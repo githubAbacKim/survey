@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteBase /survery_project/
+	RewriteBase /survey_project/
 
 	#Removes access to the system folder bu users.
 	#Additionally this will allow you to create a System.php controller

@@ -60,4 +60,6 @@ class Survey extends CI_Controller {
 		$this->load->view('footer',$data);
 	}
 
+	
+
 }
