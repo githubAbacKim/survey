@@ -1,0 +1,151 @@
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  /* background-color: #F6EFE0;   */
+  background-image: url('../images/KakaoTalk_bg.svg');
+  background-color: #F6EFE0;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+.bold{
+    font-weight: bold;
+}
+html {
+  overflow-x: hidden;
+}
+
+/* .content{
+  background-image: url('../images/KakaoTalk_bg.svg');
+  background-color: #F6EFE0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
+.main {
+  height: auto
+}
+
+nav {
+  color: #F57600;
+}
+
+.btn-bg {
+  background-color: #FAD58C;
+  border: none;
+  color: #F57600;
+  transition: 0.4s;
+  width: 130px;
+  border-radius: 12px;
+}
+
+.text-color {
+  color: #5C1C2C;
+}
+
+.text-style {
+  font-weight: bold;
+  font-size: 5rem;
+  margin-top: 25px;
+}
+
+.normal-text-color {
+  color: #5C1C2C;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 18px;
+}
+
+.image-size {
+  width: 39rem;
+  height: 5rem;
+  margin-top: 3rem;
+}
+
+.image-size:hover {
+  cursor: pointer;
+  transition: 0.4s;
+  opacity: 0.6;
+}
+.bg-color {
+  background-color: transparent;
+}
+
+.select-label{
+    margin-top: 15px !important;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.border-button {
+  width: 100px;
+  border-top-color: #5C1C2C;
+  border-bottom-color: #5C1C2C;
+  border-radius: 10px;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  color: #5C1C2C;
+  padding: 0.7rem;
+}
+
+.border-button:hover {
+  cursor: pointer;
+  border: 1px solid #5C1C2C;
+  border-radius: 10px;
+  transition: 0.4s;
+  opacity: 0.4;
+}
+
+.text-label-drop-down {
+  color: #5C1C2C;
+  float: left;
+  margin-right: 2rem;
+  margin-top: 0.2em;
+}
+nav{
+    width: 100% !important;
+}
+.navlist{
+    right: 0 px !important;
+    width: auto !important;
+    padding: 0 !important;
+}
+.nav ul{
+    right: 0 !important;
+}
+.navbar-brand{
+    font-weight: bold;
+}
+.logo{
+    margin: auto;
+    color: #5C1C2C !important;
+}
+.startbut{
+    width: 7% !important;
+    margin: 20px auto 0 !important;
+}
+.startbut:hover{
+    cursor: pointer;
+}
+.footer{
+    margin-top: 150px !important;
+    margin-bottom: 50px !important;
+}
+@media (min-width: 1200px) {
+ 
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {}
