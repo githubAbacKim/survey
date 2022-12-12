@@ -20,13 +20,24 @@ class Survey extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['title'] = "Administrator";
-		$data['sub_heading'] = "Main Page";
-		$data['page'] = 'Frontdesk';
-		$data['content'] = 'Test Welcome';
+		$data['title'] = "Home Page";
 
 		$this->load->view('header',$data);
 		$this->load->view('index',$data);
 		$this->load->view('footer',$data);
 	}
+
+	public function survey_page(){
+		$data['title'] = "Survey Page";
+
+		$this->load->view('header',$data);
+		$this->load->view('survey',$data);
+		$this->load->view('footer',$data);
+	
+	}
+
+	public function survey_result(){
+		
+	}
+
 }
