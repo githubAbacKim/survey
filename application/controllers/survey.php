@@ -23,8 +23,7 @@ class Survey extends CI_Controller {
 		$data['title'] = "Administrator";
 		$data['sub_heading'] = "Main Page";
 		$data['page'] = 'Frontdesk';
-
-		$data['record'] = $this->admin_model->property_info();
+		$data['content'] = 'Test Welcome';
 
 		$this->load->view('header',$data);
 		$this->load->view('index',$data);
