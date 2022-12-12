@@ -60,6 +60,15 @@ class Survey extends CI_Controller {
 		$this->load->view('footer',$data);
 	}
 
-	
+	function start_survey(){
+		//add participants data
+		//set session if adding is successful
+		
+	}
+
+	function get_question(){
+		$result = $this->survey_model->function select_join($table,$join,$like=false,$where=false,$order=false,$group=false,$or_where=false,$or_like=false,$where_not_in=false,$wni_column=false,$where_in = false);	
+	}
+
 
 }
