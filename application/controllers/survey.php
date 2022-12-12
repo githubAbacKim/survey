@@ -37,7 +37,27 @@ class Survey extends CI_Controller {
 	}
 
 	public function survey_result(){
-		
+		$data['title'] = "Survey Page";
+
+		$this->load->view('header',$data);
+		$this->load->view('survey_result',$data);
+		$this->load->view('footer',$data);
+	}
+
+	public function question_statistic(){
+		$data['title'] = "Survey Page";
+
+		$this->load->view('header',$data);
+		$this->load->view('question_statistics',$data);
+		$this->load->view('footer',$data);
+	}
+
+	public function value_statistic(){
+		$data['title'] = "Survey Page";
+
+		$this->load->view('header',$data);
+		$this->load->view('value_statistics',$data);
+		$this->load->view('footer',$data);
 	}
 
 }
