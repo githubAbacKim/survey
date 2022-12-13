@@ -115,9 +115,6 @@ nav{
     width: auto !important;
     padding: 0 !important;
 }
-.nav ul{
-    right: 0 !important;
-}
 .navbar-brand{
     font-weight: bold;
 }
@@ -133,11 +130,12 @@ nav{
     cursor: pointer;
 }
 .footer{
-    margin-top: 150px !important;
-    margin-bottom: 50px !important;
+  margin-top: 10%!important;
+  margin-bottom: 5% !important;
 }
+
 @media (min-width: 1200px) {
- 
+
 }
 
 @media (min-width: 576px) {
@@ -145,7 +143,7 @@ nav{
 }
 
 @media (min-width: 768px) {
-
+  
 }
 
 @media (min-width: 992px) {

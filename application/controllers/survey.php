@@ -37,37 +37,27 @@ class Survey extends CI_Controller {
 	}
 
 	public function survey_result(){
-		$data['title'] = "Survey Page";
+		$data['title'] = "Survey Result Page";
 
 		$this->load->view('header',$data);
 		$this->load->view('survey_result',$data);
 		$this->load->view('footer',$data);
 	}
 
-	public function question_statistic(){
-		$data['title'] = "Survey Page";
+	public function questionStatistics(){
+		$data['title'] = "Question Statistics Page";
 
 		$this->load->view('header',$data);
-		$this->load->view('question_statistics',$data);
+		$this->load->view('questionStat',$data);
 		$this->load->view('footer',$data);
 	}
 
-	public function value_statistic(){
-		$data['title'] = "Survey Page";
+	public function valueStatistic(){
+		$data['title'] = "Value Statistics Page";
 
 		$this->load->view('header',$data);
-		$this->load->view('value_statistics',$data);
+		$this->load->view('valueStat',$data);
 		$this->load->view('footer',$data);
-	}
-
-	function start_survey(){
-		//add participants data
-		//set session if adding is successful
-
-	}
-
-	function get_question(){
-		//$result = $this->survey_model->select_join($table,$join,$like=false,$where=false,$order=false,$group=false,$or_where=false,$or_like=false,$where_not_in=false,$wni_column=false,$where_in = false);	
 	}
 
 

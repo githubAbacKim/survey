@@ -1,3 +1,6 @@
+<style>
+    
+</style>
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
     <a href="#" class="navbar-brand logo">AI 도시를 부탁해!</a>
@@ -32,7 +35,7 @@
     <div class="text-center">
         <p>
             <span class="bold">동의</span>  
-            <input class="form-check-input checkbox" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
         </p>
     </div>
@@ -45,69 +48,74 @@
     <div class="footer text-center container">
         <!-- Grid container -->
         <div class="container">
+            <form id="">
+
+            </form>
             <div class="row text-center d-flex justify-content-center pt-5">
                 <!-- Grid column -->
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
+                <div class="col-md-3 justify-content-center">
                     <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                    <select class="form-select form-select-sm bg-color border-button">
-                        <option value="선택">선택</option>
-                        <option>남성</option>
-                        <option>여성</option>
+                    <select id="gender" class="form-select form-select-sm bg-color border-button">
+                        <option>선택</option>
+                        <option value="남성">남성</option>
+                        <option value="여성">여성</option>
                     </select>
-                    </h6>
+                </div>
+                
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3">
+                    <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                    <select id="school_level" class="form-select form-select-sm bg-color border-button">
+                        <option value="초등학교">초등학생</option>
+                        <option value="중학교">중학생</option>
+                        <option value="고등학교">고등학생</option>
+                        <option value="대학">대학생</option>
+                        <option value="일반인">일반인</option>
+                    </select>
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                    <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                    <select class="form-select form-select-sm bg-color border-button">
-                        <option value="선택">선택</option>
-                        <option>남성</option>
-                        <option>여성</option>
+                <div class="col-md-3">
+                    <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                    <select id="elem" class="form-select form-select-sm bg-color border-button">
+                        <option value="">선택</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
-                    </h6>
+                    <select id="highschool" class="form-select form-select-sm bg-color border-button">
+                        <option value="">선택</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <select id="college" class="form-select form-select-sm bg-color border-button">
+                        <option value="">선택</option>
+                        <option value="인문사회">인문사회</option>
+                        <option value="자연 | 공학">자연 | 공학</option>
+                        <option value="예체능">예체능</option>
+                    </select>
+                    <select id="public" class="form-select form-select-sm bg-color border-button">
+                        <option value="인문사회">일반</option>
+                    </select>
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
+                <div class="col-md-3">
                     <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                    <select class="form-select form-select-sm bg-color border-button">
-                        <option value="선택">선택</option>
-                        <option>남성</option>
-                        <option>여성</option>
+                    <select id="region" class="form-select form-select-sm bg-color border-button">
+                        <option value="">선택</option>
+                        <option value="읍면지역">읍면지역</option>
+                        <option value="중소도시">중소도시</option>                        
+                        <option value="대도시">대도시</option>
                     </select>
-                    </h6>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                    <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                    <select class="form-select form-select-sm bg-color border-button">
-                        <option value="선택">선택</option>
-                        <option>남성</option>
-                        <option>여성</option>
-                    </select>
-                    </h6>
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2">
-                    <h6 class="text-uppercase font-weight-bold">
-                    <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                    <select class="form-select form-select-sm bg-color border-button">
-                        <option value="선택">선택</option>
-                        <option>남성</option>
-                        <option>여성</option>
-                    </select>
-                    </h6>
                 </div>
                 <!-- Grid column -->
             </div>
@@ -115,3 +123,65 @@
         </div>
     </div>
 </div>
+<script>
+    $(function(){
+        const elemlevel = $("#elem");
+        const highschool = $("#highschool");
+        const college = $("#college");
+        const public = $("#public");     
+
+        function getShowList(school){
+            if(school === "초등학교"){
+                elemlevel.show();
+                highschool.hide();
+                college.hide();
+                public.hide();
+            }
+            else if(school === "중학교"){
+                elemlevel.show();
+                highschool.hide();
+                college.hide();
+                public.hide();
+            }
+            else if(school === "고등학교"){
+                highschool.show();
+                elemlevel.hide();
+                college.hide();
+                public.hide();
+            }
+            else if(school === "대학"){
+                college.show();
+                elemlevel.hide();
+                highschool.hide();
+                public.hide();
+            }
+            else if(school === "일반인"){
+                public.show();
+                elemlevel.hide();
+                highschool.hide();
+                college.hide();
+            }
+            else{
+                elemlevel.hide();
+                highschool.hide();
+                college.hide();
+                public.hide();
+            }
+        }
+
+        var data = document.getElementById('school_level').value;
+        getShowList(data);
+        
+        $("#school_level").change(function(){
+            var data = document.getElementById('school_level').value;
+            getShowList(data);
+        });  
+        
+        $("#confirm_agree").click(function(){
+            if ($(this).is(":checked")) {
+                
+            }
+        }); 
+         
+    })
+</script>
