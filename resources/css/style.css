@@ -59,6 +59,7 @@ nav {
   transition: 0.4s;
   opacity: 0.6;
 }
+
 .bg-color {
   background-color: transparent;
 }
@@ -121,7 +122,9 @@ nav{
   margin-top: 10%!important;
   margin-bottom: 5% !important;
 }
-
+.profile_image image{
+  width: auto !important;
+}
 @media (min-width: 1200px) {
 
 }
