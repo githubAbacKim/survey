@@ -67,7 +67,7 @@ class Survey extends CI_Controller {
 	}
 
 	function get_question(){
-		$result = $this->survey_model->select_join($table,$join,$like=false,$where=false,$order=false,$group=false,$or_where=false,$or_like=false,$where_not_in=false,$wni_column=false,$where_in = false);	
+		//$result = $this->survey_model->select_join($table,$join,$like=false,$where=false,$order=false,$group=false,$or_where=false,$or_like=false,$where_not_in=false,$wni_column=false,$where_in = false);	
 	}
 
 
