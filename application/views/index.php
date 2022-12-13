@@ -1,5 +1,7 @@
 <style>
-    
+    select option{
+        padding: 10px !important;
+    }
 </style>
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">

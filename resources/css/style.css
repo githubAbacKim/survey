@@ -1,16 +1,4 @@
-html,
-body {
-  font-family: Verdana, sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  /* background-color: #F6EFE0;   */
-  background-image: url('../images/KakaoTalk_bg.svg');
-  background-color: #F6EFE0;
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-family: 'Raleway', sans-serif;
-}
+
 .bold{
     font-weight: bold;
 }

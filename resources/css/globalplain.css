@@ -1,0 +1,10 @@
+html,
+body {
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: #F6EFE0;  
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: '넥슨Lv1고딕 OTF', sans-serif;
+}
