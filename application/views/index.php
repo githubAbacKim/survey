@@ -1,28 +1,28 @@
-    <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
-        <div class="container-fluid">
-        <a href="#" class="navbar-brand logo">AI 도시를 부탁해!</a>
-            <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            collapse navbar-collapse -->
-            <div class="navlist">
-                <ul class="nav">
-                    <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">테스트</a>
-                    </li>
-                    <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">문항 보기</a>
-                    </li>
-                    <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="#" role="button">가치 통계</a>
-                    </li>
-                    <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="#" role="button">문항 통계</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-light navbar-expand-lg p-5 nav">
+    <div class="container-fluid">
+    <a href="#" class="navbar-brand logo">AI 도시를 부탁해!</a>
+        <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        collapse navbar-collapse -->
+        <div class="navlist">
+            <ul class="nav">
+                <li clas="nav-item">
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">테스트</a>
+                </li>
+                <li clas="nav-item">
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">문항 보기</a>
+                </li>
+                <li clas="nav-item">
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="#" role="button">가치 통계</a>
+                </li>
+                <li clas="nav-item">
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="#" role="button">문항 통계</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 
 <div class="container-fluid content">
