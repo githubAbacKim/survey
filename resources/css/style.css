@@ -134,6 +134,49 @@ nav{
   margin-bottom: 5% !important;
 }
 
+.header-logo{
+  margin: 3rem 2rem 2rem 15rem;
+}
+
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin-left: 2rem;
+  background-color: #5C1C2C;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot:hover{
+  cursor: pointer;
+}
+
+.header-text-container{
+ background:linear-gradient(90deg, #FAD58C 43.13%, rgba(250, 213, 140, 0) 93.33%);
+}
+.header-text{
+  margin-left: 15rem;
+}
+.next-page-indicator a{
+  text-decoration: none; 
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+
+.next-page-indicator a:hover{
+ color: orange;
+ transition: 0.4s ease-in-out;
+}
+
+.progress-indicator{
+  margin-left: 12rem;
+}
+
+.body-text{
+  padding-left: 15rem;
+}
 @media (min-width: 1200px) {
 
 }
