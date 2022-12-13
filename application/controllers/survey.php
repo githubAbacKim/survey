@@ -30,7 +30,7 @@ class Survey extends CI_Controller {
 	public function survey_page(){
 		$data['title'] = "Survey Page";
 
-		$this->load->view('header',$data);
+		$this->load->view('headerplain',$data);
 		$this->load->view('survey',$data);
 		$this->load->view('footer',$data);
 	
@@ -39,15 +39,15 @@ class Survey extends CI_Controller {
 	public function survey_result(){
 		$data['title'] = "Survey Result Page";
 
-		$this->load->view('header',$data);
-		$this->load->view('survey_result',$data);
+		$this->load->view('headerplain',$data);
+		$this->load->view('surveyResult',$data);
 		$this->load->view('footer',$data);
 	}
 
 	public function questionStatistics(){
 		$data['title'] = "Question Statistics Page";
 
-		$this->load->view('header',$data);
+		$this->load->view('headerplain',$data);
 		$this->load->view('questionStat',$data);
 		$this->load->view('footer',$data);
 	}
@@ -55,9 +55,13 @@ class Survey extends CI_Controller {
 	public function valueStatistic(){
 		$data['title'] = "Value Statistics Page";
 
-		$this->load->view('header',$data);
+		$this->load->view('headerplain',$data);
 		$this->load->view('valueStat',$data);
 		$this->load->view('footer',$data);
+	}
+
+	public function register_user(){
+		
 	}
 
 

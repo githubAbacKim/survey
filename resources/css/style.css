@@ -59,6 +59,7 @@ nav {
   transition: 0.4s;
   opacity: 0.6;
 }
+
 .bg-color {
   background-color: transparent;
 }
@@ -150,8 +151,6 @@ nav{
   margin-left: 2rem;
   font-weight: bold;
 }
-
-
 .next-page-indicator a:hover{
  color: orange;
  transition: 0.4s ease-in-out;
