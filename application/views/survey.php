@@ -76,6 +76,7 @@
                     <p class="card-text">개인의 사생활이 노출될 수 있습니다.</p>
                 </div>
             </div>
+            
         </div>
     </div>
     <div class="col-12 col-lg-1 col-md-1 col-xl-5 mt-5">
