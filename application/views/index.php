@@ -184,6 +184,35 @@
                 
             }
         }); 
+        $('#btnSave').click(function(){
+            
+            $.ajax({
+                type:'ajax',
+                method: 'post',
+                url: url,
+                data: data,
+                async: false,
+                dataType: 'json',
+                success: function(response){
+                    var error = response.error;
+                    var type = response.type;
+                    if (response.success) {
+                        $('#myForm')[0].reset();
+                        $('.alert-success').html(type + 'successful.').fadeIn().delay(2000).fadeOut('slow');
+                        accountTable.ajax.reload(null, false);
+                        if(type === "Update"){$('#myModal').modal('hide');}
+                    }else{
+                        $('#myModal').modal('hide');
+                        $('.alert-danger').html(error).fadeIn().delay(2000).fadeOut('slow');
+                    }
+                },
+                error: function(){
+                    $('.alert-danger').html('Unable to add record.').fadeIn().delay(2000).fadeOut('slow');
+                    $('#myModal').modal('hide');
+                }
+            });
+        });
+        
          
     })
 </script>

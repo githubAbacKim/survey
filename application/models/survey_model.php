@@ -114,7 +114,7 @@ class Survey_Model extends CI_Model {
 		$query = $this->db->get();
 
 		if ($query->num_rows > 0) {
-			return $query->result();
+			return $query->row();
 		}else{
 			return false;
 		}

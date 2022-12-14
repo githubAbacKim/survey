@@ -61,7 +61,57 @@ class Survey extends CI_Controller {
 	}
 
 	public function register_user(){
+		$this->form_validation->set_rules('gender','Gender','required');
+		$this->form_validation->set_rules('school_level','School Level','required');
+		$this->form_validation->set_rules('classification','Classification','required');
+		$this->form_validation->set_rules('regional_scale','Regional Scale','required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$msg['error'] = validation_errors();
+			$msg['success'] = false;
+		}else{
+			$data = array(
+				"gender"=>set_value('gender'),
+				"school_level"=>set_value('school_level'),
+				"classification"=>set_value('classification'),
+				"regional_scale"=>set_value('regional_scale')
+			);
+			
+			$add = $this->project_model->insert('participants',$data);
+			if ($add != false) {
+				$msg['success'] = true;
+			}else{
+				$msg['success'] = false;
+				$msg['error'] = 'Error adding data.';
+			}
+		}
+		$msg['type'] = 'Add';
+		echo json_encode($msg);
+	}
+
+	public function get_question(){
+		$result = array('data' => array());
+		$join = array(
+			array("agree","question","question_id"),
+			array("disagree","question","question_id")
+		);
+		$data = $this->survey_model->select_join('question',$join);
+		$data2 = $this->survey_model->select('disagree');
 		
+		foreach($data as $value){
+			echo $value->agree_title.'-'.$value->disagree_title.'-'.$value->question;
+		}
+		// if ($data != false) {
+		// 	foreach (shuffle($data) as $key => $value) {				
+		// 		$result['data'][$key] = array(
+		// 			"num"=>$value->question_num,
+		// 			"question"=>$value->question,
+		// 			"agree_img"=>$value->agree_image,
+		// 			"agree_title"
+		// 		);
+		// 	}
+		// }
+		// echo json_encode($result);
 	}
 
 
