@@ -1,11 +1,11 @@
 <style>
-    select option{
+    select option {
         padding: 10px !important;
     }
 </style>
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
-    <a href="#" class="navbar-brand logo">AI 도시를 부탁해!</a>
+        <a href="#" class="navbar-brand logo">AI 도시를 부탁해!</a>
         <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,14 +36,15 @@
 
     <div class="text-center">
         <p>
-            <span class="bold">동의</span>  
+            <span class="bold">동의</span>
             <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
         </p>
     </div>
 
     <div class="container-fluid text-center">
-        <img class="startbut" src="<?php echo base_url("resources/images/start-01.svg")?>" class="rounded mx-auto d-block image-size image-submit" alt="sumbit">
+        <img class="startbut" src="<?php echo base_url("resources/images/start-01.svg") ?>"
+            class="rounded mx-auto d-block image-size image-submit" alt="sumbit">
     </div>
 
     <!-- Footer -->
@@ -63,7 +64,7 @@
                         <option value="여성">여성</option>
                     </select>
                 </div>
-                
+
                 <!-- Grid column -->
 
                 <!-- Grid column -->
@@ -115,7 +116,7 @@
                     <select id="region" class="form-select form-select-sm bg-color border-button">
                         <option value="">선택</option>
                         <option value="읍면지역">읍면지역</option>
-                        <option value="중소도시">중소도시</option>                        
+                        <option value="중소도시">중소도시</option>
                         <option value="대도시">대도시</option>
                     </select>
                 </div>
@@ -125,5 +126,5 @@
         </div>
     </div>
 </div>
-<script src="<?php echo base_url('resources/js/index.js')?>" type="module">
+<script src="<?php echo base_url('resources/js/index.js') ?>" type="module">
 </script>
