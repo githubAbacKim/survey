@@ -3,9 +3,6 @@
         border-radius: 2em;
         background-color: white;
     }
-    div{
-        border: solid 1px;
-    }
 </style>
 <div class="container-fluid p-3">
     <!-- header -->
@@ -13,7 +10,7 @@
         <div class="col-lg-2 col-xs-12 p-3 text-center">
             <h5 class="fw-bold mt-4">AI 도시를 부탁해!</h5>
         </div>
-        <div class="col-lg-6 col-xs-12 p-3">
+        <div class="col-lg-6 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight">
             <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">테스트</a></div>
             <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">테스트</a></div>
             <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">테스트</a></div>

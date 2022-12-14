@@ -4,7 +4,11 @@
     } */
     .scale-div{
         border-radius: 2em;
-        border:solid 1px;
+        overflow: auto;
+    }
+    .scale-div:hover{
+        border: solid 2px #F57600;
+        cursor: pointer;
     }
 </style>
 <div class="container-fluid p-0">
@@ -48,8 +52,9 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-6 col-xs-12 p-3 offset-3 d-flex flex-row-reverse bd-highlight mySlides">
-            <div class="scale-div col-lg-6 g-3">                
+        <!-- pagination div -->
+        <div class="col-lg-6 col-xs-12 p-3 gap-3 offset-3 d-flex flex-row-reverse bd-highlight mySlides">
+            <div class="scale-div col-lg-6" data-value="agree" data-qnum="1">                
                 <picture>
                     <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png')?>" type="image/svg+xml">
                     <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>" alt="agree"
@@ -60,23 +65,21 @@
                     <h5>찬성</h5>
                 </div>
                 <div class="card-body card-height text-color">
-                    <p class="card-text">노약자나 장애인, 어린이 등 사회 위약층 등에게 안전에 도움이
-                        되어 사회 공공에 이익이 됩니다.</p>
+                    노약자나 장애인, 어린이 등 사회 위약층 등에게 안전에 도움이
+                        되어 사회 공공에 이익이 됩니다.
                 </div>
             </div>
-            <div class="scale-div col-lg-6 g-3">
+            <div class="scale-div col-lg-6" data-value="disagree" data-qnum="1">
                 <picture>
-                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png')?>" type="image/svg+xml">
-                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>" alt="agree"
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/disagree.png')?>" type="image/svg+xml">
+                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/disagree.png") ?>" alt="agree"
                     id="answer">
                 </picture>
-                <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/disagree.png") ?>" alt="disagree"
-                    id="answer">
                 <div class="card-title-t text-center text-color">
                     <h5>찬성</h5>
                 </div>
                 <div class="card-body card-height text-color">
-                    <p class="card-text">개인의 사생활이 노출될 수 있습니다.</p>
+                    개인의 사생활이 노출될 수 있습니다.
                 </div>
             </div>
         </div>
