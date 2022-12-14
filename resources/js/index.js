@@ -2,35 +2,35 @@ $(function(){
     const elemlevel = $("#elem");
     const highschool = $("#highschool");
     const college = $("#college");
-    const public = $("#public");     
+    const public_sec = $("#public");     
 
     function getShowList(school){
         if(school === "초등학교"){
             elemlevel.show();
             highschool.hide();
             college.hide();
-            public.hide();
+            public_sec.hide();
         }
         else if(school === "중학교"){
             elemlevel.show();
             highschool.hide();
             college.hide();
-            public.hide();
+            public_sec.hide();
         }
         else if(school === "고등학교"){
             highschool.show();
             elemlevel.hide();
             college.hide();
-            public.hide();
+            public_sec.hide();
         }
         else if(school === "대학"){
             college.show();
             elemlevel.hide();
             highschool.hide();
-            public.hide();
+            public_sec.hide();
         }
         else if(school === "일반인"){
-            public.show();
+            public_sec.show();
             elemlevel.hide();
             highschool.hide();
             college.hide();
@@ -39,7 +39,7 @@ $(function(){
             elemlevel.hide();
             highschool.hide();
             college.hide();
-            public.hide();
+            public_sec.hide();
         }
     }
 
@@ -87,7 +87,7 @@ $(function(){
     });
 
     $.ajax({
-        url:'<?php echo base_url("survey/get_question")?>',
+        url:'http://127.0.0.1/survey_project/survey/get_question',
         async:false,
         dataType:'json',
         success: function(data){
@@ -98,5 +98,13 @@ $(function(){
         }
     });
     
-     
+    $.ajax({//START...
+        url:'../../survey_project/survey/get_question',
+        type:'GET',
+        async:false,
+        dataType:'json',
+        success: function(data){
+            console.log(data)
+        }
+      });//END....
 })

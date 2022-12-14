@@ -125,3 +125,5 @@
         </div>
     </div>
 </div>
+<script src="<?php echo base_url('resources/js/index.js')?>" type="module">
+</script>

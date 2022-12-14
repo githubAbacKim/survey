@@ -101,11 +101,6 @@ class Survey extends CI_Controller {
 		$result = array('data' => array());
 		$data = $this->survey_model->select('question');
 		shuffle($data);
-		foreach($data as $value){
-			echo'<br>';
-			echo $value->question;
-			echo'<br>';
-		}
 		
 		echo json_encode($data);
 	}
