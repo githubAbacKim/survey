@@ -60,6 +60,14 @@ class Survey extends CI_Controller {
 		$this->load->view('footer',$data);
 	}
 
+	public function questions(){
+		$data['title'] = "Value Statistics Page";
+
+		$this->load->view('headerplain',$data);
+		$this->load->view('questions',$data);
+		$this->load->view('footer',$data);
+	}
+
 	public function register_user(){
 		$this->form_validation->set_rules('gender','Gender','required');
 		$this->form_validation->set_rules('school_level','School Level','required');
@@ -91,27 +99,15 @@ class Survey extends CI_Controller {
 
 	public function get_question(){
 		$result = array('data' => array());
-		$join = array(
-			array("agree","question","question_id"),
-			array("disagree","question","question_id")
-		);
-		$data = $this->survey_model->select_join('question',$join);
-		$data2 = $this->survey_model->select('disagree');
-		
+		$data = $this->survey_model->select('question');
+		shuffle($data);
 		foreach($data as $value){
-			echo $value->agree_title.'-'.$value->disagree_title.'-'.$value->question;
+			echo'<br>';
+			echo $value->question;
+			echo'<br>';
 		}
-		// if ($data != false) {
-		// 	foreach (shuffle($data) as $key => $value) {				
-		// 		$result['data'][$key] = array(
-		// 			"num"=>$value->question_num,
-		// 			"question"=>$value->question,
-		// 			"agree_img"=>$value->agree_image,
-		// 			"agree_title"
-		// 		);
-		// 	}
-		// }
-		// echo json_encode($result);
+		
+		echo json_encode($data);
 	}
 
 

@@ -59,103 +59,91 @@
     <!-- end header -->
 
 
-    <div class="row p-5 justify-content-evenly ">
-        <div class="col-lg-6 col-xs-12 p-2 d-flex flex-row-reverse bd-highlight question-card ">
-            <div class="col-lg-12 col-xs-12 p-5">
-                <h5 class="fw-bold mt-4 text-color">1. AI 스피커를 통해 가정의 일상 대화를 수집하여 위기 상황시 출동하는 사회 안전망을 만들려고 합니다.
-                    정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. </h5>
+    <div class="row p-5 justify-content-evenly d-flex flex-row-reverse bd-highlight gap-4 ">
 
-                <div class="progress mt-5 m-5">
-                    <span class="bold ">찬성</span>
-                    <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="30"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    <span class="bold">반대</span>
-                </div>
+        <div class="col-lg-8 col-xs-12 p-5 question-card">
+            <h5 class="fw-bold mt-4 text-color">1. AI 스피커를 통해 가정의 일상 대화를 수집하여 위기 상황시 출동하는 사회 안전망을 만들려고 합니다.
+                정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. </h5>
 
+            <div class="progress mt-5 m-5">
+                <span class="bold ">찬성</span>
+                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                    aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="30"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="bold">반대</span>
+            </div>
+            <!-- question div -->
+            <div class="col-lg-12  col-xs-12 p-3 gap-2  d-flex  bd-highlight">
 
-                <!-- question div -->
-                <div class="col-lg-12   col-xs-12 p-3 gap-2  d-flex  bd-highlight mySlides">
+                <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree"
+                    data-qnum="1">
+                    <div class="text-center p-2 text-color">
+                        <h5 class="fw-bold">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree"
+                                id="confirm_agree">
+                            찬성 :
 
-                    <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree"
-                        data-qnum="1">
-                        <div class="text-center p-2 text-color">
-                            <h5 class="fw-bold">
-                                <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                    id="confirm_agree">
-                                찬성 :
-
-                                &nbsp;&nbsp; 안전에 도움이되어 사회공공에 이익이 됩니다.
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree"
-                        data-qnum="1">
-                        <div class="text-center p-2 text-color">
-                            <h5 class="fw-bold">
-                                <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                    id="confirm_agree">
-                                내가 반대 : &nbsp;&nbsp;문항
-
-                                인간 존엄성을 해칩니다.
-                            </h5>
-                        </div>
-
+                            &nbsp;&nbsp; 안전에 도움이되어 사회공공에 이익이 됩니다.
+                        </h5>
                     </div>
                 </div>
+                <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree"
+                    data-qnum="1">
+                    <div class="text-center p-2 text-color">
+                        <h5 class="fw-bold">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree"
+                                id="confirm_agree">
+                            내가 반대 : &nbsp;&nbsp;문항
 
+                            인간 존엄성을 해칩니다.
+                        </h5>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="row p-5 justify-content-evenly ">
-        <div class="col-lg-6 col-xs-12 p-2 d-flex flex-row-reverse bd-highlight question-card ">
-            <div class="col-lg-12 col-xs-12 p-5">
-                <h5 class="fw-bold mt-4 text-color">2. 안면인식 CCTV를 도입하여 전과자 일상생활을 감시하고자 합니다. </h5>
+        <div class="col-lg-8 col-xs-12 p-5 question-card">
+            <h5 class="fw-bold mt-4 text-color">1. AI 스피커를 통해 가정의 일상 대화를 수집하여 위기 상황시 출동하는 사회 안전망을 만들려고 합니다.
+                정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. </h5>
 
-                <div class="progress mt-5 m-5">
-                    <span class="bold ">찬성</span>
-                    <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="30"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    <span class="bold">반대</span>
-                </div>
+            <div class="progress mt-5 m-5">
+                <span class="bold ">찬성</span>
+                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
+                    aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="30"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="bold">반대</span>
+            </div>
+            <!-- question div -->
+            <div class="col-lg-12  col-xs-12 p-3 gap-2  d-flex  bd-highlight">
 
+                <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree"
+                    data-qnum="1">
+                    <div class="text-center p-2 text-color">
+                        <h5 class="fw-bold">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree"
+                                id="confirm_agree">
+                            찬성 :
 
-                <!-- question div -->
-                <div class="col-lg-12  col-xs-12 p-3 gap-2  d-flex  bd-highlight mySlides">
-
-                    <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree"
-                        data-qnum="1">
-                        <div class="text-center p-2 text-color">
-                            <h5 class="fw-bold">
-                                <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                    id="confirm_agree">
-                                찬성 :&nbsp;&nbsp;
-
-                                전과자의 행동을 감시하면 범죄율이 감소하여
-                                사회 안전에 큰 도움이 될 것입니다.
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree"
-                        data-qnum="1">
-                        <div class="text-center p-2 text-color">
-                            <h5 class="fw-bold">
-                                <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                    id="confirm_agree">
-                                내가 반대 :&nbsp;&nbsp; 문항
-
-                                전과자는 이미 죄에 대한 처벌을 받았습니다.
-                                범죄자의 인권도 존중되어야 합니다.
-                            </h5>
-                        </div>
-
+                            &nbsp;&nbsp; 안전에 도움이되어 사회공공에 이익이 됩니다.
+                        </h5>
                     </div>
                 </div>
+                <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree"
+                    data-qnum="1">
+                    <div class="text-center p-2 text-color">
+                        <h5 class="fw-bold">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree"
+                                id="confirm_agree">
+                            내가 반대 : &nbsp;&nbsp;문항
 
+                            인간 존엄성을 해칩니다.
+                        </h5>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
