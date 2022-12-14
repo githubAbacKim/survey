@@ -57,9 +57,9 @@
         <div class="col-lg-6 col-xs-12 p-3 gap-3 offset-3 d-flex flex-row-reverse bd-highlight mySlides">
             <div class="scale-div col-lg-6" data-value="agree" data-qnum="1">
                 <picture>
-                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png') ?>"
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.svg') ?>"
                         type="image/svg+xml">
-                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>"
+                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.svg") ?>"
                         alt="agree" id="answer">
                 </picture>
 
@@ -73,10 +73,10 @@
             </div>
             <div class="scale-div col-lg-6" data-value="disagree" data-qnum="1">
                 <picture>
-                    <source srcset="<?php echo base_url('resources/images/question_images/q1/disagree.png') ?>"
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/disagree.svg') ?>"
                         type="image/svg+xml">
                     <img class="img-fluid"
-                        src="<?php echo base_url("resources/images/question_images/q1/disagree.png") ?>" alt="agree"
+                        src="<?php echo base_url("resources/images/question_images/q1/disagree.svg") ?>" alt="agree"
                         id="answer">
                 </picture>
                 <div class="card-title-t text-center p-2 text-color">

@@ -6,22 +6,26 @@
 </style>
 <div class="container-fluid p-3">
     <!-- header -->
-    <div class="row p-3 justify-content-evenly">
-        <div class="col-lg-2 col-xs-12 p-3 text-center">
+    <div class="row">
+        <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
             <h5 class="fw-bold mt-4 text-color">AI 도시를 부탁해!</h5>
         </div>
-        <div class="col-lg-6 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-md-1">
+        <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
 
             <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#">처음으로</a>
             </div>
             <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
                     role="button">다시하기</a>
             </div>
-        </div>
-        <div class="col-lg-6 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-md-4">
+        </div>        
+    </div>
+    <!-- end header -->
+    <div class="row">
+        <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
             <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#"
-                    role="button">조회</a></div>
-            <div class="col-md-2 mt-3 justify-content-center">
+                    role="button">조회</a>
+            </div>
+            <div class="col-lg-3 mt-3">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
                 <select id="gender" class="form-select form-select-sm bg-color border-button">
                     <option>선택</option>
@@ -29,7 +33,7 @@
                     <option value="여성">여성</option>
                 </select>
             </div>
-            <div class="col-md-2  mt-3 justify-content-center">
+            <div class="col-lg-3 mt-3">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
                 <select id="gender" class="form-select form-select-sm bg-color border-button ">
                     <option>선택</option>
@@ -37,7 +41,7 @@
                     <option value="여성">여성</option>
                 </select>
             </div>
-            <div class="col-md-2  mt-3 justify-content-center">
+            <div class="col-lg-3 mt-3">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
                 <select id="gender" class="form-select form-select-sm bg-color border-button">
                     <option>선택</option>
@@ -46,7 +50,7 @@
                 </select>
             </div>
         </div>
-        <div class="col-lg-6 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-md-4">
+        <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
             <div class="text-center">
                 <p>
                     <input class="form-check-input checkbox text-color" type="checkbox" value="agree"
@@ -56,8 +60,6 @@
             </div>
         </div>
     </div>
-    <!-- end header -->
-
 
     <div class="row p-5 justify-content-evenly d-flex flex-row-reverse bd-highlight gap-4 ">
 

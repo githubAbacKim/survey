@@ -87,7 +87,7 @@ $(function(){
     });
 
     $.ajax({
-        url:'http://127.0.0.1/survey_project/survey/get_question',
+        url:'../../survey_project/survey/get_question',
         async:false,
         dataType:'json',
         success: function(data){

@@ -1,5 +1,5 @@
 <style>
-    select option {
+    .form-select option {
         padding: 10px !important;
     }
 </style>
@@ -52,13 +52,12 @@
         <!-- Grid container -->
         <div class="container">
             <form id="">
-
             </form>
             <div class="row text-center d-flex justify-content-center pt-5">
                 <!-- Grid column -->
                 <div class="col-md-3 justify-content-center">
                     <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                    <select id="gender" class="form-select form-select-sm bg-color border-button">
+                    <select id="gender" class="form-select bg-color border-button">
                         <option>선택</option>
                         <option value="남성">남성</option>
                         <option value="여성">여성</option>
@@ -70,7 +69,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3">
                     <label for="form-select" class="select-label text-label-drop-down">학교급</label>
-                    <select id="school_level" class="form-select form-select-sm bg-color border-button">
+                    <select id="school_level" class="form-select bg-color border-button">
                         <option value="초등학교">초등학생</option>
                         <option value="중학교">중학생</option>
                         <option value="고등학교">고등학생</option>
