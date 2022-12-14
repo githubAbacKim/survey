@@ -97,14 +97,5 @@ $(function(){
             console.log('error')
         }
     });
-    
-    $.ajax({//START...
-        url:'../../survey_project/survey/get_question',
-        type:'GET',
-        async:false,
-        dataType:'json',
-        success: function(data){
-            console.log(data)
-        }
-      });//END....
+
 })
