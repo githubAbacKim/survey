@@ -163,9 +163,11 @@ nav{
 .card-title-t h5{
   font-weight: bold;
 }
-
+.card-body{
+  background-color: white;
+}
 .card-height{
-  height: 100px;
+  height: 50px;
   font-size: 0.7rem;
   font-weight: bold;
 }

@@ -1,5 +1,13 @@
+<style>
+    /* div{
+        border:solid 1px;
+    } */
+    .scale-div{
+        border-radius: 2em;
+        border:solid 1px;
+    }
+</style>
 <div class="container-fluid p-0">
-
     <div class="row top-bar">
         <div class="col-12  col-xl-8 text-color">
             <h3 class="header-logo">AI 도시를 부탁해!</h3>
@@ -33,55 +41,49 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-12  col-xl-7 text-color">
-            <h3 class="body-text">1. AI 스피커를 통해 가정의 일상 대화를 수집하여 위기 상황시 출동하는 사회 안전망을 만들려고 합니다.
-                정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. q</h3>
+        <div class="col-lg-6 offset-2 col-xs-12 text-color">
+            <p>1. AI 스피커를 통해 가정의 일상 대화를 수집하여 위기 상황시 출동하는 사회 안전망을 만들려고 합니다.
+                정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. q</p>
         </div>
     </div>
 
-</div>
-
-
-
-<div class="row justify-content-md-center mySlides d-flex">
-    <div class="col-12 col-lg-2 col-md-2 col-xl-3 mt-5">
-    </div>
-    <div class="col-6 col-lg-4 col-md-4 col-xl-3 mt-5">
-        <div class="container">
-            <div class="card " style="width: 15rem;" id="answers-list">
-                <img class="card-img-top" src="<?php echo base_url("resources/images/agree.png") ?>" alt="agree"
+    <div class="row">
+        <div class="col-lg-6 col-xs-12 p-3 offset-3 d-flex flex-row-reverse bd-highlight mySlides">
+            <div class="scale-div col-lg-6 g-3">                
+                <picture>
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png')?>" type="image/svg+xml">
+                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>" alt="agree"
                     id="answer">
+                </picture>
 
-                <div class="card-title-t pt-3 text-center text-color">
+                <div class="card-title-t text-center text-color">
                     <h5>찬성</h5>
                 </div>
-
                 <div class="card-body card-height text-color">
                     <p class="card-text">노약자나 장애인, 어린이 등 사회 위약층 등에게 안전에 도움이
                         되어 사회 공공에 이익이 됩니다.</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="col-6 col-lg-4 col-md-4 mt-5 col-xl-5">
-        <div class="container">
-            <div class="card" style="width: 15rem;">
-                <img class="card-img-top" src="<?php echo base_url("resources/images/disagree.png") ?>" alt="disagree"
+            <div class="scale-div col-lg-6 g-3">
+                <picture>
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png')?>" type="image/svg+xml">
+                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>" alt="agree"
                     id="answer">
-                <div class="card-title-t pt-3 text-center text-color">
+                </picture>
+                <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/disagree.png") ?>" alt="disagree"
+                    id="answer">
+                <div class="card-title-t text-center text-color">
                     <h5>찬성</h5>
                 </div>
                 <div class="card-body card-height text-color">
                     <p class="card-text">개인의 사생활이 노출될 수 있습니다.</p>
                 </div>
             </div>
-            
         </div>
     </div>
-    <div class="col-12 col-lg-1 col-md-1 col-xl-5 mt-5">
-    </div>
+
 </div>
+
 
 
 <script>
