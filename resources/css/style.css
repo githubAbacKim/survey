@@ -140,35 +140,58 @@ nav{
   cursor: pointer;
 }
 
+
 .header-text-container{
  background:linear-gradient(90deg, #FAD58C 43.13%, rgba(250, 213, 140, 0) 93.33%);
 }
-.header-text{
-  margin-left: 15rem;
-}
-.next-page-indicator a{
-  text-decoration: none; 
-  margin-left: 2rem;
-  font-weight: bold;
-}
-.next-page-indicator a:hover{
- color: orange;
- transition: 0.4s ease-in-out;
-}
 
-.progress-indicator{
-  margin-left: 12rem;
-}
+
+.next-page-indicator a:hover{
+  color: orange;
+  transition: 0.4s ease-in-out;
+ }
 
 .body-text{
   padding-left: 15rem;
+  font-weight: bold;
+  font-size:20px;
+}
+
+.card-title-t{
+  background-color: #F9E4B2;
+}
+.card-title-t h5{
+  font-weight: bold;
+}
+
+.card-height{
+  height: 100px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.card:hover{
+  cursor: pointer;
 }
 @media (min-width: 1200px) {
+  .header-text{
+    margin-left: 10rem;
+  }
+
 
 }
 
 @media (min-width: 576px) {
+  .header-text{
+    text-align: center;
+  }
 
+  .next-page-indicator a{
+    text-decoration: none; 
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+ 
 }
 
 @media (min-width: 768px) {
