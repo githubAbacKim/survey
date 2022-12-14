@@ -2,11 +2,12 @@
     /* div{
         border:solid 1px;
     } */
-    .scale-div{
+    .scale-div {
         border-radius: 2em;
         overflow: auto;
     }
-    .scale-div:hover{
+
+    .scale-div:hover {
         border: solid 2px #F57600;
         cursor: pointer;
     }
@@ -54,28 +55,31 @@
     <div class="row">
         <!-- pagination div -->
         <div class="col-lg-6 col-xs-12 p-3 gap-3 offset-3 d-flex flex-row-reverse bd-highlight mySlides">
-            <div class="scale-div col-lg-6" data-value="agree" data-qnum="1">                
+            <div class="scale-div col-lg-6" data-value="agree" data-qnum="1">
                 <picture>
-                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png')?>" type="image/svg+xml">
-                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>" alt="agree"
-                    id="answer">
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/agree.png') ?>"
+                        type="image/svg+xml">
+                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/agree.png") ?>"
+                        alt="agree" id="answer">
                 </picture>
 
-                <div class="card-title-t text-center text-color">
+                <div class="card-title-t text-center p-2 text-color">
                     <h5>찬성</h5>
                 </div>
                 <div class="card-body card-height text-color">
                     노약자나 장애인, 어린이 등 사회 위약층 등에게 안전에 도움이
-                        되어 사회 공공에 이익이 됩니다.
+                    되어 사회 공공에 이익이 됩니다.
                 </div>
             </div>
             <div class="scale-div col-lg-6" data-value="disagree" data-qnum="1">
                 <picture>
-                    <source srcset="<?php echo base_url('resources/images/question_images/q1/disagree.png')?>" type="image/svg+xml">
-                    <img class="img-fluid" src="<?php echo base_url("resources/images/question_images/q1/disagree.png") ?>" alt="agree"
-                    id="answer">
+                    <source srcset="<?php echo base_url('resources/images/question_images/q1/disagree.png') ?>"
+                        type="image/svg+xml">
+                    <img class="img-fluid"
+                        src="<?php echo base_url("resources/images/question_images/q1/disagree.png") ?>" alt="agree"
+                        id="answer">
                 </picture>
-                <div class="card-title-t text-center text-color">
+                <div class="card-title-t text-center p-2 text-color">
                     <h5>찬성</h5>
                 </div>
                 <div class="card-body card-height text-color">
