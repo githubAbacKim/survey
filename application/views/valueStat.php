@@ -67,14 +67,12 @@
 
 
     <div class="row p-5 justify-content-evenly">
-        <div class="col-lg-5 col-xs-12 p-3  rounded-3 mt-5">
+        <div class="col-lg-7 col-xs-12 p-3  rounded-3 mt-5">
             <div class=" p-3">
                 <canvas id="pie-chart" width="1000" height="650"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
             </div>
         </div>
-
-
 
         <div class="col-lg-3 col-xs-12 d-grid gap-3">
             <div class="profile_head p-3  text-color">
@@ -122,10 +120,11 @@
         },
         options: {
             legend: {
+                top: '150px',
                 position: 'right',
-                align: 'bottom',
+                align: 'top',
                 color: 'rgb(255, 99, 132)',
-                padding: 20
+                padding: '20px'
             }
         }
     });

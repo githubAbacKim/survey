@@ -26,54 +26,49 @@ $(function(){
             }
         });
     });
+    
+    var listContainer = $("#mySlides");
+    var paginationcont = $('#template').html();
 
-    var batTemplate = "" +
-        "<div class='col-md-12 col-xs-12 subinfodiv'>" +
-          "<div class='col-md-3 col-xs-12 pull-right'>" +
-              "<div class='col-md-12 text-right read' id='{{divid}}' data-kind='{{kind}}' data-id='{{id}}' ><i class='fa fa-window-close fa-2x' aria-hidden='true'></i></div>" + 
-              "<div class='col-md-12 text-right'><time class='timeago' datetime='{{createAt}}'>{{createAt}}</time></div>" + 
-          "</div>" +
-          "<div class='col-md-4 col-xs-12 pull-left'>" +
-              "<h4 class='text-left'>{{date}}</h4>"+
-              "<span class='notification'>{{message}}</span><br />" +
-              "<span class='client'>{{name}}</span><br />" +
-              "<span class='sched'>{{instructor}}({{startTime}}~{{endTime}})</span><br />" +
-          "</div>" +
-        "</div>";
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
-    var paginationcont = "" +
-        '<div class="scale-div col-lg-6" data-value="agree" data-qnum="1">'+
-            '<picture>'+
-                '<source srcset="<?php echo base_url({{agree_img}}) ?>"'+
-                    'type="image/svg+xml">'+
-                '<img class="img-fluid" src="<?php echo base_url({{agree_img}}) ?>"'+
-                    'alt="agree" id="answer">'+
-            '</picture>'+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
 
-            '<div class="card-title-t text-center p-2 text-color">'+
-                '<h5>{{agree_title}}</h5>'+
-            '</div>'+
-            '<div class="card-body card-height text-color">{{agree_desc}}</div>'+
-        '</div>'+
-        '<div class="scale-div col-lg-6" data-value="disagree" data-qnum="1">'+
-            '<picture>'+
-                '<source srcset="<?php echo base_url({{disagree_img}}) ?>"'+
-                    'type="image/svg+xml">'+
-                '<img class="img-fluid" src="<?php echo base_url({{disagree_img}}) ?>" alt="agree" id="answer">'+
-            '</picture>'+
-            '<div class="card-title-t text-center p-2 text-color">'+
-                '<h5>{{disagree_desc}}</h5>'+
-            '</div>'+
-            '<div class="card-body card-height text-color">{{disagree_desc}}</div>'+
-        '</div>';
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var y = document.getElementsByClassName("dot");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+            y[slideIndex - 1].style.background = "red";
+        }
         
-        listContainer.append(Mustache.render(batTemplate, data)); 
         $.ajax({
             url:'../../survey_project/survey/get_question',
             async:false,
             dataType:'json',
-            success: function(data){
-                console.log(data)
+            success: function(results){
+                $.each(results,function(i,result){
+                    console.log(result)
+                    var data = {
+                        'qnum': result.question_num,
+                        'question': result.question,
+                        'agree_img': result.agree_image,
+                        'agree_title':'찬성',
+                        'agree_desc': result.agree_desc,
+                        'disagree_img':result.disagree_image,
+                        'disagree_title':'반대',
+                        'disagree_desc':result.disagree_desc,
+                    }
+                    listContainer.append(Mustache.render(paginationcont, data)); 
+                });
             },
             error: function(){
                 console.log('error')

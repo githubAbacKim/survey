@@ -11,7 +11,7 @@
             <ul class="nav">
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo base_url('survey/survey_result') ?>" role="button">테스트</a>
+                        href="<?php echo base_url('survey/survey_page') ?>" role="button">테스트</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
