@@ -116,5 +116,12 @@ class Survey extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function fetchquestion()
+	{
+		$result = array('data' => array());
+		$data = $this->survey_model->select('question');
+		echo json_encode($data);
+	}
+
 
 }

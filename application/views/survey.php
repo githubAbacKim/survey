@@ -57,7 +57,7 @@
                 <div class="card-title-t text-center p-2 text-color">
                     <h5>{{agree_title}}</h5>
                 </div>
-                <div class="card-body card-height text-color">{{agree_desc}}</div>
+                <div class="card-body card-height text-color p-3">{{agree_desc}}</div>
             </div>
             <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
                 <picture>
@@ -67,7 +67,7 @@
                 <div class="card-title-t text-center p-2 text-color">
                     <h5>{{disagree_title}}</h5>
                 </div>
-                <div class="card-body card-height text-color">
+                <div class="card-body card-height text-color p-3">
                     {{disagree_desc}}
                 </div>
             </div>

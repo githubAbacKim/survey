@@ -3,6 +3,9 @@
         border-radius: 2em;
         background-color: white;
     }
+    /* div{
+        border:solid 1px;
+    } */
 </style>
 <div class="container-fluid p-3">
     <!-- header -->
@@ -26,8 +29,7 @@
     <!-- end header -->
     <div class="row">
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
-            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  " href="#"
-                    role="button">조회</a>
+            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#" role="button">조회</a>
             </div>
             <div class="col-lg-3 mt-3">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
@@ -67,7 +69,7 @@
 
 
     <div class="row p-5 justify-content-evenly">
-        <div class="col-lg-7 col-xs-12 p-3  rounded-3 mt-5">
+        <div class="col-lg-8 col-xs-12 p-3  rounded-3 mt-5">
             <div class=" p-3">
                 <canvas id="pie-chart" width="1000" height="650"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -77,10 +79,10 @@
         <div class="col-lg-3 col-xs-12 d-grid gap-3">
             <div class="profile_head p-3  text-color">
                 <div class="p-2 bd-highlight text-center">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#">STH</a>
+                    <div class="col-4 offset-3 shadow p-2 btn-bg">STH</span>
                 </div>
             </div>
-            <div class="border border-warning rounded text-color">
+            <div class="border border-warning rounded text-color mt-5">
                 <div class=" col-12 picture-image">
                     <picture>
                         <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>"
@@ -120,11 +122,9 @@
         },
         options: {
             legend: {
-                top: '150px',
                 position: 'right',
-                align: 'top',
-                color: 'rgb(255, 99, 132)',
-                padding: '20px'
+                align:'center',
+                color: 'rgb(255, 99, 132)'                
             }
         }
     });
