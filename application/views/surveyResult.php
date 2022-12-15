@@ -3,6 +3,10 @@
         background: linear-gradient(270.51deg, rgba(255, 255, 255, 0) -0.1%, rgba(255, 255, 255, 0.336495) 16.1%, rgba(255, 255, 255, 0.34) 89.76%, rgba(255, 255, 255, 0) 100.21%);
         border-radius: 32px;
     }
+    .scale-div image{
+        width: 642.2px;
+        height: 172.19px;
+    }
 </style>
 <div class="container-fluid p-3">
     <!-- header -->
@@ -41,19 +45,19 @@
         </div>
 
         <div class="col-lg-5 col-xs-12 p-3 d-grid gap-3">
-            <div class="scale-div col-12 p-3 gx-2">
+            <div class="scale-div col-12 gx-2">
                 <picture>
                     <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                 </picture>
             </div>
-            <div class="scale-div col-12 p-3 gx-2">
+            <div class="scale-div col-12 gx-2">
                 <picture>
                     <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                 </picture>
             </div>
-            <div class="scale-div col-12 p-3 gx-2">
+            <div class="scale-div col-12 gx-2">
                 <picture>
                     <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">

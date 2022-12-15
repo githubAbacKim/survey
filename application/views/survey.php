@@ -44,6 +44,7 @@
     </div>
 
     <template id="template">
+        <div class="col-lg-12 mySlides" id="mySlides">
         <div class="col-lg-6 offset-2 col-xs-12 text-color" >
             <p>{{question}}</p>
         </div>
@@ -61,8 +62,8 @@
             </div>
             <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
                 <picture>
-                    <source srcset='./../{{agree_img}}' type="image/svg+xml">
-                    <img class="img-fluid" src='./../{{agree_img}}' alt="disagree" id="answer">
+                    <source srcset='./../{{disagree_img}}' type="image/svg+xml">
+                    <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer">
                 </picture>
                 <div class="card-title-t text-center p-2 text-color">
                     <h5>{{disagree_title}}</h5>
@@ -72,10 +73,11 @@
                 </div>
             </div>
         </div>
+        </div> 
     </template>
     
-    <div class="row mt-5" >
-        <div class="col-lg-12 mySlides" id="mySlides"></div>        
+    <div class="row mt-5">
+        <div id="slideCont"></div>
     </div>
 </div>
 <script src="./../resources/js/survey.js"></script>

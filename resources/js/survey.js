@@ -27,7 +27,7 @@ $(function(){
         });
     });
     
-    var listContainer = $("#mySlides");
+    var listContainer = $("#slideCont");
     var paginationcont = $('#template').html();
 
         var slideIndex = 1;
@@ -56,7 +56,7 @@ $(function(){
             dataType:'json',
             success: function(results){
                 $.each(results,function(i,result){
-                    console.log(result)
+                    console.log(result.question_num)
                     var data = {
                         'qnum': result.question_num,
                         'question': result.question,
