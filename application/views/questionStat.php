@@ -8,7 +8,7 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <h5 class="fw-bold mt-4 text-color">AI 도시를 부탁해!</h5>
+            <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
 
@@ -17,7 +17,7 @@
             <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
                     role="button">다시하기</a>
             </div>
-        </div>        
+        </div>
     </div>
     <!-- end header -->
     <div class="row">
@@ -68,34 +68,30 @@
                 정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. </h5>
 
             <div class="progress mt-5 m-5">
-                <span class="bold ">찬성</span>
+                <span class="bold text-color">찬성</span>
                 <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
                     aria-valuemax="100"></div>
                 <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="30"
                     aria-valuemin="0" aria-valuemax="100"></div>
-                <span class="bold">반대</span>
+                <span class="bold text-color">반대</span>
             </div>
             <!-- question div -->
             <div class="col-lg-12  col-xs-12 p-3 gap-2  d-flex  bd-highlight">
 
-                <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree"
-                    data-qnum="1">
+                <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree" data-qnum="1">
                     <div class="text-center p-2 text-color">
                         <h5 class="fw-bold">
-                            <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                id="confirm_agree">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
                             찬성 :
 
                             &nbsp;&nbsp; 안전에 도움이되어 사회공공에 이익이 됩니다.
                         </h5>
                     </div>
                 </div>
-                <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree"
-                    data-qnum="1">
+                <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree" data-qnum="1">
                     <div class="text-center p-2 text-color">
                         <h5 class="fw-bold">
-                            <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                id="confirm_agree">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
                             내가 반대 : &nbsp;&nbsp;문항
 
                             인간 존엄성을 해칩니다.
@@ -111,34 +107,30 @@
                 정확도를 높이기 위해서는 모든 가정에서 AI 스피커를 설치해야합니다. </h5>
 
             <div class="progress mt-5 m-5">
-                <span class="bold ">찬성</span>
+                <span class="bold  text-color">찬성</span>
                 <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0"
                     aria-valuemax="100"></div>
                 <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="30"
                     aria-valuemin="0" aria-valuemax="100"></div>
-                <span class="bold">반대</span>
+                <span class="bold text-color">반대</span>
             </div>
             <!-- question div -->
             <div class="col-lg-12  col-xs-12 p-3 gap-2  d-flex  bd-highlight">
 
-                <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree"
-                    data-qnum="1">
+                <div class="col-lg-6 question-stat-card p-4 agree-question-component" data-value="agree" data-qnum="1">
                     <div class="text-center p-2 text-color">
                         <h5 class="fw-bold">
-                            <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                id="confirm_agree">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
                             찬성 :
 
                             &nbsp;&nbsp; 안전에 도움이되어 사회공공에 이익이 됩니다.
                         </h5>
                     </div>
                 </div>
-                <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree"
-                    data-qnum="1">
+                <div class="col-lg-6 question-stat-card p-4 disagree-question-card" data-value="disagree" data-qnum="1">
                     <div class="text-center p-2 text-color">
                         <h5 class="fw-bold">
-                            <input class="form-check-input checkbox" type="checkbox" value="agree"
-                                id="confirm_agree">
+                            <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
                             내가 반대 : &nbsp;&nbsp;문항
 
                             인간 존엄성을 해칩니다.

@@ -15,7 +15,7 @@
 <div class="container-fluid p-0">
     <div class="row top-bar">
         <div class="col-12  col-xl-8 text-color">
-            <h3 class="header-logo">AI 도시를 부탁해!</h3>
+            <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
         </div>
 
         <div class="col-12  col-xl-5 header-text-container">

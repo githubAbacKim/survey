@@ -16,6 +16,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="<?php echo base_url('resources/jquery/jquery-3.1.1.js') ?>"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="<?php echo base_url('resources/scripts/scripts.js') ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>
         <?php echo $title; ?>
     </title>
