@@ -60,8 +60,6 @@
                     <label for="form-select" class="select-label text-label-drop-down">성별</label>
                     <select id="gender" class="form-select bg-color border-button">
                         <option value="" disabled="disabled"></option>
-                        <option>선택</option>
-                        <option value="" disabled="disabled">-------</option>
                         <option value="남성">남성</option>
                         <option value="" disabled="disabled">-------</option>
                         <option value="여성">여성</option>
@@ -95,8 +93,6 @@
                     <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                     <select id="elem" class="form-select form-select-sm bg-color border-button">
                         <option value="" disabled="disabled"></option>
-                        <option value="">선택</option>
-                        <option value="" disabled="disabled">-------</option>
                         <option value="1">1</option>
                         <option value="" disabled="disabled">-------</option>
                         <option value="2">2</option>
@@ -111,8 +107,6 @@
                         <option value="" disabled="disabled"></option>
                     </select>
                     <select id="highschool" class="form-select form-select-sm bg-color border-button">
-                        <option value="" disabled="disabled"></option>
-                        <option value="">선택</option>
                         <option value="" disabled="disabled">-------</option>
                         <option value="1">1</option>
                         <option value="" disabled="disabled">-------</option>
@@ -122,8 +116,6 @@
                         <option value="" disabled="disabled"></option>
                     </select>
                     <select id="college" class="form-select form-select-sm bg-color border-button">
-                        <option value="" disabled="disabled"></option>
-                        <option value="">선택</option>
                         <option value="" disabled="disabled">-------</option>
                         <option value="인문사회">인문사회</option>
                         <option value="" disabled="disabled">-------</option>
@@ -140,11 +132,9 @@
 
                 <!-- Grid column -->
                 <div class="col-md-3">
-                    <label for="form-select" class="select-label text-label-drop-down">성별</label>
+                    <label for="form-select" class="select-label text-label-drop-down">지역규모</label>
                     <select id="region" class="form-select form-select-sm bg-color border-button">
                         <option value="" disabled="disabled"></option>
-                        <option value="">선택</option>
-                        <option value="" disabled="disabled">-------</option>
                         <option value="읍면지역">읍면지역</option>
                         <option value="" disabled="disabled">-------</option>
                         <option value="중소도시">중소도시</option>
