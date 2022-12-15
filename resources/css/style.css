@@ -4,7 +4,9 @@
 }
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
 
 /* .content{
   background-image: url('../images/KakaoTalk_bg.svg');
@@ -206,6 +208,19 @@ nav{
   transition: 0.5s;
   cursor: pointer;
   border-radius: 18px;  
+}
+
+
+.border{
+  border: 6px solid #FFD772 !important;
+  border-radius: 14px !important;
+}
+
+
+.picture-image:hover{
+  cursor: pointer;
+  transition: 0.6s;
+  border: 1px solid !important;
 }
 
 @media (min-width: 1200px) {
