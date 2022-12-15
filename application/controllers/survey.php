@@ -107,7 +107,7 @@ class Survey extends CI_Controller
 		echo json_encode($msg);
 	}
 
-	public function get_question()
+	public function shuffledQuestion()
 	{
 		$result = array('data' => array());
 		$data = $this->survey_model->select('question');

@@ -51,7 +51,7 @@ $(function(){
         }
         
         $.ajax({
-            url:'../../survey_project/survey/get_question',
+            url:'../../survey_project/survey/shuffledQuestion',
             async:false,
             dataType:'json',
             success: function(results){
