@@ -3,6 +3,26 @@
         padding: 10px !important;
     }
 </style>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">agree</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnclose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                "여기를 클릭함으로써 본인은 약관을 읽고 이해했음을 진술합니다." </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnclose">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
         <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
@@ -45,7 +65,7 @@
 
     <div class="container-fluid text-center">
         <img class="startbut" src="<?php echo base_url("resources/images/start-01.svg") ?>"
-            class="rounded mx-auto d-block image-size image-submit" alt="sumbit">
+            class="rounded mx-auto d-block image-size image-submit" alt="sumbit" id="start-button" data-toggle="modal">
     </div>
 
     <!-- Footer -->
@@ -150,4 +170,8 @@
     </div>
 </div>
 <script src="<?php echo base_url('resources/js/index.js') ?>" type="module">
+</script>
+
+<script>
+
 </script>
