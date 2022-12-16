@@ -123,5 +123,22 @@ class Survey extends CI_Controller
 		echo json_encode($data);
 	}
 
+	public function test(){
+		$data = array(
+			"gender" => '남성',
+			"school_level" => '초등학생',
+			"classification" => '1',
+			"regional_scale" => '읍면지역'
+		);
+
+		$add = $this->survey_model->insert('participants', $data);
+		if ($add != false) {
+			$msg['success'] = true;
+		} else {
+			$msg['success'] = false;
+			$msg['error'] = 'Error adding data.';
+		}
+		echo json_encode($msg);
+	}
 
 }

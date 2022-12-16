@@ -3,23 +3,26 @@
         border-radius: 2em;
         background-color: white;
     }
-    /* div{
-        border:solid 1px;
-    } */
+    .titleBtn {
+        background-color: #FAD58C;
+        color: #F57600;
+        border-radius: 25px;
+    }
 </style>
 <div class="container-fluid p-3">
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
+            <a href="<?php echo base_url('survey/');?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
 
-            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#">처음으로</a>
+            <div class="p-2 bd-highlight">
+                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo base_url('survey/questions');?>">처음으로</a>
             </div>
 
-            <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
-                    role="button">다시하기</a>
+            <div class="mt-3 p-2 bd-highlight">
+                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/index');?>" role="button">다시하기</a>
             </div>
             <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
                     role="button">문항보기</a>
@@ -69,20 +72,18 @@
 
 
     <div class="row p-5 justify-content-evenly">
-        <div class="col-lg-8 col-xs-12 p-3  rounded-3 mt-5">
+        <div class="col-lg-7 col-xs-12 p-3  rounded-3 mt-5">
             <div class=" p-3">
                 <canvas id="pie-chart" width="1000" height="650"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
             </div>
         </div>
 
-        <div class="col-lg-3 col-xs-12 d-grid gap-3">
-            <div class="profile_head p-3  text-color">
-                <div class="p-2 bd-highlight text-center">
-                    <div class="col-4 offset-3 shadow p-2 btn-bg">STH</span>
-                </div>
+        <div class="col-lg-5 col-xs-12 d-grid gap-3">
+            <div class="col-lg-12 profile_head p-3 text-color">
+                <div class="col-lg-4 text-center offset-4 shadow p-3 titleBtn">STH</div>
             </div>
-            <div class="border border-warning rounded text-color mt-5">
+            <div class="border border-warning rounded text-color">
                 <div class=" col-12 picture-image">
                     <picture>
                         <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>"

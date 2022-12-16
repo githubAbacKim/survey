@@ -52,7 +52,7 @@
             <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
                 <picture>
                     <source srcset='./../{{agree_img}}' type="image/svg+xml">
-                    <img class="img-fluid" src="'./../{{agree_img}}'" alt="agree" id="answer">
+                    <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer">
                 </picture>
 
                 <div class="card-title-t text-center p-2 text-color">
