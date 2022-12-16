@@ -223,6 +223,10 @@ nav{
   border: 1px solid !important;
 }
 
+.tp{
+  cursor: pointer;
+}
+
 @media (min-width: 1200px) {
   .header-text{
     margin-left: 10rem;

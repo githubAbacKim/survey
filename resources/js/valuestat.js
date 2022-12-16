@@ -36,3 +36,31 @@ new Chart(document.getElementById("pie-chart"), {
 		},
 	},
 });
+
+const alertStatus = (e) => {
+	if (
+		$("#gender").val() == "선택" ||
+		$("#classification").val() == "선택" ||
+		$("#schoollevel").val() == "선택"
+	) {
+		//check if gender is selected
+		$("#exampleModal").modal("show");
+	} else {
+	}
+
+	$("#exampleModal").modal("hide");
+};
+
+const closeModal = (e) => {
+	$("#exampleModal").modal("hide");
+};
+
+const redo = (e) => {
+	$("#gender").val("선택");
+	$("#classification").val("선택");
+	$("#schoollevel").val("선택");
+};
+
+$(document).on("click", "#redo", redo);
+$(document).on("click", "#btnclose", closeModal);
+$(document).on("click", "#lookup", alertStatus);

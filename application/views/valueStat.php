@@ -11,6 +11,23 @@
     }
 </style>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">item choose</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnclose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                "여기를 클릭함으로써 본인은 약관을 읽고 이해했음을 진술합니다." </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnclose">close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container-fluid p-3">
     <!-- header -->
@@ -25,9 +42,8 @@
                     href="<?php echo base_url('survey/questions'); ?>">처음으로</a>
             </div>
 
-            <div class="mt-3 p-2 bd-highlight">
-                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/index'); ?>"
-                    role="button">다시하기</a>
+            <div class="mt-3 p-2 bd-highlight" id="redo">
+                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="#" role="button">다시하기</a>
             </div>
             <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2"
                     href="<?php echo base_url('survey/questions') ?>" role="button">문항보기</a>
@@ -37,12 +53,12 @@
     <!-- end header -->
     <div class="row">
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
-            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#"
-                    role="button">조회</a>
+            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#" role="button"
+                    id="lookup">조회</a>
             </div>
             <div class="col-lg-3 mt-3">
                 <label for="form-select" class="select-label text-label-drop-down">학년구분</label>
-                <select id="gender" class="form-select form-select-sm bg-color border-button">
+                <select id="classification" class="form-select form-select-sm bg-color border-button">
                     <option>선택</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
