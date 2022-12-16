@@ -3,6 +3,7 @@
         border-radius: 2em;
         background-color: white;
     }
+
     .titleBtn {
         background-color: #FAD58C;
         color: #F57600;
@@ -13,16 +14,18 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <a href="<?php echo base_url('survey/');?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
+            <a href="<?php echo base_url('survey/'); ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
 
             <div class="p-2 bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo base_url('survey/questions');?>">처음으로</a>
+                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
+                    href="<?php echo base_url('survey/questions'); ?>">처음으로</a>
             </div>
 
             <div class="mt-3 p-2 bd-highlight">
-                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/index');?>" role="button">다시하기</a>
+                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/index'); ?>"
+                    role="button">다시하기</a>
             </div>
             <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
                     role="button">문항보기</a>
@@ -32,7 +35,8 @@
     <!-- end header -->
     <div class="row">
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
-            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#" role="button">조회</a>
+            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#"
+                    role="button">조회</a>
             </div>
             <div class="col-lg-3 mt-3">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
@@ -74,12 +78,12 @@
     <div class="row p-5 justify-content-evenly">
         <div class="col-lg-7 col-xs-12 p-3  rounded-3 mt-5">
             <div class=" p-3">
-                <canvas id="pie-chart" width="1000" height="650"></canvas>
+                <canvas id="pie-chart" width="1200" height="450"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
             </div>
         </div>
 
-        <div class="col-lg-5 col-xs-12 d-grid gap-3">
+        <div class="col-lg-3 col-xs-12 d-grid gap-3">
             <div class="col-lg-12 profile_head p-3 text-color">
                 <div class="col-lg-4 text-center offset-4 shadow p-3 titleBtn">STH</div>
             </div>
@@ -124,8 +128,8 @@
         options: {
             legend: {
                 position: 'right',
-                align:'center',
-                color: 'rgb(255, 99, 132)'                
+                align: 'center',
+                color: 'rgb(255, 99, 132)'
             }
         }
     });
