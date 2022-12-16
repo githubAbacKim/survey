@@ -4,6 +4,8 @@
         border-radius: 18px;
     }
 </style>
+
+
 <div class="container-fluid p-3">
     <!-- header -->
     <div class="row">
@@ -13,10 +15,12 @@
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
 
             <div class="p-2 bd-highlight">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo base_url('survey/') ?>">처음으로</a>
+                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
+                    href="<?php echo base_url('survey/') ?>">처음으로</a>
             </div>
             <div class="mt-3 p-2 bd-highlight">
-                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/') ?>" role="button">다시하기</a>
+                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/') ?>"
+                    role="button">다시하기</a>
             </div>
         </div>
     </div>
@@ -37,8 +41,7 @@
                 <div class=" col-lg-6 question-stat-card p-4" data-value="disagree" data-qnum="1">
                     <div class="text-center p-5 text-color">
                         <picture>
-                            <img class="img-fluid"
-                                src='./../{{disagree_img}}' alt="disagree" id="answer">
+                            <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer">
                         </picture>
 
                         <p class="p-2 m-2">{{disagree_desc}}</p>
@@ -47,7 +50,7 @@
             </div>
         </div>
     </template>
-    <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">        
+    <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 
 </div>
