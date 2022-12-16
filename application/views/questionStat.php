@@ -1,4 +1,7 @@
 <style>
+    div{
+        border:solid 1px;
+    }
 </style>
 
 
@@ -41,7 +44,7 @@
         <!-- end header -->
         <!-- end header -->
         <!-- end header -->
-        <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
+        <div class="col-lg-8 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
             <div class="p-2 bd-highlight" id="start-button">
                 <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="#" role="button">조회</a>
             </div>
