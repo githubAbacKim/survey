@@ -8,6 +8,57 @@
         border: solid 2px #F57600;
         cursor: pointer;
     }
+
+    /* Style the form */
+    #regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+    }
+
+    /* Style the input fields */
+    input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    }
+
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+    background-color: #ffdddd;
+    }
+
+    /* Hide all steps by default: */
+    .tab {
+    display: none;
+    }
+
+    /* Make circles that indicate the steps of the form: */
+    .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    }
+
+    /* Mark the active step: */
+    .step.active {
+    opacity: 1;
+    }
+
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+    background-color: #04AA6D;
+    }
+    
 </style>
 <div class="container-fluid p-0">
     <div class="row">
@@ -21,63 +72,57 @@
         </div>
     </div>
 
+    <template id="steps-template">
+        <span class="step"></span>
+    </template>
+
     <div class="row">
         <div class="col-lg-8 col-xs-12">
             <div class="p-3 progress-indicator">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
             </div>
-
-
         </div>
         <div class="col-12 col-xl-4 next-page-indicator text-center mt-3">
-            <a href="#" class="previous round text-color" onclick="plusDivs(-1)">&#8249; 이전</a>
-            <a href="#" class="next round text-color" onclick="plusDivs(1)">다음 &#8250;</a>
+            <button type="button" id="prevBtn">Previous</button>
+            <button type="button" id="nextBtn">Next</button>
         </div>
     </div>
 
-    <template id="template">
-        <div class="col-lg-12 mySlides" id="mySlides">
-        <div class="col-lg-6 offset-2 col-xs-12 text-color" >
-            <p>{{question}}</p>
-        </div>
-        <div class="col-lg-6 col-xs-12 p-3 gap-3 offset-3 d-flex flex-row bd-highlight">
-            <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
-                <picture>
-                    <source srcset='./../{{agree_img}}' type="image/svg+xml">
-                    <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer">
-                </picture>
+    <template id="datatemplate">
+        <div class="tab col-lg-12">
+            <div class="col-lg-6 offset-2 col-xs-12 text-color" >
+                <p>{{question}}</p>
+            </div>
+            <div class="col-lg-6 col-xs-12 p-3 gap-3 offset-3 d-flex flex-row bd-highlight">
+                <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
+                    <picture>
+                        <source srcset='./../{{agree_img}}' type="image/svg+xml">
+                        <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer" />
+                    </picture>
 
-                <div class="card-title-t text-center p-2 text-color">
-                    <h5>{{agree_title}}</h5>
+                    <div class="card-title-t text-center p-2 text-color">
+                        <h5>{{agree_title}}</h5>
+                    </div>
+                    <div class="card-body card-height text-color p-3">{{agree_desc}}</div>
                 </div>
-                <div class="card-body card-height text-color p-3">{{agree_desc}}</div>
+                <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
+                    <picture>
+                        <source srcset='./../{{disagree_img}}' type="image/svg+xml">
+                        <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer" />
+                    </picture>
+                    <div class="card-title-t text-center p-2 text-color">
+                        <h5>{{disagree_title}}</h5>
+                    </div>
+                    <div class="card-body card-height text-color p-3">
+                        {{disagree_desc}}
+                    </div>
+                </div>
             </div>
-            <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
-                <picture>
-                    <source srcset='./../{{disagree_img}}' type="image/svg+xml">
-                    <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer">
-                </picture>
-                <div class="card-title-t text-center p-2 text-color">
-                    <h5>{{disagree_title}}</h5>
-                </div>
-                <div class="card-body card-height text-color p-3">
-                    {{disagree_desc}}
-                </div>
-            </div>
-        </div>
         </div> 
     </template>
     
     <div class="row mt-5">
-        <div id="slideCont"></div>
+        <div id="slideCont">
+        </div>
     </div>
 </div>
 <script src="./../resources/js/survey.js"></script>
