@@ -1,17 +1,6 @@
-const alertStatus = (e) => {
-	if ($("#confirm_agree").is(":checked")) {
-		$("#exampleModal").modal("hide");
-	} else {
-		$("#exampleModal").modal("show");
-	}
-};
-
-const closeModal = (e) => {
-	$("#exampleModal").modal("hide");
-};
-
-$(document).on("click", "#start-button", alertStatus);
-$(document).on("click", "#btnclose", closeModal);
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip();
+});
 
 $(function () {
 	const elemlevel = $("#elem");
@@ -67,3 +56,18 @@ $(function () {
 		}
 	});
 });
+
+const alertStatus = (e) => {
+	if ($("#confirm_agree").is(":checked")) {
+		$("#exampleModal").modal("hide");
+	} else {
+		$("#exampleModal").modal("show");
+	}
+};
+
+const closeModal = (e) => {
+	$("#exampleModal").modal("hide");
+};
+
+$(document).on("click", "#start-button", alertStatus);
+$(document).on("click", "#btnclose", closeModal);
