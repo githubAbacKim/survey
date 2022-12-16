@@ -2,7 +2,7 @@ $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 });
 
-$(function () {
+$(function(){
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -49,25 +49,38 @@ $(function () {
 		var data = document.getElementById("school_level").value;
 		getShowList(data);
 	});
-
+	$('#submitform').hide();
+	$('#dummyBut').show();
 	//if check box is checked add class to start image to enable start
-	$("#confirm_agree").click(function () {
+	$("#confirm_agree").change(function () {
 		if ($(this).is(":checked")) {
-		}
+			$('#dummyBut').fadeOut("slow");
+			$('#submitform').fadeIn("slow");			
+		}else{
+			$('#submitform').fadeOut("slow");
+			$('#dummyBut').show("slow");
+		}		
+	});	
+	$("#submitform").on('click',function(){
+		var url = $('#myForm').attr('action');
+        var data = $('#myForm').serialize();
+		var gender = document.getElementById("gender").value;
+		alert(gender);
 	});
+
 });
 
-const alertStatus = (e) => {
-	if ($("#confirm_agree").is(":checked")) {
-		$("#exampleModal").modal("hide");
-	} else {
-		$("#exampleModal").modal("show");
-	}
-};
+// const alertStatus = (e) => {
+// 	if ($("#confirm_agree").is(":checked")) {
+// 		$("#exampleModal").modal("hide");
+// 	} else {
+// 		$("#exampleModal").modal("show");
+// 	}
+// };
 
-const closeModal = (e) => {
-	$("#exampleModal").modal("hide");
-};
+// const closeModal = (e) => {
+// 	$("#exampleModal").modal("hide");
+// };
 
-$(document).on("click", "#start-button", alertStatus);
-$(document).on("click", "#btnclose", closeModal);
+// $(document).on("click", "#start-button", alertStatus);
+// $(document).on("click", "#btnclose", closeModal);

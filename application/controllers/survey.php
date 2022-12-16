@@ -70,7 +70,7 @@ class Survey extends CI_Controller
 
 	public function questions()
 	{
-		$data['title'] = "Value Statistics Page";
+		$data['title'] = "Question Page";
 
 		$this->load->view('headerplain', $data);
 		$this->load->view('questions', $data);

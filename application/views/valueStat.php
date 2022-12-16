@@ -33,33 +33,27 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <a href="<?php echo base_url('survey/'); ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
+            <a class="navbar-brand logo" href="<?php echo base_url('survey/') ?>">AI 도시를 부탁해!</a>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
 
             <div class="p-2 bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                    href="<?php echo base_url('survey/questions'); ?>">처음으로</a>
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="#">처음으로</a>
             </div>
-
-            <div class="mt-3 p-2 bd-highlight" id="redo">
-                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="#" role="button">다시하기</a>
-            </div>
-            <div class="mt-3 p-2 bd-highlight"><a class="Abtn  btn-lg  p-2 text-color  m-2"
-                    href="<?php echo base_url('survey/questions') ?>" role="button">문항보기</a>
+            <div class="mt-3 p-2 bd-highlight" id="redo"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
+                    role="button">다시하기</a>
             </div>
         </div>
     </div>
     <!-- end header -->
     <div class="row">
-        <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
-            <div class="p-2 bd-highlight"><a class="btn btn-secondary btn-sm shadow p-2 btn-bg" href="#" role="button"
-                    id="lookup">조회</a>
+        <div class="col-lg-8 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-3 gap-3">
+            <div class="p-2 bd-highlight" id="start-button">
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="#" role="button">조회</a>
             </div>
-            <div class="col-lg-3 mt-3">
-                <label for="form-select" class="select-label text-label-drop-down">학년구분</label>
-                <select id="classification" class="form-select form-select-sm bg-color border-button">
-                    <option>선택</option>
+            <div class="col-auto">
+                <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -67,30 +61,48 @@
                     <option value="5">5</option>
                     <option value="6">6</option>
                 </select>
-            </div>
-            <div class="col-lg-3 mt-3">
-                <label for="form-select" class="select-label text-label-drop-down">학교급</label>
-                <select id="schoollevel" class="form-select form-select-sm bg-color border-button ">
-                    <option>선택</option>
-                    <option value="elementary">초등학생</option>
-                    <option value="middleschool">중학생</option>
-                    <option value="highschool">고등학생</option>
-                    <option value="college">대학생</option>
-                    <option value="public">일반인</option>
+                <select id="highschool" class="form-select form-select-lg bg-color border-button">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <select id="college" class="form-select form-select-lg bg-color border-button">
+                    <option value="인문사회">인문사회</option>
+                    <option value="자연 | 공학">자연 | 공학</option>
+                    <option value="예체능">예체능</option>
+                </select>
+                <select id="public" class="form-select form-select-lg bg-color border-button">
+                    <option value="인문사회">일반</option>
                 </select>
             </div>
-            <div class="col-lg-3 mt-3">
+            <div class="col-auto">
+                <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                <select id="school_level" class="form-select form-select-lg bg-color border-button">
+                    <option value="초등학교">초등학생</option>
+                    <option value="중학교">중학생</option>
+                    <option value="고등학교">고등학생</option>
+                    <option value="대학">대학생</option>
+                    <option value="일반인">일반인</option>
+                </select>
+            </div>
+            <div class="col-auto">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                <select id="gender" class="form-select form-select-sm bg-color border-button">
-                    <option>선택</option>
-                    <option value="male">남성</option>
-                    <option value="female">여성</option>
+                <select id="gender" class="form-select form-select-lg bg-color border-button">
+                    <option value="남성">남성<hr class="dropdown-divider"></option>
+                    <option value="여성">여성</option>
                 </select>
             </div>
         </div>
-
+        <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
+            <div class="text-center">
+                <p>
+                    <input class="form-check-input checkbox text-color" type="checkbox" value="agree"
+                        id="confirm_agree">
+                    내가 선택한 문항
+                </p>
+            </div>
+        </div>
     </div>
-
 
     <div class="row p-5 justify-content-evenly">
         <div class="col-lg-7 col-xs-12 p-3  rounded-3 mt-5">
@@ -130,5 +142,4 @@
         </div>
     </div>
 </div>
-
-<script src="<?php echo base_url('resources/js/valuestat.js') ?>" type="module">
+<script src="./../resources/js/valuestat.js"></script>
