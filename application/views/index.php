@@ -30,7 +30,9 @@
 <!-- /Modal -->
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
-        <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
+        <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-2">
+            <div class="col-auto mt-2"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a></div>            
+        </div>
 
         <div class="navlist">
             <ul class="nav">
