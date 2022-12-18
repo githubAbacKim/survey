@@ -10,16 +10,14 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
+            <div class="col-auto mt-3"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a></div>            
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
-
             <div class="p-2 bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                    href="<?php echo base_url('survey/') ?>">처음으로</a>
+                <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
-            <div class="mt-3 p-2 bd-highlight">
-                <a class="Abtn  btn-lg  p-2 text-color  m-2" href="<?php echo base_url('survey/') ?>"
+            <div class="mt-2 p-2 bd-highlight">
+                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('survey/') ?>"
                     role="button">다시하기</a>
             </div>
         </div>

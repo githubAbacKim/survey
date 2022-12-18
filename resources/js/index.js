@@ -65,22 +65,7 @@ $(function(){
 		var url = $('#myForm').attr('action');
         var data = $('#myForm').serialize();
 		var gender = document.getElementById("gender").value;
-		alert(gender);
+		window.location.href = "survey/survey_page";
 	});
 
 });
-
-// const alertStatus = (e) => {
-// 	if ($("#confirm_agree").is(":checked")) {
-// 		$("#exampleModal").modal("hide");
-// 	} else {
-// 		$("#exampleModal").modal("show");
-// 	}
-// };
-
-// const closeModal = (e) => {
-// 	$("#exampleModal").modal("hide");
-// };
-
-// $(document).on("click", "#start-button", alertStatus);
-// $(document).on("click", "#btnclose", closeModal);

@@ -33,14 +33,14 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <a class="navbar-brand logo" href="<?php echo base_url('survey/') ?>">AI 도시를 부탁해!</a>
+            <div class="col-auto mt-3"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a></div>            
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
-
             <div class="p-2 bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="#">처음으로</a>
+                <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
-            <div class="mt-3 p-2 bd-highlight" id="redo"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
+            <div class="mt-2 p-2 bd-highlight">
+                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('survey/') ?>"
                     role="button">다시하기</a>
             </div>
         </div>
@@ -49,9 +49,9 @@
     <div class="row">
         <div class="col-lg-8 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-3 gap-3">
             <div class="p-2 bd-highlight" id="start-button">
-                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="#" role="button">조회</a>
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" href="#" role="button">조회</a>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                 <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
                     <option value="1">1</option>
@@ -75,7 +75,7 @@
                     <option value="인문사회">일반</option>
                 </select>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                 <select id="school_level" class="form-select form-select-lg bg-color border-button">
                     <option value="초등학교">초등학생</option>
@@ -85,7 +85,7 @@
                     <option value="일반인">일반인</option>
                 </select>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
                 <select id="gender" class="form-select form-select-lg bg-color border-button">
                     <option value="남성">남성<hr class="dropdown-divider"></option>

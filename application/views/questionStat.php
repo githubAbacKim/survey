@@ -27,14 +27,14 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <a class="navbar-brand logo" href="<?php echo base_url('survey/') ?>">AI 도시를 부탁해!</a>
+            <div class="col-auto mt-3"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a></div>            
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
-
             <div class="p-2 bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="#">처음으로</a>
+                <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
-            <div class="mt-3 p-2 bd-highlight" id="redo"><a class="Abtn  btn-lg  p-2 text-color  m-2" href="#"
+            <div class="mt-2 p-2 bd-highlight">
+                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('survey/') ?>"
                     role="button">다시하기</a>
             </div>
         </div>
@@ -43,9 +43,9 @@
     <div class="row">
         <div class="col-lg-8 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-3 gap-3">
             <div class="p-2 bd-highlight" id="start-button">
-                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="#" role="button">조회</a>
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" href="#" role="button">조회</a>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                 <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
                     <option value="1">1</option>
@@ -69,7 +69,7 @@
                     <option value="인문사회">일반</option>
                 </select>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                 <select id="school_level" class="form-select form-select-lg bg-color border-button">
                     <option value="초등학교">초등학생</option>
@@ -79,7 +79,7 @@
                     <option value="일반인">일반인</option>
                 </select>
             </div>
-            <div class="col-auto">
+            <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
                 <select id="gender" class="form-select form-select-lg bg-color border-button">
                     <option value="남성">남성<hr class="dropdown-divider"></option>
@@ -107,8 +107,8 @@
                     Here get the total agree and disgree in each question and 
                  -->
                 <span class="bold text-color mr-1">찬성</span>
-                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" id="{{agreeprog}}" role="progressbar" style="width:60%;" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" id="{{disagreeprog}}"  style="width:40%;" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                 <span class="bold text-color ml-1">반대</span>
             </div>
             <!-- question div -->
@@ -119,7 +119,7 @@
                     <div class="text-center p-2 text-color">
                         <h5 class="fw-bold">
                             <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
-                            찬성 : {{agree_desc}}
+                            찬성 : <span>{{agree_desc}}</span>
                         </h5>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                     <div class="text-center p-2 text-color">
                         <h5 class="fw-bold">
                             <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
-                            내가 반대 : {{disagree_desc}}
+                            내가 반대 : <span>{{disagree_desc}}</span>
                         </h5>
                     </div>
                 </div>
