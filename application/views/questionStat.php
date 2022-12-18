@@ -108,12 +108,11 @@
                  -->
                 <span class="bold text-color mr-1">찬성</span>
                 <div class="progress-bar" id="{{agreeprog}}" role="progressbar" style="width:60%;" aria-valuemin="0" aria-valuemax="100"></div>
-                <div class="progress-bar bg-success" id="{{disagreeprog}}"  style="width:40%;" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" id="{{disagreeprog}}" style="width:40%;" aria-valuemin="0" aria-valuemax="100"></div>
                 <span class="bold text-color ml-1">반대</span>
             </div>
             <!-- question div -->
             <div class="col-lg-12  col-xs-12 p-3 gap-2  d-flex  bd-highlight">
-
                 <div class="col-lg-6 question-stat-card p-4 agree-question-component" id='{{agreediv}}'
                     data-value="agree" data-qnum='{{qnum}}'>
                     <div class="text-center p-2 text-color">
