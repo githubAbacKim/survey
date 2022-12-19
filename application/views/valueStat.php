@@ -136,14 +136,14 @@
                         <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>"
                             type="image/svg+xml">
 
-                        <div class="a-caption-left">
-                            <p class="text-color">a left</p>
+                        <div class="a-caption-left ">
+                            <p class="text-color rotatetext-a-left" style="transform: rotate(2149deg);">인간존엄성</p>
                         </div>
 
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
 
                         <div class="a-caption-right">
-                            <p class="text-color">a right</p>
+                            <p class="text-color" style="transform: rotate(2149deg);">사회공공성</p>
                         </div>
 
                     </picture>
@@ -156,11 +156,11 @@
                         <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>"
                             type="image/svg+xml">
                         <div class="b-caption-left">
-                            <p class="text-color">b left</p>
+                            <p class="text-color" style="transform: rotate(2169deg);">기술합목적성</p>
                         </div>
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                         <div class="b-caption-right">
-                            <p class="text-color">b right</p>
+                            <p class="text-color" style="transform: rotate(2169deg);">사회공공성</p>
                         </div>
                     </picture>
                 </div>
@@ -174,13 +174,13 @@
                             type="image/svg+xml">
 
                         <div class="c-caption-left">
-                            <p class="text-color">a left</p>
+                            <p class="text-color" style="transform: rotate(2149deg);">기술합목적성</p>
                         </div>
 
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
 
                         <div class="c-caption-right">
-                            <p class="text-color">c right</p>
+                            <p class="text-color" style="transform: rotate(2149deg);">인간존엄성</p>
                         </div>
                     </picture>
                 </div>
