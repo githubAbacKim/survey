@@ -24,12 +24,12 @@
     </div>
     <!-- end header -->
     <template id="data-template">
-        <div class="col-lg-8 col-xs-12 p-5 question-card">
+        <div class="col-lg-8 col-xs-1 question-card">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- question div -->
-            <div class="col-lg-12  col-xs-12   d-flex  bd-highlight">
+            <div class="col-lg-12 col-xs-12 d-flex bd-highlight">
                 <div class="col-lg-6 question-stat-card p-4 " data-value="agree" data-qnum="1">
-                    <div class="text-center p-5 text-color">
+                    <div class="text-center text-color">
                         <picture>
                             <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer">
                         </picture>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class=" col-lg-6 question-stat-card p-4" data-value="disagree" data-qnum="1">
-                    <div class="text-center p-5 text-color">
+                    <div class="text-center text-color">
                         <picture>
                             <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer">
                         </picture>

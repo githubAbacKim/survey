@@ -65,7 +65,7 @@ $(function(){
 		var url = $('#myForm').attr('action');
         var data = $('#myForm').serialize();
 		var gender = document.getElementById("gender").value;
-		window.location.href = "survey/survey_page";
+		window.location.href = "survey_page";
 	});
 
 });
