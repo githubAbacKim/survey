@@ -14,6 +14,7 @@ html {
   background-repeat: no-repeat;
 } */
 
+
 a{
   text-decoration: none;
 }
@@ -224,9 +225,10 @@ nav{
   cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .header-text{
     margin-left: 10rem;
+
   }
 
 }
@@ -252,11 +254,19 @@ nav{
   
 }
 
+@media (min-width: 1200px) {
+ 
+}
+
+.a-caption-left p,.a-caption-right p,.b-caption-left p,.b-caption-right p,.c-caption-left p,.c-caption-right p{
+  font-size: 65%;
+  font-weight: bold;
+}
 
 
 .a-caption-right {
   position: absolute;
-  top: 33%;
+  top: 29%;
   left: 88%;
   transform: translate( -50%, -50% );
   text-align: center;
