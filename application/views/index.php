@@ -88,7 +88,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-lg-2">
+                <div class="col-auto">
                     <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                     <select id="school_level" class="form-select form-select-lg bg-color border-button">
                         <option value="초등학교">초등학생</option>
@@ -101,7 +101,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-lg-2">
+                <div class="col-auto">
                     <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                     <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
                         <option>고르다</option>
@@ -131,7 +131,7 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-lg-2">
+                <div class="col-auto">
                     <label for="form-select" class="select-label text-label-drop-down">지역규모</label>
                     <select id="region" class="form-select form-select-lg bg-color border-button">
                         <option value="읍면지역">읍면지역</option>

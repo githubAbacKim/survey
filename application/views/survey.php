@@ -1,12 +1,12 @@
 <style>
     .scale-div {
-        border-radius: 2em;
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
         overflow: auto;
     }
-
-    .scale-div:hover {
-        border: solid 2px #F57600;
-        cursor: pointer;
+    .card-body {
+        border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
     }
 
     /* Style the form */
@@ -92,19 +92,24 @@
             <div class="col-lg-6 offset-2 col-xs-12 text-color" >
                 <p>{{question}}</p>
             </div>
-            <div class="col-lg-6 col-xs-12 p-3 gap-3 offset-3 d-flex flex-row bd-highlight">
+            <div class="col-lg-8 col-xs-12 p-3 gap-3 offset-2 d-flex flex-row bd-highlight">                
                 <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
+                    <label for="ag{{qnum}}">
                     <picture>
                         <source srcset='./../{{agree_img}}' type="image/svg+xml">
                         <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer" />
                     </picture>
-
                     <div class="card-title-t text-center p-2 text-color">
                         <h5>{{agree_title}}</h5>
                     </div>
-                    <div class="card-body card-height text-color p-3">{{agree_desc}}</div>
+                    <div class="card-body card-height text-color p-3">
+                        <p>{{agree_desc}}</p>
+                    </div>                  
+                    <input type="radio" name="q1" id="ag{{qnum}}"></label>
                 </div>
+
                 <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
+                    <label for="dis{{qnum}}">
                     <picture>
                         <source srcset='./../{{disagree_img}}' type="image/svg+xml">
                         <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer" />
@@ -113,8 +118,9 @@
                         <h5>{{disagree_title}}</h5>
                     </div>
                     <div class="card-body card-height text-color p-3">
-                        {{disagree_desc}}
+                        <p>{{disagree_desc}}</p>                        
                     </div>
+                    <input type="radio" name="q1" id="dis{{qnum}}"></label>                  
                 </div>
             </div>
         </div> 
