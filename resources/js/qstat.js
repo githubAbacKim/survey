@@ -2,31 +2,31 @@ $(function () {
 	var listContainer = $("#questCont");
 	var paginationcont = $("#qstat-template").html();
 
-	function getData(){
-        var tmp = null;
-        $.ajax({
-            url:'../../survey_project/survey/fetchquestion',
-            async:false,
-            dataType:'json',
-            success: function(results){
-                $.each(results,function(i,result){
-                    tmp = results;
-                });
-            },
-            error: function(){
-                console.log('error')
-            }
-        });
-        return tmp;
-    }
+	function getData() {
+		var tmp = null;
+		$.ajax({
+			url: "../../survey_project/survey/fetchquestion",
+			async: false,
+			dataType: "json",
+			success: function (results) {
+				$.each(results, function (i, result) {
+					tmp = results;
+				});
+			},
+			error: function () {
+				console.log("error");
+			},
+		});
+		return tmp;
+	}
 
-	function displayQuestion(results){
+	function displayQuestion(results) {
 		$.each(results, function (i, result) {
 			console.log(result.question_num);
 			var disagree_div = "disagree" + result.question_num;
 			var agree_div = "agree" + result.question_num;
-			var progAgree = "agreeprog"+ result.question_num;
-			var progDisagree = "disagreeprog"+ result.question_num;
+			var progAgree = "agreeprog" + result.question_num;
+			var progDisagree = "disagreeprog" + result.question_num;
 			console.log(agree_div);
 			var data = {
 				qnum: result.question_num,
@@ -42,13 +42,13 @@ $(function () {
 				agreeval: 80,
 				disagreeval: 20,
 				agreeprog: progAgree,
-				disagreeprog: progDisagree
+				disagreeprog: progDisagree,
 			};
 			var tagree = 30;
 			var tdisagree = 90;
 
-			$('#'+progAgree).css('width','20%');
-			$('#'+progDisagree).css('width','20%');
+			$("#" + progAgree).css("width", "20%");
+			$("#" + progDisagree).css("width", "20%");
 
 			listContainer.append(Mustache.render(paginationcont, data));
 		});
@@ -121,27 +121,25 @@ $(function () {
 				$("#exampleModal").modal("show");
 			} else {
 			}
-	
+
 			$("#exampleModal").modal("hide");
 		} else {
 			$("#exampleModal").modal("show");
 		}
 	};
-	
+
 	const closeModal = (e) => {
 		$("#exampleModal").modal("hide");
 	};
-	
+
 	//redo select options
 	const redo = (e) => {
 		$("#gender").val("선택");
 		$("#classification").val("선택");
 		$("#schoollevel").val("선택");
 	};
-	
+
 	$(document).on("click", "#start-button", alertStatus);
 	$(document).on("click", "#btnclose", closeModal);
 	$(document).on("click", "#redo", redo);
 });
-
-

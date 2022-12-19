@@ -6,7 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 /* .content{
   background-image: url('../images/KakaoTalk_bg.svg');
   background-color: #F6EFE0;
@@ -251,4 +250,58 @@ nav{
 
 @media (min-width: 992px) {
   
+}
+
+
+
+.a-caption-right {
+  position: absolute;
+  top: 33%;
+  left: 88%;
+  transform: translate( -50%, -50% );
+  text-align: center;
+}
+.a-caption-left {
+  position: absolute;
+  top: 46%;
+  left: 20%;
+  transform: translate( -50%, -50% );
+  text-align: center;
+}
+
+
+.c-caption-left {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate( -50%, -50% );
+  text-align: center;
+}
+
+
+.c-caption-right {
+  position: absolute;
+  top: 33%;
+  left: 87%;
+  transform: translate( -50%, -50% );
+  text-align: center;
+}
+
+
+
+.b-caption-left {
+  position: absolute;
+  top: 34%;
+  left: 10%;
+  transform: translate( -50%, -50% );
+  text-align: center;
+}
+
+
+.b-caption-right {
+  position: absolute;
+  top: 43%;
+  left: 77%;
+  transform: translate( -50%, -50% );
+  text-align: center;
 }

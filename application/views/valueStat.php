@@ -9,6 +9,18 @@
         color: #F57600;
         border-radius: 25px;
     }
+
+
+    .picture-container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+
+    /* div {
+        border: 1px solid;
+    } */
 </style>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -33,15 +45,15 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <div class="col-auto mt-3"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a></div>            
+            <div class="col-auto mt-3"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를
+                    부탁해!</a></div>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
             <div class="p-2 bd-highlight">
                 <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
             <div class="mt-2 p-2 bd-highlight">
-                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('survey/') ?>"
-                    role="button">다시하기</a>
+                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('survey/') ?>" role="button">다시하기</a>
             </div>
         </div>
     </div>
@@ -88,7 +100,9 @@
             <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">성별</label>
                 <select id="gender" class="form-select form-select-lg bg-color border-button">
-                    <option value="남성">남성<hr class="dropdown-divider"></option>
+                    <option value="남성">남성
+                        <hr class="dropdown-divider">
+                    </option>
                     <option value="여성">여성</option>
                 </select>
             </div>
@@ -118,26 +132,59 @@
             </div>
             <div class="border border-warning rounded text-color">
                 <div class=" col-12 picture-image">
-                    <picture>
+                    <picture class="picture-container  d-flex">
                         <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>"
                             type="image/svg+xml">
+
+                        <div class="a-caption-left">
+                            <p class="text-color">a left</p>
+                        </div>
+
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
+
+                        <div class="a-caption-right">
+                            <p class="text-color">a right</p>
+                        </div>
+
                     </picture>
                 </div>
+
+
+
                 <div class=" col-12 picture-image">
-                    <picture>
+                    <picture class="picture-container  d-flex">
                         <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>"
                             type="image/svg+xml">
+                        <div class="b-caption-left">
+                            <p class="text-color">b left</p>
+                        </div>
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
+                        <div class="b-caption-right">
+                            <p class="text-color">b right</p>
+                        </div>
                     </picture>
                 </div>
+
+
+
+
                 <div class=" col-12 picture-image">
-                    <picture>
+                    <picture class="picture-container  d-flex">
                         <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>"
                             type="image/svg+xml">
+
+                        <div class="c-caption-left">
+                            <p class="text-color">a left</p>
+                        </div>
+
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
+
+                        <div class="c-caption-right">
+                            <p class="text-color">c right</p>
+                        </div>
                     </picture>
                 </div>
+
             </div>
         </div>
     </div>
