@@ -17,7 +17,6 @@
         color: white;
     }
 
-
     /* div {
         border: 1px solid;
     } */
@@ -119,14 +118,14 @@
     </div>
 
     <div class="row p-5 justify-content-evenly">
-        <div class="col-lg-7 col-xs-12 p-3  rounded-3 mt-5">
-            <div class=" p-3">
+        <div class="col-lg-7 col-xs-12 p-3 rounded-3 mt-5">
+            <div class="mt-5 p-3">
                 <canvas id="pie-chart" width="1200" height="550"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
             </div>
         </div>
 
-        <div class="col-lg-3 col-xs-12 d-grid gap-3">
+        <div class="col-lg-5 col-xs-12 d-grid gap-3">
             <div class="col-lg-12 profile_head p-3 text-color">
                 <div class="col-lg-4 text-center offset-4 shadow p-3 titleBtn">STH</div>
             </div>
@@ -145,7 +144,6 @@
                         <div class="a-caption-right">
                             <p class="text-color" style="transform: rotate(2149deg);">사회공공성</p>
                         </div>
-
                     </picture>
                 </div>
 
