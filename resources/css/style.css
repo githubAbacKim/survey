@@ -368,35 +368,96 @@ text-align: center;
   border-radius: 2em !important;
 }
  
-@media (min-width: 1400px) {
-  .header-text{
-    margin-left: 10rem;
+@media (max-width: 575.98px) {  }
 
+@media (min-width: 576px) and (max-width: 860.98px) { 
+  .sm-scale-sr-text{
+    font-size: 10pt !important;
+    color: white;
   }
+  .lg-scale-sr-text{
+    color: white;
+    font-size: 10pt !important;
+  }
+ }
 
-}
+@media (min-width: 768px) and (max-width: 1100.98px) { 
   
-@media (min-width: 576px) {
-  .header-text{
+  .sm-scale-sr-text{
+    font-size: 4pt !important;
+    color: white;
+  }
+  .lg-scale-sr-text{
+    color: white;
+    font-size: 8pt !important;
+  }
+ }
+
+@media (min-width: 992px) and (max-width: 1482.98px) { 
+  .sm-scale-sr-text{
+    font-size: 8pt !important;
+    color: white;
+  }
+  .lg-scale-sr-text{
+    color: white;
+    font-size: 8pt !important;
+  }
+  .a-sr-caption-left {
+    position: absolute;
+    top: 42%;
+    left: 20%;
+    transform: translate( -50%, -50% );
     text-align: center;
+    }
+
+    .a-sr-caption-right {
+      position: absolute;
+      top: 22%;
+      left: 88%;
+      transform: translate( -50%, -50% );
+      text-align: center;
+      }
+
+        .b-sr-caption-left {
+      position: absolute;
+      top: 25%;
+      left: 11%;
+      transform: translate( -50%, -50% );
+        text-align: center;
+      }
+
+    .b-sr-caption-right {
+      position: absolute;
+      top: 39%;
+      left: 80%;
+      transform: translate( -50%, -50% );
+      text-align: center;
+      }
+    .c-sr-caption-left {
+      position: absolute;
+      top: 40%;
+      left: 20%;
+      transform: translate( -50%, -50% );
+      text-align: center;
+      }
+    
+      .c-sr-caption-right {
+        position: absolute;
+        top: 24%;
+        left: 88%;
+        transform: translate( -50%, -50% );
+        text-align: center;
+        }
+
+ }
+
+@media (min-width: 1480px) and  (max-width: 1618.98px){ 
+  .sm-scale-sr-text{
+    font-size: 8pt !important;
+    color: white;
   }
-
-  .next-page-indicator a{
-    text-decoration: none; 
-    margin-left: 1rem;
-    font-weight: bold;
+  .lg-scale-sr-text{
+    color: white;
+    font-size: 8pt !important;
   }
- 
-}
-
-@media (min-width: 768px) {
-  
-}
-
-@media (min-width: 992px) {
-  
-}
-
-@media (min-width: 1200px) {
- 
-}
+ }
