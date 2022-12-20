@@ -114,11 +114,24 @@
                         <span class="bold left-progress">찬성</span>
                     </div>
                     <div class=" col-10">
+
+                        <script>
+                            var agreeWidth = 60;
+                            var disagreeWidth = 40;
+                            $(document).ready(function () {
+                                $('#agreeprog').width(agreeWidth + '%');
+                                $('#disagreeprog').width(disagreeWidth + '%');
+                            });
+
+                        </script>
+
+                        <script>
+                        </script>
                         <div class="progress mt-5 m-2">
-                            <div class="progress-bar" id="{{agreeprog}}" role="progressbar" style="width:60%;"
-                                aria-valuemin="0" aria-valuemax="100"></div>
-                            <div class="progress-bar bg-success" id="{{disagreeprog}}" style="width:40%;"
-                                aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar" id="agreeprog" role="progressbar" aria-valuemin="0"
+                                aria-valuemax="100" id="progressBar"></div>
+                            <div class="progress-bar bg-success" id="disagreeprog" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col-1  mt-5">
@@ -126,8 +139,6 @@
                     </div>
                 </div>
             </div>
-
-
 
 
             <!-- question div -->
