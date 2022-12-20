@@ -111,7 +111,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-1 mt-5 text-nowrap text-right">
-                        <span class="bold text-color">찬성</span>
+                        <span class="bold left-progress">찬성</span>
                     </div>
                     <div class=" col-10">
                         <div class="progress mt-5 m-2">
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <div class="col-1  mt-5">
-                        <span class="bold text-color">반대</span>
+                        <span class="bold text-color right-progress">반대</span>
                     </div>
                 </div>
             </div>

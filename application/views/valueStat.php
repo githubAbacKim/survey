@@ -16,7 +16,6 @@
         text-align: center;
         color: white;
     }
-    
 </style>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -129,7 +128,8 @@
             <div class="p-3 scale-contval">
                 <div class="col-12 position-relative">
                     <picture class="picture-container d-flex">
-                        <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>" type="image/svg+xml">
+                        <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>"
+                            type="image/svg+xml">
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                         <div class="a-caption-left w-auto">
                             <p class="scale-text text rotate-left">인간존엄성</p>
@@ -141,7 +141,8 @@
                 </div>
                 <div class="col-12 position-relative">
                     <picture class="picture-container d-flex">
-                        <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>" type="image/svg+xml">
+                        <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>"
+                            type="image/svg+xml">
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                         <div class="b-caption-left w-auto">
                             <p class="scale-text rotate-right">기술합목적성 l</p>
@@ -149,11 +150,12 @@
                         <div class="b-caption-right w-auto">
                             <p class="scale-text rotate-right">사회공공성 r</p>
                         </div>
-                    </picture> 
-                </div>                
+                    </picture>
+                </div>
                 <div class="col-12 position-relative">
                     <picture class="picture-container  d-flex">
-                        <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>" type="image/svg+xml">
+                        <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>"
+                            type="image/svg+xml">
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                         <div class="c-caption-left w-auto">
                             <p class="scale-text rotate-left">기술합목적성</p>
