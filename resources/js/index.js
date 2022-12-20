@@ -3,6 +3,7 @@ $(function () {
 });
 
 $(function(){
+	
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -49,8 +50,10 @@ $(function(){
 		var data = document.getElementById("school_level").value;
 		getShowList(data);
 	});
+
 	$('#submitform').hide();
 	$('#dummyBut').show();
+
 	//if check box is checked add class to start image to enable start
 	$("#confirm_agree").change(function () {
 		if ($(this).is(":checked")) {
@@ -61,11 +64,10 @@ $(function(){
 			$('#dummyBut').show("slow");
 		}		
 	});	
+
 	$("#submitform").on('click',function(){
 		var url = $('#myForm').attr('action');
         var data = $('#myForm').serialize();
-		var gender = document.getElementById("gender").value;
-		window.location.href = "survey_page";
+		alert(data);
 	});
-
 });

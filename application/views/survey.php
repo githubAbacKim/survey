@@ -10,13 +10,13 @@
     }
 
     /* Style the form */
-    #regForm {
+    /* #regForm {
     background-color: #ffffff;
     margin: 100px auto;
     padding: 40px;
     width: 70%;
     min-width: 300px;
-    }
+    } */
 
     /* Style the input fields */
     input {
@@ -105,9 +105,8 @@
                     <div class="card-body card-height text-color p-3">
                         <p>{{agree_desc}}</p>
                     </div>                  
-                    <input type="radio" name="q1" id="ag{{qnum}}"></label>
+                    <input type="radio" name="rq{{qnum}}" id="ag{{qnum}}" require></label>
                 </div>
-
                 <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
                     <label for="dis{{qnum}}">
                     <picture>
@@ -120,15 +119,17 @@
                     <div class="card-body card-height text-color p-3">
                         <p>{{disagree_desc}}</p>                        
                     </div>
-                    <input type="radio" name="q1" id="dis{{qnum}}"></label>                  
+                    <input type="radio" name="rq{{qnum}}" id="dis{{qnum}}" require></label>                  
                 </div>
             </div>
         </div> 
     </template>
     
     <div class="row mt-5">
-        <div id="slideCont">
-        </div>
+        <form action="" id="regForm">
+            <div id="slideCont">
+            </div>
+        </form>
     </div>
 </div>
 <script src="./../resources/js/survey.js"></script>

@@ -76,13 +76,30 @@ $(function(){
 				},
 			],
 		},
+		// options: {
+		// 	legend: {
+		// 		position: "right",
+		// 		align: "center",
+		// 		color: "rgb(255, 99, 132)",
+		// 	}
+		// }
+
 		options: {
-			legend: {
-				position: "right",
-				align: "center",
-				color: "rgb(255, 99, 132)",
+			responsive: true,
+			legend:{
+				position: 'right',
+				align: 'center',
+				color: 'rgb(255, 99, 132)',
+				labels:{
+					font:{
+						size: 30
+					},
+				}
 			},
-		},
+			// layout:{
+				
+			// }
+		}
 	});
 	
 	const alertStatus = (e) => {

@@ -32,18 +32,16 @@
                 <h4 class="fw-bold">사회중시_H형 시장님</h4>
                 <h4 class="fw-bold">SSH</h4>
             </div>
-            <div class="profile_image p-3  gx-2">
+            <div class="profile_image p-3 gx-2">                
                 <picture>
                     <source srcset="<?php echo base_url('resources/images/personality/ssh.svg') ?>"
                         type="image/svg+xml">
                     <img src="<?php echo base_url('resources/personality/personality/images/ssh.svg') ?>"
                         class="img-fluid" alt="...">
                 </picture>
-                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                    href="<?php echo base_url('survey/questionStatistics') ?>" role="button">테스트</a>
+                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo base_url('survey/questionStatistics') ?>" role="button">테스트</a>
             </div>
         </div>
-
         <div class="col-lg-5 col-xs-12 p-3 d-grid gap-3">
             <div class="scale-div col-12 gx-2">
                 <picture>
@@ -53,12 +51,14 @@
             </div>
             <div class="scale-div col-12 gx-2">
                 <picture>
+                    <div class="col-lg-2"></div>
                     <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                 </picture>
             </div>
             <div class="scale-div col-12 gx-2">
                 <picture>
+                    <div class="col-lg-2"></div>
                     <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                 </picture>

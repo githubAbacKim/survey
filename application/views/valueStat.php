@@ -16,10 +16,7 @@
         text-align: center;
         color: white;
     }
-
-    /* div {
-        border: 1px solid;
-    } */
+    
 </style>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -129,60 +126,43 @@
             <div class="col-lg-12 profile_head p-3 text-color">
                 <div class="col-lg-4 text-center offset-4 shadow p-3 titleBtn">STH</div>
             </div>
-            <div class="border border-warning rounded text-color">
-                <div class=" col-12 picture-image">
-                    <picture class="picture-container  d-flex">
-                        <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>"
-                            type="image/svg+xml">
-
-                        <div class="a-caption-left ">
-                            <p class="text-color rotatetext-a-left" style="transform: rotate(2149deg);">인간존엄성</p>
-                        </div>
-
+            <div class="p-3 scale-contval">
+                <div class="col-12 position-relative">
+                    <picture class="picture-container d-flex">
+                        <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>" type="image/svg+xml">
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
-
-                        <div class="a-caption-right">
-                            <p class="text-color" style="transform: rotate(2149deg);">사회공공성</p>
+                        <div class="a-caption-left w-auto">
+                            <p class="scale-text text rotate-left">인간존엄성</p>
+                        </div>
+                        <div class="a-caption-right w-auto">
+                            <p class="scale-text rotate-left">사회공공성</p>
                         </div>
                     </picture>
                 </div>
-
-
-
-                <div class=" col-12 picture-image">
-                    <picture class="picture-container  d-flex">
-                        <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>"
-                            type="image/svg+xml">
-                        <div class="b-caption-left">
-                            <p class="text-color" style="transform: rotate(2169deg);">기술합목적성</p>
-                        </div>
+                <div class="col-12 position-relative">
+                    <picture class="picture-container d-flex">
+                        <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>" type="image/svg+xml">
                         <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
-                        <div class="b-caption-right">
-                            <p class="text-color" style="transform: rotate(2169deg);">사회공공성</p>
+                        <div class="b-caption-left w-auto">
+                            <p class="scale-text rotate-right">기술합목적성 l</p>
+                        </div>
+                        <div class="b-caption-right w-auto">
+                            <p class="scale-text rotate-right">사회공공성 r</p>
+                        </div>
+                    </picture>
+                </div>                
+                <div class="col-12 position-relative">
+                    <picture class="picture-container  d-flex">
+                        <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>" type="image/svg+xml">
+                        <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
+                        <div class="c-caption-left w-auto">
+                            <p class="scale-text rotate-left">기술합목적성</p>
+                        </div>
+                        <div class="c-caption-right w-auto">
+                            <p class="scale-text rotate-left">인간존엄성</p>
                         </div>
                     </picture>
                 </div>
-
-
-
-
-                <div class=" col-12 picture-image">
-                    <picture class="picture-container  d-flex">
-                        <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>"
-                            type="image/svg+xml">
-
-                        <div class="c-caption-left">
-                            <p class="text-color" style="transform: rotate(2149deg);">기술합목적성</p>
-                        </div>
-
-                        <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
-
-                        <div class="c-caption-right">
-                            <p class="text-color" style="transform: rotate(2149deg);">인간존엄성</p>
-                        </div>
-                    </picture>
-                </div>
-
             </div>
         </div>
     </div>
