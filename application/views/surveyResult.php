@@ -1,7 +1,7 @@
 <style>
     .scale-div {
         background: linear-gradient(270.51deg, rgba(255, 255, 255, 0) -0.1%, rgba(255, 255, 255, 0.336495) 16.1%, rgba(255, 255, 255, 0.34) 89.76%, rgba(255, 255, 255, 0) 100.21%);
-        border-radius: 32px;
+        border-radius: 32px; 
     }
     .scale-div image{
         width: 642.2px;

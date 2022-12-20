@@ -149,7 +149,7 @@
                         <div class="b-caption-right w-auto">
                             <p class="scale-text rotate-right">사회공공성 r</p>
                         </div>
-                    </picture>
+                    </picture> 
                 </div>                
                 <div class="col-12 position-relative">
                     <picture class="picture-container  d-flex">

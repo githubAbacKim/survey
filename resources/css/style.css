@@ -289,7 +289,7 @@ text-align: center;
   border:solid 6px #FFD772;
   border-radius: 2em !important;
 }
-
+ 
 @media (min-width: 1400px) {
   .header-text{
     margin-left: 10rem;
