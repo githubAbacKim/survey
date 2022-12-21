@@ -68,6 +68,6 @@ $(function(){
 	$("#submitform").on('click',function(){
 		var url = $('#myForm').attr('action');
         var data = $('#myForm').serialize();
-		alert(data);
+		window.location.href = 'survey/survey_page'
 	});
 });
