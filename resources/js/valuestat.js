@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -46,6 +46,18 @@ $(function(){
 		getShowList(data);
 	});
 
+	let arrayDataAnswer = [];
+	arrayDataAnswer[0] = 1;
+	arrayDataAnswer[1] = 2;
+	arrayDataAnswer[2] = 3;
+	arrayDataAnswer[3] = 4;
+	arrayDataAnswer[4] = 5;
+	arrayDataAnswer[5] = 6;
+	arrayDataAnswer[6] = 7;
+	arrayDataAnswer[7] = 8;
+	arrayDataAnswer.forEach((n) => {
+		console.log(n);
+	});
 	new Chart(document.getElementById("pie-chart"), {
 		type: "pie",
 		data: {
@@ -72,10 +84,12 @@ $(function(){
 						"#e8c3b9",
 						"#c45850",
 					],
-					data: [2478, 5267, 734, 784, 433, 734, 784, 433],
+
+					data: arrayDataAnswer,
 				},
 			],
 		},
+
 		// options: {
 		// 	legend: {
 		// 		position: "right",
@@ -86,22 +100,22 @@ $(function(){
 
 		options: {
 			responsive: true,
-			legend:{
-				position: 'right',
-				align: 'center',
-				color: 'rgb(255, 99, 132)',
-				labels:{
-					font:{
-						size: 30
+			legend: {
+				position: "right",
+				align: "center",
+				color: "rgb(255, 99, 132)",
+				labels: {
+					font: {
+						size: 30,
 					},
-				}
+				},
 			},
 			// layout:{
-				
+
 			// }
-		}
+		},
 	});
-	
+
 	const alertStatus = (e) => {
 		if (
 			$("#gender").val() == "선택" ||
@@ -112,22 +126,21 @@ $(function(){
 			$("#exampleModal").modal("show");
 		} else {
 		}
-	
+
 		$("#exampleModal").modal("hide");
 	};
-	
+
 	const closeModal = (e) => {
 		$("#exampleModal").modal("hide");
 	};
-	
+
 	const redo = (e) => {
 		$("#gender").val("선택");
 		$("#classification").val("선택");
 		$("#schoollevel").val("선택");
 	};
-	
+
 	$(document).on("click", "#redo", redo);
 	$(document).on("click", "#btnclose", closeModal);
 	$(document).on("click", "#lookup", alertStatus);
 });
-
