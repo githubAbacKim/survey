@@ -4,6 +4,7 @@
         border-top-right-radius: 2em;
         overflow: auto;
     }
+
     .card-body {
         border-bottom-left-radius: 2em;
         border-bottom-right-radius: 2em;
@@ -20,45 +21,44 @@
 
     /* Style the input fields */
     input {
-    padding: 10px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
-    border: 1px solid #aaaaaa;
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
     }
 
     /* Mark input boxes that gets an error on validation: */
     input.invalid {
-    background-color: #ffdddd;
+        background-color: #ffdddd;
     }
 
     /* Hide all steps by default: */
     .tab {
-    display: none;
+        display: none;
     }
 
     /* Make circles that indicate the steps of the form: */
     .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
     }
 
     /* Mark the active step: */
     .step.active {
-    opacity: 1;
+        opacity: 1;
     }
 
     /* Mark the steps that are finished and valid: */
     .step.finish {
-    background-color: #04AA6D;
+        background-color: #04AA6D;
     }
-    
 </style>
 <div class="container-fluid p-0">
     <div class="row">
@@ -89,42 +89,44 @@
 
     <template id="datatemplate">
         <div class="tab col-lg-12">
-            <div class="col-lg-6 offset-2 col-xs-12 text-color" >
+            <div class="col-lg-6 offset-2 col-xs-12 text-color">
                 <p>{{question}}</p>
             </div>
-            <div class="col-lg-8 col-xs-12 p-3 gap-3 offset-2 d-flex flex-row bd-highlight">                
+            <div class="col-lg-8 col-xs-12 p-3 gap-3 offset-2 d-flex flex-row bd-highlight">
                 <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
                     <label for="ag{{qnum}}">
-                    <picture>
-                        <source srcset='./../{{agree_img}}' type="image/svg+xml">
-                        <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer" />
-                    </picture>
-                    <div class="card-title-t text-center p-2 text-color">
-                        <h5>{{agree_title}}</h5>
-                    </div>
-                    <div class="card-body card-height text-color p-3">
-                        <p>{{agree_desc}}</p>
-                    </div>                  
-                    <input type="radio" name="rq{{qnum}}" id="ag{{qnum}}" require></label>
+                        <picture>
+                            <source srcset='./../{{agree_img}}' type="image/svg+xml">
+                            <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer" />
+                        </picture>
+                        <div class="card-title-t text-center p-2 text-color">
+                            <h5>{{agree_title}}</h5>
+                        </div>
+                        <div class="card-body card-height text-color p-3">
+                            <p>{{agree_desc}}</p>
+                        </div>
+                        <input type="radio" name="rq{{qnum}}" id="ag{{qnum}}" class="agreeRadio">
+                    </label>
                 </div>
                 <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
                     <label for="dis{{qnum}}">
-                    <picture>
-                        <source srcset='./../{{disagree_img}}' type="image/svg+xml">
-                        <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer" />
-                    </picture>
-                    <div class="card-title-t text-center p-2 text-color">
-                        <h5>{{disagree_title}}</h5>
-                    </div>
-                    <div class="card-body card-height text-color p-3">
-                        <p>{{disagree_desc}}</p>                        
-                    </div>
-                    <input type="radio" name="rq{{qnum}}" id="dis{{qnum}}" require></label>                  
+                        <picture>
+                            <source srcset='./../{{disagree_img}}' type="image/svg+xml">
+                            <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer" />
+                        </picture>
+                        <div class="card-title-t text-center p-2 text-color">
+                            <h5>{{disagree_title}}</h5>
+                        </div>
+                        <div class="card-body card-height text-color p-3">
+                            <p>{{disagree_desc}}</p>
+                        </div>
+                        <input type="radio" name="rq{{qnum}}" id="dis{{qnum}}" class="disagreeRadio">
+                    </label>
                 </div>
             </div>
-        </div> 
+        </div>
     </template>
-    
+
     <div class="row mt-5">
         <form action="" id="regForm">
             <div id="slideCont">

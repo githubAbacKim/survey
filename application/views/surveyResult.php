@@ -9,9 +9,9 @@
         height: 172.19px;
     }
 
-    /*  div {
+    div {
         border: 1px solid;
-    } */
+    }
 </style>
 <div class="container-fluid p-3">
     <!-- header -->

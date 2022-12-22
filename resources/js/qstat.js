@@ -144,6 +144,7 @@ $(function () {
 	$(document).on("click", "#redo", redo);
 	
 });
+
 var agreeWidth = 60;
 var disagreeWidth = 40;
 $(document).ready(function () {
