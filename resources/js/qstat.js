@@ -142,6 +142,7 @@ $(function () {
 	$(document).on("click", "#start-button", alertStatus);
 	$(document).on("click", "#btnclose", closeModal);
 	$(document).on("click", "#redo", redo);
+	
 });
 var agreeWidth = 60;
 var disagreeWidth = 40;
