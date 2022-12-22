@@ -2,8 +2,7 @@ $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 });
 
-$(function(){
-	
+$(function () {
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -51,23 +50,25 @@ $(function(){
 		getShowList(data);
 	});
 
-	$('#submitform').hide();
-	$('#dummyBut').show();
+	$("#submitform").hide();
+	$("#dummyBut").show();
 
 	//if check box is checked add class to start image to enable start
 	$("#confirm_agree").change(function () {
 		if ($(this).is(":checked")) {
-			$('#dummyBut').fadeOut("slow");
-			$('#submitform').fadeIn("slow");			
-		}else{
-			$('#submitform').fadeOut("slow");
-			$('#dummyBut').show("slow");
-		}		
-	});	
-
-	$("#submitform").on('click',function(){
-		var url = $('#myForm').attr('action');
-        var data = $('#myForm').serialize();
-		window.location.href = 'survey/survey_page'
+			$("#dummyBut").fadeOut("slow");
+			$("#submitform").fadeIn("slow");
+		} else {
+			$("#submitform").fadeOut("slow");
+			$("#dummyBut").show("slow");
+		}
 	});
+
+	$("#submitform").on("click", function () {
+		var url = $("#myForm").attr("action");
+		var data = $("#myForm").serialize();
+		window.location.href = "survey/survey_page";
+	});
+
+	function getDataTopage() {}
 });

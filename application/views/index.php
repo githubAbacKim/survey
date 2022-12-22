@@ -69,7 +69,7 @@
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
         </p>
     </div>
-    <form id="startForm" action="">
+    <form id="startForm" action="" method="GET">
         <div class="container-fluid text-center startCont">
             <img src="<?php echo base_url("resources/images/start-01.svg") ?>" class="startbut mt-3" id="submitform"
                 alt="sumbit" data-toggle="modal">
