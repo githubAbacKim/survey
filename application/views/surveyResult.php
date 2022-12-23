@@ -9,9 +9,10 @@
         height: 172.19px;
     }
 
+    /* 
     div {
         border: 1px solid;
-    }
+    } */
 </style>
 <div class="container-fluid p-3">
     <!-- header -->
@@ -63,10 +64,10 @@
                     <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                     <div class="a-sr-caption-left w-auto">
-                        <p class="lg-scale-sr-text sr-rotate-left" id="lg-p">인간존엄성</p>
+                        <p class="lg-scale-sr-text a sr-rotate-left" id="lg-p">인간존엄성</p>
                     </div>
                     <div class="a-sr-caption-right w-auto">
-                        <p class="sm-scale-sr-text sr-rotate-left" id="sm-p">사회공공성</p>
+                        <p class="sm-scale-sr-text b sr-rotate-left" id="sm-p">사회공공성</p>
                     </div>
                 </picture>
             </div>
@@ -76,10 +77,10 @@
                     <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                     <div class="b-sr-caption-left w-auto">
-                        <p class="sm-scale-sr-text sr-rotate-right" id="sm-p">기술합목적성</p>
+                        <p class="sm-scale-sr-text c sr-rotate-right" id="sm-p">기술합목적성</p>
                     </div>
                     <div class="b-sr-caption-right w-auto">
-                        <p class="lg-scale-sr-text sr-rotate-right" id="lg-p">사회공공성</p>
+                        <p class="lg-scale-sr-text d sr-rotate-right" id="lg-p">사회공공성</p>
                     </div>
 
                 </picture>
@@ -90,12 +91,15 @@
                     <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>" type="image/svg+xml">
                     <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
                     <div class="c-sr-caption-left w-auto">
-                        <p class="lg-scale-sr-text sr-rotate-left" id="lg-p">기술합목적성</p>
+                        <p class="lg-scale-sr-text e sr-rotate-left" id="lg-p">기술합목적성</p>
                     </div>
                     <div class="c-sr-caption-right w-auto">
-                        <p class="sm-scale-sr-text sr-rotate-left" id="sm-p">인간존엄성</p>
+                        <p class="sm-scale-sr-text f sr-rotate-left" id="sm-p">인간존엄성</p>
                     </div>
                 </picture>
             </div>
         </div>
     </div>
+
+
+    <script src="<?php echo base_url('resources/js/sresult.js') ?>" type="module"></script>
