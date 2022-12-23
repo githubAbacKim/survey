@@ -77,35 +77,7 @@ class Survey extends CI_Controller
 		$this->load->view('footer', $data);
 	}
 
-	public function register_user()
-	{
-		$this->form_validation->set_rules('gender', 'Gender', 'required');
-		$this->form_validation->set_rules('school_level', 'School Level', 'required');
-		$this->form_validation->set_rules('classification', 'Classification', 'required');
-		$this->form_validation->set_rules('regional_scale', 'Regional Scale', 'required');
-
-		if ($this->form_validation->run() == FALSE) {
-			$msg['error'] = validation_errors();
-			$msg['success'] = false;
-		} else {
-			$data = array(
-				"gender" => set_value('gender'),
-				"school_level" => set_value('school_level'),
-				"classification" => set_value('classification'),
-				"regional_scale" => set_value('regional_scale')
-			);
-
-			$add = $this->project_model->insert('participants', $data);
-			if ($add != false) {
-				$msg['success'] = true;
-			} else {
-				$msg['success'] = false;
-				$msg['error'] = 'Error adding data.';
-			}
-		}
-		$msg['type'] = 'Add';
-		echo json_encode($msg);
-	}
+	// fetch functions
 
 	public function shuffledQuestion()
 	{
@@ -123,22 +95,83 @@ class Survey extends CI_Controller
 		echo json_encode($data);
 	}
 
-	public function test(){
-		$data = array(
-			"gender" => '남성',
-			"school_level" => '초등학생',
-			"classification" => '1',
-			"regional_scale" => '읍면지역'
-		);
+	function generateRandomString($length = 10) {
+		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$charactersLength = strlen($characters);
+		$randomString = '';
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		return $randomString;
+	}
 
-		$add = $this->survey_model->insert('participants', $data);
-		if ($add != false) {
-			$msg['success'] = true;
+	// insert functions
+	
+	public function register_participants()
+	{
+		$this->form_validation->set_rules('gender', '성별', 'required');
+		$this->form_validation->set_rules('school_level', '학교급', 'required');
+
+		if( $this->input->post('school_level') === "초등학교"){
+			$this->form_validation->set_rules('elem', '초등학교', 'required');
+		}
+		if( $this->input->post('school_level') === "중학교"){
+			$this->form_validation->set_rules('highschool', '중학교', 'required');
+		}
+		if( $this->input->post('school_level') === "고등학교"){
+			$this->form_validation->set_rules('highschool', '고등학교', 'required');
+		}
+		if( $this->input->post('school_level') === "대학"){
+			$this->form_validation->set_rules('college', '대학', 'required');
+		}
+		if( $this->input->post('school_level') === "일반인"){
+			$this->form_validation->set_rules('public', '일반인', 'required');
+		}
+		$this->form_validation->set_rules('regional_scale', '지역규모', 'required');
+
+		if ($this->form_validation->run() == FALSE) {
+			$msg['error'] = validation_errors();
+			$msg['status'] = false;
 		} else {
-			$msg['success'] = false;
-			$msg['error'] = 'Error adding data.';
+			if(set_value('school_level') === "초등학교"){
+				$classification  = set_value('elem');
+			}
+			if(set_value('school_level') === "중학교"){
+				$classification = set_value('highschool');
+			}
+			if(set_value('school_level') === "고등학교"){
+				$classification = set_value('highschool');
+			}
+			if(set_value('school_level') === "대학"){
+				$classification = set_value('college');
+			}
+			if(set_value('school_level') === "일반인"){
+				$classification = set_value('public');
+			}
+
+			$data = array(
+				"gender" => set_value('gender'),
+				"school_level" => set_value('school_level'),
+				"classification" => $classification,
+				"regional_scale" => set_value('regional_scale')
+			);
+			
+			$add = $this->survey_model->insert('participants', $data,true);
+			if ($add === true) {
+				$msg['status'] = true;
+				// set session values id, inserted data
+				$this->session->set_userdata('participant_id', $add[1]);
+			} else {
+				$msg['status'] = false;
+				$msg['error'] = 'Error adding data.';
+			}
 		}
 		echo json_encode($msg);
+	}
+
+	public function test(){
+		$length = 5;
+		echo $this->generateRandomString($length);
 	}
 
 }

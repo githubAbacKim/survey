@@ -15,8 +15,8 @@ $(function () {
 			college.hide();
 			public_sec.hide();
 		} else if (school === "중학교") {
-			elemlevel.show();
-			highschool.hide();
+			highschool.show();
+			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
 		} else if (school === "고등학교") {
@@ -65,9 +65,27 @@ $(function () {
 	});
 
 	$("#submitform").on("click", function () {
-		var url = $("#myForm").attr("action");
-		var data = $("#myForm").serialize();
-		window.location.href = "survey/survey_page";
+		var url = $("#startForm").attr("action");
+		var data = $("#startForm").serialize();		
+		
+		$.ajax({
+			type:'ajax',
+			method: 'post',
+			url: url,
+			data: data,
+			async: false,
+			dataType: 'json',
+			success: function(response){
+				if(response.status === true){
+					alert("Your session is now started!");
+				}else{
+					alert(response.error);
+				}
+			},
+			error: function(response){
+				alert(response.error);
+			}
+		});
 	});
 
 	function getDataTopage() {}
