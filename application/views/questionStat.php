@@ -27,7 +27,7 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <div class="col-auto mt-3"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를
+            <div class="col-auto mt-3"><a href="<?php echo base_url('page/') ?>" class="navbar-brand logo">AI 도시를
                     부탁해!</a></div>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
@@ -35,9 +35,9 @@
                 <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
             <div class="mt-2 p-2 bd-highlight">
-                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('survey/') ?>" role="button">다시하기</a>
+                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('page/') ?>" role="button">다시하기</a>
             </div>
-        </div>
+        </div>page
     </div>
     <!-- end header -->
     <div class="row">

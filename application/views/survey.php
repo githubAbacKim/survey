@@ -63,7 +63,7 @@
 <div class="container-fluid p-0">
     <div class="row">
         <div class="col-lg-2 col-xs-12 offset-2  p-5 text-color">
-            <a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
+            <a href="<?php echo base_url('page/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
         </div>
     </div>
     <div class="row">

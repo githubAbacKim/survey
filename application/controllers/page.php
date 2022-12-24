@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Survey extends CI_Controller
+class Page extends CI_Controller
 {
 
 	/**

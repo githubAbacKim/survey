@@ -32,27 +32,27 @@
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-2">
-            <div class="col-auto mt-2"><a href="<?php echo base_url('survey/') ?>" class="navbar-brand logo">AI 도시를
+            <div class="col-auto mt-2"><a href="<?php echo base_url('page/') ?>" class="navbar-brand logo">AI 도시를
                     부탁해!</a></div>
         </div>
-
+page
         <div class="navlist">
             <ul class="nav">
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo base_url('survey/survey_result') ?>" role="button">테스트</a>
+                        href="<?php echo base_url('page/survey_result') ?>" role="button">테스트</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo base_url('survey/questions') ?>" role="button">문항 보기</a>
+                        href="<?php echo base_url('page/questions') ?>" role="button">문항 보기</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2"
-                        href="<?php echo base_url('survey/valueStatistic') ?>" role="button">가치 통계</a>
+                        href="<?php echo base_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2"
-                        href="<?php echo base_url('survey/questionStatistics') ?>" role="button">문항 통계</a>
+                        href="<?php echo base_url('page/questionStatistics') ?>" role="button">문항 통계</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +69,7 @@
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
         </p>
     </div>
-    <form id="startForm" action="<?php echo base_url('survey/register_participants')?>" method="POST">
+    <form id="startForm" action="<?php echo base_url('page/register_participants')?>" method="POST">
         <div class="container-fluid text-center startCont">
             <img src="<?php echo base_url("resources/images/start-01.svg") ?>" class="startbut mt-3" id="submitform"
                 alt="sumbit" data-toggle="modal">
