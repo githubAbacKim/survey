@@ -1,5 +1,4 @@
 $(function(){
-    var base_url = '<?php echo base_url() ?>';
     var listContainer = $("#questCont");
     var paginationcont = $('#data-template').html();
     $.ajax({
