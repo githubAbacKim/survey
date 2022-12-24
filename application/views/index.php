@@ -35,7 +35,6 @@
             <div class="col-auto mt-2"><a href="<?php echo base_url('page/') ?>" class="navbar-brand logo">AI 도시를
                     부탁해!</a></div>
         </div>
-page
         <div class="navlist">
             <ul class="nav">
                 <li clas="nav-item">
