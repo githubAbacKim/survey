@@ -2,7 +2,7 @@ $(function () {
 	function getData() {
 		var tmp = null;
 		$.ajax({
-			url: "../../survey_project/survey/shuffledQuestion",
+			url: "../../survey/page/shuffledQuestion",
 			async: false,
 			dataType: "json",
 			success: function (results) {

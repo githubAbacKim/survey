@@ -1,8 +1,9 @@
 $(function(){
+    var base_url = '<?php echo base_url() ?>';
     var listContainer = $("#questCont");
     var paginationcont = $('#data-template').html();
     $.ajax({
-        url:'../../survey_project/survey/fetchquestion',
+        url:'../../survey/page/fetchquestion',
         async:false,
         dataType:'json',
         success: function(results){
