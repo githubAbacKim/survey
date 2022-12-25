@@ -9,9 +9,9 @@
         opacity: 0.4;
     }
 
-    div {
+    /*    div {
         border: 1px solid;
-    }
+    } */
 </style>
 
 <!-- Modal -->
@@ -84,6 +84,7 @@
             <div class="container">
                 <div class="row text-center d-flex justify-content-evenly">
                     <!-- Grid column -->
+
                     <div class="col-auto">
                         <label for="form-select" class="select-label text-label-drop-down">성별</label>
                         <select id="gender" name="gender" class="form-select form-select-lg bg-color border-button">
