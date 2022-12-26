@@ -5,7 +5,7 @@ $(function () {
 	function getData() {
 		var tmp = null;
 		$.ajax({
-			url: "../../survey_project/survey/fetchquestion",
+			url: "/page/fetchquestion",
 			async: false,
 			dataType: "json",
 			success: function (results) {

@@ -1,4 +1,5 @@
 $(function () {
+	
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -63,8 +64,7 @@ $(function () {
 
 	$("#submitform").on("click", function () {
 		var url = $("#startForm").attr("action");
-		var data = $("#startForm").serialize();		
-		
+		var data = $("#startForm").serialize();				
 		$.ajax({
 			type:'ajax',
 			method: 'post',
@@ -131,4 +131,5 @@ $(function () {
 				});
 		});
 	}
+	
 });

@@ -155,4 +155,4 @@
     <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
-<script src="./../resources/js/qstat.js"></script>
+<script src="<?php echo base_url('resources/js/qstat.js');?>"></script>
