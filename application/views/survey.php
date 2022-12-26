@@ -60,6 +60,27 @@
         background-color: #04AA6D;
     }
 </style>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">agree</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnclose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                "여기를 클릭함으로써 본인은 약관을 읽고 이해했음을 진술합니다." </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnclose">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
+
+
 <div class="container-fluid p-0">
     <div class="row">
         <div class="col-lg-2 col-xs-12 offset-2  p-5 text-color">

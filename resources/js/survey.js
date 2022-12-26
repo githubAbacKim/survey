@@ -132,7 +132,20 @@ $(function () {
 			$(".agreeRadio").prop("checked", false);
 			$(".disagreeRadio").prop("checked", false);
 		} else {
-			alert("not check");
+			$("#exampleModal").modal("show");
 		}
 	});
+
+	const closeModal = (e) => {
+		$("#exampleModal").modal("hide");
+	};
+
+	//redo select options
+	const redo = (e) => {
+		$("#gender").val("선택");
+		$("#classification").val("선택");
+		$("#schoollevel").val("선택");
+	};
+
+	$(document).on("click", "#btnclose", closeModal);
 });

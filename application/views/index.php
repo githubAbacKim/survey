@@ -8,6 +8,10 @@
         width: 100px;
         opacity: 0.4;
     }
+
+    /*    div {
+        border: 1px solid;
+    } */
 </style>
 
 <!-- Modal -->
@@ -68,7 +72,7 @@
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
         </p>
     </div>
-    <form id="startForm" action="<?php echo base_url('page/register_participants')?>" method="POST">
+    <form id="startForm" action="<?php echo base_url('page/register_participants') ?>" method="POST">
         <div class="container-fluid text-center startCont">
             <img src="<?php echo base_url("resources/images/start-01.svg") ?>" class="startbut mt-3" id="submitform"
                 alt="sumbit" data-toggle="modal">
@@ -80,7 +84,8 @@
             <div class="container">
                 <div class="row text-center d-flex justify-content-evenly">
                     <!-- Grid column -->
-                    <div class="col-lg-2">
+
+                    <div class="col-auto">
                         <label for="form-select" class="select-label text-label-drop-down">성별</label>
                         <select id="gender" name="gender" class="form-select form-select-lg bg-color border-button">
                             <option value="">고르다</option>
@@ -93,7 +98,8 @@
                     <!-- Grid column -->
                     <div class="col-auto">
                         <label for="form-select" class="select-label text-label-drop-down">학교급</label>
-                        <select id="school_level" name="school_level" class="form-select form-select-lg bg-color border-button">
+                        <select id="school_level" name="school_level"
+                            class="form-select form-select-lg bg-color border-button">
                             <option value="초등학교">초등학생</option>
                             <option value="중학교">중학생</option>
                             <option value="고등학교">고등학생</option>
@@ -115,7 +121,8 @@
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select>
-                        <select id="highschool" name="highschool" class="form-select form-select-lg bg-color border-button">
+                        <select id="highschool" name="highschool"
+                            class="form-select form-select-lg bg-color border-button">
                             <option value="">고르다</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -137,7 +144,8 @@
                     <!-- Grid column -->
                     <div class="col-auto">
                         <label for="form-select" class="select-label text-label-drop-down">지역규모</label>
-                        <select id="region" name="regional_scale" class="form-select form-select-lg bg-color border-button">
+                        <select id="region" name="regional_scale"
+                            class="form-select form-select-lg bg-color border-button">
                             <option value="읍면지역">읍면지역</option>
                             <option value="중소도시">중소도시</option>
                             <option value="대도시">대도시</option>
