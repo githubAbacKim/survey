@@ -169,6 +169,22 @@ class Page extends CI_Controller
 		echo json_encode($msg);
 	}
 
+	public function survey_answers()
+	{
+		for ($i=1; $i <= 9; $i++) { 
+			echo $i.'<br>';
+			$this->form_validation->set_rules('rq'.$i, 'Question #'.$i, 'required');
+		}
+
+		if ($this->form_validation->run() == FALSE) {
+			$msg['error'] = validation_errors();
+			$msg['status'] = false;
+		} else {
+			
+		}
+
+	}
+
 	public function test(){
 		$length = 5;
 		echo $this->generateRandomString($length);

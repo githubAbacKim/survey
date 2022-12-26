@@ -65,13 +65,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">agree</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Error!!!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnclose">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                "여기를 클릭함으로써 본인은 약관을 읽고 이해했음을 진술합니다." </div>
+                답을 선택하세요. 
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnclose">close</button>
             </div>
@@ -149,7 +150,7 @@
     </template>
 
     <div class="row mt-5">
-        <form action="" id="regForm">
+        <form action="<?php echo base_url('page/survey_answer');?>" method="POST" id="regForm">
             <div id="slideCont">
             </div>
         </form>
