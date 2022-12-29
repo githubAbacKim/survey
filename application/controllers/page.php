@@ -28,8 +28,6 @@ class Page extends CI_Controller
 		$this->load->view('header', $data);
 		$this->load->view('index', $data);
 		$this->load->view('footer', $data);
-
-		echo $_SERVER['HTTP_HOST'];
 	}
 
 	public function survey_page()

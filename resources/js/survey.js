@@ -147,7 +147,7 @@ $(function () {
 			dataType: 'json',
 			success: function(response){
 				if(response.status === true){		
-					// window.location.href = "/page/survey_result/";
+					window.location.href = "/page/survey_result/";
 					alert(response.data);
 				}else{
 					alert(response.error);
@@ -158,6 +158,16 @@ $(function () {
 			}
 		});
 	});
+
+	$(".agreeRadio").click(function () {
+		var value = $(".agreeRadio").value;
+		alert(value);
+	});
+	$(".disagreeRadio").click(function () {
+		var value = $(".disagreeRadio").value;
+		alert(value);
+	});
+
 	const closeModal = (e) => {
 		$("#exampleModal").modal("hide");
 	};

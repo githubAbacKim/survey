@@ -42,7 +42,7 @@
     .step {
         height: 15px;
         width: 15px;
-        margin: 0 2px;
+        margin: 0 10px;
         background-color: #bbbbbb;
         border: none;
         border-radius: 50%;
@@ -92,8 +92,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 col-xs-5 header-text-container">
+        <div class="col-lg-12 col-xs-5 header-text-container">
+            <div class="col-lg-6 offset-lg-2">
             <p class="header-text p-3 text-color">문제의 상황 설명과 선택지의 근거를 바탕으로 선택해주세요. 총 9 문항입니다.</p>
+            </div>
         </div>
     </div>
 
@@ -102,11 +104,11 @@
     </template>
 
     <div class="row">
-        <div class="col-lg-8 col-xs-12">
-            <div class="p-3 progress-indicator">
+        <div class="col-lg-4 offset-lg-2 col-xs-12">
+            <div class="mt-3 progress-indicator">
             </div>
         </div>
-        <div class="col-12 col-xl-4 next-page-indicator text-center mt-3">
+        <div class="col-lg-2 offset-lg-2 next-page-indicator text-center mt-3">
             <button type="button" id="prevBtn">Previous</button>
             <button type="button" id="nextBtn">Next</button>
             <button type="button" id="submitBtn">Submit</button>
@@ -115,11 +117,11 @@
 
     <template id="datatemplate">
         <div class="tab col-lg-12">
-            <div class="col-lg-6 offset-2 col-xs-12 text-color">
+            <div class="col-lg-6 offset-lg-2 col-xs-12 text-color">
                 <p>{{question}}</p>
             </div>
-            <div class="col-lg-8 col-xs-12 p-3 gap-3 offset-2 d-flex flex-row bd-highlight">
-                <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
+            <div class="col-lg-12 col-xs-12 p-3 gap-3 justify-content-md-center d-flex flex-row bd-highlight">
+                <div class="scale-div col-lg-3 col-xs-6" data-value="agree" data-qnum='{{qnum}}'>
                     <label for="ag{{qnum}}">
                         <picture>
                             <source srcset='<?php echo base_url()?>{{agree_img}}' type="image/svg+xml">
@@ -134,7 +136,7 @@
                         <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="agreeRadio" >
                     </label>
                 </div>
-                <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
+                <div class="scale-div col-lg-3 col-xs-6" data-value="disagree" data-qnum='{{qnum}}'>
                     <label for="dis{{qnum}}">
                         <picture>
                             <source srcset='<?php echo base_url()?>{{disagree_img}}' type="image/svg+xml">
@@ -146,7 +148,7 @@
                         <div class="card-body card-height text-color p-3">
                             <p>{{disagree_desc}}</p>
                         </div>
-                        <input type="radio" name="rq{{qnum}}" value="agree" id="dis{{qnum}}" class="disagreeRadio">
+                        <input type="radio" name="rq{{qnum}}" value="disagree" id="dis{{qnum}}" class="disagreeRadio">
                     </label>
                 </div>
             </div>
