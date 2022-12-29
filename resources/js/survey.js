@@ -54,9 +54,12 @@ $(function () {
 			document.getElementById("prevBtn").style.display = "inline";
 		}
 		if (n == x.length - 1) {
-			document.getElementById("nextBtn").innerHTML = "Submit";
+			// document.getElementById("nextBtn").innerHTML = "Submit";
+			document.getElementById("nextBtn").style.display = "none";
+			document.getElementById("submitBtn").style.display = "inline";
 		} else {
-			document.getElementById("nextBtn").innerHTML = "Next";
+			document.getElementById("nextBtn").style.display = "inline";
+			document.getElementById("submitBtn").style.display = "none";
 		}
 		// ... and run a function that displays the correct step indicator:
 		fixStepIndicator(n);
@@ -72,11 +75,13 @@ $(function () {
 		// Increase or decrease the current tab by 1:
 		currentTab = currentTab + n;
 		// if you have reached the end of the form... :
-		// if (currentTab >= x.length) {
-		// 	//...the form gets submitted:
-		// 	document.getElementById("regForm").submit();
-		// 	return false;
-		// }
+
+		if (currentTab >= x.length) {
+			//...the form gets submitted:
+			//document.getElementById("regForm").submit();			
+			return false;
+		}
+
 		// Otherwise, display the correct tab:
 		showTab(currentTab);
 	}
@@ -127,15 +132,32 @@ $(function () {
 		nextPrev(-1);
 	});
 	$("#nextBtn").click(function () {
-		if ($(".agreeRadio").is(":checked") || $(".disagreeRadio").is(":checked")) {
-			nextPrev(1);
-			$(".agreeRadio").prop("checked", false);
-			$(".disagreeRadio").prop("checked", false);
-		} else {
-			$("#exampleModal").modal("show");
-		}
+		nextPrev(1);
 	});
 
+	$("#submitBtn").click(function () {
+		var url = $("#regForm").attr("action");
+		var data = $("#regForm").serialize();		
+		$.ajax({
+			type:'ajax',
+			method: 'post',
+			url: url,
+			data: data,
+			async: false,
+			dataType: 'json',
+			success: function(response){
+				if(response.status === true){		
+					// window.location.href = "/page/survey_result/";
+					alert(response.data);
+				}else{
+					alert(response.error);
+				}
+			},
+			error: function(response){
+				alert(response.error);
+			}
+		});
+	});
 	const closeModal = (e) => {
 		$("#exampleModal").modal("hide");
 	};

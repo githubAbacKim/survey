@@ -59,6 +59,9 @@
     .step.finish {
         background-color: #04AA6D;
     }
+    #submitBtn{
+        display: none;
+    }
 </style>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -90,7 +93,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6 col-xs-5 header-text-container">
-            <p class="header-text mt-3 text-color">문제의 상황 설명과 선택지의 근거를 바탕으로 선택해주세요. 총 9 문항입니다.</p>
+            <p class="header-text p-3 text-color">문제의 상황 설명과 선택지의 근거를 바탕으로 선택해주세요. 총 9 문항입니다.</p>
         </div>
     </div>
 
@@ -106,6 +109,7 @@
         <div class="col-12 col-xl-4 next-page-indicator text-center mt-3">
             <button type="button" id="prevBtn">Previous</button>
             <button type="button" id="nextBtn">Next</button>
+            <button type="button" id="submitBtn">Submit</button>
         </div>
     </div>
 
@@ -118,8 +122,8 @@
                 <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
                     <label for="ag{{qnum}}">
                         <picture>
-                            <source srcset='./../{{agree_img}}' type="image/svg+xml">
-                            <img class="img-fluid" src='./../{{agree_img}}' alt="agree" id="answer" />
+                            <source srcset='<?php echo base_url()?>{{agree_img}}' type="image/svg+xml">
+                            <img class="img-fluid" src='<?php echo base_url()?>{{agree_img}}' alt="agree" id="answer" />
                         </picture>
                         <div class="card-title-t text-center p-2 text-color">
                             <h5>{{agree_title}}</h5>
@@ -127,14 +131,14 @@
                         <div class="card-body card-height text-color p-3">
                             <p>{{agree_desc}}</p>
                         </div>
-                        <input type="radio" name="rq{{qnum}}" id="ag{{qnum}}" class="agreeRadio">
+                        <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="agreeRadio" >
                     </label>
                 </div>
                 <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
                     <label for="dis{{qnum}}">
                         <picture>
-                            <source srcset='./../{{disagree_img}}' type="image/svg+xml">
-                            <img class="img-fluid" src='./../{{disagree_img}}' alt="disagree" id="answer" />
+                            <source srcset='<?php echo base_url()?>{{disagree_img}}' type="image/svg+xml">
+                            <img class="img-fluid" src='<?php echo base_url()?>{{disagree_img}}' alt="disagree" id="answer" />
                         </picture>
                         <div class="card-title-t text-center p-2 text-color">
                             <h5>{{disagree_title}}</h5>
@@ -142,7 +146,7 @@
                         <div class="card-body card-height text-color p-3">
                             <p>{{disagree_desc}}</p>
                         </div>
-                        <input type="radio" name="rq{{qnum}}" id="dis{{qnum}}" class="disagreeRadio">
+                        <input type="radio" name="rq{{qnum}}" value="agree" id="dis{{qnum}}" class="disagreeRadio">
                     </label>
                 </div>
             </div>
@@ -150,10 +154,10 @@
     </template>
 
     <div class="row mt-5">
-        <form action="<?php echo base_url('page/survey_answer');?>" method="POST" id="regForm">
+        <form action="<?php echo base_url('page/survey_answers');?>" method="POST" id="regForm">
             <div id="slideCont">
             </div>
         </form>
     </div>
 </div>
-<script src="./../resources/js/survey.js"></script>
+<script src="<?php echo base_url('resources/js/survey.js')?>"></script>

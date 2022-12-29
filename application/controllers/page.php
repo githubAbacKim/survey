@@ -28,6 +28,8 @@ class Page extends CI_Controller
 		$this->load->view('header', $data);
 		$this->load->view('index', $data);
 		$this->load->view('footer', $data);
+
+		echo $_SERVER['HTTP_HOST'];
 	}
 
 	public function survey_page()
@@ -105,8 +107,13 @@ class Page extends CI_Controller
 		return $randomString;
 	}
 
+	public function baseurl(){
+		$data['url'] = base_url();
+		echo json_encode($data);
+	}
+
 	// insert functions
-	
+
 	public function register_participants()
 	{
 		$this->form_validation->set_rules('gender', '성별', 'required');
@@ -155,9 +162,10 @@ class Page extends CI_Controller
 				"classification" => $classification,
 				"regional_scale" => set_value('regional_scale')
 			);
-			
-			$add = $this->survey_model->insert('participants', $data,true);
-			if ($add === true) {
+
+			$return = true;
+			$add = $this->survey_model->insert('participants', $data,$return);
+			if ($add[0] === true) {
 				$msg['status'] = true;
 				// set session values id, inserted data
 				$this->session->set_userdata('participant_id', $add[1]);
@@ -171,18 +179,47 @@ class Page extends CI_Controller
 
 	public function survey_answers()
 	{
-		for ($i=1; $i <= 9; $i++) { 
-			echo $i.'<br>';
-			$this->form_validation->set_rules('rq'.$i, 'Question #'.$i, 'required');
+		for ($i=1; $i <= 9; $i++) {
+			$name = 'rq'.$i;
+			$this->form_validation->set_rules($name, 'Question #'.$i, 'required');
 		}
 
 		if ($this->form_validation->run() == FALSE) {
 			$msg['error'] = validation_errors();
 			$msg['status'] = false;
 		} else {
-			
+			$id = $this->session->userdata('participant_id');
+			// $data = array(
+			// 	array($id,set_value('rq1'),'1'),
+			// 	array($id,set_value('rq2'),'2'),
+			// 	array($id,set_value('rq3'),'3'),
+			// 	array($id,set_value('rq4'),'4'),
+			// 	array($id,set_value('rq5'),'5'),
+			// 	array($id,set_value('rq6'),'6'),
+			// 	array($id,set_value('rq7'),'7'),
+			// 	array($id,set_value('rq8'),'8'),
+			// 	array($id,set_value('rq9'),'9')
+			// );
+			$data = array(
+				set_value('rq1'),set_value('rq2'),set_value('rq3'),set_value('rq4'),set_value('rq5'),set_value('rq6'),
+				set_value('rq7'),set_value('rq8'),set_value('rq9')
+			);
+			$msg['data'] = set_value('rq1');
 		}
+		echo json_encode($msg);
+	}
 
+	public function valsession(){
+		if($this->session->userdata('participant_id') !== null || $this->session->has_userdata('participant_id')){
+			$data['status'] = true;
+		}else{
+			$data['status'] = false;
+		}
+		echo json_encode($data);
+	}
+
+	public function clearSession(){
+		$this->session->sess_destroy();
 	}
 
 	public function test(){

@@ -1,5 +1,21 @@
 $(function () {
-	
+	function validatesession() {
+		var tmp = null;
+		$.ajax({
+			url: "/page/valsession/",
+			async: false,
+			dataType: "json",
+			success: function (results) {
+				$.each(results, function (i, result) {
+					tmp = results.status;
+				});
+			},
+			error: function () {
+				console.log("error");
+			},
+		});
+		return tmp;
+	}
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -64,72 +80,30 @@ $(function () {
 
 	$("#submitform").on("click", function () {
 		var url = $("#startForm").attr("action");
-		var data = $("#startForm").serialize();				
-		$.ajax({
-			type:'ajax',
-			method: 'post',
-			url: url,
-			data: data,
-			async: false,
-			dataType: 'json',
-			success: function(response){
-				if(response.status === true){
-					alert("Your session is now started!");
-				}else{
+		var data = $("#startForm").serialize();		
+		if(validatesession() === false){
+			$.ajax({
+				type:'ajax',
+				method: 'post',
+				url: url,
+				data: data,
+				async: false,
+				dataType: 'json',
+				success: function(response){
+					if(response.status === true){
+						alert("Your session is now started!");
+						window.location.href = "/page/survey_page/";
+					}else{
+						alert(response.error);
+					}
+				},
+				error: function(response){
 					alert(response.error);
 				}
-			},
-			error: function(response){
-				alert(response.error);
-			}
-		});
+			});
+		}else{
+			window.location.href = "/page/survey_page/";
+		}		
+		
 	});
-
-	function getDataTopage() {
-		/* var gender = document.getElementById("gender");
-		var value = gender.value;
-		var gendertext = gender.options[gender.selectedIndex].text;
-
-		if (gendertext == "select") {
-			alert("please select gender");
-		} else {
-			alert("gender selected");
-		} */
-		/* let form = document.querySelector("#post");
-		let data = new FormData(form);
-
-		for (let entry of data) {
-			console.log(entry);
-		}
-
-		for (let [key, value] of data) {
-			console.log(key);
-			console.log(value);
-		}0 */
-
-		document.addEventListener("submit", function (event) {
-			event.preventDefault();
-
-			fetch("https://jsonplaceholder.typicode.com/posts	", {
-				method: "POST",
-				body: JSON.stringify(Object.fromEntries(new FormData(event.target))),
-				headers: {
-					"Content-type": "application/json; charset=UTF-8",
-				},
-			})
-				.then(function (response) {
-					if (response.ok) {
-						return response.json();
-					}
-					return Promise.reject(response);
-				})
-				.then(function (data) {
-					console.log(data);
-				})
-				.catch(function (error) {
-					console.warn(error);
-				});
-		});
-	}
-	
 });
