@@ -37,57 +37,67 @@
             <div class="mt-2 p-2 bd-highlight">
                 <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('page/') ?>" role="button">다시하기</a>
             </div>
-        </div>page
+        </div>
     </div>
     <!-- end header -->
     <div class="row">
-        <div class="col-lg-8 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-3 gap-3">
-            <div class="p-2 bd-highlight" id="start-button">
-                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" href="#" role="button">조회</a>
+        <form action="<?php echo base_url('/page/lookupValstat')?>" method="POST" id="valForm">
+            <div class="col-lg-8 offset-lg-3 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight gap-3">            
+                <div class="col-xs-12 p-2 bd-highlight" id="start-button">
+                    <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="submitBtn">조회</a>
+                </div>
+                <div class="col-auto mt-2">
+                    <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                    <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                    <select id="highschool" class="form-select form-select-lg bg-color border-button">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <select id="college" class="form-select form-select-lg bg-color border-button">
+                        <option value="인문사회">인문사회</option>
+                        <option value="자연 | 공학">자연 | 공학</option>
+                        <option value="예체능">예체능</option>
+                    </select>
+                    <select id="public" class="form-select form-select-lg bg-color border-button">
+                        <option value="인문사회">일반</option>
+                    </select>
+                </div>
+                <div class="col-auto mt-2">
+                    <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                    <select id="school_level" class="form-select form-select-lg bg-color border-button">
+                        <option value="초등학교">초등학생</option>
+                        <option value="중학교">중학생</option>
+                        <option value="고등학교">고등학생</option>
+                        <option value="대학">대학생</option>
+                        <option value="일반인">일반인</option>
+                    </select>
+                </div>
+                <div class="col-auto mt-2">
+                    <label for="form-select" class="select-label text-label-drop-down">성별</label>
+                    <select id="gender" class="form-select form-select-lg bg-color border-button">
+                        <option value="남성">남성
+                            <hr class="dropdown-divider">
+                        </option>
+                        <option value="여성">여성</option>
+                    </select>
+                </div>
+            </div>        
+            <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
+                <div class="text-center">
+                    <p>
+                        <input class="form-check-input checkbox text-color" type="checkbox" value="agree" id="confirm_agree"> 내가 선택한 문항
+                    </p>
+                </div>
             </div>
-            <div class="col-auto mt-2">
-                <label for="form-select" class="select-label text-label-drop-down">학교급</label>
-                <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <select id="highschool" class="form-select form-select-lg bg-color border-button">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <select id="college" class="form-select form-select-lg bg-color border-button">
-                    <option value="인문사회">인문사회</option>
-                    <option value="자연 | 공학">자연 | 공학</option>
-                    <option value="예체능">예체능</option>
-                </select>
-                <select id="public" class="form-select form-select-lg bg-color border-button">
-                    <option value="인문사회">일반</option>
-                </select>
-            </div>
-            <div class="col-auto mt-2">
-                <label for="form-select" class="select-label text-label-drop-down">학교급</label>
-                <select id="school_level" class="form-select form-select-lg bg-color border-button">
-                    <option value="초등학교">초등학생</option>
-                    <option value="중학교">중학생</option>
-                    <option value="고등학교">고등학생</option>
-                    <option value="대학">대학생</option>
-                    <option value="일반인">일반인</option>
-                </select>
-            </div>
-            <div class="col-auto mt-2">
-                <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                <select id="gender" class="form-select form-select-lg bg-color border-button">
-                    <option value="남성">남성
-                        <hr class="dropdown-divider">
-                    </option>
-                    <option value="여성">여성</option>
-                </select>
-            </div>
+        </form>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
             <div class="text-center">
