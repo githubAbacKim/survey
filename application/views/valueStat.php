@@ -40,33 +40,34 @@
     <!-- header -->
     <div class="row">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-1">
-            <div class="col-auto mt-3"><a href="<?php echo base_url('page/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a></div>
+            <div class="col-auto mt-3"><a href="<?php echo site_url('page/') ?>" class="navbar-brand logo">AI 도시를
+                    부탁해!</a></div>
         </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-1">
             <div class="p-2 bd-highlight">
                 <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
             <div class="mt-2 p-2 bd-highlight">
-                <a class="btn btn-lg p-2 text-color" href="<?php echo base_url('page/') ?>" role="button">다시하기</a>
+                <a class="btn btn-lg p-2 text-color" href="<?php echo site_url('page/') ?>" role="button">다시하기</a>
             </div>
         </div>
     </div>
     <!-- end header -->
     <div class="row">
-        <form action="<?php echo base_url('/page/lookupValstat')?>" method="POST" id="valForm">
-        <div class="col-lg-8 offset-lg-3 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight gap-3">            
-            <div class="col-xs-12 p-2 bd-highlight" id="start-button">
-                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="submitBtn">조회</a>
+        <div class="col-lg-8 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-3 gap-3">
+            <div class="p-2 bd-highlight" id="start-button">
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" href="#" role="button">조회</a>
             </div>
             <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                 <select id="elem" class="form-select form-select-lg bg-color border-button gap-3">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
+                  <option value="">고르다</option>
+                  <option value="1">1학년</option>
+                  <option value="2">2학년</option>
+                  <option value="3">3학년</option>
+                  <option value="4">4학년</option>
+                  <option value="5">5학년</option>
+                  <option value="6">6학년</option>
                 </select>
                 <select id="highschool" class="form-select form-select-lg bg-color border-button">
                     <option value="1">1</option>
@@ -101,15 +102,16 @@
                     <option value="여성">여성</option>
                 </select>
             </div>
-        </div>        
+        </div>
         <div class="col-lg-7 col-xs-12 p-3 d-flex flex-row-reverse bd-highlight offset-lg-4">
             <div class="text-center">
                 <p>
-                    <input class="form-check-input checkbox text-color" type="checkbox" value="agree" id="confirm_agree"> 내가 선택한 문항
+                    <input class="form-check-input checkbox text-color" type="checkbox" value="agree"
+                        id="confirm_agree">
+                    내가 선택한 문항
                 </p>
             </div>
         </div>
-        </form>
     </div>
 
     <div class="row p-5 justify-content-evenly">
@@ -122,7 +124,7 @@
 
         <div class="col-lg-5 col-xs-12 d-grid gap-3">
             <div class="col-lg-12 profile_head p-3 text-color">
-                <div class="col-lg-4 col-xs-4 text-center offset-lg-4 shadow p-3 titleBtn">STH</div>
+                <div class="col-lg-4 text-center offset-4 shadow p-3 titleBtn">STH</div>
             </div>
             <div class="p-3 scale-contval">
                 <div class="col-12 position-relative">

@@ -36,26 +36,26 @@
 <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-2">
-            <div class="col-auto mt-2"><a href="<?php echo base_url('page/') ?>" class="navbar-brand logo">AI 도시를
+            <div class="col-auto mt-2"><a href="<?php echo site_url('page/') ?>" class="navbar-brand logo">AI 도시를
                     부탁해!</a></div>
         </div>
         <div class="navlist">
             <ul class="nav">
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo base_url('page/survey_result') ?>" role="button">테스트</a>
+                        href="<?php echo site_url('page/survey_result') ?>" role="button">테스트</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo base_url('page/questions') ?>" role="button">문항 보기</a>
+                        href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2"
-                        href="<?php echo base_url('page/valueStatistic') ?>" role="button">가치 통계</a>
+                        href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2"
-                        href="<?php echo base_url('page/questionStatistics') ?>" role="button">문항 통계</a>
+                        href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
                 </li>
             </ul>
         </div>
@@ -72,7 +72,7 @@
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
         </p>
     </div>
-    <form id="startForm" action="<?php echo base_url('page/register_participants') ?>" method="POST">
+    <form id="startForm" action="<?php echo site_url('page/register_participants') ?>" method="POST">
         <div class="container-fluid text-center startCont">
             <img src="<?php echo base_url("resources/images/start-01.svg") ?>" class="startbut mt-3" id="submitform"
                 alt="sumbit" data-toggle="modal">
@@ -114,12 +114,12 @@
                         <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                         <select id="elem" name="elem" class="form-select form-select-lg bg-color border-button gap-3">
                             <option value="">고르다</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
+                            <option value="1">1학년</option>
+                            <option value="2">2학년</option>
+                            <option value="3">3학년</option>
+                            <option value="4">4학년</option>
+                            <option value="5">5학년</option>
+                            <option value="6">6학년</option>
                         </select>
                         <select id="highschool" name="highschool"
                             class="form-select form-select-lg bg-color border-button">

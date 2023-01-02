@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
+// $config['base_url'] = 'http://fx4.070.mywebsitetransfer.com/survey-master/';
+$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'];
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +36,7 @@ $config['base_url'] = "http://".$_SERVER['HTTP_HOST'];
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
-
+$config['index_page'] = 'index.php';
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
@@ -103,7 +103,6 @@ $config['charset'] = 'UTF-8';
 |
 */
 $config['enable_hooks'] = FALSE;
-
 /*
 |--------------------------------------------------------------------------
 | Class Extension Prefix
@@ -117,7 +116,6 @@ $config['enable_hooks'] = FALSE;
 |
 */
 $config['subclass_prefix'] = 'MY_';
-
 /*
 |--------------------------------------------------------------------------
 | Composer auto-loading
@@ -139,7 +137,6 @@ $config['subclass_prefix'] = 'MY_';
 |	autoloading (application/config/autoload.php)
 */
 $config['composer_autoload'] = FALSE;
-
 /*
 |--------------------------------------------------------------------------
 | Allowed URL Characters
@@ -161,7 +158,6 @@ $config['composer_autoload'] = FALSE;
 |
 */
 $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
-
 /*
 |--------------------------------------------------------------------------
 | Enable Query Strings

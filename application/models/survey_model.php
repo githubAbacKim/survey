@@ -1,19 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Survey_Model extends CI_Model {
-	function __constructor(){
-		parent::__construct();
-		$this->load->dbforge();
-	}
 
 	function select($table,$like=false,$where=false){
 		if($like != false){
 			$this->db->like($like);
 		}
-		
+
 		if ($where != false) {
 			$this->db->where($where);
-		}		
+		}
 
 		$query = $this->db->get($table);
 
