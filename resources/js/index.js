@@ -78,6 +78,20 @@ $(function () {
 		}
 	});
 
+	function modal(title,message,type){
+		$("#alertModal").modal("show");
+		$('#alertModal').find('.modal-title').text(title);
+		if(type === "success") 
+		{
+			$('.alert-success').html(message).fadeIn();
+			$('.alert-danger').hide();
+		} else
+		{
+			$('.alert-success').hide();
+			$('.alert-danger').html(message).fadeIn();
+		}
+	}
+
 	$("#submitform").on("click", function () {
 		var url = $("#startForm").attr("action");
 		var data = $("#startForm").serialize();		
@@ -90,15 +104,22 @@ $(function () {
 				async: false,
 				dataType: 'json',
 				success: function(response){
-					if(response.status === true){
-						alert("Your session is now started!");
-						window.location.href = "/page/survey_page/";
+					if(response.status === true){		
+						window.location.href = "/page/survey_page/";						
 					}else{
-						alert(response.error);
+						console.log("error adding");
+						var title = '이런!!!';
+						var message = response.error;
+						var type = 'error';
+						modal(title,message,type);
 					}
 				},
 				error: function(response){
-					alert(response.error);
+					console.log("error query");
+					var title = '이런!!!';
+					var message = response.error;
+					var type = 'error';
+					modal(title,message,type);
 				}
 			});
 		}else{
@@ -106,4 +127,16 @@ $(function () {
 		}		
 		
 	});
+
+	$("#goresult").click(function () {
+		if(validatesession() === false){
+			var title = '이런!!!';
+			var message = "설문 조사를 시작하지 않았습니다!";
+			var type = 'error';
+			modal(title,message,type);
+		}else{
+			window.location.href = "/page/survey_result";
+		}
+	});
+
 });

@@ -8,9 +8,40 @@
         width: 642.2px;
         height: 172.19px;
     }
+    .cancelbtn, .redobtn {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
 
-    /*
-    div {
+    button:hover {
+    opacity:1;
+    }
+
+    /* Float cancel and delete buttons and add an equal width */
+    .cancelbtn, .redobtn {
+    float: left;
+    width: 45%;
+    }
+
+    /* Add a color to the cancel button */
+    .cancelbtn {
+    /* background-color: #ccc; */
+    border: solid 1px #ccc;
+    color: black;
+    }
+
+    /* Add a color to the delete button */
+    .redobtn {
+    /* background-color: #f44336; */
+    border: solid 1px #ccc;
+    color: black;
+    }
+    /* div {
         border: 1px solid;
     } */
 </style>
@@ -25,7 +56,7 @@
                 <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2">처음으로</a>
             </div>
             <div class="p-2 bd-highlight mt-3">
-                <a class="text-color p-2 m-2" href="<?php echo site_url('page/index') ?>" role="button">다시하기</a>
+                <a class="text-color p-2 m-2" id="redo" role="button">다시하기</a>
             </div>
             <div class="p-2 bd-highlight mt-3">
                 <a class="text-color p-2 m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항보기</a>
@@ -35,71 +66,102 @@
     <!-- end header -->
 
     <div class="row p-3 justify-content-evenly">
-        <div class="col-lg-5 col-xs-12 p-3 gap-3 rounded-3  text-center">
+        <template id="profileTemp">
             <div class="profile_head p-3  gx-2 text-color">
                 <p>당신의 도시계획 유형은</p>
-                <h4 class="fw-bold">사회중시_H형 시장님</h4>
-                <h4 class="fw-bold">SSH</h4>
+                <h4 class="fw-bold">{{type_mayor}}</h4>
+                <h4 class="fw-bold">{{type}}</h4>
             </div>
 
             <div class="profile_image p-3 gx-2">
                 <picture>
-                    <source srcset="<?php echo base_url('resources/images/personality/ssh.svg') ?>"
-                        type="image/svg+xml">
-                    <img src="<?php echo base_url('resources/personality/personality/images/ssh.svg') ?>"
-                        class="img-fluid" alt="...">
-
+                    <source srcset="<?php echo base_url()?>{{profile}}" type="image/svg+xml">
+                    <img src="<?php echo base_url()?>{{profile}}" class="img-fluid" alt="...">
                 </picture>
 
                 <div class="col-lg-12  text-color">
-                    <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2"
-                        href="<?php echo site_url('page/questionStatistics') ?>" role="button">테스트</a>
+                    <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">전체 통계보기</a>
                 </div>
-
             </div>
+        </template>   
+        <div class="col-lg-5 col-xs-12 p-3 gap-3 rounded-3  text-center" id="prof_cont">            
         </div>
-        <div class="col-lg-5 col-xs-12 p-3 d-grid gap-3">
+
+        <template id="scaleTemp">
             <div class="scale-div col-12 gx-2 position-relative">
                 <picture class="picture-container d-flex">
-                    <source srcset="<?php echo base_url('resources/images/scale/scale1.svg') ?>" type="image/svg+xml">
-                    <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
-                    <div class="a-sr-caption-left w-auto">
-                        <p class="lg-scale-sr-text a sr-rotate-left" id="lg-p">인간존엄성</p>
+                    <source srcset="<?php echo base_url();?>{{scalesh}}" type="image/svg+xml">
+                    <img src="<?php echo base_url();?>{{scalesh}}" class="img-fluid" alt="...">
+                    <div class="{{labelsh1}} {{rotate1}}" id="sh1">
+                        <p class="scalelabel">인간존엄성</p>
                     </div>
-                    <div class="a-sr-caption-right w-auto">
-                        <p class="sm-scale-sr-text b sr-rotate-left" id="sm-p">사회공공성</p>
+                    <div class="{{labelsh2}} {{rotate1}}">
+                        <p class="scalelabel" id="sh2">사회공공성</p>
                     </div>
                 </picture>
             </div>
             <div class="scale-div col-12 gx-2  position-relative">
                 <picture class="picture-container d-flex">
-                    <!--   <div class="col-lg-2"></div> -->
-                    <source srcset="<?php echo base_url('resources/images/scale/scale2.svg') ?>" type="image/svg+xml">
-                    <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
-                    <div class="b-sr-caption-left w-auto">
-                        <p class="sm-scale-sr-text c sr-rotate-right" id="sm-p">기술합목적성</p>
+                    <source srcset="<?php echo base_url()?>{{scalets}}" type="image/svg+xml">
+                    <img src="<?php echo base_url()?>{{scalets}}" class="img-fluid" alt="...">
+                    <div class="{{labelts1}} {{rotate2}}">
+                        <p class="scalelabel" id="ts1">기술합목적성</p>
                     </div>
-                    <div class="b-sr-caption-right w-auto">
-                        <p class="lg-scale-sr-text d sr-rotate-right" id="lg-p">사회공공성</p>
+                    <div class="{{labelts2}} {{rotate2}}">
+                        <p class="scalelabel" id="ts2">사회공공성</p>
                     </div>
-
                 </picture>
             </div>
-            <div class="scale-div col-12 gx-2  position-relative">
+            <div class="scale-div col-12 gx-2 position-relative">
                 <picture class="picture-container d-flex">
-                    <!--  <div class="col-lg-2"></div> -->
-                    <source srcset="<?php echo base_url('resources/images/scale/scale3.svg') ?>" type="image/svg+xml">
-                    <img src="<?php echo base_url('resources/images/scale1.svg') ?>" class="img-fluid" alt="...">
-                    <div class="c-sr-caption-left w-auto">
-                        <p class="lg-scale-sr-text e sr-rotate-left" id="lg-p">기술합목적성</p>
+                    <source srcset="<?php echo base_url()?>{{scaleth}}" type="image/svg+xml">
+                    <img src="<?php echo base_url()?>{{scaleth}}" class="img-fluid" alt="...">
+                    <div class="{{labelth1}} {{rotate3}}">
+                        <p class="scalelabel" id="th1">기술합목적성</p>
                     </div>
-                    <div class="c-sr-caption-right w-auto">
-                        <p class="sm-scale-sr-text f sr-rotate-left" id="sm-p">인간존엄성</p>
+                    <div class="{{labelth2}} {{rotate3}}">
+                        <p class="scalelabel" id="th2">인간존엄성</p>
                     </div>
                 </picture>
-            </div>
+            </div> 
+        </template>   
+        <div class="col-lg-5 col-xs-12 p-3 d-grid gap-3" id="scale_cont">                       
         </div>
     </div>
 
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert alert-secondary text-center" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+            </div>
+            <div class="modal-footer justify-content-md-center gap-2">
+                <button type="button" id="initiateRedo" class="redobtn">확인</button>
+                <button type="button" class="cancelbtn" data-bs-dismiss="modal">취소</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Error!!!</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" id="btnclose">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                <div class="alert alert-success" style="display:none" role="alert">A simple success alert—check it out!</div>
+                <div class="alert alert-danger" style="display:none" role="alert">A simple danger alert—check it out!</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnclose">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="<?php echo base_url('resources/js/sresult.js') ?>" type="module"></script>

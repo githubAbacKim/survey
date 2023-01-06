@@ -2,10 +2,10 @@ $(function () {
 	var listContainer = $("#questCont");
 	var paginationcont = $("#qstat-template").html();
 
-	function getData() {
+	function getData(url) {
 		var tmp = null;
 		$.ajax({
-			url: "/page/fetchquestion",
+			url:url,
 			async: false,
 			dataType: "json",
 			success: function (results) {
@@ -22,12 +22,12 @@ $(function () {
 
 	function displayQuestion(results) {
 		$.each(results, function (i, result) {
-			console.log(result.question_num);
+			//console.log(result.question_num);
 			var disagree_div = "disagree" + result.question_num;
 			var agree_div = "agree" + result.question_num;
 			var progAgree = "agreeprog" + result.question_num;
 			var progDisagree = "disagreeprog" + result.question_num;
-			console.log(agree_div);
+			//console.log(agree_div);
 			var data = {
 				qnum: result.question_num,
 				question: result.question,
@@ -44,18 +44,38 @@ $(function () {
 				agreeprog: progAgree,
 				disagreeprog: progDisagree,
 			};
-			var tagree = 30;
-			var tdisagree = 90;
-
-			$("#" + progAgree).css("width", "20%");
-			$("#" + progDisagree).css("width", "20%");
 
 			listContainer.append(Mustache.render(paginationcont, data));
 		});
 	}
 
-	displayQuestion(getData());
+	function searchResult(question,$stat){
+		let num = 1;
+		$.each(question, function (i, result) {
+			var progAgree = "agreeprog" + result.question_num;
+			var progDisagree = "disagreeprog" + result.question_num;
 
+			$.each($stat, function (i, data) {
+				if(result.question_num === i)
+				{
+					var tagree = data[0]*100 + "%";
+					var tdisagree = data[1]*100 + "%";
+					console.log(tagree);
+					console.log(tdisagree);
+
+					$("#" + progAgree).css("width", tagree);
+					$("#" + progDisagree).css("width", tdisagree);
+				}
+			});
+			num++;
+		});
+	}
+	
+	let displayUrl = '/page/fetchquestion';
+	let resultUrl = '/page/fetchDefaultData';
+	displayQuestion(getData(displayUrl));	
+	let defaultdata = getData(resultUrl).data;
+	searchResult(getData(displayUrl),defaultdata);
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -67,12 +87,12 @@ $(function () {
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
-		} else if (school === "중학교") {
+		} else if (school === "중학생") {
 			elemlevel.show();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
-		} else if (school === "고등학교") {
+		} else if (school === "고등학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
@@ -95,6 +115,19 @@ $(function () {
 		}
 	}
 
+	function modal(title,message,type){
+		$("#alertModal").modal("show");
+		$('#alertModal').find('.modal-title').text(title);
+		if(type === "success") 
+		{
+			$('.alert-success').html(message).fadeIn();
+			$('.alert-danger').hide();
+		} else
+		{
+			$('.alert-success').hide();
+			$('.alert-danger').html(message).fadeIn();
+		}
+	}
 	var data = document.getElementById("school_level").value;
 	getShowList(data);
 
@@ -103,51 +136,34 @@ $(function () {
 		getShowList(data);
 	});
 
-	//if check box is checked add class to start image to enable start
-	$("#confirm_agree").click(function () {
-		if ($(this).is(":checked")) {
-		}
-	});
-
-	const alertStatus = (e) => {
-		if ($("#confirm_agree").is(":checked")) {
-			//check if check box is check
-			if (
-				$("#gender").val() == "선택" ||
-				$("#classification").val() == "선택" ||
-				$("#schoollevel").val() == "선택"
-			) {
-				//check if gender is selected
-				$("#exampleModal").modal("show");
-			} else {
+	$("#search").on("click", function () {
+		var url = "/page/fetchDataSearch";
+		var data = $("#searchform").serialize();
+		$.ajax({
+			type:'ajax',
+			method: 'post',
+			url: url,
+			data: data,
+			async: false,
+			dataType: 'json',
+			success: function(response){
+				if(response.status === true){	
+					searchResult(getData(displayUrl),response.data)
+				}else{
+					console.log("no data");
+					var title = '앗 미안 해요!!!';
+					var message = response.error;
+					var type = 'error';
+					modal(title,message,type);
+				}
+			},
+			error: function(response){
+				console.log("error query");
+				var title = '앗 미안 해요!!!';
+				var message = response.error;
+				var type = 'error query';
+				modal(title,message,type);
 			}
-
-			$("#exampleModal").modal("hide");
-		} else {
-			$("#exampleModal").modal("show");
-		}
-	};
-
-	const closeModal = (e) => {
-		$("#exampleModal").modal("hide");
-	};
-
-	//redo select options
-	const redo = (e) => {
-		$("#gender").val("선택");
-		$("#classification").val("선택");
-		$("#schoollevel").val("선택");
-	};
-
-	$(document).on("click", "#start-button", alertStatus);
-	$(document).on("click", "#btnclose", closeModal);
-	$(document).on("click", "#redo", redo);
-	
-});
-
-var agreeWidth = 60;
-var disagreeWidth = 40;
-$(document).ready(function () {
-	$("#agreeprog").width(agreeWidth + "%");
-	$("#disagreeprog").width(disagreeWidth + "%");
+		});			
+	});
 });

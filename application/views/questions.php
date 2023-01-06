@@ -29,7 +29,7 @@
             <!-- question div -->
             <div class="col-lg-12 col-xs-12 d-flex bd-highlight">
                 <div class="col-lg-6 question-stat-card p-4 " data-value="agree" data-qnum="1">
-                    <div class="text-center text-color">
+                    <div class="text-left text-color">
                         <picture>
                             <img class="img-fluid" src='<?php echo base_url();?>{{agree_img}}' alt="agree" id="answer">
                         </picture>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class=" col-lg-6 question-stat-card p-4" data-value="disagree" data-qnum="1">
-                    <div class="text-center text-color">
+                    <div class="text-left text-color">
                         <picture>
                             <img class="img-fluid" src='<?php echo base_url();?>{{disagree_img}}' alt="disagree" id="answer">
                         </picture>

@@ -234,10 +234,6 @@ nav{
 
 }
 
-.a-caption-left p,.a-caption-right p,.b-caption-left p,.b-caption-right p,.c-caption-left p,.c-caption-right p{
-  font-size: 10pt;
-  font-weight: bold;
-}
 .scale-text{
   font-size: 8pt !important;
 }
@@ -256,15 +252,15 @@ transform: rotate(-12deg);
   }
 .a-caption-right {
 position: absolute;
-top: 29%;
-left: 88%;
+top: 46%;
+left: 85%;
 transform: translate( -50%, -50% );
 text-align: center;
 }
 .a-caption-left {
 position: absolute;
 top: 46%;
-left: 20%;
+left: 15%;
 transform: translate( -50%, -50% );
 text-align: center;
 }
@@ -301,67 +297,11 @@ transform: translate( -50%, -50% );
 text-align: center;
 }
 
-
-.sm-scale-sr-text{
-  font-size: 12pt !important;
-  color: white;
-}
-.lg-scale-sr-text{
-  color: white;
-  font-size: 12pt !important;
-}
-.a-sr-caption-left p,.a-sr-caption-right p,.b-sr-caption-left p,.b-sr-caption-right p,.c-sr-caption-left p,.c-sr- caption-right p{
-  font-size: 10pt;
+.scalelabel{
+  font-size: 8pt;
   font-weight: bold;
+  color: white;
 }
-
-        .a-sr-caption-left {
-        position: absolute;
-        top: 42%;
-        left: 20%;
-        transform: translate( -50%, -50% );
-        text-align: center;
-        }
-
-        .a-sr-caption-right {
-          position: absolute;
-          top: 27%;
-          left: 88%;
-          transform: translate( -50%, -50% );
-          text-align: center;
-          }
-
-            .b-sr-caption-left {
-          position: absolute;
-          top: 31%;
-          left: 12%;
-          transform: translate( -50%, -50% );
-            text-align: center;
-          }
-    
-        .b-sr-caption-right {
-          position: absolute;
-          top: 47%;
-          left: 80%;
-          transform: translate( -50%, -50% );
-          text-align: center;
-          }
-        .c-sr-caption-left {
-          position: absolute;
-          top: 42%;
-          left: 20%;
-          transform: translate( -50%, -50% );
-          text-align: center;
-          }
-        
-          .c-sr-caption-right {
-            position: absolute;
-            top: 28%;
-            left: 88%;
-            transform: translate( -50%, -50% );
-            text-align: center;
-            }
-      
 
 .scale-contval{
   border:solid 6px #FFD772;
@@ -393,63 +333,87 @@ text-align: center;
   }
  }
 
-@media (min-width: 992px) and (max-width: 1482.98px) { 
-  .sm-scale-sr-text{
-    font-size: 8pt !important;
-    color: white;
+@media (min-width: 480px){ 
+  .leftbig{
+    position: absolute;
+    top: 50% !important;
+    left: 4%;
+    text-align: center;
+    width: 80px;
   }
+
+  .leftsmall{
+    position: absolute;
+    top: 15%;
+    left: 8.5%;
+    text-align: center;
+    width: 60px !important;
+  }
+  .rightbig{
+    position: absolute;
+    top: 50%;
+    left: 76%;
+    text-align: center;    
+    width: 80px !important;
+  }
+  .rightsmall{
+    position: absolute;
+    top: 14%;
+    left: 76%;
+    text-align: center;
+    width: 60px !important;
+  }
+
   .lg-scale-sr-text{
     color: white;
     font-size: 8pt !important;
   }
-  .a-sr-caption-left {
-    position: absolute;
-    top: 42%;
-    left: 20%;
-    transform: translate( -50%, -50% );
-    text-align: center;
-    }
-
-    .a-sr-caption-right {
-      position: absolute;
-      top: 22%;
-      left: 88%;
-      transform: translate( -50%, -50% );
-      text-align: center;
-      }
-
-        .b-sr-caption-left {
-      position: absolute;
-      top: 25%;
-      left: 11%;
-      transform: translate( -50%, -50% );
-        text-align: center;
-      }
-
-    .b-sr-caption-right {
-      position: absolute;
-      top: 39%;
-      left: 80%;
-      transform: translate( -50%, -50% );
-      text-align: center;
-      }
-    .c-sr-caption-left {
-      position: absolute;
-      top: 40%;
-      left: 20%;
-      transform: translate( -50%, -50% );
-      text-align: center;
-      }
-    
-      .c-sr-caption-right {
-        position: absolute;
-        top: 24%;
-        left: 88%;
-        transform: translate( -50%, -50% );
-        text-align: center;
-        }
 
  }
+
+ @media(min-width: 1366px) { 
+  .leftbig{
+    position: absolute;
+    top: 50% !important;
+    left: 6%;
+    text-align: center;
+    width: 80px;
+  }
+  .leftbig2{
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    text-align: center;
+    width: 80px !important;
+  }
+  .leftsmall{
+    position: absolute;
+    top: 14%;
+    left: 9.5%;
+    text-align: center;
+    width: 70px !important;
+  }
+  .rightbig{
+    position: absolute;
+    top: 50%;
+    left: 78%;
+    text-align: center;    
+    width: 80px !important;
+  }
+  .rightsmall{
+    position: absolute;
+    top: 14%;
+    left: 77%;
+    text-align: center;
+    width: 65px !important;
+  }
+
+  .lg-scale-sr-text{
+    color: white;
+    font-size: 8pt !important;
+  }
+
+ } 
 
 @media (min-width: 1480px) and  (max-width: 1618.98px){ 
   .sm-scale-sr-text{

@@ -16,6 +16,23 @@ $(function () {
 		});
 		return tmp;
 	}
+	function validatesession() {
+		var tmp = null;
+		$.ajax({
+			url: "/page/valsession/",
+			async: false,
+			dataType: "json",
+			success: function (results) {
+				$.each(results, function (i, result) {
+					tmp = results.status;
+				});
+			},
+			error: function () {
+				console.log("error");
+			},
+		});
+		return tmp;
+	}
 
 	var listContainer = $("#slideCont");
 	var datatemplate = $("#datatemplate").html();
@@ -86,29 +103,44 @@ $(function () {
 		showTab(currentTab);
 	}
 
+	// function validateForm() {
+	// 	// This function deals with validation of the form fields
+	// 	var x,
+	// 		y,
+	// 		i,
+	// 		valid = true;
+	// 	x = document.getElementsByClassName("tab");
+	// 	y = x[currentTab].getElementsByTagName('input');
+	// 	//y = x[currentTab].document.querySelector('input[type="radio"]:checked')  ;
+	// 	// A loop that checks every input field in the current tab:
+	// 	for (i = 0; i < y.length; i++) {
+	// 		// If a field is empty...
+	// 		if (y[i].value === '') {
+	// 			console.log('invalid')
+	// 			// add an "invalid" class to the field:
+	// 			y[i].className += " invalid";
+	// 			// and set the current valid status to false:
+	// 			valid = false;
+	// 		}
+	// 	}
+	// 	// If the valid status is true, mark the step as finished and valid:
+	// 	if (valid) {
+	// 		document.getElementsByClassName("step")[currentTab].className +=
+	// 			" finish";
+	// 	}
+	// 	return valid; // return the valid status
+	// }
+
 	function validateForm() {
 		// This function deals with validation of the form fields
 		var x,
 			y,
 			i,
 			valid = true;
-		x = document.getElementsByClassName("tab");
-		y = x[currentTab].getElementsByTagName("input");
-		// A loop that checks every input field in the current tab:
-		for (i = 0; i < y.length; i++) {
-			// If a field is empty...
-			if (y[i].value == "") {
-				// add an "invalid" class to the field:
-				y[i].className += " invalid";
-				// and set the current valid status to false:
-				valid = false;
-			}
-		}
-		// If the valid status is true, mark the step as finished and valid:
-		if (valid) {
+		
 			document.getElementsByClassName("step")[currentTab].className +=
 				" finish";
-		}
+	
 		return valid; // return the valid status
 	}
 
@@ -122,62 +154,88 @@ $(function () {
 		//... and adds the "active" class to the current step:
 		x[n].className += " active";
 	}
-
-	console.log(getData());
-	displayData(getData());
-	generateSteps(getData());
-	var currentTab = 0; // Current tab is set to be the first tab (0)
-	showTab(currentTab); // Display the current tab
-	$("#prevBtn").click(function () {
-		nextPrev(-1);
-	});
-	$("#nextBtn").click(function () {
-		nextPrev(1);
-	});
-
-	$("#submitBtn").click(function () {
-		var url = $("#regForm").attr("action");
-		var data = $("#regForm").serialize();		
-		$.ajax({
-			type:'ajax',
-			method: 'post',
-			url: url,
-			data: data,
-			async: false,
-			dataType: 'json',
-			success: function(response){
-				if(response.status === true){		
-					window.location.href = "/page/survey_result/";
-					alert(response.data);
-				}else{
-					alert(response.error);
-				}
-			},
-			error: function(response){
-				alert(response.error);
-			}
+	function modal(title,message,type){
+		$("#alertModal").modal("show");
+		$('#alertModal').find('.modal-title').text(title);
+		if(type === "success") 
+		{
+			$('.alert-success').html(message).fadeIn();
+			$('.alert-danger').hide();
+		} else
+		{
+			$('.alert-success').hide();
+			$('.alert-danger').html(message).fadeIn();
+		}
+	}
+	
+	if(validatesession() === false)
+	{
+		var title = '축하합니다!';
+		var message = '설문조사에 응해주셔서 감사합니다!';
+		var type = 'error';
+		modal(title,message,type);
+		window.setTimeout(function () {
+			window.location.href = "/page/index/";
+		},1000);
+	} else 
+	{
+		displayData(getData());
+		generateSteps(getData());
+		var currentTab = 0; // Current tab is set to be the first tab (0)
+		showTab(currentTab); // Display the current tab
+		$("#prevBtn").click(function () {
+			nextPrev(-1);
 		});
-	});
+		$("#nextBtn").click(function () {
+			nextPrev(1);
+		});
 
-	$(".agreeRadio").click(function () {
-		var value = $(".agreeRadio").value;
-		alert(value);
-	});
-	$(".disagreeRadio").click(function () {
-		var value = $(".disagreeRadio").value;
-		alert(value);
-	});
+		$("#submitBtn").click(function () {
+			var url = $("#regForm").attr("action");
+			var data = $("#regForm").serialize();		
+			$.ajax({
+				type:'ajax',
+				method: 'post',
+				url: url,
+				data: data,
+				async: false,
+				dataType: 'json',
+				success: function(response){
+					if(response.status === true){
+						var title = '축하합니다!';
+						var message = '설문조사에 응해주셔서 감사합니다!';
+						var type = 'success';
+						modal(title,message,type);
+						window.setTimeout(function () {
+							window.location.href = "/page/survey_result/";
+						},1000);
+					}else{
+						var title = '에러 메시지!!!';
+						var message = response.error;
+						var type = 'error';	
+						modal(title,message,type);					
+					}
+				},
+				error: function(response){
+					var title = '에러 메시지!!!';
+					var message = response.error;
+					var type = 'error';	
+					modal(title,message,type);							
+				}
+			});
+		});
 
-	const closeModal = (e) => {
-		$("#exampleModal").modal("hide");
-	};
+		const closeModal = (e) => {
+			$("#exampleModal").modal("hide");
+		};
 
-	//redo select options
-	const redo = (e) => {
-		$("#gender").val("선택");
-		$("#classification").val("선택");
-		$("#schoollevel").val("선택");
-	};
+		//redo select options
+		const redo = (e) => {
+			$("#gender").val("선택");
+			$("#classification").val("선택");
+			$("#schoollevel").val("선택");
+		};
 
-	$(document).on("click", "#btnclose", closeModal);
+		$(document).on("click", "#btnclose", closeModal);
+	}
 });

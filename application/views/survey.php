@@ -42,9 +42,10 @@
     .step {
         height: 15px;
         width: 15px;
-        margin: 0 2px;
+        margin: 0 15px;
         background-color: #bbbbbb;
-        border: none;
+        border: solid 4px #5C1C2C;
+        /* border: none; */
         border-radius: 50%;
         display: inline-block;
         opacity: 0.5;
@@ -57,34 +58,19 @@
 
     /* Mark the steps that are finished and valid: */
     .step.finish {
-        background-color: #04AA6D;
+        background-color: #FFCC4A;
     }
     #submitBtn{
         display: none;
     }
+    button{
+        border:none;
+        background: none;
+    }
+    /* input[type=radio]{
+        opacity: 0;
+    } */
 </style>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Error!!!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnclose">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                답을 선택하세요.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnclose">close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /Modal -->
-
-
 <div class="container-fluid p-0">
     <div class="row">
         <div class="col-lg-2 col-xs-12 offset-2  p-5 text-color">
@@ -92,8 +78,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 col-xs-5 header-text-container">
+        <div class="col-lg-12 col-xs-5 header-text-container">
+            <div class="col-lg-6 offset-lg-2">
             <p class="header-text p-3 text-color">문제의 상황 설명과 선택지의 근거를 바탕으로 선택해주세요. 총 9 문항입니다.</p>
+            </div>
         </div>
     </div>
 
@@ -102,24 +90,23 @@
     </template>
 
     <div class="row">
-        <div class="col-lg-8 col-xs-12">
-            <div class="p-3 progress-indicator">
+        <div class="col-lg-4 offset-lg-2 col-xs-12">
+            <div class="mt-3 progress-indicator">
             </div>
         </div>
-        <div class="col-12 col-xl-4 next-page-indicator text-center mt-3">
-            <button type="button" id="prevBtn">Previous</button>
-            <button type="button" id="nextBtn">Next</button>
-            <button type="button" id="submitBtn">Submit</button>
+        <div class="col-lg-2 offset-lg-2 next-page-indicator text-center mt-3">
+            <button type="button" id="prevBtn"><img src="<?php echo base_url('resources/images/back.svg');?>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> 이전</button>
+            <button type="button" id="nextBtn">다음<img src="<?php echo base_url('resources/images/next.svg');?>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></button>
+            <button type="button" id="submitBtn">제출하다<img src="<?php echo base_url('resources/images/next.svg');?>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""></button>
         </div>
     </div>
-
     <template id="datatemplate">
         <div class="tab col-lg-12">
-            <div class="col-lg-6 offset-2 col-xs-12 text-color">
+            <div class="col-lg-6 offset-lg-3 col-xs-12 text-color">
                 <p>{{question}}</p>
             </div>
-            <div class="col-lg-8 col-xs-12 p-3 gap-3 offset-2 d-flex flex-row bd-highlight">
-                <div class="scale-div col-lg-6" data-value="agree" data-qnum='{{qnum}}'>
+            <div class="col-lg-12 col-xs-12 p-3 gap-3 justify-content-md-center d-flex flex-row bd-highlight">
+                <div class="scale-div col-lg-3 col-xs-6" data-value="agree" data-qnum='{{qnum}}'>
                     <label for="ag{{qnum}}">
                         <picture>
                             <source srcset='<?php echo base_url()?>{{agree_img}}' type="image/svg+xml">
@@ -131,10 +118,10 @@
                         <div class="card-body card-height text-color p-3">
                             <p>{{agree_desc}}</p>
                         </div>
-                        <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="agreeRadio" >
+                        <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="radio" >
                     </label>
                 </div>
-                <div class="scale-div col-lg-6" data-value="disagree" data-qnum='{{qnum}}'>
+                <div class="scale-div col-lg-3 col-xs-6" data-value="disagree" data-qnum='{{qnum}}'>
                     <label for="dis{{qnum}}">
                         <picture>
                             <source srcset='<?php echo base_url()?>{{disagree_img}}' type="image/svg+xml">
@@ -146,13 +133,15 @@
                         <div class="card-body card-height text-color p-3">
                             <p>{{disagree_desc}}</p>
                         </div>
-                        <input type="radio" name="rq{{qnum}}" value="agree" id="dis{{qnum}}" class="disagreeRadio">
+                        <input type="radio" name="rq{{qnum}}" value="disagree" id="dis{{qnum}}" class="radio">
                     </label>
-                </div>
+                </div>                
+            </div>
+            <div class="col-lg-6 offset-lg-3 col-xs-12 text-color">
+            <input class="form-control" name="comment{{qnum}}" type="text" placeholder="위 문항에 대한 시장님의 의견을 들려주세요!" aria-label="default input example">
             </div>
         </div>
     </template>
-
     <div class="row mt-5">
         <form action="<?php echo site_url('page/survey_answers');?>" method="POST" id="regForm">
             <div id="slideCont">
@@ -160,4 +149,26 @@
         </form>
     </div>
 </div>
+<div class="clearfix">...</div>
+<!-- Modal -->
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Error!!!</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" id="btnclose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <div class="alert alert-success" style="display:none" role="alert">A simple success alert—check it out!</div>
+            <div class="alert alert-danger" style="display:none" role="alert">A simple danger alert—check it out!</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnclose">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
 <script src="<?php echo base_url('resources/js/survey.js')?>"></script>

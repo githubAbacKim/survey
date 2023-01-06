@@ -42,20 +42,16 @@
         <div class="navlist">
             <ul class="nav">
                 <li clas="nav-item">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo site_url('page/survey_result') ?>" role="button">테스트</a>
+                    <a id="goresult" class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" role="button">테스트</a>
                 </li>
                 <li clas="nav-item">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2"
-                        href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
                 </li>
                 <li clas="nav-item">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2"
-                        href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                 </li>
                 <li clas="nav-item">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2"
-                        href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
                 </li>
             </ul>
         </div>
@@ -100,6 +96,7 @@
                         <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                         <select id="school_level" name="school_level"
                             class="form-select form-select-lg bg-color border-button">
+                            <option value="">고르다</option>
                             <option value="초등학교">초등학생</option>
                             <option value="중학교">중학생</option>
                             <option value="고등학교">고등학생</option>
@@ -111,7 +108,7 @@
 
                     <!-- Grid column -->
                     <div class="col-auto">
-                        <label for="form-select" class="select-label text-label-drop-down">학교급</label>
+                        <label for="form-select" class="select-label text-label-drop-down">학년구분</label>
                         <select id="elem" name="elem" class="form-select form-select-lg bg-color border-button gap-3">
                             <option value="">고르다</option>
                             <option value="1">1학년</option>
@@ -146,6 +143,7 @@
                         <label for="form-select" class="select-label text-label-drop-down">지역규모</label>
                         <select id="region" name="regional_scale"
                             class="form-select form-select-lg bg-color border-button">
+                            <option value="">고르다</option>
                             <option value="읍면지역">읍면지역</option>
                             <option value="중소도시">중소도시</option>
                             <option value="대도시">대도시</option>
@@ -158,4 +156,25 @@
         </div>
     </form>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Error!!!</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" id="btnclose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <div class="alert alert-success" style="display:none" role="alert">A simple success alert—check it out!</div>
+            <div class="alert alert-danger" style="display:none" role="alert">A simple danger alert—check it out!</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnclose">close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal -->
 <script src="<?php echo base_url('resources/js/index.js') ?>" type="module"></script>
