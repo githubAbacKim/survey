@@ -22,17 +22,17 @@ $(function () {
 	const public_sec = $("#public");
 
 	function getShowList(school) {
-		if (school === "초등학교") {
+		if (school === "초등학생") {
 			elemlevel.show();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
-		} else if (school === "중학교") {
-			highschool.show();
-			elemlevel.hide();
+		} else if (school === "중학생") {
+			elemlevel.show();
+			highschool.hide();
 			college.hide();
 			public_sec.hide();
-		} else if (school === "고등학교") {
+		} else if (school === "고등학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
@@ -70,11 +70,11 @@ $(function () {
 	//if check box is checked add class to start image to enable start
 	$("#confirm_agree").change(function () {
 		if ($(this).is(":checked")) {
-			$("#dummyBut").fadeOut("slow");
+			$("#dummyBut").fadeOut("fast");
 			$("#submitform").fadeIn("slow");
 		} else {
-			$("#submitform").fadeOut("slow");
-			$("#dummyBut").show("slow");
+			$("#submitform").fadeOut("fast");
+			$("#dummyBut").fadeIn("slow");
 		}
 	});
 

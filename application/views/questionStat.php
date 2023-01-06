@@ -5,6 +5,39 @@
     .bg-orange{
         background-color: #F3681A;
     }
+    .cancelbtn, .redobtn {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+
+    button:hover {
+    opacity:1;
+    }
+
+    /* Float cancel and delete buttons and add an equal width */
+    .cancelbtn, .redobtn {
+    float: left;
+    width: 45%;
+    }
+
+    /* Add a color to the cancel button */
+    .cancelbtn {
+    /* background-color: #ccc; */
+    border: solid 1px #ccc;
+    color: black;
+    }
+
+    /* Add a color to the delete button */
+    .redobtn {
+    /* background-color: #f44336; */
+    border: solid 1px #ccc;
+    color: black;
+    }
 </style>
 
 <!-- Modal -->
@@ -38,7 +71,7 @@
                 <div class="btn-bg shadow p-3 btn-bg text-center">처음으로</div>
             </div>
             <div class="mt-2 p-2 bd-highlight">
-                <a class="btn btn-lg p-2 text-color" href="<?php echo site_url('page/') ?>" role="button">다시하기</a>
+                <a class="text-color p-2 m-2" id="redo" role="button">다시하기</a>
             </div>
         </div>
     </div>
@@ -79,7 +112,7 @@
             <div class="col-auto mt-2">
                 <label for="form-select" class="select-label text-label-drop-down">학교급</label>
                 <select id="school_level" name="school_level" class="form-select form-select-lg bg-color border-button">
-                    <option value="초등학교">초등학생</option>
+                    <option value="초등학생">초등학생</option>
                     <option value="중학생">중학생</option>
                     <option value="고등학생">고등학생</option>
                     <option value="대학">대학생</option>
@@ -148,6 +181,21 @@
     </div>
 </div>
 <!-- Modal -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-body">
+            <div class="alert alert-secondary text-center" role="alert">
+                A simple danger alert—check it out!
+            </div>
+        </div>
+        <div class="modal-footer justify-content-md-center gap-2">
+            <button type="button" id="initiateRedo" class="redobtn">확인</button>
+            <button type="button" class="cancelbtn" data-bs-dismiss="modal">닫다</button>
+        </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

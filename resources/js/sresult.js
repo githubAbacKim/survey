@@ -25,7 +25,7 @@ $(function () {
 	}
 
 	function displayResults(){
-		let url = "/page/fetResultData";
+		let url = "/page/fetchResultData";
 		let data = getData(url);
 
 		//set containers

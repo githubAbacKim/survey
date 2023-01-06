@@ -1,12 +1,9 @@
 <style>
     .scale-div {
         background: linear-gradient(270.51deg, rgba(255, 255, 255, 0) -0.1%, rgba(255, 255, 255, 0.336495) 16.1%, rgba(255, 255, 255, 0.34) 89.76%, rgba(255, 255, 255, 0) 100.21%);
-        border-radius: 32px;
     }
-
-    .scale-div image {
-        width: 642.2px;
-        height: 172.19px;
+    .profile_image picture image{
+        height: 100px !important;
     }
     .cancelbtn, .redobtn {
     color: white;
@@ -41,7 +38,7 @@
     border: solid 1px #ccc;
     color: black;
     }
-    /* div {
+    /* picture,div {
         border: 1px solid;
     } */
 </style>
@@ -65,31 +62,34 @@
     </div>
     <!-- end header -->
 
-    <div class="row p-3 justify-content-evenly">
+    <div class="row p-3 ">
         <template id="profileTemp">
-            <div class="profile_head p-3  gx-2 text-color">
-                <p>당신의 도시계획 유형은</p>
-                <h4 class="fw-bold">{{type_mayor}}</h4>
-                <h4 class="fw-bold">{{type}}</h4>
-            </div>
+            <div class="col-lg-9 offset-lg-1">
+                <div class="profile_head text-color">
+                    <p>당신의 도시계획 유형은</p>
+                    <h4 class="fw-bold fs-5">{{type_mayor}}</h4>
+                    <h4 class="fw-bold fs-5">{{type}}</h4>
+                </div>
+                <div class="profile_image">
+                
+                        <picture>
+                            <source srcset="<?php echo base_url()?>{{profile}}" type="image/svg+xml">
+                            <img src="<?php echo base_url()?>{{profile}}" class="img-fluid" alt="...">
+                        </picture>
 
-            <div class="profile_image p-3 gx-2">
-                <picture>
-                    <source srcset="<?php echo base_url()?>{{profile}}" type="image/svg+xml">
-                    <img src="<?php echo base_url()?>{{profile}}" class="img-fluid" alt="...">
-                </picture>
-
-                <div class="col-lg-12  text-color">
-                    <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">전체 통계보기</a>
+                        <div class="col-lg-12  text-color">
+                            <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">전체 통계보기</a>
+                        </div>
+                
                 </div>
             </div>
         </template>   
-        <div class="col-lg-5 col-xs-12 p-3 gap-3 rounded-3  text-center" id="prof_cont">            
+        <div class="col-lg-3 col-xs-12 offset-lg-2 rounded-3 text-center" id="prof_cont">            
         </div>
 
         <template id="scaleTemp">
-            <div class="scale-div col-12 gx-2 position-relative">
-                <picture class="picture-container d-flex">
+            <div class="scale-div position-relative mt-3 align-self-center">
+                <picture class="picture-container">
                     <source srcset="<?php echo base_url();?>{{scalesh}}" type="image/svg+xml">
                     <img src="<?php echo base_url();?>{{scalesh}}" class="img-fluid" alt="...">
                     <div class="{{labelsh1}} {{rotate1}}" id="sh1">
@@ -100,8 +100,8 @@
                     </div>
                 </picture>
             </div>
-            <div class="scale-div col-12 gx-2  position-relative">
-                <picture class="picture-container d-flex">
+            <div class="scale-div position-relative mt-3 align-self-center">
+                <picture class="picture-container">
                     <source srcset="<?php echo base_url()?>{{scalets}}" type="image/svg+xml">
                     <img src="<?php echo base_url()?>{{scalets}}" class="img-fluid" alt="...">
                     <div class="{{labelts1}} {{rotate2}}">
@@ -112,8 +112,8 @@
                     </div>
                 </picture>
             </div>
-            <div class="scale-div col-12 gx-2 position-relative">
-                <picture class="picture-container d-flex">
+            <div class="scale-div position-relative mt-3 align-self-center">
+                <picture class="picture-container">
                     <source srcset="<?php echo base_url()?>{{scaleth}}" type="image/svg+xml">
                     <img src="<?php echo base_url()?>{{scaleth}}" class="img-fluid" alt="...">
                     <div class="{{labelth1}} {{rotate3}}">
@@ -125,7 +125,7 @@
                 </picture>
             </div> 
         </template>   
-        <div class="col-lg-5 col-xs-12 p-3 d-grid gap-3" id="scale_cont">                       
+        <div class="col-lg-4 col-xs-12 offset-lg-1" id="scale_cont">                       
         </div>
     </div>
 

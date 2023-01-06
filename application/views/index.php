@@ -6,7 +6,7 @@
     #dummyBut {
         color: gray;
         width: 100px;
-        opacity: 0.4;
+        opacity: 1;
     }
 
     /*    div {
@@ -59,7 +59,7 @@
 </nav>
 <div class="container-fluid content">
     <h1 class="text-lg-center text-color text-style text-center">AI 도시를 부탁해!</h1>
-    <p class="text-md normal-text-color">당신은 <b>AI 도시의 시장님</b>입니다. A<br>AI와 관련된 다양한 상황에서<b> 당신의 입장을 선택</b>해주세요.</p>
+    <p class="text-md normal-text-color">당신은 <b>AI 도시의 시장님</b>입니다. <br>AI와 관련된 다양한 상황에서<b> 당신의 입장을 선택</b>해주세요.</p>
 
     <div class="text-center">
         <p class="tp" data-toggle="tooltip" data-placement="bottom" title=" 수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.">
@@ -70,9 +70,9 @@
     </div>
     <form id="startForm" action="<?php echo site_url('page/register_participants') ?>" method="POST">
         <div class="container-fluid text-center startCont">
-            <img src="<?php echo base_url("resources/images/start-01.svg") ?>" class="startbut mt-3" id="submitform"
+            <img src="<?php echo base_url("resources/images/realstart.svg") ?>" class="startbut mt-3" id="submitform"
                 alt="sumbit" data-toggle="modal">
-            <img src="<?php echo base_url("resources/images/start-01.svg") ?>" class="mt-3" id="dummyBut">
+            <img src="<?php echo base_url("resources/images/dummystart.svg") ?>" class="mt-3" id="dummyBut">
         </div>
         <!-- Footer -->
         <div class="footer text-center container">
@@ -97,9 +97,9 @@
                         <select id="school_level" name="school_level"
                             class="form-select form-select-lg bg-color border-button">
                             <option value="">고르다</option>
-                            <option value="초등학교">초등학생</option>
-                            <option value="중학교">중학생</option>
-                            <option value="고등학교">고등학생</option>
+                            <option value="초등학생">초등학생</option>
+                            <option value="중학생">중학생</option>
+                            <option value="고등학생">고등학생</option>
                             <option value="대학">대학생</option>
                             <option value="일반인">일반인</option>
                         </select>
@@ -111,12 +111,12 @@
                         <label for="form-select" class="select-label text-label-drop-down">학년구분</label>
                         <select id="elem" name="elem" class="form-select form-select-lg bg-color border-button gap-3">
                             <option value="">고르다</option>
-                            <option value="1">1학년</option>
-                            <option value="2">2학년</option>
-                            <option value="3">3학년</option>
-                            <option value="4">4학년</option>
-                            <option value="5">5학년</option>
-                            <option value="6">6학년</option>
+                            <option value="1학년">1학년</option>
+                            <option value="2학년">2학년</option>
+                            <option value="3학년">3학년</option>
+                            <option value="4학년">4학년</option>
+                            <option value="5학년">5학년</option>
+                            <option value="6학년">6학년</option>
                         </select>
                         <select id="highschool" name="highschool"
                             class="form-select form-select-lg bg-color border-button">

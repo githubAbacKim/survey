@@ -174,7 +174,7 @@ nav{
 }
 .card-height{
   height: 80px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
@@ -298,7 +298,7 @@ text-align: center;
 }
 
 .scalelabel{
-  font-size: 8pt;
+  font-size: 7pt;
   font-weight: bold;
   color: white;
 }
@@ -364,18 +364,13 @@ text-align: center;
     width: 60px !important;
   }
 
-  .lg-scale-sr-text{
-    color: white;
-    font-size: 8pt !important;
-  }
-
  }
 
  @media(min-width: 1366px) { 
   .leftbig{
     position: absolute;
-    top: 50% !important;
-    left: 6%;
+    top: 51% !important;
+    left: 4%;
     text-align: center;
     width: 80px;
   }
@@ -388,31 +383,61 @@ text-align: center;
   }
   .leftsmall{
     position: absolute;
-    top: 14%;
-    left: 9.5%;
+    top: 16%;
+    left: 7.5%;
     text-align: center;
     width: 70px !important;
   }
   .rightbig{
     position: absolute;
-    top: 50%;
-    left: 78%;
+    top: 55%;
+    left: 76%;
     text-align: center;    
     width: 80px !important;
   }
   .rightsmall{
     position: absolute;
-    top: 14%;
-    left: 77%;
+    top: 16%;
+    left: 75.5%;
     text-align: center;
     width: 65px !important;
   }
-
-  .lg-scale-sr-text{
-    color: white;
-    font-size: 8pt !important;
+  /* for value statistics */
+  .valleftbig{
+    position: absolute;
+    top: 50% !important;
+    left: 5%;
+    text-align: center;
+    width: 80px;
   }
-
+  .valleftbig2{
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    text-align: center;
+    width: 80px !important;
+  }
+  .valleftsmall{
+    position: absolute;
+    top: 16%;
+    left: 7.5%;
+    text-align: center;
+    width: 70px !important;
+  }
+  .valrightbig{
+    position: absolute;
+    top: 55%;
+    left: 76%;
+    text-align: center;    
+    width: 80px !important;
+  }
+  .valrightsmall{
+    position: absolute;
+    top: 15%;
+    left: 76%;
+    text-align: center;
+    width: 65px !important;
+  }
  } 
 
 @media (min-width: 1480px) and  (max-width: 1618.98px){ 

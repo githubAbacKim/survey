@@ -167,13 +167,12 @@ class Page extends CI_Controller
 			"HTT" => "기술적 중요도_H형 시장",
 			"HST" => "균형 중요도_A 유형 시장",
 			"STH" => "균형 중요도_B 유형 시장"
-		);
-		
+		);		
 		return $type[$result];
-		
 	}
 
 	function fetchProfile($result){
+		$return = null;
 		$char_profile = array(
 			"SSH"=>"resources/images/personality/social.svg",
 			"SST" => "resources/images/personality/social.svg",
@@ -184,10 +183,12 @@ class Page extends CI_Controller
 			"HST" => "resources/images/personality/balance.svg",
 			"STH" => "resources/images/personality/balance.svg"
 		);
-		return $char_profile[$result];
+		$return = ($result !== false) ?  $char_profile[$result] : $return = $char_profile;	
+		return $return;
 	}
 	
 	function fetchScale($result){
+		$return = null;
 		$scale = array(
 			"SSH" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/oppositeisgreater.svg'),
 			"SST" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/agreeisgreater.svg'),
@@ -198,10 +199,12 @@ class Page extends CI_Controller
 			"HST" =>array('resources/images/scale/oppositeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/agreeisgreater.svg'),
 			"STH" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg'),
 		);
-		return $scale[$result];
+		$return = ($result !== false) ?  $scale[$result] : $scale;	
+		return $return;
 	}
 
 	function fetchLabelRotate($result){
+		$return = null;
 		$label = array(
 			"SSH" =>array('rotate-left','rotate-right','rotate-right'),
 			"SST" =>array('rotate-left','rotate-right','rotate-left'),
@@ -212,10 +215,12 @@ class Page extends CI_Controller
 			"HST" =>array('rotate-right','rotate-right','rotate-left'),
 			"STH" =>array('rotate-left','rotate-left','rotate-right'),
 		);
-		return $label[$result];
+		$return = ($result !== false) ?  $label[$result] : $label;	
+		return $return;
 	}
 
 	function fetchLabelStyle($result){
+		$return = null;
 		$labelstyle = array(
 			// sh1 ,sh2, ts1, ts2, th1, th2
 			// rotate-left: 'leftbig','rightsmall'
@@ -229,10 +234,12 @@ class Page extends CI_Controller
 			"HST" =>array('leftsmall','rightbig','leftsmall','rightbig','leftbig','rightsmall'),
 			"STH" =>array('leftbig','rightsmall','leftbig','rightsmall','leftsmall','rightbig'),
 		);
-		return $labelstyle[$result];
+		$return = ($result !== false) ?  $labelstyle[$result] : $labelstyle;	
+		return $return;
 	}
 
-	function fetResultData(){
+	//data result for question stat search
+	function fetchResultData(){
 		$result = $this->getResultChar($this->session->userdata('sh'),$this->session->userdata('ts'),$this->session->userdata('th'));
 		$data['type_mayor'] = $this->fetchMayorType($result);
 		$data['profile'] = $this->fetchProfile($result);
@@ -244,19 +251,18 @@ class Page extends CI_Controller
 		echo json_encode($data);
 	}
 
-	function fetchDataSearch(){
-		// per question total agree and disagree
+	function lookUpQuestionStat(){
 		$this->form_validation->set_rules('gender', '성별', 'required',array('required'=>'선택 해주세요 {field}'));
 		$this->form_validation->set_rules('school_level', '학교급', 'required',array('required'=>'선택 해주세요 {field}'));
 
-		if( $this->input->post('school_level') === "초등학교"){
-			$this->form_validation->set_rules('elem', '초등학교', 'required',array('required'=>'선택 해주세요 {field}'));
+		if( $this->input->post('school_level') === "초등학생"){
+			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "중학생"){
-			$this->form_validation->set_rules('highschool', '중학교', 'required',array('required'=>'선택 해주세요 {field}'));
+			$this->form_validation->set_rules('elem', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "고등학생"){
-			$this->form_validation->set_rules('highschool', '고등학교', 'required',array('required'=>'선택 해주세요 {field}'));
+			$this->form_validation->set_rules('highschool', '고등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "대학"){
 			$this->form_validation->set_rules('college', '대학', 'required',array('required'=>'선택 해주세요 {field}'));
@@ -266,13 +272,13 @@ class Page extends CI_Controller
 			//$msg['error'] = "선택하지 않은 항목이 있습니다. 모든 항목을 선택해주세요.";
 			$msg['status'] = false;
 		} else {
-			if(set_value('school_level') === "초등학교"){
+			if(set_value('school_level') === "초등학생"){
 				$classification  = set_value('elem');
 			}
-			if(set_value('school_level') === "중학교"){
-				$classification = set_value('highschool');
+			if(set_value('school_level') === "중학생"){
+				$classification = set_value('elem');
 			}
-			if(set_value('school_level') === "고등학교"){
+			if(set_value('school_level') === "고등학생"){
 				$classification = set_value('highschool');
 			}
 			if(set_value('school_level') === "대학"){
@@ -294,6 +300,59 @@ class Page extends CI_Controller
 			$result = $this->survey_model->select_join($var,$like=false,$where);
 			if($result !== false){
 				$msg['data'] = $this->processSearch($result);
+				$msg['status'] = true;
+			}else{
+				$msg['status'] = false;
+				$msg['error'] = "결과가 없습니다.";
+				// no result
+			}
+		}
+		echo json_encode($msg);
+	}
+
+	function lookUpValueStat(){
+		$this->form_validation->set_rules('gender', '성별', 'required',array('required'=>'선택 해주세요 {field}'));
+		$this->form_validation->set_rules('school_level', '학교급', 'required',array('required'=>'선택 해주세요 {field}'));
+
+		if( $this->input->post('school_level') === "초등학생"){
+			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
+		}
+		if( $this->input->post('school_level') === "중학생"){
+			$this->form_validation->set_rules('elem', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
+		}
+		if( $this->input->post('school_level') === "고등학생"){
+			$this->form_validation->set_rules('highschool', '고등학생', 'required',array('required'=>'선택 해주세요 {field}'));
+		}
+		if( $this->input->post('school_level') === "대학"){
+			$this->form_validation->set_rules('college', '대학', 'required',array('required'=>'선택 해주세요 {field}'));
+		}
+		if ($this->form_validation->run() == FALSE) {
+			$msg['error'] = validation_errors();
+			//$msg['error'] = "선택하지 않은 항목이 있습니다. 모든 항목을 선택해주세요.";
+			$msg['status'] = false;
+		} else {
+			if(set_value('school_level') === "초등학생"){
+				$classification  = set_value('elem');
+			}
+			if(set_value('school_level') === "중학생"){
+				$classification = set_value('elem');
+			}
+			if(set_value('school_level') === "고등학생"){
+				$classification = set_value('highschool');
+			}
+			if(set_value('school_level') === "대학"){
+				$classification = set_value('college');
+			}
+
+			$where = array(
+				"gender" => set_value('gender'),
+				"school_level" => set_value('school_level'),
+				"classification" => strval($classification)
+			);
+			
+			$result = $this->survey_model->select("participants",$like=false,$where);
+			if($result !== false){
+				$msg['data'] = $this->processValStatSearch($result);
 				$msg['status'] = true;
 			}else{
 				$msg['status'] = false;
@@ -359,6 +418,32 @@ class Page extends CI_Controller
 		return $resultarr;
 	}
 
+	function processValStatSearch($result){
+		$ssh=0; $sst=0; $hth=0; $hsh=0; $stt=0; $htt=0; $hst=0; $sth=0;	
+		$return_arr = null;
+		foreach ($result as $key => $value) {
+			if($value->result === "SSH") $ssh++;			
+			if($value->result === "SST") $sst++;
+			if($value->result === "HTH") $hth++;
+			if($value->result === "HSH") $hsh++;
+			if($value->result === "STT") $stt++;
+			if($value->result === "HTT") $htt++;
+			if($value->result === "HST") $hst++;
+			if($value->result === "STH") $sth++;
+		}
+		$return_arr = array(
+			$ssh,
+			$sst,
+			$hth,
+			$hsh,
+			$stt,
+			$htt,
+			$hst,
+			$sth
+		);
+		return $return_arr;
+	}
+
 	function fetchDefaultData(){
 		$var = array(
 			"tab1"=>"participants_answer pa",
@@ -378,20 +463,47 @@ class Page extends CI_Controller
 		echo json_encode($msg);
 	}
 
+	function fetchAllLink($result){
+		$return = null;
+		$type = array(
+			"SSH"=>array("name"=>"ssh","desc"=>"사회중시_H형 시장님","bgcolor"=>"#6370E3","color"=>"#E3E6FF"),
+			"SST"=>array("name"=>"sst","desc"=>"사회중시_T형 시장님","bgcolor"=>"#BEC5FF","color"=>"#2230AF"),
+			"HTH"=>array("name"=>"hth","desc"=>"인간중시_T형 시장님","bgcolor"=>"#42C696","color"=>"#D7FFF0"),
+			"HSH"=>array("name"=>"hsh","desc"=>"인간중시_S형 시장님","bgcolor"=>"#9AF5D4","color"=>"#11734F"),
+			"STT"=>array("name"=>"stt","desc"=>"기술중시_S형 시장님","bgcolor"=>"#BB6BED","color"=>"#FCF8FF"),
+			"HTT"=>array("name"=>"htt","desc"=>"기술중시_H형 시장님","bgcolor"=>"#DDB1FF","color"=>"#A445DF"),
+			"HST"=>array("name"=>"hst","desc"=>"균형중시_A형 시장님","bgcolor"=>"#FF9C27","color"=>"#FFF9EA"),
+			"STH"=>array("name"=>"sth","desc"=>"균형중시_B형 시장님","bgcolor"=>"#FFD772","color"=>"#EC840B")
+		);		
+		($result !== false) ? $return = $type[$result] : $return = $type;	
+		return $return;
+	}
+
+	function fetchDefaultResultType(){				
+		$default = "SSH";
+		$result = $this->survey_model->select("participants");
+		$msg['data'] = $this->processValStatSearch($result);
+		$msg['link'] = $this->fetchAllLInk(false);
+		$msg['rotate'] = $this->fetchLabelRotate($default);
+		$msg['label'] = $this->fetchLabelStyle($default);
+		$msg['scale'] = $this->fetchScale($default);
+		echo json_encode($msg);
+	}
+
 	// processing script	
 	public function register_participants()
 	{	
 		$this->form_validation->set_rules('gender', '성별', 'required',array('required'=>'선택 해주세요 {field}'));
 		$this->form_validation->set_rules('school_level', '학교급', 'required',array('required'=>'선택 해주세요 {field}'));
 
-		if( $this->input->post('school_level') === "초등학교"){
-			$this->form_validation->set_rules('elem', '초등학교', 'required',array('required'=>'선택 해주세요 {field}'));
+		if( $this->input->post('school_level') === "초등학생"){
+			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
-		if( $this->input->post('school_level') === "중학교"){
-			$this->form_validation->set_rules('highschool', '중학교', 'required',array('required'=>'선택 해주세요 {field}'));
+		if( $this->input->post('school_level') === "중학생"){
+			$this->form_validation->set_rules('elem', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
-		if( $this->input->post('school_level') === "고등학교"){
-			$this->form_validation->set_rules('highschool', '고등학교', 'required',array('required'=>'선택 해주세요 {field}'));
+		if( $this->input->post('school_level') === "고등학생"){
+			$this->form_validation->set_rules('highschool', '고등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "대학"){
 			$this->form_validation->set_rules('college', '대학', 'required',array('required'=>'선택 해주세요 {field}'));
@@ -406,13 +518,13 @@ class Page extends CI_Controller
 			$msg['error'] = "선택하지 않은 항목이 있습니다. 모든 항목을 선택해주세요.";
 			$msg['status'] = false;
 		} else {
-			if(set_value('school_level') === "초등학교"){
+			if(set_value('school_level') === "초등학생"){
 				$classification  = set_value('elem');
 			}
-			if(set_value('school_level') === "중학교"){
-				$classification = set_value('highschool');
+			if(set_value('school_level') === "중학생"){
+				$classification = set_value('elem');
 			}
-			if(set_value('school_level') === "고등학교"){
+			if(set_value('school_level') === "고등학생"){
 				$classification = set_value('highschool');
 			}
 			if(set_value('school_level') === "대학"){
@@ -496,7 +608,8 @@ class Page extends CI_Controller
 		echo json_encode($msg);
 	}
 
-	public function valsession(){
+	public function valsession()
+	{
 		if($this->session->userdata('participant_id') !== null || $this->session->has_userdata('participant_id')){
 			$data['status'] = true;
 		}else{
@@ -591,7 +704,8 @@ class Page extends CI_Controller
 	}
 
 	public function test2(){
-		echo $this->fetchDefaultData();
+		$result = 'SSH';
+		echo print_r($this->fetchScale($result));
 	}
 
 }
