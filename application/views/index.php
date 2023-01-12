@@ -1,15 +1,10 @@
 <style>
-    .form-select option {
-        padding: 10px !important;
-    }
-
     #dummyBut {
         color: gray;
         width: 100px;
         opacity: 1;
     }
-
-    /*    div {
+    /* div {
         border: 1px solid;
     } */
 </style>
@@ -42,16 +37,16 @@
         <div class="navlist">
             <ul class="nav">
                 <li clas="nav-item">
-                    <a id="goresult" class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" role="button">테스트</a>
-                </li>
-                <li clas="nav-item">
-                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
-                </li>
-                <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                 </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
+                </li>   
+                <li clas="nav-item">
+                    <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
+                </li>             
+                <li clas="nav-item">
+                    <a id="goresult" class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" role="button">ABOUT</a>
                 </li>
             </ul>
         </div>
@@ -78,76 +73,102 @@
         <div class="footer text-center container">
             <!-- Grid container -->
             <div class="container">
-                <div class="row text-center d-flex justify-content-evenly">
-                    <!-- Grid column -->
-
-                    <div class="col-auto">
-                        <label for="form-select" class="select-label text-label-drop-down">성별</label>
-                        <select id="gender" name="gender" class="form-select form-select-lg bg-color border-button">
-                            <option value="">고르다</option>
-                            <option value="남성">남성</option>
-                            <option value="여성">여성</option>
-                        </select>
+                <div class="row">
+                    <!-- Grid column -->    
+                    <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
+                        <div class="col col-lg-5 col-sm-5">
+                            <label for="form-select" class="p-3 select-label text-label-drop-down">성별</label>
+                        </div>
+                        <div class="col col-lg-7 col-sm-7">                            
+                            <select id="gender" name="gender" class="form-select form-select-lg bg-color border-button">
+                                <optgroup class="p-3">
+                                    <option value="">선택</option>
+                                    <option value="남성">남성</option>
+                                    <option value="여성">여성</option>
+                                </optgroup>
+                            </select>
+                        </div>                        
                     </div>
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-auto">
-                        <label for="form-select" class="select-label text-label-drop-down">학교급</label>
-                        <select id="school_level" name="school_level"
-                            class="form-select form-select-lg bg-color border-button">
-                            <option value="">고르다</option>
-                            <option value="초등학생">초등학생</option>
-                            <option value="중학생">중학생</option>
-                            <option value="고등학생">고등학생</option>
-                            <option value="대학">대학생</option>
-                            <option value="일반인">일반인</option>
-                        </select>
+                    <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
+                        <div class="col col-lg-5 col-sm-5">
+                            <label for="form-select" class="p-3 select-label text-label-drop-down">학교급</label>
+                        </div>
+                        <div class="col col-lg-7 col-xs-7">
+                            <select id="school_level" name="school_level" class="form-select form-select-lg bg-color border-button">
+                                <optgroup>
+                                    <option value="초등학생">초등학생</option>
+                                    <option value="중학생">중학생</option>
+                                    <option value="고등학생">고등학생</option>
+                                    <option value="대학">대학생</option>
+                                    <option value="일반인">일반인</option>
+                                </optgroup>
+                            </select>
+                        </div> 
                     </div>
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-auto">
-                        <label for="form-select" class="select-label text-label-drop-down">학년구분</label>
-                        <select id="elem" name="elem" class="form-select form-select-lg bg-color border-button gap-3">
-                            <option value="">고르다</option>
-                            <option value="1학년">1학년</option>
-                            <option value="2학년">2학년</option>
-                            <option value="3학년">3학년</option>
-                            <option value="4학년">4학년</option>
-                            <option value="5학년">5학년</option>
-                            <option value="6학년">6학년</option>
-                        </select>
-                        <select id="highschool" name="highschool"
-                            class="form-select form-select-lg bg-color border-button">
-                            <option value="">고르다</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <select id="college" name="college" class="form-select form-select-lg bg-color border-button">
-                            <option value="">고르다</option>
-                            <option value="인문사회">인문사회</option>
-                            <option value="자연 | 공학">자연 | 공학</option>
-                            <option value="예체능">예체능</option>
-                        </select>
-                        <select id="public" name="public" class="form-select form-select-lg bg-color border-button">
-                            <option value="">고르다</option>
-                            <option value="인문사회">일반</option>
-                        </select>
+                    <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
+                        <div class="col col-lg-5 col-sm-5">
+                            <label for="form-select" class="p-3 select-label text-label-drop-down">학년구분</label>
+                        </div>
+                        <div class="col col-lg-7 col-sm-7">
+                            <select id="elem" name="elem" class="form-select form-select-lg bg-color border-button gap-3">
+                                <optgroup>
+                                    <option value="">선택</option>
+                                    <option value="1학년">1학년</option>
+                                    <option value="2학년">2학년</option>
+                                    <option value="3학년">3학년</option>
+                                    <option value="4학년">4학년</option>
+                                    <option value="5학년">5학년</option>
+                                    <option value="6학년">6학년</option>
+                                </optgroup>
+                            </select>
+                            <select id="highschool" name="highschool"
+                                class="form-select form-select-lg bg-color border-button">
+                                <optgroup>
+                                    <option value="">선택</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </optgroup>
+                            </select>
+                            <select id="college" name="college" class="form-select form-select-lg bg-color border-button">
+                                <optgroup>
+                                    <option value="">선택</option>
+                                    <option value="인문사회">인문사회</option>
+                                    <option value="자연 | 공학">자연 | 공학</option>
+                                    <option value="예체능">예체능</option>
+                                </optgroup>
+                            </select>
+                            <select id="public" name="public" class="form-select form-select-lg bg-color border-button">
+                                <optgroup>
+                                    <option value="">선택</option>
+                                    <option value="인문사회">일반</option>
+                                </optgroup>
+                            </select>
+                        </div>
                     </div>
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-auto">
-                        <label for="form-select" class="select-label text-label-drop-down">지역규모</label>
-                        <select id="region" name="regional_scale"
-                            class="form-select form-select-lg bg-color border-button">
-                            <option value="">고르다</option>
-                            <option value="읍면지역">읍면지역</option>
-                            <option value="중소도시">중소도시</option>
-                            <option value="대도시">대도시</option>
-                        </select>
+                    <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
+                        <div class="col col-lg-5 col-sm-5">
+                            <label for="form-select" class="p-3 select-label text-label-drop-down">지역규모</label>
+                        </div>
+                        <div class="col ol-lg-7 col-sm-7">
+                            <select id="region" name="regional_scale" class="form-select form-select-lg bg-color border-button">
+                                <optgroup>
+                                    <option value="">선택</option>
+                                    <option value="읍면지역">읍면지역</option>
+                                    <option value="중소도시">중소도시</option>
+                                    <option value="대도시">대도시</option>
+                                </optgroup>
+                            </select>
+                        </div>
                     </div>
                     <!-- Grid column -->
                 </div>

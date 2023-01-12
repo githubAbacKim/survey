@@ -70,16 +70,6 @@ $(function () {
 			num++;
 		});
 	}
-	
-	let displayUrl = '/page/fetchquestion';
-	let resultUrl = '/page/fetchDefaultData';
-	displayQuestion(getData(displayUrl));	
-	let defaultdata = getData(resultUrl).data;
-	searchResult(getData(displayUrl),defaultdata);
-	const elemlevel = $("#elem");
-	const highschool = $("#highschool");
-	const college = $("#college");
-	const public_sec = $("#public");
 
 	function getShowList(school) {
 		if (school === "초등학생") {
@@ -88,8 +78,8 @@ $(function () {
 			college.hide();
 			public_sec.hide();
 		} else if (school === "중학생") {
-			elemlevel.show();
-			highschool.hide();
+			highschool.show();
+			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
 		} else if (school === "고등학생") {
@@ -128,11 +118,24 @@ $(function () {
 			$('.alert-danger').html(message).fadeIn();
 		}
 	}
+
 	function confirmModal(title,message){
 		$("#confirmModal").modal("show");
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
-	}
+	}	
+	
+	let displayUrl = '/page/fetchquestion';
+	let resultUrl = '/page/fetchDefaultData';
+	displayQuestion(getData(displayUrl));	
+	let defaultdata = getData(resultUrl).data;
+	searchResult(getData(displayUrl),defaultdata);
+	const elemlevel = $("#elem");
+	const highschool = $("#highschool");
+	const college = $("#college");
+	const public_sec = $("#public");
+
+
 	var data = document.getElementById("school_level").value;
 	getShowList(data);
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 1340 555" style="enable-background:new 0 0 1340 555;" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FDB7AE;}
+	.st1{fill:none;stroke:#FDB7AE;stroke-width:5;stroke-linecap:round;}
+	.st2{fill:url(#SVGID_1_);}
+	.st3{fill:#6B4A4A;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#BBB0DC;}
+	.st5{fill:none;stroke:#BBB0DC;stroke-width:5;stroke-linecap:round;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);}
+	.st7{fill:#4E3434;}
+</style>
+  <path class="st0" d="M1295.1,339.6c0.5-1.5,0.9-3,1.3-4.5c19.9-74.3-24.2-150.7-98.5-170.6c-74.1-19.9-150.3,23.9-170.5,97.9h-0.1 L991,397.9l269.2,72.1L1295.1,339.6z"/>
+  <path class="st1" d="M1170.9,167.2l7.3-27c1.4-5.3,6.9-8.5,12.2-7.1l30,8c5.3,1.4,8.5,6.9,7.1,12.2l-7.3,27"/>
+  <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="996.9711" y1="1175.3734" x2="280.7371" y2="983.4584" gradientTransform="matrix(1 0 0 1 0 -708)">
+    <stop offset="0" style="stop-color:#6B4A4A"/>
+    <stop offset="0.4882" style="stop-color:#4A3232"/>
+    <stop offset="1" style="stop-color:#6B4A4A"/>
+  </linearGradient>
+  <path class="st2" d="M166.4,236.5l966.9,259.1l-1.6,5.8c-1.4,5.3-6.9,8.5-12.3,7.1L171.9,254.6c-5.3-1.4-8.5-6.9-7.1-12.2 L166.4,236.5z"/>
+  <g>
+    <rect x="1109.2" y="464.5" transform="matrix(0.2588 -0.9659 0.9659 0.2588 356.8763 1436.026)" class="st3" width="10" height="42"/>
+    <g>
+      <path class="st3" d="M1118.6,483.5c-105.1-26.8-153.5-70.3-164.5-88.7l349.8,93.7C1285.9,498,1223.7,510.3,1118.6,483.5z"/>
+    </g>
+  </g>
+  <path class="st3" d="M952.6,382l353.5,94.7c3.2,0.9,5.1,4.1,4.2,7.3l0,0c-0.9,3.2-4.1,5.1-7.3,4.2l-353.5-94.7 c-3.2-0.9-5.1-4.1-4.2-7.3l0,0C946.1,383,949.4,381.1,952.6,382z"/>
+  <path class="st4" d="M307.3,133.6c0.4-0.9,0.6-1.8,0.8-2.9c12.7-46.5-15.5-94.3-63-106.8c-47.4-12.3-96.1,15-108.9,61.2l0,0 L112.8,170l172.1,45.1L307.3,133.6z"/>
+  <path class="st5" d="M227.5,25.9l3.3-12.1c1.6-6.1,8.1-9.7,14.2-8.1l9,2.4c6.2,1.6,9.9,7.9,8.3,13.9L259,34.1"/>
+  <g>
+    <rect x="182.9" y="216.2" transform="matrix(0.2588 -0.9659 0.9659 0.2588 -89.7953 357.3329)" class="st3" width="10" height="42"/>
+    <g>
+      <path class="st3" d="M192.3,235.3C87.2,208.4,38.8,165,27.7,146.6l349.8,93.7C359.6,249.8,297.4,262.1,192.3,235.3z"/>
+    </g>
+  </g>
+  <path class="st3" d="M26.2,133.7l353.5,94.7c3.2,0.9,5.1,4.1,4.2,7.3l0,0c-0.9,3.2-4.1,5.1-7.3,4.2L23.1,145.3 c-3.2-0.9-5.1-4.1-4.2-7.3l0,0C19.8,134.8,23,132.9,26.2,133.7z"/>
+  <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="655.514" y1="1029" x2="655.514" y2="1216.8" gradientTransform="matrix(1 0 0 1 0 -708)">
+    <stop offset="0.8728" style="stop-color:#6B4A4A"/>
+    <stop offset="1" style="stop-color:#4D3434"/>
+  </linearGradient>
+  <path class="st6" d="M733.7,485.7c-1.2,0-2.3-0.7-2.7-1.8l-72.2-161.1c-1.1-2.4-4.4-2.4-5.5,0l-72.2,161.1c-0.5,1.1-1.6,1.8-2.7,1.8 h-67.7c-4.9,0-9.1,3.6-9.9,8.5l-1.7,11.1c-0.3,1.8,1.1,3.5,3,3.5H809c1.9,0,3.3-1.7,2.9-3.6l-2.2-11.3c-0.9-4.7-5-8.1-9.8-8.1h-66.2 V485.7z"/>
+  <circle class="st7" cx="655" cy="380" r="14"/>
+  <path class="st3" d="M484,510c0-2.2,1.8-4,4-4h335c2.2,0,4,1.8,4,4v9c0,5.5-4.5,10-10,10H494c-5.5,0-10-4.5-10-10V510z"/>
+  <text style="fill: rgb(255, 255, 255); font-family: Roboto; font-size: 36px; white-space: pre;" transform="matrix(0.651975, 0.165598, -0.171018, 0.673311, 148.146698, -130.614395)" x="84.534" y="333.134">기술합목적성</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Roboto; font-size: 36px; white-space: pre;" transform="matrix(1.09544, 0.285389, -0.270808, 1.039477, -26.845913, -117.415611)" x="1022.97" y="141.69">인간존엄성</text>
+</svg>

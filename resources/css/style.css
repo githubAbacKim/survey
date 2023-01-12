@@ -71,20 +71,12 @@ nav {
   background-color: transparent;
 }
 
-.select-label{
-    margin-top: 15px !important;
-    font-size: 12pt;
-    font-weight: bold;
-}
-
 .border-button {
-  width: 100px;
   border-top-color: #5C1C2C;
   border-bottom-color: #5C1C2C;
   border-radius: 10px;
   border-left: none;
   border-right: none;
-  text-align: center;
   color: #5C1C2C;
   padding: 0.7rem;
 }
@@ -99,9 +91,7 @@ nav {
 
 .text-label-drop-down {
   color: #5C1C2C;
-  float: left;
-  margin-right: 2rem;
-  margin-top: 0.2em;
+
 }
 nav{
     width: 100% !important;
@@ -200,12 +190,12 @@ nav{
 .checkbox:hover{
   cursor: pointer;
 }
-.question-stat-card:hover{
+/* .question-stat-card:hover{
   border: 1px solid orange;
   transition: 0.5s;
   cursor: pointer;
   border-radius: 18px;  
-}
+} */
 
 
 .border{
@@ -234,9 +224,9 @@ nav{
 
 }
 
-.scale-text{
+/* .scale-text{
   font-size: 8pt !important;
-}
+} */
 .rotate-left{
 transform: rotate(-15deg);
 }
@@ -298,7 +288,7 @@ text-align: center;
 }
 
 .scalelabel{
-  font-size: 7pt;
+  font-size: 5pt;
   font-weight: bold;
   color: white;
 }
@@ -307,33 +297,77 @@ text-align: center;
   border:solid 6px #FFD772;
   border-radius: 2em !important;
 }
- 
-@media (max-width: 575.98px) {  }
+.cancelbtn, .redobtn {
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  }
 
-@media (min-width: 576px) and (max-width: 860.98px) { 
-  .sm-scale-sr-text{
-    font-size: 10pt !important;
-    color: white;
+  button:hover {
+  opacity:1;
   }
-  .lg-scale-sr-text{
-    color: white;
-    font-size: 10pt !important;
-  }
- }
 
-@media (min-width: 768px) and (max-width: 1100.98px) { 
-  
-  .sm-scale-sr-text{
-    font-size: 4pt !important;
-    color: white;
+  /* Float cancel and delete buttons and add an equal width */
+  .cancelbtn, .redobtn {
+  float: left;
+  width: 45%;
   }
-  .lg-scale-sr-text{
-    color: white;
-    font-size: 8pt !important;
-  }
- }
 
-@media (min-width: 480px){ 
+  /* Add a color to the cancel button */
+  .cancelbtn {
+  /* background-color: #ccc; */
+  border: solid 1px #ccc;
+  color: black;
+  }
+
+  /* Add a color to the delete button */
+  .redobtn {
+  /* background-color: #f44336; */
+  border: solid 1px #ccc;
+  color: black;
+  }
+  .cancelbtn, .redobtn {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    }
+
+    button:hover {
+    opacity:1;
+    }
+
+    /* Float cancel and delete buttons and add an equal width */
+    .cancelbtn, .redobtn {
+    float: left;
+    width: 45%;
+    }
+
+    /* Add a color to the cancel button */
+    .cancelbtn {
+    /* background-color: #ccc; */
+    border: solid 1px #ccc;
+    color: black;
+    }
+
+    /* Add a color to the delete button */
+    .redobtn {
+    /* background-color: #f44336; */
+    border: solid 1px #ccc;
+    color: black;
+    }
+
+@media (min-width: 400px){ 
+  .select-label{
+    text-align: left !important;
+  }
   .leftbig{
     position: absolute;
     top: 50% !important;
@@ -363,46 +397,6 @@ text-align: center;
     text-align: center;
     width: 60px !important;
   }
-
- }
-
- @media(min-width: 1366px) { 
-  .leftbig{
-    position: absolute;
-    top: 51% !important;
-    left: 4%;
-    text-align: center;
-    width: 80px;
-  }
-  .leftbig2{
-    position: absolute;
-    top: 50%;
-    left: 7%;
-    text-align: center;
-    width: 80px !important;
-  }
-  .leftsmall{
-    position: absolute;
-    top: 16%;
-    left: 7.5%;
-    text-align: center;
-    width: 70px !important;
-  }
-  .rightbig{
-    position: absolute;
-    top: 55%;
-    left: 76%;
-    text-align: center;    
-    width: 80px !important;
-  }
-  .rightsmall{
-    position: absolute;
-    top: 16%;
-    left: 75.5%;
-    text-align: center;
-    width: 65px !important;
-  }
-  /* for value statistics */
   .valleftbig{
     position: absolute;
     top: 50% !important;
@@ -438,15 +432,79 @@ text-align: center;
     text-align: center;
     width: 65px !important;
   }
- } 
-
-@media (min-width: 1480px) and  (max-width: 1618.98px){ 
-  .sm-scale-sr-text{
-    font-size: 8pt !important;
-    color: white;
-  }
-  .lg-scale-sr-text{
-    color: white;
-    font-size: 8pt !important;
-  }
  }
+
+ @media(min-width: 1366px) { 
+  .leftbig{
+    position: absolute;
+    top: 51% !important;
+    left: 4%;
+    text-align: center;
+    width: 80px;
+    font-size: 8pt !important;
+  }
+  .leftbig2{
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    text-align: center;
+    width: 80px !important;
+  }
+  .leftsmall{
+    position: absolute;
+    top: 16%;
+    left: 7.5%;
+    text-align: center;
+    width: 70px !important;
+    font-size: 6pt !important;
+  }
+  .rightbig{
+    position: absolute;
+    top: 55%;
+    left: 76%;
+    text-align: center;    
+    width: 80px !important;
+    font-size: 8pt !important;
+  }
+  .rightsmall{
+    position: absolute;
+    top: 16%;
+    left: 75.5%;
+    text-align: center;
+    width: 65px !important;
+    font-size: 6pt !important;
+  }
+  /* for value statistics */
+  .valleftbig{
+    position: absolute;
+    top: 55% !important;
+    left: 4%;
+    text-align: center;
+    width: 60px;
+    font-size: 8pt !important;
+  }
+  .valleftsmall{
+    position: absolute;
+    top: 16%;
+    left: 9%;
+    text-align: center;
+    width: 40px !important;
+    font-size: 3pt !important;
+  }
+  .valrightbig{
+    position: absolute;
+    top: 55%;
+    left: 75%;
+    text-align: center;    
+    width: 60px !important;
+    font-size: 8pt !important;
+  }
+  .valrightsmall{
+    position: absolute;
+    top: 15%;
+    left: 77%;
+    text-align: center;
+    width: 40px !important;
+    font-size: 4px !important;
+  }
+ } 

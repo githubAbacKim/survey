@@ -28,8 +28,8 @@ $(function () {
 			college.hide();
 			public_sec.hide();
 		} else if (school === "중학생") {
-			elemlevel.show();
-			highschool.hide();
+			highschool.show();
+			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
 		} else if (school === "고등학생") {

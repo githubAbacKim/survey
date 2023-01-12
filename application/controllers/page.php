@@ -190,14 +190,14 @@ class Page extends CI_Controller
 	function fetchScale($result){
 		$return = null;
 		$scale = array(
-			"SSH" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/oppositeisgreater.svg'),
-			"SST" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/agreeisgreater.svg'),
-			"HTH" =>array('resources/images/scale/oppositeisgreater.svg','resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg'),
-			"HSH" =>array('resources/images/scale/oppositeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/oppositeisgreater.svg'),
-			"STT" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/agreeisgreater.svg','resources/images/scale/agreeisgreater.svg'),
-			"HTT" =>array('resources/images/scale/oppositeisgreater.svg','resources/images/scale/agreeisgreater.svg','resources/images/scale/agreeisgreater.svg'),
-			"HST" =>array('resources/images/scale/oppositeisgreater.svg','resources/images/scale/oppositeisgreater.svg','resources/images/scale/agreeisgreater.svg'),
-			"STH" =>array('resources/images/scale/agreeisgreater.svg','resources/images/scale/agreeisgreater.svg','resources/images/scale/oppositeisgreater.svg'),
+			"SSH" =>array('resources/images/scale/s1_agreeisgreater.svg','resources/images/scale/s2_oppositeisgreater.svg','resources/images/scale/s3_oppositeisgreater.svg'),
+			"SST" =>array('resources/images/scale/s1_agreeisgreater.svg','resources/images/scale/s2_oppositeisgreater.svg','resources/images/scale/s3_agreeisgreater.svg'),
+			"HTH" =>array('resources/images/scale/s1_oppositeisgreater.svg','resources/images/scale/s2_agreeisgreater.svg','resources/images/scale/s3_oppositeisgreater.svg'),
+			"HSH" =>array('resources/images/scale/s1_oppositeisgreater.svg','resources/images/scale/s2_oppositeisgreater.svg','resources/images/scale/s3_oppositeisgreater.svg'),
+			"STT" =>array('resources/images/scale/s1_agreeisgreater.svg','resources/images/scale/s2_agreeisgreater.svg','resources/images/scale/s3_agreeisgreater.svg'),
+			"HTT" =>array('resources/images/scale/s1_oppositeisgreater.svg','resources/images/scale/s2_agreeisgreater.svg','resources/images/scale/s3_agreeisgreater.svg'),
+			"HST" =>array('resources/images/scale/s1_oppositeisgreater.svg','resources/images/scale/s2_oppositeisgreater.svg','resources/images/scale/s3_agreeisgreater.svg'),
+			"STH" =>array('resources/images/scale/s1_agreeisgreater.svg','resources/images/scale/s2_agreeisgreater.svg','resources/images/scale/s3_oppositeisgreater.svg'),
 		);
 		$return = ($result !== false) ?  $scale[$result] : $scale;	
 		return $return;
@@ -259,7 +259,7 @@ class Page extends CI_Controller
 			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "중학생"){
-			$this->form_validation->set_rules('elem', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
+			$this->form_validation->set_rules('highschool', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "고등학생"){
 			$this->form_validation->set_rules('highschool', '고등학생', 'required',array('required'=>'선택 해주세요 {field}'));
@@ -276,7 +276,7 @@ class Page extends CI_Controller
 				$classification  = set_value('elem');
 			}
 			if(set_value('school_level') === "중학생"){
-				$classification = set_value('elem');
+				$classification = set_value('highschool');
 			}
 			if(set_value('school_level') === "고등학생"){
 				$classification = set_value('highschool');
@@ -318,7 +318,7 @@ class Page extends CI_Controller
 			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "중학생"){
-			$this->form_validation->set_rules('elem', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
+			$this->form_validation->set_rules('highschool', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "고등학생"){
 			$this->form_validation->set_rules('highschool', '고등학생', 'required',array('required'=>'선택 해주세요 {field}'));
@@ -331,11 +331,14 @@ class Page extends CI_Controller
 			//$msg['error'] = "선택하지 않은 항목이 있습니다. 모든 항목을 선택해주세요.";
 			$msg['status'] = false;
 		} else {
+			if(set_value('school_level') === "*"){
+				$classification  = '*';
+			}
 			if(set_value('school_level') === "초등학생"){
 				$classification  = set_value('elem');
 			}
 			if(set_value('school_level') === "중학생"){
-				$classification = set_value('elem');
+				$classification = set_value('highschool');
 			}
 			if(set_value('school_level') === "고등학생"){
 				$classification = set_value('highschool');
@@ -490,9 +493,25 @@ class Page extends CI_Controller
 		echo json_encode($msg);
 	}
 
+	function getSelectedData(){
+		$data = $this->input->post('data');
+		if($data !== false || $data !== null){
+			$msg['status'] = true;
+			$msg['scale'] = $this->fetchScale($data);
+			$msg['rotate'] = $this->fetchLabelRotate($data);
+			$msg['label'] = $this->fetchLabelStyle($data);
+		}else{
+			$msg['status'] = false;
+			$msg['error'] = "no post data has been receive";
+		}
+		$msg['test'] = $data;
+		echo json_encode($msg);
+	}
+
+	
+
 	// processing script	
-	public function register_participants()
-	{	
+	public function register_participants(){	
 		$this->form_validation->set_rules('gender', '성별', 'required',array('required'=>'선택 해주세요 {field}'));
 		$this->form_validation->set_rules('school_level', '학교급', 'required',array('required'=>'선택 해주세요 {field}'));
 
@@ -500,7 +519,7 @@ class Page extends CI_Controller
 			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "중학생"){
-			$this->form_validation->set_rules('elem', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
+			$this->form_validation->set_rules('highschool', '중학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
 		if( $this->input->post('school_level') === "고등학생"){
 			$this->form_validation->set_rules('highschool', '고등학생', 'required',array('required'=>'선택 해주세요 {field}'));
@@ -522,7 +541,7 @@ class Page extends CI_Controller
 				$classification  = set_value('elem');
 			}
 			if(set_value('school_level') === "중학생"){
-				$classification = set_value('elem');
+				$classification = set_value('highschool');
 			}
 			if(set_value('school_level') === "고등학생"){
 				$classification = set_value('highschool');
@@ -554,8 +573,7 @@ class Page extends CI_Controller
 		echo json_encode($msg);
 	}
 
-	public function survey_answers()
-	{
+	public function survey_answers(){
 		for ($i=1; $i <= 9; $i++) {
 			$name = 'rq'.$i;
 			$this->form_validation->set_rules($name, 'Question #'.$i, 'required',array('required'=>'선택 해주세요 {field}'));
@@ -608,8 +626,24 @@ class Page extends CI_Controller
 		echo json_encode($msg);
 	}
 
-	public function valsession()
-	{
+	function validateUser(){
+		$where = array("participant_id"=>$this->session->userdata('participant_id'));
+		$check = $this->survey_model->select('participants_answer',false,$where);
+
+		if($check != false){
+			$msg['status'] = true;
+		}else{
+			$msg['status'] = false;
+		}
+		echo json_encode($msg);
+	}
+
+	function cancelSurvey(){
+		// delete participants record
+		// clear session
+	}
+
+	public function valsession(){
 		if($this->session->userdata('participant_id') !== null || $this->session->has_userdata('participant_id')){
 			$data['status'] = true;
 		}else{
@@ -704,8 +738,7 @@ class Page extends CI_Controller
 	}
 
 	public function test2(){
-		$result = 'SSH';
-		echo print_r($this->fetchScale($result));
+		echo $this->validateUser();
 	}
 
 }

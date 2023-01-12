@@ -111,11 +111,12 @@ $(function () {
 	// 		valid = true;
 	// 	x = document.getElementsByClassName("tab");
 	// 	y = x[currentTab].getElementsByTagName('input');
-	// 	//y = x[currentTab].document.querySelector('input[type="radio"]:checked')  ;
+	// 	z = x[currentTab].querySelector('input[type="radio"]');
 	// 	// A loop that checks every input field in the current tab:
-	// 	for (i = 0; i < y.length; i++) {
+	// 	for (i = 0; i < z.length; i++) {
+	// 		alert(z[i].value);
 	// 		// If a field is empty...
-	// 		if (y[i].value === '') {
+	// 		if (z[i].value === '') {
 	// 			console.log('invalid')
 	// 			// add an "invalid" class to the field:
 	// 			y[i].className += " invalid";
@@ -131,17 +132,58 @@ $(function () {
 	// 	return valid; // return the valid status
 	// }
 
-	function validateForm() {
-		// This function deals with validation of the form fields
+	// function validateForm() {
+	// 	// This function deals with validation of the form fields
+	// 	var x,
+	// 		y,
+	// 		i,
+	// 		valid = true;
+		
+	// 		document.getElementsByClassName("step")[currentTab].className +=" finish";
+	
+	// 	return valid; // return the valid status
+	// }
+
+	function validateForm(){
 		var x,
 			y,
 			i,
 			valid = true;
-		
-			document.getElementsByClassName("step")[currentTab].className +=
-				" finish";
-	
+		x = document.getElementsByClassName("tab");
+		y = x[currentTab].getElementsByTagName('input');
+		// A loop that checks every input field in the current tab:
+		let stat;
+		let radio1;
+		let radio2
+		for (i = 0; i < y.length; i++) {			
+			if(y[i].getAttribute('type') === 'radio'){
+				radio1 = y[0].getAttribute('id');
+				radio2 = y[1].getAttribute('id')
+				
+				if($('#'+radio1).prop("checked") !== false || $('#'+radio2).prop("checked") !== false){
+					stat = "pass";
+				}else{
+					stat = "failed";
+				}
+			}			
+		}
+		// If a field is empty...
+		if (stat === 'failed') {
+			var title = '이런!';
+			var message = "답변을 선택하세요.";
+			var type = 'error';	
+			modal(title,message,type);
+			// add an "invalid" class to the field:
+			y[i].className += " invalid";
+			// and set the current valid status to false:
+			valid = false;
+		}
+		// If the valid status is true, mark the step as finished and valid:
+		if (valid) {
+			document.getElementsByClassName("step")[currentTab].className += " finish";
+		}
 		return valid; // return the valid status
+		
 	}
 
 	function fixStepIndicator(n) {
@@ -202,13 +244,7 @@ $(function () {
 				dataType: 'json',
 				success: function(response){
 					if(response.status === true){
-						var title = '축하합니다!';
-						var message = '설문조사에 응해주셔서 감사합니다!';
-						var type = 'success';
-						modal(title,message,type);
-						window.setTimeout(function () {
-							window.location.href = "/page/survey_result/";
-						},1000);
+						window.location.href = "/page/survey_result/";
 					}else{
 						var title = '에러 메시지!!!';
 						var message = response.error;

@@ -4,16 +4,15 @@ $(function () {
 	const college = $("#college");
 	const public_sec = $("#public");
 
-	function getShowList(school) 
-	{
+	function getShowList(school){
 		if (school === "초등학생") {
 			elemlevel.show();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
 		} else if (school === "중학생") {
-			elemlevel.show();
-			highschool.hide();
+			highschool.show();
+			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
 		} else if (school === "고등학생") {
@@ -57,11 +56,30 @@ $(function () {
 		return tmp;
 	}
 
+	function getSelectedLinkData(param){	
+		var tmp = null;	
+		$.ajax({
+			type: "POST",
+			url: "/page/getSelectedData", 
+			data: {data: param},
+			dataType: "json",  
+			cache:false,
+			success: function(result){
+				tmp = result;  //as a debugging message.
+			},
+			error: function () {
+				console.log("error");
+			},
+		});// you have missed this bracket
+		
+		return tmp;
+	}
+
 	function displayData(scaledata,rotatedata,labeldata,type)
 	{	//display scale
-		console.log(scaledata)
-		console.log(rotatedata)
-		console.log(labeldata)
+		// console.log(scaledata)
+		// console.log(rotatedata)
+		// console.log(labeldata)
 		var scaleContainer = $("#scaleCont");
 		var scaletemp = $("#scaletemplate").html();
 		
@@ -85,20 +103,20 @@ $(function () {
 
 	}
 
-	function displaylink($result)
+	function displaylink(result)
 	{	// get linklist
 		var linkContainer = $("#linkCont");
 		var link = $("#linktemplate").html();
-		$.each($result, function (i, d) {		
+		$.each(result, function (i, d) {	
+			// i = uppercase name , d.name = lowercase name	
 			let divid = d.name;	
-			let name = d.name;
-				name = name.toUpperCase();
 			let tempdata = {
-				type: name,
+				type: i,
 				type_desc: d.desc,
 				bgcolor: d.bgcolor,
 				color: d.color,
-				id:d.name
+				id:d.name,
+				linkId: d.name+"link"
 			};
 			let bgcolor = d.bgcolor;
 			let color = d.color;
@@ -109,27 +127,33 @@ $(function () {
 		});		
 	}
 
-	function processRotate(data,type){
-		var tmp = [];
-		var num = 0;
+	function makeAllClickableLink(data)
+	{
 		$.each(data, function (i,d) {
-			if(i === type)
-			{
-				tmp[num] = d;
-			}
+			let name = d.name+"link";		
+			//console.log(id);	
+			$('#'+name).click(function () {
+				let value = this.getAttribute('data-value');
+				let scaleContainer = $("#scaleCont");
+				
+				$.ajax({
+					type: "POST",
+					url: "/page/getSelectedData", 
+					data: {data: value},
+					dataType: "json",  
+					cache:false,
+					success: function(r){
+						scaleContainer.empty();
+						displayData(r.scale,r.rotate,r.label,value);
+					},
+					error: function () {
+						console.log("error");
+					},
+				});			
+			});
 		});
-
-		return tmp;
 	}
 
-	function processScale(data,type){
-		
-	}
-
-	function processLabel(data,type){
-		
-	}
-	
 	function modal(title,message,type){
 		$("#alertModal").modal("show");
 		$('#alertModal').find('.modal-title').text(title);
@@ -143,11 +167,112 @@ $(function () {
 			$('.alert-danger').html(message).fadeIn();
 		}
 	}
+
 	function confirmModal(title,message){
 		$("#confirmModal").modal("show");
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
+
+	function valModal(title,message){
+		$("#valModal").modal("show");
+		$('#valModal').find('.modal-title').text(title);
+		$('.alert-secondary').html(message);
+	}
+
+	function displayPie(piedata){
+		new Chart(document.getElementById("pie-chart"), {
+			type: "pie",
+			data: {
+				labels: [
+					"SSH",
+					"SST",
+					"HTH",
+					"HSH",
+					"STT",
+					"HTT",
+					"HST",
+					"STH",
+				],
+				datasets: [
+					{
+						label: "answers",
+						backgroundColor: [
+							"#6370E3",
+							"#BEC5FF",
+							"#42C696",
+							"#9AF5D4",
+							"#BB6BED",
+							"#DDB1FF",
+							"#FF9C27",
+							"#FFD772",
+						],
+						data: piedata,
+					},
+				],
+			},
+			options: {
+				responsive: true,
+				legend: {
+					position: "bottom",
+					align: "center",
+					color: "rgb(255, 99, 132)",
+					labels: {
+						font: {
+							size: 30,
+						},
+					},
+				},
+			},
+		});
+	}
+
+	function validatesession() {
+		var tmp = null;
+		$.ajax({
+			url: "/page/valsession/",
+			async: false,
+			dataType: "json",
+			success: function (results) {
+				$.each(results, function (i, result) {
+					tmp = results.status;
+				});
+			},
+			error: function () {
+				console.log("error");
+			},
+		});
+		return tmp;
+	}
+
+	function validatePageAccess(){
+		// validate page access here if user wants direct access page without finishing survey exam
+		// check participants id if it has survey answer.
+		// if false promp if want to continue survey
+		// if not delete participants data and clear session and redirect to this page.
+
+		var tmp = null;
+		$.ajax({
+			url: "/page/validateUser/",
+			async: false,
+			dataType: "json",
+			success: function (results) {
+				if(results.status == false){
+					//open prompt here and redirect to survey if user wants to continue
+					var title = '앗 미안 해요!!!';
+					var message = "평가를 멈추시겠습니까? 지금 멈추면 모든 평가의 데이터가 삭제되고 결과를 볼 수 없습니다";
+					var type = 'error';
+					valmodal(title,message,type);
+				}
+			},
+			error: function () {
+				console.log("error");
+			},
+		});
+		return tmp;
+
+	}
+
 	var data = document.getElementById("school_level").value;
 	getShowList(data);
 
@@ -168,7 +293,7 @@ $(function () {
 			dataType: 'json',
 			success: function(response){
 				if(response.status === true){	
-					searchResult(getData(displayUrl),response.data)
+					displayPie(response.data);
 				}else{
 					//console.log("no data");
 					var title = '앗 미안 해요!!!';
@@ -192,7 +317,38 @@ $(function () {
 		var message = '<p>설문 페이지에서 나가시겠습니까?</p> <p>설문 페이지를 나가면 설문 내용이 모두 초기화 됩니다.</p>';
 		confirmModal(title,message);
 	});
+
 	$('#initiateRedo').click(function() {
+		var url = '/page/clearSession';
+		  $.ajax({
+			  type:'ajax',
+			  method: 'post',
+			  url: url,
+			  async: false,
+			  dataType: 'json',
+			  success: function(response){
+				  var error = response.error;
+				  if (response.success == true) {
+					  window.location.href = '/page/index';
+				  }else{
+					  $('.alert-danger').html(error).fadeIn();
+					  var title = '에러 메시지!!!';
+					  var message = response.error;
+					  var type = 'error';	
+					  alertModal(title,message,type);
+				  }
+			  },
+			  error: function(){
+				  $('.alert-danger').html('요청 처리 오류!').fadeIn();
+			  }
+		  });
+	});
+
+	$('#continuesurvey').click(function() {
+		window.location.href = '/page/survey_page';
+	});
+	
+	$('#cancelsurvey').click(function() {
 		var url = '/page/clearSession';
 		  $.ajax({
 			  type:'ajax',
@@ -220,50 +376,7 @@ $(function () {
 
 	let url = "/page/fetchDefaultResultType";
 	let piedata = getData(url).data;
-	new Chart(document.getElementById("pie-chart"), {
-		type: "pie",
-		data: {
-			labels: [
-				"SSH",
-				"SST",
-				"HTH",
-				"HSH",
-				"STT",
-				"HTT",
-				"HST",
-				"STH",
-			],
-			datasets: [
-				{
-					label: "answers",
-					backgroundColor: [
-						"#6370E3",
-						"#BEC5FF",
-						"#42C696",
-						"#9AF5D4",
-						"#BB6BED",
-						"#DDB1FF",
-						"#FF9C27",
-						"#FFD772",
-					],
-					data: piedata,
-				},
-			],
-		},
-		options: {
-			responsive: true,
-			legend: {
-				position: "bottom",
-				align: "center",
-				color: "rgb(255, 99, 132)",
-				labels: {
-					font: {
-						size: 30,
-					},
-				},
-			},
-		},
-	});
+	displayPie(piedata);
 
 	let linkdata = getData(url).link;
 	let scaledata = getData(url).scale;
@@ -272,4 +385,7 @@ $(function () {
 	
 	displaylink(linkdata);
 	displayData(scaledata,rotatedata,labeldata,"SSH");
+	makeAllClickableLink(linkdata);
+
+	
 });

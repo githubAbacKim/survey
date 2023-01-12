@@ -60,6 +60,7 @@ $(function () {
 		};
 		scaleContainer.append(Mustache.render(scale, scaleTempdata));
 	}
+
 	function validatesession() {
 		var tmp = null;
 		$.ajax({
@@ -77,6 +78,7 @@ $(function () {
 		});
 		return tmp;
 	}
+
 	function alertModal(title,message,type){
 		$("#alertModal").modal("show");
 		$('#alertModal').find('.modal-title').text(title);
@@ -90,6 +92,7 @@ $(function () {
 			$('.alert-danger').html(message).fadeIn();
 		}
 	}
+	
 	function confirmModal(title,message){
 		$("#confirmModal").modal("show");
 		$('#confirmModal').find('.modal-title').text(title);
