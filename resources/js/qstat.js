@@ -60,8 +60,8 @@ $(function () {
 				{
 					var tagree = data[0]*100 + "%";
 					var tdisagree = data[1]*100 + "%";
-					console.log(tagree);
-					console.log(tdisagree);
+					// console.log(tagree);
+					// console.log(tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);

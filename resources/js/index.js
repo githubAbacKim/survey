@@ -55,6 +55,69 @@ $(function () {
 		}
 	}
 
+	function valModal(title,message){
+		$("#valModal").modal("show");
+		$('#valModal').find('.modal-title').text(title);
+		$('.alert-secondary').html(message);
+	}
+
+	function validatePageAccess(){
+		let tmp;
+		$.ajax({
+			url: "/page/validateUser/",
+			async: false,
+			dataType: "json",
+			success: function (results) {
+				if(results.status == false){
+					tmp = false;
+				}else{
+					tmp = true;
+				}
+			},
+			error: function () {
+				console.log("error");
+			},
+		});
+		return tmp;
+	}
+	
+	if(validatePageAccess() === false && validatesession() === true){
+		$('#continuesurvey').click(function() {
+			window.location.href = '/page/survey_page';
+		});
+		
+		$('#cancelsurvey').click(function() {
+			var url = '/page/cancelSurvey';
+			$.ajax({
+				type:'ajax',
+				method: 'post',
+				url: url,
+				async: false,
+				dataType: 'json',
+				success: function(response){
+					var error = response.error;
+					if (response.success == true) {
+						window.location.href = '/page/index';
+					}else{
+						$('.alert-danger').html(error).fadeIn();
+						var title = '에러 메시지!!!';
+						var message = response.error;
+						var type = 'error';	
+						alertModal(title,message,type);
+					}
+				},
+				error: function(){
+					$('.alert-danger').html('요청 처리 오류!').fadeIn();
+				}
+			});
+		});
+
+		var title = '앗 미안 해요!!!';
+		var message = "평가를 멈추시겠습니까? 지금 멈추면 모든 평가의 데이터가 삭제되고 결과를 볼 수 없습니다";
+		var type = 'error';
+		valModal(title,message,type);
+	}
+	
 	var data = document.getElementById("school_level").value;
 	getShowList(data);
 
@@ -138,5 +201,5 @@ $(function () {
 			window.location.href = "/page/survey_result";
 		}
 	});
-
+		
 });

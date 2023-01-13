@@ -174,12 +174,6 @@ $(function () {
 		$('.alert-secondary').html(message);
 	}
 
-	function valModal(title,message){
-		$("#valModal").modal("show");
-		$('#valModal').find('.modal-title').text(title);
-		$('.alert-secondary').html(message);
-	}
-
 	function displayPie(piedata){
 		new Chart(document.getElementById("pie-chart"), {
 			type: "pie",
@@ -245,34 +239,6 @@ $(function () {
 		return tmp;
 	}
 
-	function validatePageAccess(){
-		// validate page access here if user wants direct access page without finishing survey exam
-		// check participants id if it has survey answer.
-		// if false promp if want to continue survey
-		// if not delete participants data and clear session and redirect to this page.
-
-		var tmp = null;
-		$.ajax({
-			url: "/page/validateUser/",
-			async: false,
-			dataType: "json",
-			success: function (results) {
-				if(results.status == false){
-					//open prompt here and redirect to survey if user wants to continue
-					var title = '앗 미안 해요!!!';
-					var message = "평가를 멈추시겠습니까? 지금 멈추면 모든 평가의 데이터가 삭제되고 결과를 볼 수 없습니다";
-					var type = 'error';
-					valmodal(title,message,type);
-				}
-			},
-			error: function () {
-				console.log("error");
-			},
-		});
-		return tmp;
-
-	}
-
 	var data = document.getElementById("school_level").value;
 	getShowList(data);
 
@@ -319,36 +285,6 @@ $(function () {
 	});
 
 	$('#initiateRedo').click(function() {
-		var url = '/page/clearSession';
-		  $.ajax({
-			  type:'ajax',
-			  method: 'post',
-			  url: url,
-			  async: false,
-			  dataType: 'json',
-			  success: function(response){
-				  var error = response.error;
-				  if (response.success == true) {
-					  window.location.href = '/page/index';
-				  }else{
-					  $('.alert-danger').html(error).fadeIn();
-					  var title = '에러 메시지!!!';
-					  var message = response.error;
-					  var type = 'error';	
-					  alertModal(title,message,type);
-				  }
-			  },
-			  error: function(){
-				  $('.alert-danger').html('요청 처리 오류!').fadeIn();
-			  }
-		  });
-	});
-
-	$('#continuesurvey').click(function() {
-		window.location.href = '/page/survey_page';
-	});
-	
-	$('#cancelsurvey').click(function() {
 		var url = '/page/clearSession';
 		  $.ajax({
 			  type:'ajax',

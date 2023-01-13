@@ -75,4 +75,15 @@ class Survey_Model extends CI_Model {
 		  return false;
 	  }
   	}
+
+	function delete($table_name,$where){
+		$this->db->where($where);
+		$this->db->delete($table_name);
+
+		if ($this->db->affected_rows() > 0) {
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

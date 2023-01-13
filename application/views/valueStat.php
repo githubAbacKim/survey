@@ -73,7 +73,7 @@
                 <div class="col col-lg-7 col-sm-7">                            
                     <select id="gender" name="gender" class="form-select bg-color border-button">
                         <optgroup class="p-3">
-                            <option value="*">전체</option>
+                            <option value="전체">전체</option>
                             <option value="남성">남성</option>
                             <option value="여성">여성</option>
                         </optgroup>
@@ -90,7 +90,7 @@
                 <div class="col col-lg-7 col-xs-7">
                     <select id="school_level" name="school_level" class="form-select bg-color border-button">
                         <optgroup>
-                            <option value="*">전체</option>
+                            <option value="전체">전체</option>
                             <option value="초등학생">초등학생</option>
                             <option value="중학생">중학생</option>
                             <option value="고등학생">고등학생</option>
@@ -148,6 +148,7 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
             </div>
         </div>
+        
         <template id="linktemplate">
             <a id="{{linkId}}" data-value="{{type}}" role="button">
                 <div class="col-lg-12 col-sm-8 d-flex typelabels mt-2">
@@ -217,21 +218,6 @@
             <div class="modal-footer justify-content-md-center gap-2">
                 <button type="button" id="initiateRedo" class="redobtn">나가기</button>
                 <button type="button" class="cancelbtn" data-bs-dismiss="modal">취소</button>
-            </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="valModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-body">
-                <div class="alert alert-secondary text-center" role="alert">
-                    A simple danger alert—check it out!
-                </div>
-            </div>
-            <div class="modal-footer justify-content-md-center gap-2">
-                <button type="button" id="continuesurvey" class="redobtn">나가기</button>
-                <button type="button" id="cancelsurvey" class="cancelbtn">취소</button>
             </div>
             </div>
         </div>

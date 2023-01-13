@@ -285,11 +285,27 @@ class Page extends CI_Controller
 				$classification = set_value('college');
 			}
 
-			$where = array(
-				"gender" => set_value('gender'),
-				"school_level" => set_value('school_level'),
-				"classification" => strval($classification)
-			);
+			if(set_value('gender') === "전체" && set_value('school_level') !== '전체'){
+				$where = array(
+					"school_level" => set_value('school_level'),
+					"classification" => strval($classification)
+				);
+			}
+			elseif (set_value('gender') !== "전체" && set_value('school_level') === '전체') {
+				$where = array(
+					"gender" => set_value('gender')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {
+				$where=false;
+			}
+			else{
+				$where = array(
+					"gender" => set_value('gender'),
+					"school_level" => set_value('school_level'),
+					"classification" => strval($classification)
+				);
+			}
 
 			$var = array(
 				"tab1"=>"participants_answer pa",
@@ -313,7 +329,7 @@ class Page extends CI_Controller
 	function lookUpValueStat(){
 		$this->form_validation->set_rules('gender', '성별', 'required',array('required'=>'선택 해주세요 {field}'));
 		$this->form_validation->set_rules('school_level', '학교급', 'required',array('required'=>'선택 해주세요 {field}'));
-
+		
 		if( $this->input->post('school_level') === "초등학생"){
 			$this->form_validation->set_rules('elem', '초등학생', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
@@ -326,14 +342,12 @@ class Page extends CI_Controller
 		if( $this->input->post('school_level') === "대학"){
 			$this->form_validation->set_rules('college', '대학', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
+
 		if ($this->form_validation->run() == FALSE) {
 			$msg['error'] = validation_errors();
 			//$msg['error'] = "선택하지 않은 항목이 있습니다. 모든 항목을 선택해주세요.";
 			$msg['status'] = false;
 		} else {
-			if(set_value('school_level') === "*"){
-				$classification  = '*';
-			}
 			if(set_value('school_level') === "초등학생"){
 				$classification  = set_value('elem');
 			}
@@ -346,14 +360,30 @@ class Page extends CI_Controller
 			if(set_value('school_level') === "대학"){
 				$classification = set_value('college');
 			}
-
-			$where = array(
-				"gender" => set_value('gender'),
-				"school_level" => set_value('school_level'),
-				"classification" => strval($classification)
-			);
-			
+	
+			if(set_value('gender') === "전체" && set_value('school_level') !== '전체'){
+				$where = array(
+					"school_level" => set_value('school_level'),
+					"classification" => strval($classification)
+				);
+			}
+			elseif (set_value('gender') !== "전체" && set_value('school_level') === '전체') {
+				$where = array(
+					"gender" => set_value('gender')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {
+				$where=false;
+			}
+			else{
+				$where = array(
+					"gender" => set_value('gender'),
+					"school_level" => set_value('school_level'),
+					"classification" => strval($classification)
+				);
+			}
 			$result = $this->survey_model->select("participants",$like=false,$where);
+
 			if($result !== false){
 				$msg['data'] = $this->processValStatSearch($result);
 				$msg['status'] = true;
@@ -641,6 +671,22 @@ class Page extends CI_Controller
 	function cancelSurvey(){
 		// delete participants record
 		// clear session
+		$table_name = "participants";
+		$where = array("participant_id"=>$this->session->userdata('participant_id'));
+		$cancel = $this->survey_model->delete($table_name,$where);
+		
+		if($cancel == true){
+			if($this->processClearSession() == true){
+				$msg['success'] = true;
+			}else{
+				$msg['success'] = false;
+				$msg['error'] = "error clearing session";
+			}
+		}else{
+			$msg['success'] = false;
+			$msg['error'] = "error deleting participants";
+		}
+		echo json_encode($msg);
 	}
 
 	public function valsession(){
@@ -652,21 +698,30 @@ class Page extends CI_Controller
 		echo json_encode($data);
 	}
 
-	public function clearSession(){
+	public function processClearSession(){
 		$result_arr = array("sh","ts","th","participants_id");
 		$this->session->unset_userdata($result_arr);
 		$this->session->sess_destroy();
 
 		if($this->session->userdata('participants_id')) 
 		{
-			$msg['success'] = false;
-			$msg['error'] = "설문조사를 다시 실행할 수 없습니다! 불편을 드려 죄송합니다.";	
+			return false;
 			
 		}else 
 		{
-			$msg['success'] = true;
-		} 			
+			return true;
+		} 
+	}
 
+	public function clearSession(){
+		if($this->processClearSession() == true) 
+		{
+			$msg['success'] = true;			
+		}else 
+		{
+			$msg['success'] = false;
+			$msg['error'] = "설문조사를 다시 실행할 수 없습니다! 불편을 드려 죄송합니다.";	
+		} 
 		echo json_encode($msg);
 	}
 
@@ -738,7 +793,31 @@ class Page extends CI_Controller
 	}
 
 	public function test2(){
-		echo $this->validateUser();
+		$gender = '전체';
+		$school_level = 'dfasdf';
+
+		if($gender === "전체" && $school_level !== '전체'){
+			$where = array(
+				"school_level" => "elem",
+				"classification" => "1dd"
+			);
+		}
+		elseif ($gender !== "전체" && $school_level === '전체') {
+			$where = array(
+				"gender" => "malke"
+			);
+		}
+		elseif ($gender === "전체" && $school_level === '전체') {
+			$where='false';
+		}
+		else{
+			$where = array(
+				"gender" => 'male',
+				"school_level" => "elem",
+				"classification" => "1tt"
+			);
+		}
+		echo print_r($where);
 	}
 
 }
