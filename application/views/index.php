@@ -4,9 +4,14 @@
         width: 100px;
         opacity: 1;
     }
-    /* div {
-        border: 1px solid;
-    } */
+    .btnWhite{
+    background-color: white;
+    border: none;
+    color: #F57600;
+    transition: 0.4s;
+    width: 130px;
+    border-radius: 12px;
+    }
 </style>
 
 <!-- Modal -->
@@ -35,7 +40,10 @@
                     부탁해!</a></div>
         </div>
         <div class="navlist">
-            <ul class="nav">
+            <ul class="nav">          
+                <li clas="nav-item">
+                    <a class="btn btn-secondary btn-sm shadow p-2 btnWhite m-2" href="<?php echo site_url('page/aboutus') ?>" role="button">ABOUT</a>
+                </li>
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                 </li>
@@ -44,10 +52,7 @@
                 </li>   
                 <li clas="nav-item">
                     <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
-                </li>             
-                <li clas="nav-item">
-                    <a id="goresult" class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" role="button">ABOUT</a>
-                </li>
+                </li>   
             </ul>
         </div>
     </div>

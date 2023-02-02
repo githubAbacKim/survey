@@ -77,6 +77,16 @@ class Page extends CI_Controller
 		$this->load->view('footer', $data);
 	}
 
+	public function aboutus()
+	{
+		$data['title'] = "About Us Page";
+
+		$this->load->view('headerplain', $data);
+		$this->load->view('bodyHeader',$data);
+		$this->load->view('aboutus', $data);
+		$this->load->view('footer', $data);
+	}
+
 	// fetch functions
 
 	public function shuffledQuestion()

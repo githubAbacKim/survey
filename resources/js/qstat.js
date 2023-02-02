@@ -207,4 +207,6 @@ $(function () {
 			  }
 		  });
 	});
+
+	$('[data-toggle="tooltip"]').tooltip('show'); // generate tooltip
 });
