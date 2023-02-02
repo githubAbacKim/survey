@@ -9,24 +9,6 @@
 
 <!-- /Modal -->
 <div class="container-fluid p-3">
-    <!-- header -->
-    <div class="row d-flex flex-row">
-        <div class="col-lg-3 col-xs-12 p-3 text-center align-self-center offset-lg-1">
-            <a href="<?php echo site_url('page/') ?>" class="navbar-brand logo">AI 도시를부탁해!</a>
-        </div>
-        <div class="col-lg-8 col-xs-12 d-flex justify-content-end bd-highlight">
-            <div class="col-lg-2 bd-highlight align-self-center">
-                <a class="btn btn-lg text-color" id="redo" role="button">다시하기</a>
-            </div>
-            <div class="col-lg-2 bd-highlight align-self-center">
-                <a class="btn btn-lg text-color" href="<?php echo site_url('page/questions');?>" role="button">문항보기</a>
-            </div>
-            <div class="col-lg-3 col-sm-12 text-center bd-highlight align-self-center">
-                <a class="btn btn-secondary btn-sm shadow ms-3 p-2 btn-bg" role="button">조회</a>
-            </div>
-        </div>
-    </div>
-    <!-- end header -->
     <form id="searchform" method="post">
         <div class="row mt-5 justify-content-end">        
             <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">

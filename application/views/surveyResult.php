@@ -10,25 +10,6 @@
     } */
 </style>
 <div class="container-fluid p-3">
-    <!-- header -->
-    <div class="row d-flex flex-row">
-        <div class="col-lg-3 col-xs-12 p-3 text-center align-self-center offset-lg-2">
-            <a href="<?php echo site_url('page/')?>" class="navbar-brand logo">AI 도시를부탁해!</a>
-        </div>
-        <div class="col-lg-6 col-xs-12 d-flex justify-content-end bd-highlight">
-            <div class="col-lg-2 bd-highlight align-self-center">
-                <a class="btn btn-lg text-color" id="redo" role="button">다시하기</a>
-            </div>
-            <div class="col-lg-2 bd-highlight align-self-center">
-                <a class="btn btn-lg text-color" href="<?php echo site_url('page/questions');?>" role="button">문항보기</a>
-            </div>
-            <div class="col-lg-3 col-sm-12 text-center bd-highlight align-self-center">
-                <a class="btn btn-secondary btn-sm shadow ms-3 p-2 btn-bg" role="button">조회</a>
-            </div>
-        </div>
-    </div>
-    <!-- end header -->
-
     <div class="row p-3 justify-content-evenly">
         <template id="profileTemp">
             <div class="col-lg-10 offset-lg-1">

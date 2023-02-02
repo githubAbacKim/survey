@@ -24,6 +24,7 @@ class Page extends CI_Controller
 		$data['title'] = "Home Page";
 
 		$this->load->view('header', $data);
+		$this->load->view('bodyHeader',$data);
 		$this->load->view('index', $data);
 		$this->load->view('footer', $data);
 
@@ -46,6 +47,7 @@ class Page extends CI_Controller
 		$data['title'] = "Survey Result Page";
 
 		$this->load->view('headerplain', $data);
+		$this->load->view('bodyHeader',$data);
 		$this->load->view('surveyResult', $data);
 		$this->load->view('footer', $data);
 	}
@@ -55,6 +57,7 @@ class Page extends CI_Controller
 		$data['title'] = "Question Statistics Page";
 
 		$this->load->view('headerplain', $data);
+		$this->load->view('bodyHeader',$data);
 		$this->load->view('questionStat', $data);
 		$this->load->view('footer', $data);
 	}
@@ -64,6 +67,7 @@ class Page extends CI_Controller
 		$data['title'] = "Value Statistics Page";
 
 		$this->load->view('headerplain', $data);
+		$this->load->view('bodyHeader',$data);
 		$this->load->view('valueStat', $data);
 		$this->load->view('footer', $data);
 	}
@@ -73,6 +77,7 @@ class Page extends CI_Controller
 		$data['title'] = "Question Page";
 
 		$this->load->view('headerplain', $data);
+		$this->load->view('bodyHeader',$data);
 		$this->load->view('questions', $data);
 		$this->load->view('footer', $data);
 	}
@@ -546,9 +551,7 @@ class Page extends CI_Controller
 		}
 		$msg['test'] = $data;
 		echo json_encode($msg);
-	}
-
-	
+	}	
 
 	// processing script	
 	public function register_participants(){	

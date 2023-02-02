@@ -4,14 +4,6 @@
         width: 100px;
         opacity: 1;
     }
-    .btnWhite{
-    background-color: white;
-    border: none;
-    color: #F57600;
-    transition: 0.4s;
-    width: 130px;
-    border-radius: 12px;
-    }
 </style>
 
 <!-- Modal -->
@@ -33,7 +25,7 @@
     </div>
 </div>
 <!-- /Modal -->
-<nav class="navbar navbar-light navbar-expand-lg p-5 nav">
+<!-- <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
     <div class="container-fluid">
         <div class="col-lg-2 col-xs-12 p-3 text-center offset-lg-2">
             <div class="col-auto mt-2"><a href="<?php echo site_url('page/') ?>" class="navbar-brand logo">AI 도시를
@@ -56,7 +48,7 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
 <div class="container-fluid content">
     <h1 class="text-lg-center text-color text-style text-center">AI 도시를 부탁해!</h1>
     <p class="text-md normal-text-color">당신은 <b>AI 도시의 시장님</b>입니다. <br>AI와 관련된 다양한 상황에서<b> 당신의 입장을 선택</b>해주세요.</p>

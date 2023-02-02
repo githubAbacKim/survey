@@ -1,3 +1,13 @@
+<style>
+    .btnWhite{
+        background-color: white;
+        border: none;
+        color: #F57600;
+        transition: 0.4s;
+        width: 130px;
+        border-radius: 12px;
+    }
+</style>
 <header>
     <nav class="navbar navbar-light navbar-expand-lg p-5 nav">
         <div class="container-fluid">
@@ -9,16 +19,19 @@
                 <ul class="nav">          
                     <li clas="nav-item">
                         <a class="btn btn-secondary btn-sm shadow p-2 btnWhite m-2" href="<?php echo site_url('page/aboutus') ?>" role="button">ABOUT</a>
-                    </li>
+                    </li>      
+                    <li clas="nav-item">
+                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" id="redo" role="button">다시하기</a>
+                    </li> 
+                    <li clas="nav-item">
+                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
+                    </li>  
                     <li clas="nav-item">
                         <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                     </li>
                     <li clas="nav-item">
                         <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
-                    </li>   
-                    <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
-                    </li>   
+                    </li>  
                 </ul>
             </div>
         </div>

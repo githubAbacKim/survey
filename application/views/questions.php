@@ -6,22 +6,7 @@
 </style>
 
 
-<div class="container-fluid p-3">
-    <!-- header -->
-    <div class="row d-flex flex-row">
-        <div class="col-lg-3 col-xs-12 p-3 text-center align-self-center offset-lg-1">
-            <a href="<?php echo site_url('page/') ?>" class="navbar-brand logo">AI 도시를부탁해!</a>
-        </div>
-        <!-- <div class="col-lg-8 col-xs-12 d-flex justify-content-end bd-highlight">
-            <div class="col-lg-2 bd-highlight">
-                <a class="btn btn-lg text-color" id="redo" role="button">다시하기</a>
-            </div>
-            <div class="col-lg-3 col-sm-12 text-center bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow ms-3 p-2 btn-bg" role="button">조회</a>
-            </div>
-        </div> -->
-    </div>
-    <!-- end header -->
+<div class="container-fluid p-3">    
     <template id="data-template">
         <div class="col-lg-8 col-sm-12 question-card">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
