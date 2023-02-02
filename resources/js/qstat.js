@@ -127,9 +127,11 @@ $(function () {
 	
 	let displayUrl = '/page/fetchquestion';
 	let resultUrl = '/page/fetchDefaultData';
-	displayQuestion(getData(displayUrl));	
+	displayQuestion(getData(displayUrl));
+
 	let defaultdata = getData(resultUrl).data;
 	searchResult(getData(displayUrl),defaultdata);
+	
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
