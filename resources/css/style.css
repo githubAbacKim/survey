@@ -362,6 +362,7 @@ text-align: center;
     color: black;
     }
 
+    
 @media (min-width: 400px){ 
   .select-label{
     text-align: left !important;

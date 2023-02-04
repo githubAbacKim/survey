@@ -100,9 +100,9 @@
                     <div class=" col-10">
                         <div class="progress mt-5 m-2">
                             <div class="progress-bar bg-success" id="{{agreeprog}}" role="progressbar" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuemax="100" data-toggle="tooltip" data-placement="right" title="{{agreePercent}}"></div>
                             <div class="progress-bar bg-orange" id="{{disagreeprog}}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuemax="100" data-toggle="tooltip" data-placement="left" title="{{disagreePercent}}"></div>
                         </div>
                     </div>
                     <div class="col-1  mt-5">

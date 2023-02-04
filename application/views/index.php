@@ -203,8 +203,8 @@
             </div>
         </div>
         <div class="modal-footer justify-content-md-center gap-2">
-            <button type="button" id="continuesurvey" class="redobtn">나가기</button>
-            <button type="button" id="cancelsurvey" class="cancelbtn">취소</button>
+            <button type="button" id="continuesurvey" class="redobtn">취소</button>
+            <button type="button" id="cancelsurvey" class="cancelbtn">나가기</button>
         </div>
         </div>
     </div>

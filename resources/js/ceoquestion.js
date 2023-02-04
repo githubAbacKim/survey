@@ -1,12 +1,12 @@
 $(function(){
     
-    var listContainer = $("#questCont");
-    var paginationcont = $('#data-template').html();
-
-    function getData() {
+    var listContainer = "questCont";
+    var paginationcont = "data-template";
+	
+    function getData(url) {
 		var tmp = null;
 		$.ajax({
-			url: "/page/fetchquestion",
+			url:url,
 			async: false,
 			dataType: "json",
 			success: function (results) {
@@ -21,10 +21,22 @@ $(function(){
 		return tmp;
 	}
 
-    function displayQuestionStat(dataresult)
+	const mustacheTemplating = (container,template,data) =>{
+		const $container = $("#"+container);
+		const $template = $("#"+template).html();  
+	
+		$container.append(Mustache.render($template, data)); 
+	}
+
+    function displayQuestionStat(questions,comments)
     {
-        $.each(dataresult,function(i,result){
-            console.log(result.question_num)
+
+        $.each(questions,function(i,result){
+            ///console.log(result.question_num)
+			
+			let num = result.question_num;
+			const container = "commentCont"+num;
+			const commTemp = "commentTemp";
             var data = {
                 'qnum': result.question_num,
                 'question': result.question,
@@ -35,12 +47,40 @@ $(function(){
                 'disagree_title':'반대',
                 'disagree_desc':result.disagree_desc,
             }
-            listContainer.append(Mustache.render(paginationcont, data)); 
+			mustacheTemplating(listContainer,paginationcont,data);
+			
+			$.each(comments,function(x,d){
+							
+				
+				
+				if(d.question_num === num){
+					console.log(d.question_num +'-'+ x);
+					const commentData = {
+						'comment': d.comment
+					}					
+					mustacheTemplating(container,commTemp,commentData);
+				}
+				
+			})
         });
+			
     }
 
-    function getResult(){
-        // get result for 9 q
+    function makeAnswerArr(data,questions){
+        let commentArr = [];	
+		let num = 0;
+		$.each(questions,function(o,q){
+			commentArr[q.question_num] = [];
+			$.each(data,function(i,d){
+				if(q.question_num == d.question_num){
+					commentArr[q.question_num][o] = d.comment;
+					num++;
+				}
+			})
+		})
+		
+		return commentArr;
+
     }
 
     function lookupsearch(){
@@ -65,8 +105,14 @@ $(function(){
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
+	let resultUrl = '/ceo/fetchAllAnswer';
+	const defaultdata = getData(resultUrl);
 
-    displayQuestionStat(getData());
+	const questionurl = "/ceo/fetchquestion";
+	const question = getData(questionurl);
+	
+    displayQuestionStat(question,defaultdata);
+
     $('#redo').click(function() {
 		var title = '축하합니다!';
 		var message = '<p>설문 페이지에서 나가시겠습니까?</p> <p>설문 페이지를 나가면 설문 내용이 모두 초기화 됩니다.</p>';
