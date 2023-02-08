@@ -2,7 +2,7 @@ $(function(){
     
     var listContainer = "questCont";
     var paginationcont = "data-template";
-	
+
     function getData(url) {
 		var tmp = null;
 		$.ajax({
@@ -53,7 +53,7 @@ $(function(){
 							
 				
 				
-				if(d.question_num === num){
+				if(d.question_num === num && d.comment !== ""){
 					console.log(d.question_num +'-'+ x);
 					const commentData = {
 						'comment': d.comment
@@ -143,4 +143,5 @@ $(function(){
 			  }
 		  });
 	});
+	
 });

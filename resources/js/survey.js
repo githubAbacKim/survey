@@ -16,23 +16,23 @@ $(function () {
 		});
 		return tmp;
 	}
-	function validatesession() {
-		var tmp = null;
-		$.ajax({
-			url: "/page/valsession/",
-			async: false,
-			dataType: "json",
-			success: function (results) {
-				$.each(results, function (i, result) {
-					tmp = results.status;
-				});
-			},
-			error: function () {
-				console.log("error");
-			},
-		});
-		return tmp;
-	}
+	// function validatesession() {
+	// 	var tmp = null;
+	// 	$.ajax({
+	// 		url: "/page/valsession/",
+	// 		async: false,
+	// 		dataType: "json",
+	// 		success: function (results) {
+	// 			$.each(results, function (i, result) {
+	// 				tmp = results.status;
+	// 			});
+	// 		},
+	// 		error: function () {
+	// 			console.log("error");
+	// 		},
+	// 	});
+	// 	return tmp;
+	// }
 
 	var listContainer = $("#slideCont");
 	var datatemplate = $("#datatemplate").html();
@@ -263,13 +263,6 @@ $(function () {
 
 		const closeModal = (e) => {
 			$("#exampleModal").modal("hide");
-		};
-
-		//redo select options
-		const redo = (e) => {
-			$("#gender").val("선택");
-			$("#classification").val("선택");
-			$("#schoollevel").val("선택");
 		};
 
 		$(document).on("click", "#btnclose", closeModal);

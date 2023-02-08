@@ -21,14 +21,20 @@ class Ceo extends CI_Controller
 
 	public function index()
 	{
+		$this->questions();
+
+		// echo $_SERVER['HTTP_HOST'];
+	}
+
+	public function questions()
+	{
 		$data['title'] = "Question Page";
 
 		$this->load->view('headerplain', $data);
-		$this->load->view('ceo/ceobodyHeader',$data);
+		$this->load->view('ceo/ceobodyheader',$data);
 		$this->load->view('ceo/ceoquestion', $data);
 		$this->load->view('footer', $data);
 
-		// echo $_SERVER['HTTP_HOST'];
 	}
 
 	public function questionStatistics()
@@ -36,7 +42,7 @@ class Ceo extends CI_Controller
 		$data['title'] = "Question Statistics Page";
 
 		$this->load->view('headerplain', $data);
-		$this->load->view('ceo/ceobodyHeader',$data);
+		$this->load->view('ceo/ceobodyheader',$data);
 		$this->load->view('ceo/ceoitemstatistics', $data);
 		$this->load->view('footer', $data);
 	}
@@ -46,8 +52,8 @@ class Ceo extends CI_Controller
 		$data['title'] = "Value Statistics Page";
 
 		$this->load->view('headerplain', $data);
-		$this->load->view('ceo/ceobodyHeader',$data);
-		$this->load->view('ceo/ceovalueStat', $data);
+		$this->load->view('ceo/ceobodyheader',$data);
+		$this->load->view('ceo/ceovaluestat', $data);
 		$this->load->view('footer', $data);
 	}
 
@@ -56,7 +62,7 @@ class Ceo extends CI_Controller
 		$data['title'] = "About Us Page";
 
 		$this->load->view('headerplain', $data);
-		$this->load->view('bodyHeader',$data);
+		$this->load->view('bodyheader',$data);
 		$this->load->view('aboutus', $data);
 		$this->load->view('footer', $data);
 	}
@@ -269,15 +275,26 @@ class Ceo extends CI_Controller
 				$classification = set_value('college');
 			}
 
-			if(set_value('gender') === "전체" && set_value('school_level') !== '전체'){
+			if(set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체'){
 				$where = array(
 					"school_level" => set_value('school_level'),
 					"classification" => strval($classification)
 				);
 			}
-			elseif (set_value('gender') !== "전체" && set_value('school_level') === '전체') {
+			elseif (set_value('gender') !== "전체" && set_value('school_level') === "전체") {
 				$where = array(
 					"gender" => set_value('gender')
+				);
+			}
+			elseif (set_value('gender') !== "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"gender" => set_value('gender'),
+					"school_level" => set_value('school_level')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"school_level" => set_value('school_level')
 				);
 			}
 			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {
@@ -345,15 +362,26 @@ class Ceo extends CI_Controller
 				$classification = set_value('college');
 			}
 	
-			if(set_value('gender') === "전체" && set_value('school_level') !== '전체'){
+			if(set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체'){
 				$where = array(
 					"school_level" => set_value('school_level'),
 					"classification" => strval($classification)
 				);
 			}
-			elseif (set_value('gender') !== "전체" && set_value('school_level') === '전체') {
+			elseif (set_value('gender') !== "전체" && set_value('school_level') === "전체") {
 				$where = array(
 					"gender" => set_value('gender')
+				);
+			}
+			elseif (set_value('gender') !== "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"gender" => set_value('gender'),
+					"school_level" => set_value('school_level')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"school_level" => set_value('school_level')
 				);
 			}
 			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {

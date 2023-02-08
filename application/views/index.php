@@ -209,5 +209,21 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-body">
+            <div class="alert alert-secondary text-center" role="alert">
+                A simple danger alert—check it out!
+            </div>
+        </div>
+        <div class="modal-footer justify-content-md-center gap-2">
+            <button type="button" id="initiateRedo" class="redobtn">나가기</button>
+            <button type="button" class="cancelbtn" data-bs-dismiss="modal">취소</button>
+        </div>
+        </div>
+    </div>
+</div>
+    
 <!-- /Modal -->
 <script src="<?php echo base_url('resources/js/index.js') ?>" type="module"></script>

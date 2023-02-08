@@ -13,7 +13,7 @@
         font-weight: bolder;
     }
     .typelabels{
-        background-color: white;
+        /* background-color: white; */
         color: black;
         border-radius: 25px;
     }
@@ -47,8 +47,8 @@
 
 <div class="container-fluid p-3">
     <form id="searchform" method="post">
-        <div class="row mt-5 justify-content-end">        
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+        <div class="row">        
+            <div class="col-lg-2 offset-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="p-3 select-label text-label-drop-down">성별</label>
                 </div>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="col col-lg-6 col-sm-7">
                     <select id="elem" name="elem" class="form-select bg-color border-button gap-3">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="1학년">1학년</option>
                         <option value="2학년">2학년</option>
                         <option value="3학년">3학년</option>
@@ -100,19 +100,19 @@
                         <option value="6학년">6학년</option>
                     </select>
                     <select id="highschool" name="highschool" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
                     <select id="college" name="college" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="인문사회">인문사회</option>
                         <option value="자연 | 공학">자연 | 공학</option>
                         <option value="예체능">예체능</option>
                     </select>
                     <select id="public" name="public" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="인문사회">일반</option>
                     </select>
                 </div>
@@ -134,7 +134,7 @@
         <template id="linktemplate">
             <a id="{{linkId}}" data-value="{{type}}" role="button">
                 <div class="col-lg-12 col-sm-8 d-flex typelabels mt-2">
-                    <div class="col-3 text-center titleLabels p-1" id="{{id}}">{{type}}</div>
+                    <div class="col-3 text-center titleLabels shadow p-1" id="{{id}}">{{type}}</div>
                     <div class="col-9 text-center labeldesc p-1"><h>{{type_desc}}</span></div>
                 </div>
             </a>            
@@ -142,7 +142,7 @@
         <div class="col-lg-3 col-sm-6 align-self-center" id="linkCont">        
         </div>
 
-        <template id="scaletemplate">
+        <!-- <template id="scaletemplate">
             <div class="col-lg-12 col-sm-12 profile_head text-color">
                 <div class="col-lg-4 col-ms-6 text-center offset-lg-4 shadow p-2 titleBtn">{{type}}</div>
             </div>
@@ -151,42 +151,24 @@
                     <picture class="picture-container d-flex">
                         <source srcset="<?php echo base_url();?>{{scalesh}}" type="image/svg+xml">
                         <img src="<?php echo base_url();?>{{scalesh}}" class="img-fluid" alt="...">
-                        <!-- <div class="val{{labelsh1}} {{rotate1}}" id="sh1">
-                            <p class="scalelabel">인간존엄성</p>
-                        </div>
-                        <div class="val{{labelsh2}} {{rotate1}}">
-                            <p class="scalelabel" id="sh2">사회공공성</p>
-                        </div> -->
                     </picture>
                 </div>
                 <div class="scale-div col-12 gx-2  position-relative">
                     <picture class="picture-container d-flex">
                         <source srcset="<?php echo base_url()?>{{scalets}}" type="image/svg+xml">
                         <img src="<?php echo base_url()?>{{scalets}}" class="img-fluid" alt="...">
-                        <!-- <div class="val{{labelts1}} {{rotate2}}">
-                            <p class="scalelabel" id="ts1">기술합목적성</p>
-                        </div>
-                        <div class="val{{labelts2}} {{rotate2}}">
-                            <p class="scalelabel" id="ts2">사회공공성</p>
-                        </div> -->
                     </picture>
                 </div>
                 <div class="scale-div col-12 gx-2 position-relative">
                     <picture class="picture-container d-flex">
                         <source srcset="<?php echo base_url()?>{{scaleth}}" type="image/svg+xml">
                         <img src="<?php echo base_url()?>{{scaleth}}" class="img-fluid" alt="...">
-                        <!-- <div class="val{{labelth1}} {{rotate3}}">
-                            <p class="scalelabel" id="th1">기술합목적성</p>
-                        </div>
-                        <div class="val{{labelth2}} {{rotate3}}">
-                            <p class="scalelabel" id="th2">인간존엄성</p>
-                        </div> -->
                     </picture>
                 </div>
             </div>
         </template>
         <div class="col-lg-3 col-xs-12 d-grid gap-3 mt-3" id="scaleCont">            
-        </div>
+        </div> -->
     </div>
     <!-- Modal -->
     <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">

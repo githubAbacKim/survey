@@ -174,14 +174,14 @@ class Page extends CI_Controller
 
 	function fetchMayorType($result){
 		$type = array(
-			"SSH"=>"사회적 중요성_H 유형 시장",
-			"SST" => "사회적 중요성_T 유형 시장",
-			"HTH" => "인간의 중요성_T 유형 시장",
-			"HSH" => "인간 중요도_S형 시장",
-			"STT" => "기술적 중요도_S형 시장",
-			"HTT" => "기술적 중요도_H형 시장",
-			"HST" => "균형 중요도_A 유형 시장",
-			"STH" => "균형 중요도_B 유형 시장"
+			"SSH" => "사회중시_H형 시장님",
+			"SST" => "사회중시_T형 시장님",
+			"HTH" => "인간중시_T형 시장님",
+			"HSH" => "인간중시_S형 시장님",
+			"STT" => "기술중시_S형 시장님",
+			"HTT" => "기술중시_H형 시장님",
+			"HST" => "균형중시_A형 시장님",
+			"STH" => "균형중시_B형 시장님"
 		);		
 		return $type[$result];
 	}
@@ -300,15 +300,26 @@ class Page extends CI_Controller
 				$classification = set_value('college');
 			}
 
-			if(set_value('gender') === "전체" && set_value('school_level') !== '전체'){
+			if(set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체'){
 				$where = array(
 					"school_level" => set_value('school_level'),
 					"classification" => strval($classification)
 				);
 			}
-			elseif (set_value('gender') !== "전체" && set_value('school_level') === '전체') {
+			elseif (set_value('gender') !== "전체" && set_value('school_level') === "전체") {
 				$where = array(
 					"gender" => set_value('gender')
+				);
+			}
+			elseif (set_value('gender') !== "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"gender" => set_value('gender'),
+					"school_level" => set_value('school_level')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"school_level" => set_value('school_level')
 				);
 			}
 			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {
@@ -376,15 +387,26 @@ class Page extends CI_Controller
 				$classification = set_value('college');
 			}
 	
-			if(set_value('gender') === "전체" && set_value('school_level') !== '전체'){
+			if(set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체'){
 				$where = array(
 					"school_level" => set_value('school_level'),
 					"classification" => strval($classification)
 				);
 			}
-			elseif (set_value('gender') !== "전체" && set_value('school_level') === '전체') {
+			elseif (set_value('gender') !== "전체" && set_value('school_level') === "전체") {
 				$where = array(
 					"gender" => set_value('gender')
+				);
+			}
+			elseif (set_value('gender') !== "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"gender" => set_value('gender'),
+					"school_level" => set_value('school_level')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
+				$where = array(
+					"school_level" => set_value('school_level')
 				);
 			}
 			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {

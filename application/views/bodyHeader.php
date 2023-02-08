@@ -16,22 +16,22 @@
                         부탁해!</a></div>
             </div>
             <div class="navlist">
-                <ul class="nav">          
+                <ul class="nav">      
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btnWhite m-2" href="<?php echo site_url('page/aboutus') ?>" role="button">ABOUT</a>
-                    </li>      
+                        <a class="btn btn-secondary btn-sm shadow p-3 btnWhite m-2 redo" id="redo" role="button">다시하기</a>
+                    </li>       
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" id="redo" role="button">다시하기</a>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                     </li> 
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
-                    </li>  
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
+                    </li> 
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
-                    </li>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
+                    </li>                         
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
-                    </li>  
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" href="<?php echo site_url('page/aboutus') ?>" role="button">ABOUT</a>
+                    </li> 
                 </ul>
             </div>
         </div>

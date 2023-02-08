@@ -10,9 +10,9 @@
 </style>
 <div class="container-fluid p-3">
     <template id="commentTemp">
-        <div class="card col-10 offset-1 mb-1">
-            <div class="card-body">
-                {{comment}}
+        <div class="h-card-2 card p-3 mt-2 rounded-10">
+            <div class="h-card-3">
+            {{comment}}
             </div>
         </div>
     </template>    

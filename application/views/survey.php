@@ -1,7 +1,7 @@
 <style>
     .scale-div {
-        border-top-left-radius: 2em;
-        border-top-right-radius: 2em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
         overflow: auto;
     }
 
@@ -70,10 +70,13 @@
     /* input[type=radio]{
         opacity: 0;
     } */
+    .questiontext{
+        background-image : url("../../resources/images/questionbg.svg");
+    }
 </style>
 <div class="container-fluid p-0">
     <div class="row">
-        <div class="col-lg-2 col-xs-12 offset-2  p-5 text-color">
+        <div class="col-lg-2 col-xs-12 offset-2 p-5 text-color">
             <a href="<?php echo site_url('page/') ?>" class="navbar-brand logo">AI 도시를 부탁해!</a>
         </div>
     </div>
@@ -102,7 +105,7 @@
     </div>
     <template id="datatemplate">
         <div class="tab col-lg-12">
-            <div class="col-lg-6 offset-lg-3 col-xs-12 text-color">
+            <div class="col-lg-8 p-3 offset-lg-2 col-xs-12 questiontext text-color">
                 <p>{{question}}</p>
             </div>
             <div class="col-lg-12 col-xs-12 p-3 gap-3 justify-content-md-center d-flex flex-row bd-highlight">

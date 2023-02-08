@@ -61,18 +61,12 @@
             </div>
         </div>
         <div class="row mt-15">
-            <div class="col-sm-12 col-md-6 offset-md-3">
+            <div class="col-sm-12 col-md-8 offset-md-2">
                 <img class="img-fluid" src="../../resources/images/aboutus/tab4.svg" alt="">
             </div>
         </div>
     </div>
     <div class="container-fluid mb-5">
-        <div class="col-10 offset-1 mt-5 text-center fs-6 text text-color bold">
-        AI도시를 부탁해는 사람이 중심이 되는 ‘인공지능(AI) 윤리 기준’의 3대 기본원칙에서 아이디어를 얻어 제작하였습니다.<br> 
-다만, AI도시를 부탁해에서는 인간 존엄성, 사회 공공선, 기술 합목적성의 정의를 인간, 사회, 기술에 초점을 맞춰 단순화 하였습니다.<br> 
-따라서 사람이 중심이 되는 ‘인공지능(AI) 윤리 기준’과 AI도시를 부탁해에서의 인간 존엄성, 사회 공공선, 기술 합목적성의 정의는 다를 수 있습니다.
-        </div>
-
         <div class="col-6 offset-3 mt-5">
             <img class="img-fluid" src="../../resources/images/aboutus/Group 1111.svg" alt="">
         </div>
@@ -83,7 +77,40 @@
             <div class="col-6 text-center text-color bg-light p-3 footertext">AI도시를 부탁해 by 김은경</div>
         </div>
     </div>
-
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert alert-secondary text-center" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+            </div>
+            <div class="modal-footer justify-content-md-center gap-2">
+                <button type="button" id="initiateRedo" class="redobtn">나가기</button>
+                <button type="button" class="cancelbtn" data-bs-dismiss="modal">취소</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Error!!!</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" id="btnclose">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                <div class="alert alert-success" style="display:none" role="alert">A simple success alert—check it out!</div>
+                <div class="alert alert-danger" style="display:none" role="alert">A simple danger alert—check it out!</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnclose">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <!-- <script src="<?php echo base_url("resources/js/question.js")?>"></script> -->

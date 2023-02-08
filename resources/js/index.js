@@ -1,21 +1,4 @@
 $(function () {
-	function validatesession() {
-		var tmp = null;
-		$.ajax({
-			url: "/page/valsession/",
-			async: false,
-			dataType: "json",
-			success: function (results) {
-				$.each(results, function (i, result) {
-					tmp = results.status;
-				});
-			},
-			error: function () {
-				console.log("error");
-			},
-		});
-		return tmp;
-	}
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
@@ -60,28 +43,8 @@ $(function () {
 		$('#valModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
-
-	function validatePageAccess(){
-		let tmp;
-		$.ajax({
-			url: "/page/validateUser/",
-			async: false,
-			dataType: "json",
-			success: function (results) {
-				if(results.status == false){
-					tmp = false;
-				}else{
-					tmp = true;
-				}
-			},
-			error: function () {
-				console.log("error");
-			},
-		});
-		return tmp;
-	}
 	
-	if(validatePageAccess() === false && validatesession() === true){
+	if(validatesession() === true && validateanswer() === false){
 		$('#continuesurvey').click(function() {
 			window.location.href = '/page/survey_page';
 		});
@@ -158,7 +121,7 @@ $(function () {
 	$("#submitform").on("click", function () {
 		var url = $("#startForm").attr("action");
 		var data = $("#startForm").serialize();		
-		if(validatesession() === false){
+		if(validatesession() === false && validateanswer() === false){
 			$.ajax({
 				type:'ajax',
 				method: 'post',

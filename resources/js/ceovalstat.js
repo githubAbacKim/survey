@@ -60,7 +60,7 @@ $(function () {
 		var tmp = null;	
 		$.ajax({
 			type: "POST",
-			url: "/page/getSelectedData", 
+			url: "/ceo/getSelectedData", 
 			data: {data: param},
 			dataType: "json",  
 			cache:false,
@@ -75,33 +75,28 @@ $(function () {
 		return tmp;
 	}
 
-	function displayData(scaledata,rotatedata,labeldata,type)
-	{	//display scale
-		// console.log(scaledata)
-		// console.log(rotatedata)
-		// console.log(labeldata)
-		var scaleContainer = $("#scaleCont");
-		var scaletemp = $("#scaletemplate").html();
+	// function displayData(scaledata,rotatedata,labeldata,type)
+	// {	
+	// 	var scaleContainer = $("#scaleCont");
+	// 	var scaletemp = $("#scaletemplate").html();
 		
-		let scaleTempdata = {
-			type: type,
-			scalesh: scaledata[0],
-			rotate1: rotatedata[0],
-			labelsh1: labeldata[0],
-			labelsh2: labeldata[1],
-			scalets: scaledata[1],
-			rotate2: rotatedata[1],
-			labelts1: labeldata[2],
-			labelts2: labeldata[3],
-			scaleth: scaledata[2],
-			rotate3: rotatedata[2],
-			labelth1: labeldata[4],
-			labelth2: labeldata[5]			
-		};
-		scaleContainer.append(Mustache.render(scaletemp, scaleTempdata));
-			
-
-	}
+	// 	let scaleTempdata = {
+	// 		type: type,
+	// 		scalesh: scaledata[0],
+	// 		rotate1: rotatedata[0],
+	// 		labelsh1: labeldata[0],
+	// 		labelsh2: labeldata[1],
+	// 		scalets: scaledata[1],
+	// 		rotate2: rotatedata[1],
+	// 		labelts1: labeldata[2],
+	// 		labelts2: labeldata[3],
+	// 		scaleth: scaledata[2],
+	// 		rotate3: rotatedata[2],
+	// 		labelth1: labeldata[4],
+	// 		labelth2: labeldata[5]			
+	// 	};
+	// 	scaleContainer.append(Mustache.render(scaletemp, scaleTempdata));		
+	// }
 
 	function displaylink(result)
 	{	// get linklist
@@ -127,32 +122,32 @@ $(function () {
 		});		
 	}
 
-	function makeAllClickableLink(data)
-	{
-		$.each(data, function (i,d) {
-			let name = d.name+"link";		
-			//console.log(id);	
-			$('#'+name).click(function () {
-				let value = this.getAttribute('data-value');
-				let scaleContainer = $("#scaleCont");
+	// function makeAllClickableLink(data)
+	// {
+	// 	$.each(data, function (i,d) {
+	// 		let name = d.name+"link";		
+	// 		//console.log(id);	
+	// 		$('#'+name).click(function () {
+	// 			let value = this.getAttribute('data-value');
+	// 			let scaleContainer = $("#scaleCont");
 				
-				$.ajax({
-					type: "POST",
-					url: "/page/getSelectedData", 
-					data: {data: value},
-					dataType: "json",  
-					cache:false,
-					success: function(r){
-						scaleContainer.empty();
-						displayData(r.scale,r.rotate,r.label,value);
-					},
-					error: function () {
-						console.log("error");
-					},
-				});			
-			});
-		});
-	}
+	// 			$.ajax({
+	// 				type: "POST",
+	// 				url: "/ceo/getSelectedData", 
+	// 				data: {data: value},
+	// 				dataType: "json",  
+	// 				cache:false,
+	// 				success: function(r){
+	// 					scaleContainer.empty();
+	// 					displayData(r.scale,r.rotate,r.label,value);
+	// 				},
+	// 				error: function () {
+	// 					console.log("error");
+	// 				},
+	// 			});			
+	// 		});
+	// 	});
+	// }
 
 	function modal(title,message,type){
 		$("#alertModal").modal("show");
@@ -173,79 +168,111 @@ $(function () {
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
-
+	
 	function displayPie(piedata){
-		// new Chart(document.getElementById("pie-chart"), {
-		// 	type: "pie",
-		// 	data: {
-		// 		labels: [
-		// 			"SSH",
-		// 			"SST",
-		// 			"HTH",
-		// 			"HSH",
-		// 			"STT",
-		// 			"HTT",
-		// 			"HST",
-		// 			"STH",
-		// 		],
-		// 		datasets: [
-		// 			{
-		// 				label: "answers",
-		// 				backgroundColor: [
-		// 					"#6370E3",
-		// 					"#BEC5FF",
-		// 					"#42C696",
-		// 					"#9AF5D4",
-		// 					"#BB6BED",
-		// 					"#DDB1FF",
-		// 					"#FF9C27",
-		// 					"#FFD772",
-		// 				],
-		// 				data: piedata,
-		// 			},
-		// 		],
-		// 	},
-		// 	options: {
-		// 		tooltipTemplate: "<%= value %>",
+		
+		var canvas = $('#pie-chart').get(0).getContext('2d');
 
-		// 		showTooltips: true,
-
-		// 		onAnimationComplete: function() {
-		// 			this.showTooltip(this.datasets[0].points, true);
-		// 		},
-		// 		tooltipEvents: [],
-
-		// 		responsive: true,
-		// 		legend: {
-		// 			position: "bottom",
-		// 			align: "center",
-		// 			color: "rgb(255, 99, 132)",
-		// 			labels: {
-		// 				font: {
-		// 					size: 30,
-		// 				},
-		// 			},
-		// 		},
-		// 	}, 
-			
-		// });
-		const options = {
-			tooltipTemplate: "<%= value %>",
-
-			showTooltips: true,
-		  
-			onAnimationComplete: function() {
-			  this.showTooltip(this.datasets[0].points, true);
+		Chart.pluginService.register({
+			beforeRender: function(chart) {
+				if (chart.config.options.showAllTooltips) {
+				// create an array of tooltips
+				// we can't use the chart tooltip because there is only one tooltip per chart
+				chart.pluginTooltips = [];
+				chart.config.data.datasets.forEach(function(dataset, i) {
+					chart.getDatasetMeta(i).data.forEach(function(sector, j) {
+					chart.pluginTooltips.push(new Chart.Tooltip({
+						_chart: chart.chart,
+						_chartInstance: chart,
+						_data: chart.data,
+						_options: chart.options.tooltips,
+						_active: [sector]
+					}, chart));
+					});
+				});
+				// turn off normal tooltips
+				chart.options.tooltips.enabled = false;
+				}
 			},
-			tooltipEvents: []
+			afterDraw: function(chart, easing) {
+				if (chart.config.options.showAllTooltips) {
+				// we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+				if (!chart.allTooltipsOnce) {
+					if (easing !== 1)
+					return;
+					chart.allTooltipsOnce = true;
+				}
+				// turn on tooltips
+				chart.options.tooltips.enabled = true;
+				Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
+					tooltip.initialize();
+					tooltip.update();
+					// we don't actually need this since we are not animating tooltips
+					tooltip.pivot();
+					tooltip.transition(easing).draw();
+				});
+				chart.options.tooltips.enabled = false;
+				}
+			}
+		});
+		
+		const config = {
+			type: "pie",
+			data: {
+				labels: [
+					"SSH",
+					"SST",
+					"HTH",
+					"HSH",
+					"STT",
+					"HTT",
+					"HST",
+					"STH",
+				],
+				datasets: [
+					{
+						label: "answers",
+						backgroundColor: [
+							"#6370E3",
+							"#BEC5FF",
+							"#42C696",
+							"#9AF5D4",
+							"#BB6BED",
+							"#DDB1FF",
+							"#FF9C27",
+							"#FFD772",
+						],
+						data: piedata,
+					},
+				],
+			},
+			options: {
+				responsive: true,
+				legend: {
+					position: "bottom",
+					align: "center",
+					color: "rgb(255, 99, 132)",
+					labels: {
+						font: {
+							size: 30,
+						},
+					},
+				},
+				tooltips: {
+					yAlign: 'bottom',
+					xAlign: 'center'
+				},
+				showAllTooltips: true
+			}
 		}
-		new Chart(document.getElementById("pie-chart"),options)
+		new Chart(canvas,config);
+		//new Chart(document.getElementById("pie-chart"),config);
 	}
 
 	function validatesession() {
 		var tmp = null;
 		$.ajax({
-			url: "/page/valsession/",
+			url: "/ceo/valsession/",
 			async: false,
 			dataType: "json",
 			success: function (results) {
@@ -269,7 +296,7 @@ $(function () {
 	});
 
 	$("#search").on("click", function () {
-		var url = "/page/lookUpValueStat";
+		var url = "/ceo/lookUpValueStat";
 		var data = $("#searchform").serialize();
 		$.ajax({
 			type:'ajax',
@@ -306,7 +333,7 @@ $(function () {
 	});
 
 	$('#initiateRedo').click(function() {
-		var url = '/page/clearSession';
+		var url = '/ceo/clearSession';
 		  $.ajax({
 			  type:'ajax',
 			  method: 'post',
@@ -316,7 +343,7 @@ $(function () {
 			  success: function(response){
 				  var error = response.error;
 				  if (response.success == true) {
-					  window.location.href = '/page/index';
+					  window.location.href = '/ceo/index';
 				  }else{
 					  $('.alert-danger').html(error).fadeIn();
 					  var title = '에러 메시지!!!';
@@ -331,7 +358,7 @@ $(function () {
 		  });
 	});
 
-	let url = "/page/fetchDefaultResultType";
+	let url = "/ceo/fetchDefaultResultType";
 	let piedata = getData(url).data;
 	displayPie(piedata);
 
@@ -341,8 +368,9 @@ $(function () {
 	let labeldata = getData(url).label;
 	
 	displaylink(linkdata);
-	displayData(scaledata,rotatedata,labeldata,"SSH");
-	makeAllClickableLink(linkdata);
+	
+	// displayData(scaledata,rotatedata,labeldata,"SSH");
+	// makeAllClickableLink(linkdata);
 
 	
 });

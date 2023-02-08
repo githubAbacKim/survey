@@ -5,13 +5,28 @@
     .bg-orange{
         background-color: #F3681A;
     }
+    
+    input[type="checkbox"]{
+    background: url('../../resources/images/nocheckbox.svg') no-repeat;
+    width:20px;
+    height: 20px;
+    border: none;
+    }
+    input[type="checkbox"]:checked{
+    background: url('../../resources/images/checkbox.svg') no-repeat !important;
+    width: 20px;
+    height: 25px;
+    }
+    .question-stat-card{
+        height: 18vh !important;
+    }
 </style>
 
 <!-- /Modal -->
 <div class="container-fluid p-3">
     <form id="searchform" method="post">
-        <div class="row mt-5 justify-content-end">        
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+        <div class="row mt-5">        
+            <div class="col-lg-2 offset-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="p-3 select-label text-label-drop-down">성별</label>
                 </div>
@@ -100,9 +115,9 @@
                     <div class=" col-10">
                         <div class="progress mt-5 m-2">
                             <div class="progress-bar bg-success" id="{{agreeprog}}" role="progressbar" aria-valuemin="0"
-                                aria-valuemax="100" data-toggle="tooltip" data-placement="right" title="{{agreePercent}}"></div>
+                                aria-valuemax="100" data-toggle="tooltip" data-bs-placement="top" title="{{agreePercent}}"></div>
                             <div class="progress-bar bg-orange" id="{{disagreeprog}}" aria-valuemin="0"
-                                aria-valuemax="100" data-toggle="tooltip" data-placement="left" title="{{disagreePercent}}"></div>
+                                aria-valuemax="100" data-toggle="tooltip" data-bs-placement="top" title="{{disagreePercent}}"></div>
                         </div>
                     </div>
                     <div class="col-1  mt-5">
@@ -173,4 +188,4 @@
     </div>
 </div>
 <!-- /Modal -->
-<script src="<?php echo base_url('resources/js/qstat.js');?>"></script>
+<script src="<?php echo base_url('resources/js/ceoqstat.js');?>"></script>

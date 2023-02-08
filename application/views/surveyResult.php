@@ -3,7 +3,7 @@
         background: linear-gradient(270.51deg, rgba(255, 255, 255, 0) -0.1%, rgba(255, 255, 255, 0.336495) 16.1%, rgba(255, 255, 255, 0.34) 89.76%, rgba(255, 255, 255, 0) 100.21%);
     }
     .profile_image picture image{
-        height: 100px !important;
+        height: 100px;
     }
     /* div {
         border: 1px solid;
@@ -24,13 +24,13 @@
                             <img src="<?php echo base_url()?>{{profile}}" class="img-fluid" alt="...">
                         </picture>
 
-                        <div class="col-lg-12  text-color">
+                        <!-- <div class="col-lg-12  text-color">
                             <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">전체 통계보기</a>
-                        </div>                
+                        </div>                 -->
                 </div>
             </div>
         </template>   
-        <div class="col-lg-3 col-xs-12 align-self-end text-center" id="prof_cont">            
+        <div class="col-lg-3 col-xs-12 align-self-center text-center" id="prof_cont">            
         </div>
 
         <template id="scaleTemp">
@@ -38,36 +38,18 @@
                 <picture class="picture-container">
                     <source srcset="<?php echo base_url();?>{{scalesh}}" type="image/svg+xml">
                     <img src="<?php echo base_url();?>{{scalesh}}" class="img-fluid" alt="...">
-                    <!-- <div class="{{labelsh1}} {{rotate1}}" id="sh1">
-                        <p class="scalelabel">인간존엄성</p>
-                    </div>
-                    <div class="{{labelsh2}} {{rotate1}}">
-                        <p class="scalelabel" id="sh2">사회공공성</p>
-                    </div> -->
                 </picture>
             </div>
             <div class="scale-div position-relative mt-3 align-self-center">
                 <picture class="picture-container">
                     <source srcset="<?php echo base_url()?>{{scalets}}" type="image/svg+xml">
                     <img src="<?php echo base_url()?>{{scalets}}" class="img-fluid" alt="...">
-                    <!-- <div class="{{labelts1}} {{rotate2}}">
-                        <p class="scalelabel" id="ts1">기술합목적성</p>
-                    </div>
-                    <div class="{{labelts2}} {{rotate2}}">
-                        <p class="scalelabel" id="ts2">사회공공성</p>
-                    </div> -->
                 </picture>
             </div>
             <div class="scale-div position-relative mt-3 align-self-center">
                 <picture class="picture-container">
                     <source srcset="<?php echo base_url()?>{{scaleth}}" type="image/svg+xml">
                     <img src="<?php echo base_url()?>{{scaleth}}" class="img-fluid" alt="...">
-                    <!-- <div class="{{labelth1}} {{rotate3}}">
-                        <p class="scalelabel" id="th1">기술합목적성</p>
-                    </div>
-                    <div class="{{labelth2}} {{rotate3}}">
-                        <p class="scalelabel" id="th2">인간존엄성</p>
-                    </div> -->
                 </picture>
             </div> 
         </template>   
@@ -84,8 +66,8 @@
                 </div>
             </div>
             <div class="modal-footer justify-content-md-center gap-2">
-                <button type="button" id="initiateRedo" class="redobtn">확인</button>
-                <button type="button" class="cancelbtn" data-bs-dismiss="modal">취소</button>
+                <button type="button" id="initiateRedo" class="redobtn">다시하기</button>
+                <button type="button" class="cancelbtn" data-bs-dismiss="modal">닫다</button>
             </div>
             </div>
         </div>

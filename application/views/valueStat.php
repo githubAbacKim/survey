@@ -13,7 +13,7 @@
         font-weight: bolder;
     }
     .typelabels{
-        background-color: white;
+        /* background-color: white; */
         color: black;
         border-radius: 25px;
     }
@@ -47,8 +47,8 @@
 
 <div class="container-fluid p-3">
     <form id="searchform" method="post">
-        <div class="row mt-5 justify-content-end">        
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+        <div class="row">        
+            <div class="col-lg-2 offset-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="p-3 select-label text-label-drop-down">성별</label>
                 </div>
@@ -91,7 +91,7 @@
                 </div>
                 <div class="col col-lg-6 col-sm-7">
                     <select id="elem" name="elem" class="form-select bg-color border-button gap-3">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="1학년">1학년</option>
                         <option value="2학년">2학년</option>
                         <option value="3학년">3학년</option>
@@ -100,26 +100,26 @@
                         <option value="6학년">6학년</option>
                     </select>
                     <select id="highschool" name="highschool" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
                     <select id="college" name="college" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="인문사회">인문사회</option>
                         <option value="자연 | 공학">자연 | 공학</option>
                         <option value="예체능">예체능</option>
                     </select>
                     <select id="public" name="public" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="인문사회">일반</option>
                     </select>
                 </div>
             </div>
             <!-- Grid column -->
             <div class="col-lg-2 col-sm-12 text-center bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg" id="search" role="button">조회</a>
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="search" role="button">조회</a>
             </div>
         </div>
     </form>     
@@ -134,7 +134,7 @@
         <template id="linktemplate">
             <a id="{{linkId}}" data-value="{{type}}" role="button">
                 <div class="col-lg-12 col-sm-8 d-flex typelabels mt-2">
-                    <div class="col-3 text-center titleLabels p-1" id="{{id}}">{{type}}</div>
+                    <div class="col-3 text-center titleLabels shadow p-1" id="{{id}}">{{type}}</div>
                     <div class="col-9 text-center labeldesc p-1"><h>{{type_desc}}</span></div>
                 </div>
             </a>            

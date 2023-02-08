@@ -278,38 +278,6 @@ $(function () {
 		});			
 	});
 
-	$('#redo').click(function() {
-		var title = '축하합니다!';
-		var message = '<p>설문 페이지에서 나가시겠습니까?</p> <p>설문 페이지를 나가면 설문 내용이 모두 초기화 됩니다.</p>';
-		confirmModal(title,message);
-	});
-
-	$('#initiateRedo').click(function() {
-		var url = '/page/clearSession';
-		  $.ajax({
-			  type:'ajax',
-			  method: 'post',
-			  url: url,
-			  async: false,
-			  dataType: 'json',
-			  success: function(response){
-				  var error = response.error;
-				  if (response.success == true) {
-					  window.location.href = '/page/index';
-				  }else{
-					  $('.alert-danger').html(error).fadeIn();
-					  var title = '에러 메시지!!!';
-					  var message = response.error;
-					  var type = 'error';	
-					  alertModal(title,message,type);
-				  }
-			  },
-			  error: function(){
-				  $('.alert-danger').html('요청 처리 오류!').fadeIn();
-			  }
-		  });
-	});
-
 	let url = "/page/fetchDefaultResultType";
 	let piedata = getData(url).data;
 	displayPie(piedata);

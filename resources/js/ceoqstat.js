@@ -58,15 +58,26 @@ $(function () {
 			$.each($stat, function (i, data) {
 				if(result.question_num === i)
 				{
-					var tagree = data[0]*10 + "%";
-					var tdisagree = data[1]*10 + "%";
-					//  console.log(tagree);
-					//  console.log(tdisagree);
+					let tanswer = data[0] + data[1];
+					let valagree = (data[0]/tanswer)*100;
+					let valdisagree = (data[1]/tanswer)*100;
+					var tagree = valagree.toFixed() + "%";
+					var tdisagree = valdisagree.toFixed() + "%";
+					  console.log('agree - ',tagree);
+					  console.log('disagree - ',tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);
 					$("#" + progAgree).attr("title", tagree);
 					$("#" + progDisagree).attr("title", tdisagree);
+
+					var myTooltipEl = document.getElementById(progAgree)
+					var tooltipag = new bootstrap.Tooltip(myTooltipEl)
+					tooltipag.show();
+
+					var myTooltipEl2 = document.getElementById(progDisagree)
+					var tooltipdis = new bootstrap.Tooltip(myTooltipEl2)
+					tooltipdis.show();
 				}
 			});
 			num++;
@@ -209,4 +220,5 @@ $(function () {
 			  }
 		  });
 	});
+
 });

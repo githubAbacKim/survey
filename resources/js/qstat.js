@@ -58,10 +58,13 @@ $(function () {
 			$.each($stat, function (i, data) {
 				if(result.question_num === i)
 				{
-					var tagree = data[0]*10 + "%";
-					var tdisagree = data[1]*10 + "%";
-					//  console.log(tagree);
-					//  console.log(tdisagree);
+					let tanswer = data[0] + data[1];
+					let valagree = (data[0]/tanswer)*100;
+					let valdisagree = (data[1]/tanswer)*100;
+					var tagree = valagree.toFixed() + "%";
+					var tdisagree = valdisagree.toFixed() + "%";
+					  console.log('agree - ',tagree);
+					  console.log('disagree - ',tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);
@@ -169,44 +172,12 @@ $(function () {
 					modal(title,message,type);
 				}
 			},
-			error: function(response){
-				console.log("error query");
+			error: function(response){				
 				var title = '앗 미안 해요!!!';
 				var message = response.error;
 				var type = 'error query';
 				modal(title,message,type);
 			}
 		});			
-	});
-
-	$('#redo').click(function() {
-		var title = '축하합니다!';
-		var message = '<p>설문 페이지에서 나가시겠습니까?</p> <p>설문 페이지를 나가면 설문 내용이 모두 초기화 됩니다.</p>';
-		confirmModal(title,message);
-	});
-	$('#initiateRedo').click(function() {
-		var url = '/page/clearSession';
-		  $.ajax({
-			  type:'ajax',
-			  method: 'post',
-			  url: url,
-			  async: false,
-			  dataType: 'json',
-			  success: function(response){
-				  var error = response.error;
-				  if (response.success == true) {
-					  window.location.href = '/page/index';
-				  }else{
-					  $('.alert-danger').html(error).fadeIn();
-					  var title = '에러 메시지!!!';
-					  var message = response.error;
-					  var type = 'error';	
-					  alertModal(title,message,type);
-				  }
-			  },
-			  error: function(){
-				  $('.alert-danger').html('요청 처리 오류!').fadeIn();
-			  }
-		  });
 	});
 });
