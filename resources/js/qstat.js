@@ -180,4 +180,6 @@ $(function () {
 			}
 		});			
 	});
+
+	validatesession() === true && validateanswer() === true ? resetSurvey(): false;
 });

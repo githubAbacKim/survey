@@ -138,8 +138,8 @@ $(function () {
 		$('.alert-secondary').html(message);
 	}	
 	
-	let displayUrl = '/page/fetchquestion';
-	let resultUrl = '/page/fetchDefaultData';
+	let displayUrl = '/ceo/fetchquestion';
+	let resultUrl = '/ceo/fetchDefaultData';
 	displayQuestion(getData(displayUrl));
 
 	let defaultdata = getData(resultUrl).data;
@@ -160,7 +160,7 @@ $(function () {
 	});
 
 	$("#search").on("click", function () {
-		var url = "/page/lookUpQuestionStat";
+		var url = "/ceo/lookUpQuestionStat";
 		var data = $("#searchform").serialize();
 		$.ajax({
 			type:'ajax',
@@ -196,7 +196,7 @@ $(function () {
 		confirmModal(title,message);
 	});
 	$('#initiateRedo').click(function() {
-		var url = '/page/clearSession';
+		var url = '/ceo/clearSession';
 		  $.ajax({
 			  type:'ajax',
 			  method: 'post',

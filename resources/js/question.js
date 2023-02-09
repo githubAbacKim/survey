@@ -67,4 +67,6 @@ $(function(){
 	}
 
     displayQuestionStat(getData());
+
+	validatesession() === true && validateanswer() === true ? resetSurvey(): false;
 });

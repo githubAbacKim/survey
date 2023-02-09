@@ -1,9 +1,11 @@
 $(function () {
+
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
 	const public_sec = $("#public");
 
+	
 	function getShowList(school) {
 		if (school === "초등학생") {
 			elemlevel.show();
@@ -43,6 +45,8 @@ $(function () {
 		$('#valModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
+	
+	validatesession() === true && validateanswer() === true ? resetSurvey(): false;
 	
 	if(validatesession() === true && validateanswer() === false){
 		$('#continuesurvey').click(function() {
@@ -163,6 +167,5 @@ $(function () {
 		}else{
 			window.location.href = "/page/survey_result";
 		}
-	});
-		
+	});		
 });

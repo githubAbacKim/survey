@@ -78,11 +78,9 @@
                         </div>
                         <div class="col col-lg-7 col-sm-7">                            
                             <select id="gender" name="gender" class="form-select form-select-lg bg-color border-button">
-                                <optgroup class="p-3">
-                                    <option value="">선택</option>
-                                    <option value="남성">남성</option>
-                                    <option value="여성">여성</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="남성">남성</option>
+                                <option value="여성">여성</option>
                             </select>
                         </div>                        
                     </div>
@@ -95,13 +93,12 @@
                         </div>
                         <div class="col col-lg-7 col-xs-7">
                             <select id="school_level" name="school_level" class="form-select form-select-lg bg-color border-button">
-                                <optgroup>
-                                    <option value="초등학생">초등학생</option>
-                                    <option value="중학생">중학생</option>
-                                    <option value="고등학생">고등학생</option>
-                                    <option value="대학">대학생</option>
-                                    <option value="일반인">일반인</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="초등학생">초등학생</option>
+                                <option value="중학생">중학생</option>
+                                <option value="고등학생">고등학생</option>
+                                <option value="대학">대학생</option>
+                                <option value="일반인">일반인</option>
                             </select>
                         </div> 
                     </div>
@@ -114,38 +111,30 @@
                         </div>
                         <div class="col col-lg-7 col-sm-7">
                             <select id="elem" name="elem" class="form-select form-select-lg bg-color border-button gap-3">
-                                <optgroup>
-                                    <option value="">선택</option>
-                                    <option value="1학년">1학년</option>
-                                    <option value="2학년">2학년</option>
-                                    <option value="3학년">3학년</option>
-                                    <option value="4학년">4학년</option>
-                                    <option value="5학년">5학년</option>
-                                    <option value="6학년">6학년</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="1학년">1학년</option>
+                                <option value="2학년">2학년</option>
+                                <option value="3학년">3학년</option>
+                                <option value="4학년">4학년</option>
+                                <option value="5학년">5학년</option>
+                                <option value="6학년">6학년</option>
                             </select>
                             <select id="highschool" name="highschool"
                                 class="form-select form-select-lg bg-color border-button">
-                                <optgroup>
-                                    <option value="">선택</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
                             </select>
                             <select id="college" name="college" class="form-select form-select-lg bg-color border-button">
-                                <optgroup>
-                                    <option value="">선택</option>
-                                    <option value="인문사회">인문사회</option>
-                                    <option value="자연 | 공학">자연 | 공학</option>
-                                    <option value="예체능">예체능</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="인문사회">인문사회</option>
+                                <option value="자연 | 공학">자연 | 공학</option>
+                                <option value="예체능">예체능</option>
                             </select>
                             <select id="public" name="public" class="form-select form-select-lg bg-color border-button">
-                                <optgroup>
-                                    <option value="">선택</option>
-                                    <option value="인문사회">일반</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="인문사회">일반</option>
                             </select>
                         </div>
                     </div>
@@ -158,12 +147,10 @@
                         </div>
                         <div class="col ol-lg-7 col-sm-7">
                             <select id="region" name="regional_scale" class="form-select form-select-lg bg-color border-button">
-                                <optgroup>
-                                    <option value="">선택</option>
-                                    <option value="읍면지역">읍면지역</option>
-                                    <option value="중소도시">중소도시</option>
-                                    <option value="대도시">대도시</option>
-                                </optgroup>
+                                <option value="">선택</option>
+                                <option value="읍면지역">읍면지역</option>
+                                <option value="중소도시">중소도시</option>
+                                <option value="대도시">대도시</option>
                             </select>
                         </div>
                     </div>

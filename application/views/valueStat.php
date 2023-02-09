@@ -54,11 +54,9 @@
                 </div>
                 <div class="col col-lg-7 col-sm-7">                            
                     <select id="gender" name="gender" class="form-select bg-color border-button">
-                        <optgroup class="p-3">
-                            <option value="전체">전체</option>
-                            <option value="남성">남성</option>
-                            <option value="여성">여성</option>
-                        </optgroup>
+                        <option value="전체">전체</option>
+                        <option value="남성">남성</option>
+                        <option value="여성">여성</option>
                     </select>
                 </div>                        
             </div>
@@ -71,14 +69,12 @@
                 </div>
                 <div class="col col-lg-7 col-xs-7">
                     <select id="school_level" name="school_level" class="form-select bg-color border-button">
-                        <optgroup>
-                            <option value="전체">전체</option>
-                            <option value="초등학생">초등학생</option>
-                            <option value="중학생">중학생</option>
-                            <option value="고등학생">고등학생</option>
-                            <option value="대학">대학생</option>
-                            <option value="일반인">일반인</option>
-                        </optgroup>
+                        <option value="전체">전체</option>
+                        <option value="초등학생">초등학생</option>
+                        <option value="중학생">중학생</option>
+                        <option value="고등학생">고등학생</option>
+                        <option value="대학">대학생</option>
+                        <option value="일반인">일반인</option>
                     </select>
                 </div> 
             </div>

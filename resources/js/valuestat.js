@@ -291,5 +291,5 @@ $(function () {
 	displayData(scaledata,rotatedata,labeldata,"SSH");
 	makeAllClickableLink(linkdata);
 
-	
+	validatesession() === true && validateanswer() === true ? resetSurvey(): false;
 });

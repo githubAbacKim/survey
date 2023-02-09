@@ -98,6 +98,4 @@ $(function () {
 	}else{			
 		displayResults();	
 	}
-
-	
 });
