@@ -33,42 +33,60 @@
     .mt-15{
         margin-top: 15em;
     }
+    /* .section1{
+        background-image: url('../../resources/images/aboutus/section1bg.svg');
+        background-position:bottom;
+        background-size:contain;
+        background-repeat: no-repeat;
+        height: 100vh;
+    } */
     .section2{
-        background-image: url('../../resources/images/aboutus/Group\ 1110.svg');
-        background-position:center;
+        background-image: url('../../resources/images/aboutus/section2.svg');
+        background-position:bottom;
         background-size:contain;
         background-repeat: no-repeat;
     }
     .footertext{
         font-size: 1rem;
     }
+    .text-orange{
+        color: #CB6100;
+    }
+    .text-brown{
+        color: #5C1C2C;
+    }
 </style>
 
 <main>
     <div class="container-fluid section1"> 
-        <img src="../../resources/images/aboutus/section1.svg" class="img-fluid" alt="...">
+        <div class="col-lg-6 col-sm-7 offset-lg-3 offset-sm-3">
+            <img src="../../resources/images/aboutus/section1.svg" class="img-fluid" alt="...">
+        </div>
     </div>
-    <div class="container-fluid section2">
-        <div class="row mt-5 gap-2">
-            <div class="col-2 offset-3">
+    <div class="container-fluid section2 p-5">
+        <div class="row mt-5 gap-1 justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-4">
             <img class="img-fluid" src="../../resources/images/aboutus/tab1.svg" alt="">
             </div>
-            <div class="col-2">
+            <div class="col-lg-3 col-md-4 col-sm-4">
             <img class="img-fluid" src="../../resources/images/aboutus/tab2.svg" alt="">
             </div>
-            <div class="col-2">
+            <div class="col-lg-3 col-md-4 col-sm-4">
             <img class="img-fluid" src="../../resources/images/aboutus/tab3.svg" alt="">
             </div>
         </div>
-        <div class="row mt-15">
-            <div class="col-sm-12 col-md-8 offset-md-2">
-                <img class="img-fluid" src="../../resources/images/aboutus/tab4.svg" alt="">
+        <div class="row mt-5">
+            <div class="col-xs-12 col-md-8 offset-md-2">
+                <!-- <img class="img-fluid" src="../../resources/images/aboutus/tab4.svg" alt=""> -->
+                <p class="text-break bold text-brown">
+                    <span class="text-orange">AI도시를 부탁해</span>는 <span class="text-success">사람이 중심이 되는 ‘인공지능(AI) 윤리 기준’의 3대 기본원칙</span>에서 아이디어를 얻어 제작하였습니다. 다만, <span class="text-orange">AI도시를 부탁해</span>에서는 인간 존엄성, 사회 공공선, 기술 합목적성의 정의를 인간, 사회, 기술에 초점을 맞춰 단순화 하였습니다. 따라서 <span class="text-orange">사람이 중심이 되는 ‘인공지능(AI) 윤리 기준’</span>과 <span class="text-orange">AI도시를 부탁해</span>에서의 인간 존엄성, 사회 공공선, 기술 합목적성의 정의는 다를 수 있습니다.
+                </p>
             </div>
         </div>
     </div>
     <div class="container-fluid mb-5">
-        <div class="col-6 offset-3 mt-5">
-            <img class="img-fluid" src="../../resources/images/aboutus/Group 1111.svg" alt="">
+        <div class="col-lg-6 offset-lg-3 col-xs-12 mt-5">
+            <img class="img-fluid" src="../../resources/images/aboutus/Group 1111.svg" alt="">            
         </div>
     </div>
     <div class="container-fluid mt-5 mb-5">
