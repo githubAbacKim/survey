@@ -310,7 +310,7 @@ $(function () {
 					displayPie(response.data);
 				}else{
 					//console.log("no data");
-					var title = '앗 미안 해요!!!';
+					var title = '죄송합니다!!!';
 					var message = response.error;
 					var type = 'error';
 					modal(title,message,type);
@@ -318,44 +318,12 @@ $(function () {
 			},
 			error: function(response){
 				//console.log("error query");
-				var title = '앗 미안 해요!!!';
+				var title = '죄송합니다!!!';
 				var message = response.error;
 				var type = 'error query';
 				modal(title,message,type);
 			}
 		});			
-	});
-
-	$('#redo').click(function() {
-		var title = '축하합니다!';
-		var message = '<p>설문 페이지에서 나가시겠습니까?</p> <p>설문 페이지를 나가면 설문 내용이 모두 초기화 됩니다.</p>';
-		confirmModal(title,message);
-	});
-
-	$('#initiateRedo').click(function() {
-		var url = '/ceo/clearSession';
-		  $.ajax({
-			  type:'ajax',
-			  method: 'post',
-			  url: url,
-			  async: false,
-			  dataType: 'json',
-			  success: function(response){
-				  var error = response.error;
-				  if (response.success == true) {
-					  window.location.href = '/ceo/index';
-				  }else{
-					  $('.alert-danger').html(error).fadeIn();
-					  var title = '에러 메시지!!!';
-					  var message = response.error;
-					  var type = 'error';	
-					  alertModal(title,message,type);
-				  }
-			  },
-			  error: function(){
-				  $('.alert-danger').html('요청 처리 오류!').fadeIn();
-			  }
-		  });
 	});
 
 	let url = "/ceo/fetchDefaultResultType";

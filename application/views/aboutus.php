@@ -85,7 +85,7 @@
         </div>
     </div>
     <div class="container-fluid mb-5">
-        <div class="col-lg-6 offset-lg-3 col-xs-12 mt-5">
+        <div class="col-lg-6 offset-lg-3 col-sm-8 offset-sm-2 mt-5">
             <img class="img-fluid" src="../../resources/images/aboutus/Group 1111.svg" alt="">            
         </div>
     </div>
