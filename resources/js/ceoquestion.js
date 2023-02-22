@@ -105,11 +105,11 @@ $(function(){
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
-	function activeLink(){
+	function activeCeoLink(){
 		const path = window.location.pathname;
-		let current = path.substring(15);
-		console.log(current)
-		if(current === "questions") {
+		let ceocurrent = path.substring(15);
+		console.log(ceocurrent)
+		if( ceocurrent === "questions" || ceocurrent === "" ) {
 			$('#qlink').removeClass('btn-bg');
 			$('#qlink').addClass('btnWhite')
 			$('#valstatlink').removeClass('btnWhite');
@@ -124,6 +124,6 @@ $(function(){
 	const questionurl = "/ceo/fetchquestion";
 	const question = getData(questionurl);
 	
-	activeLink();
+	activeCeoLink();
     displayQuestionStat(question,defaultdata);
 });
