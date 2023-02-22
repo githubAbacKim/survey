@@ -17,6 +17,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
     <title><?php echo $title;?></title>
 </head>
-<body>
+<body class="container-fluid">
     
  

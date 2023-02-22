@@ -115,9 +115,9 @@
                     <div class=" col-10">
                         <div class="progress mt-5 m-2">
                             <div class="progress-bar bg-success" id="{{agreeprog}}" role="progressbar" aria-valuemin="0"
-                                aria-valuemax="100" data-toggle="tooltip" data-bs-placement="top" title="{{agreePercent}}"></div>
+                                aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="manual" data-bs-placement="top" title="{{agreePercent}}"></div>
                             <div class="progress-bar bg-orange" id="{{disagreeprog}}" aria-valuemin="0"
-                                aria-valuemax="100" data-toggle="tooltip" data-bs-placement="top" title="{{disagreePercent}}"></div>
+                                aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="manual" data-bs-placement="top" title="{{disagreePercent}}"></div>
                         </div>
                     </div>
                     <div class="col-1  mt-5">
@@ -129,9 +129,9 @@
             <!-- question div -->
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 question-stat-card p-3 agree-question-component" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
+                    <div class="col-lg-6 question-stat-card p-3" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
                         <div class="text-center p-2 text-color d-flex">
-                            <div class="col-lg-1"><input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree"></div>                            
+                            <!-- <div class="col-lg-1"><input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
                             <div class="col-lg-2">찬성 :</div>
                             <div class="col-lg-9"><span>{{agree_desc}}</span></div>
                         </div>
@@ -139,7 +139,7 @@
                     <div class="col-lg-6 question-stat-card p-4 disagree-question-card" id='{{disagreediv}}'
                         data-value="disagree" data-qnum='{{qnum}}'>
                         <div class="p-2 text-color d-flex">
-                            <div class="col-lg-1 text-center"><input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree"></div>                            
+                            <!-- <div class="col-lg-1 text-center"><input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
                             <div class="col-lg-3 text-center">내가 반대 :</div>
                             <div class="col-lg-8 text-left"><span>{{disagree_desc}}</span></div>
                         </div>

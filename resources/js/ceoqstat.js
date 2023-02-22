@@ -1,4 +1,6 @@
 $(function () {
+	
+	
 	var listContainer = $("#questCont");
 	var paginationcont = $("#qstat-template").html();
 
@@ -44,7 +46,6 @@ $(function () {
 				agreeprog: progAgree,
 				disagreeprog: progDisagree,
 			};
-
 			listContainer.append(Mustache.render(paginationcont, data));
 		});
 	}
@@ -61,21 +62,21 @@ $(function () {
 					let tanswer = data[0] + data[1];
 					let valagree = (data[0]/tanswer)*100;
 					let valdisagree = (data[1]/tanswer)*100;
-					var tagree = valagree.toFixed() + "%";
-					var tdisagree = valdisagree.toFixed() + "%";
-					  console.log('agree - ',tagree);
-					  console.log('disagree - ',tdisagree);
+					var tagree = valagree.toFixed() !== 'NaN' ? valagree.toFixed() + "%" : "0%";
+					var tdisagree = valagree.toFixed() !== 'NaN' ? valdisagree.toFixed() + "%" : "0%";
+						console.log('agree - ',valagree.toFixed());
+						console.log('disagree - ',tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);
 					$("#" + progAgree).attr("title", tagree);
 					$("#" + progDisagree).attr("title", tdisagree);
 
-					var myTooltipEl = document.getElementById(progAgree)
+					var myTooltipEl = document.getElementById(progAgree);					
 					var tooltipag = new bootstrap.Tooltip(myTooltipEl)
 					tooltipag.show();
 
-					var myTooltipEl2 = document.getElementById(progDisagree)
+					var myTooltipEl2 = document.getElementById(progDisagree);					
 					var tooltipdis = new bootstrap.Tooltip(myTooltipEl2)
 					tooltipdis.show();
 				}
@@ -191,3 +192,6 @@ $(function () {
 	});
 
 });
+$(document).ready(function() {
+	$('[data-trigger="show"]').tooltip('show');
+  });

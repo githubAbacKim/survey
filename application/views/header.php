@@ -23,4 +23,4 @@ defined('BASEPATH') or exit('No direct script access allowed');
     </title>
 </head>
 
-<body>
+<body class="container-fluid">
