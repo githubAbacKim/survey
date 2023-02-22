@@ -140,7 +140,7 @@ $(function () {
 
 	function linkAction(){}
 
-	function activeLink(){
+	function activeCeoLink(){
 		const path = window.location.pathname;
 		let current = path.substring(15);
 
@@ -156,7 +156,7 @@ $(function () {
 	
 	let displayUrl = '/ceo/fetchquestion';
 	let resultUrl = '/ceo/fetchDefaultData';
-	activeLink();
+	activeCeoLink();
 	displayQuestion(getData(displayUrl));
 
 	let defaultdata = getData(resultUrl).data;

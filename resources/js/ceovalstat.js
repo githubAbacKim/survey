@@ -324,7 +324,7 @@ $(function () {
 			}
 		});			
 	});
-	function activeLink(){
+	function activeCeoLink(){
 		const path = window.location.pathname;
 		let current = path.substring(15);
 		console.log(current)
@@ -345,7 +345,7 @@ $(function () {
 	let scaledata = getData(url).scale;
 	let rotatedata = getData(url).rotate;
 	let labeldata = getData(url).label;
-	activeLink();
+	activeCeoLink();
 	displaylink(linkdata);
 	
 	// displayData(scaledata,rotatedata,labeldata,"SSH");
