@@ -817,8 +817,6 @@ class Ceo extends CI_Controller
 	}
 
 	public function test2(){
-		
-		echo print_r($this->fetchAllAnswer());
+		echo site_url();
 	}
-
 }

@@ -169,8 +169,7 @@ $(function () {
 		$('.alert-secondary').html(message);
 	}
 	
-	function displayPie(piedata){
-		
+	function displayPie(piedata){		
 		var canvas = $('#pie-chart').get(0).getContext('2d');
 
 		Chart.pluginService.register({
@@ -325,7 +324,19 @@ $(function () {
 			}
 		});			
 	});
-
+	function activeLink(){
+		const path = window.location.pathname;
+		let current = path.substring(15);
+		console.log(current)
+		if(current === "valuestatistic"){
+			$('#qlink').removeClass('btnWhite');
+			$('#qlink').addClass('btn-bg')
+			$('#valstatlink').removeClass('btn-bg');
+			$('#valstatlink').addClass('btnWhite');
+			$('#qstatlink').removeClass('btnWhite');
+			$('#qstatlink').addClass('btn-bg');
+		}
+	}
 	let url = "/ceo/fetchDefaultResultType";
 	let piedata = getData(url).data;
 	displayPie(piedata);
@@ -334,7 +345,7 @@ $(function () {
 	let scaledata = getData(url).scale;
 	let rotatedata = getData(url).rotate;
 	let labeldata = getData(url).label;
-	
+	activeLink();
 	displaylink(linkdata);
 	
 	// displayData(scaledata,rotatedata,labeldata,"SSH");

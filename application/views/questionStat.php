@@ -126,7 +126,7 @@
                 <div class="row gap-3 justify-content-evenly mt-5">
                     <div class="col-lg-5 question-stat-card agree-question-component" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
                         <div class="text-left p-2 text-color d-flex">
-                            <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                            
+                            <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
                             <div class="col-lg-4">찬성 :</div>
                             <div class="col-lg-7"><span>{{agree_desc}}</span></div>
                         </div>
@@ -134,7 +134,7 @@
                     <div class="col-lg-5 question-stat-card agree-question-component" id='{{disagreediv}}'
                         data-value="disagree" data-qnum='{{qnum}}'>
                         <div class="text-left p-2 text-color d-flex">
-                            <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                            
+                            <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
                             <div class="col-lg-4">내가 반대 :</div>
                             <div class="col-lg-7"><span>{{disagree_desc}}</span></div>
                         </div>

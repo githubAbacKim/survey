@@ -1,6 +1,5 @@
 $(function () {
-	
-	
+		
 	var listContainer = $("#questCont");
 	var paginationcont = $("#qstat-template").html();
 
@@ -138,9 +137,26 @@ $(function () {
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}	
+
+	function linkAction(){}
+
+	function activeLink(){
+		const path = window.location.pathname;
+		let current = path.substring(15);
+
+		if(current === "questionstatistics"){
+			$('#qlink').removeClass('btnWhite');
+			$('#qlink').addClass('btn-bg')
+			$('#valstatlink').removeClass('btnWhite');
+			$('#valstatlink').addClass('btn-bg');
+			$('#qstatlink').removeClass('btn-bg');
+			$('#qstatlink').addClass('btnWhite');
+		}
+	}
 	
 	let displayUrl = '/ceo/fetchquestion';
 	let resultUrl = '/ceo/fetchDefaultData';
+	activeLink();
 	displayQuestion(getData(displayUrl));
 
 	let defaultdata = getData(resultUrl).data;

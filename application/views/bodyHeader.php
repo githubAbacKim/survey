@@ -21,19 +21,19 @@
                         <a class="btn btn-secondary btn-sm shadow p-3 btnWhite m-2 redo" id="redo" role="button">다시하기</a>
                     </li>        -->
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-3 btnWhite m-2 bold" href="<?php echo site_url('page/index') ?>" role="button">Home</a>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2 bold" id="linkhome" href="<?php echo site_url('page/index') ?>" role="button">Home</a>
                     </li>
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" id="linkvalstat" href="<?php echo site_url('page/valueStatistic') ?>" role="button">가치 통계</a>
                     </li> 
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" id="linkqstat" href="<?php echo site_url('page/questionStatistics') ?>" role="button">문항 통계</a>
                     </li> 
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg  m-2" id="linkq" href="<?php echo site_url('page/questions') ?>" role="button">문항 보기</a>
                     </li>                         
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" href="<?php echo site_url('page/aboutus') ?>" role="button">About</a>
+                        <a class="btn btn-secondary btn-sm shadow p-3 btn-bg m-2" id="linkabout" href="<?php echo site_url('page/aboutus') ?>" role="button">About</a>
                     </li> 
                 </ul>
             </div>

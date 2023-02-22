@@ -77,6 +77,79 @@ async function resetSurvey() {
     });
 }
 
+function activeLink(){
+    const path = window.location.pathname;
+    let current = path.substring(16);
+    console.log(current)
+    // linkhome linkvalstat linkqstat linkq linkabout
+
+    if(current === "index" || current === ""){
+        $('#linkhome').removeClass('btn-bg');
+        $('#linkhome').addClass('btnWhite')
+        $('#linkvalstat').removeClass('btnWhite');
+        $('#linkvalstat').addClass('btn-bg');
+        $('#linkqstat').removeClass('btnWhite');
+        $('#linkqstat').addClass('btn-bg');
+        $('#linkq').removeClass('btnWhite');
+        $('#linkq').addClass('btn-bg');
+        $('#linkabout').removeClass('btnWhite');
+        $('#linkabout').addClass('btn-bg');
+    }
+
+    if(current === "valueStatistic"){
+        $('#linkvalstat').removeClass('btn-bg');
+        $('#linkvalstat').addClass('btnWhite')
+        $('#linkhome').removeClass('btnWhite');
+        $('#linkhome').addClass('btn-bg');
+        $('#linkqstat').removeClass('btnWhite');
+        $('#linkqstat').addClass('btn-bg');
+        $('#linkq').removeClass('btnWhite');
+        $('#linkq').addClass('btn-bg');
+        $('#linkabout').removeClass('btnWhite');
+        $('#linkabout').addClass('btn-bg');
+    }
+
+    if(current === "questionStatistics"){
+        $('#linkqstat').removeClass('btn-bg');
+        $('#linkqstat').addClass('btnWhite')
+        $('#linkhome').removeClass('btnWhite');
+        $('#linkhome').addClass('btn-bg');
+        $('#linkvalstat').removeClass('btnWhite');
+        $('#linkvalstat').addClass('btn-bg');
+        $('#linkq').removeClass('btnWhite');
+        $('#linkq').addClass('btn-bg');
+        $('#linkabout').removeClass('btnWhite');
+        $('#linkabout').addClass('btn-bg');
+    }
+
+    if(current === "questions"){
+        $('#linkq').removeClass('btn-bg');
+        $('#linkq').addClass('btnWhite')
+        $('#linkhome').removeClass('btnWhite');
+        $('#linkhome').addClass('btn-bg');
+        $('#linkvalstat').removeClass('btnWhite');
+        $('#linkvalstat').addClass('btn-bg');
+        $('#linkqstat').removeClass('btnWhite');
+        $('#linkqstat').addClass('btn-bg');
+        $('#linkabout').removeClass('btnWhite');
+        $('#linkabout').addClass('btn-bg');
+    }
+
+    if(current === "aboutus"){
+        $('#linkabout').removeClass('btn-bg');
+        $('#linkabout').addClass('btnWhite')
+        $('#linkhome').removeClass('btnWhite');
+        $('#linkhome').addClass('btn-bg');
+        $('#linkvalstat').removeClass('btnWhite');
+        $('#linkvalstat').addClass('btn-bg');
+        $('#linkqstat').removeClass('btnWhite');
+        $('#linkqstat').addClass('btn-bg');
+        $('#linkq').removeClass('btnWhite');
+        $('#linkq').addClass('btn-bg');
+    }
+
+}
+activeLink()
 // if(validatesession() === false && validateanswer() === false)
 // {
 //     $('.redo').removeAttr('id');

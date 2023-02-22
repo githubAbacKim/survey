@@ -54,7 +54,7 @@ $(function(){
 				
 				
 				if(d.question_num === num && d.comment !== ""){
-					console.log(d.question_num +'-'+ x);
+					//console.log(d.question_num +'-'+ x);
 					const commentData = {
 						'comment': d.comment
 					}					
@@ -105,11 +105,25 @@ $(function(){
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
+	function activeLink(){
+		const path = window.location.pathname;
+		let current = path.substring(15);
+		console.log(current)
+		if(current === "questions") {
+			$('#qlink').removeClass('btn-bg');
+			$('#qlink').addClass('btnWhite')
+			$('#valstatlink').removeClass('btnWhite');
+			$('#valstatlink').addClass('btn-bg');
+			$('#qstatlink').removeClass('btnWhite');
+			$('#qstatlink').addClass('btn-bg');
+		}
+	}
 	let resultUrl = '/ceo/fetchAllAnswer';
 	const defaultdata = getData(resultUrl);
 
 	const questionurl = "/ceo/fetchquestion";
 	const question = getData(questionurl);
 	
+	activeLink();
     displayQuestionStat(question,defaultdata);
 });

@@ -16,15 +16,15 @@
                         부탁해!</a></div>
             </div>
             <div class="navlist">
-                <ul class="nav">          
+                <ul class="nav">         
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btnWhite m-2" href="<?php echo site_url('ceo/questions') ?>" role="button">문항 보기</a>
+                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" id="qlink" href="<?php echo site_url('ceo/questions') ?>" role="button">문항 보기</a>
                     </li> 
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('ceo/valuestatistic') ?>" role="button">가치 통계</a>
+                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" id="valstatlink" href="<?php echo site_url('ceo/valuestatistic') ?>" role="button">가치 통계</a>
                     </li>
                     <li clas="nav-item">
-                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" href="<?php echo site_url('ceo/questionstatistics') ?>" role="button">문항 통계</a>
+                        <a class="btn btn-secondary btn-sm shadow p-2 btn-bg m-2" id="qstatlink" href="<?php echo site_url('ceo/questionstatistics') ?>" role="button">문항 통계</a>
                     </li>  
                 </ul>
             </div>
