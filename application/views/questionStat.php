@@ -23,7 +23,7 @@
 </style>
 
 <!-- /Modal -->
-<div class="container-fluid p-3">
+<div class="container p-3">
     <form id="searchform" method="post">
         <div class="row">        
             <div class="col-lg-2 col-sm-12 offset-lg-2 text-center d-flex flex-row ">
@@ -97,7 +97,6 @@
             </div>
         </div>
     </form>
-
     <template id="qstat-template">
         <div class="col-lg-8 col-xs-12 p-5 question-card">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
@@ -136,7 +135,7 @@
                         <div class="text-left p-2 text-color d-flex">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
                             <div class="col-lg-4">내가 반대 :</div>
-                            <div class="col-lg-7"><span>{{disagree_desc}}</span></div>
+                            <div class="col-lg-7 h-auto d-inline-block"><span>{{disagree_desc}}</span></div>
                         </div>
                     </div>
                 </div>

@@ -3,13 +3,13 @@
         background: linear-gradient(270.51deg, rgba(255, 255, 255, 0) -0.1%, rgba(255, 255, 255, 0.336495) 16.1%, rgba(255, 255, 255, 0.34) 89.76%, rgba(255, 255, 255, 0) 100.21%);
     }
     .profile_image picture image{
-        height: 100px;
+        height: 30vh;
     }
     /* div {
         border: 1px solid;
     } */
 </style>
-<div class="container-fluid p-3">
+<div class="container p-3">
     <div class="row p-3 justify-content-evenly">
         <template id="profileTemp">
             <div class="col-lg-10 offset-lg-1">
@@ -30,30 +30,30 @@
                 </div>
             </div>
         </template>   
-        <div class="col-lg-3 col-xs-12 align-self-center text-center" id="prof_cont">            
+        <div class="col-lg-5 col-xs-12 align-self-center text-center" id="prof_cont">            
         </div>
 
         <template id="scaleTemp">
-            <div class="scale-div position-relative mt-3 align-self-center">
+            <div class="scale-div col-xxl-12 mt-3 align-self-center">
                 <picture class="picture-container">
                     <source srcset="<?php echo base_url();?>{{scalesh}}" type="image/svg+xml">
                     <img src="<?php echo base_url();?>{{scalesh}}" class="img-fluid" alt="...">
                 </picture>
             </div>
-            <div class="scale-div position-relative mt-3 align-self-center">
+            <div class="scale-div col-xxl-12 mt-3 align-self-center">
                 <picture class="picture-container">
                     <source srcset="<?php echo base_url()?>{{scalets}}" type="image/svg+xml">
                     <img src="<?php echo base_url()?>{{scalets}}" class="img-fluid" alt="...">
                 </picture>
             </div>
-            <div class="scale-div position-relative mt-3 align-self-center">
+            <div class="scale-div col-xxl-12 mt-3 align-self-center">
                 <picture class="picture-container">
                     <source srcset="<?php echo base_url()?>{{scaleth}}" type="image/svg+xml">
                     <img src="<?php echo base_url()?>{{scaleth}}" class="img-fluid" alt="...">
                 </picture>
             </div> 
         </template>   
-        <div class="col-lg-4 col-xs-12" id="scale_cont">                       
+        <div class="col-xxl-4 col-lg-4 col-xs-12" id="scale_cont">                       
         </div>
     </div>
 

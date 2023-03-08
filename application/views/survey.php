@@ -141,7 +141,7 @@
                 </div>                
             </div>
             <div class="col-lg-6 offset-lg-3 col-xs-12 text-color">
-            <input class="form-control" name="comment{{qnum}}" type="text" placeholder="위 문항에 대한 시장님의 의견을 들려주세요!" aria-label="default input example">
+                <input class="form-control" name="comment{{qnum}}" type="text" placeholder="위 문항에 대한 시장님의 의견을 들려주세요!" aria-label="default input example">
             </div>
         </div>
     </template>

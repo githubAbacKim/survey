@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<div class="container-fluid p-3">
+<div class="container p-3">
     <form id="searchform" method="post">
         <div class="row">        
             <div class="col-lg-2 offset-lg-2 col-sm-12 text-center d-flex flex-row ">

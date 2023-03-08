@@ -6,9 +6,9 @@
 </style>
 
 
-<div class="container-fluid p-3">    
+<div class="container p-3">    
     <template id="data-template">
-        <div class="col-lg-8 col-sm-12 question-card">
+        <div class="col-lg-10 col-sm-12 question-card">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- question div -->
             <div class="col-lg-12 d-flex bd-highlight">
