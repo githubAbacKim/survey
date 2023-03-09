@@ -119,7 +119,7 @@
                             <h5>{{agree_title}}</h5>
                         </div>
                         <div class="card-body card-height text-color p-3">
-                            <p>{{agree_desc}}</p>
+                            <p class="fs-5">{{agree_desc}}</p>
                         </div>
                         <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="radio" >
                     </label>
@@ -134,7 +134,7 @@
                             <h5>{{disagree_title}}</h5>
                         </div>
                         <div class="card-body card-height text-color p-3">
-                            <p>{{disagree_desc}}</p>
+                            <p class="fs-5">{{disagree_desc}}</p>
                         </div>
                         <input type="radio" name="rq{{qnum}}" value="disagree" id="dis{{qnum}}" class="radio">
                     </label>

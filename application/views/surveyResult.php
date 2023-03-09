@@ -9,16 +9,16 @@
         border: 1px solid;
     } */
 </style>
-<div class="container p-3">
+<div class="container">
     <div class="row p-3 justify-content-evenly">
         <template id="profileTemp">
             <div class="col-lg-10 offset-lg-1">
                 <div class="profile_head text-color">
-                    <p>당신의 도시계획 유형은</p>
-                    <h4 class="fw-bold fs-5">{{type_mayor}}</h4>
-                    <h4 class="fw-bold fs-5">{{type}}</h4>
+                    <h5>당신의 도시계획 유형은</h5>
+                    <h2 class="fw-bold">{{type_mayor}}</h2>
+                    <h2 class="fw-bold">{{type}}</h2>
                 </div>
-                <div class="profile_image">                
+                <div class="profile_image mt-5">                
                         <picture>
                             <source srcset="<?php echo base_url()?>{{profile}}" type="image/svg+xml">
                             <img src="<?php echo base_url()?>{{profile}}" class="img-fluid" alt="...">
@@ -53,7 +53,7 @@
                 </picture>
             </div> 
         </template>   
-        <div class="col-xxl-4 col-lg-4 col-xs-12" id="scale_cont">                       
+        <div class="col-xxl-4 col-lg-5 col-xs-12" id="scale_cont">                       
         </div>
     </div>
 

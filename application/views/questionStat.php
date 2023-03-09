@@ -20,15 +20,16 @@
     .question-stat-card{
         height: 18vh !important;
     }
+    
 </style>
 
 <!-- /Modal -->
 <div class="container p-3">
     <form id="searchform" method="post">
         <div class="row">        
-            <div class="col-lg-2 col-sm-12 offset-lg-2 text-center d-flex flex-row ">
+            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
-                    <label for="form-select" class="p-3 select-label text-label-drop-down">성별</label>
+                    <label for="form-select" class="pt-3 select-label text-label-drop-down">성별</label>
                 </div>
                 <div class="col col-lg-7 col-sm-7">                            
                     <select id="gender" name="gender" class="form-select bg-color border-button">
@@ -41,9 +42,9 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
-                    <label for="form-select" class="p-3 select-label text-label-drop-down">학교급</label>
+                    <label for="form-select" class="pt-3 select-label text-label-drop-down">학교급</label>
                 </div>
                 <div class="col col-lg-7 col-xs-7">
                     <select id="school_level" name="school_level" class="form-select bg-color border-button">
@@ -59,9 +60,9 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-6 col-sm-5">
-                    <label for="form-select" class="p-3 select-label text-label-drop-down">학년구분</label>
+                    <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
                 </div>
                 <div class="col col-lg-6 col-sm-7">
                     <select id="elem" name="elem" class="form-select bg-color border-button gap-3">
@@ -92,13 +93,13 @@
                 </div>
             </div>
             <!-- Grid column -->
-            <div class="col-lg-2 col-sm-12 text-center bd-highlight">
+            <div class="col-lg-3 col-sm-12 text-center bd-highlight">
                 <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="search" role="button">조회</a>
             </div>
         </div>
     </form>
     <template id="qstat-template">
-        <div class="col-lg-8 col-xs-12 p-5 question-card">
+        <div class="col-lg-10 col-xs-12 p-5 question-card">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- Here get the total agree and disgree in each question -->
             <div class="container">

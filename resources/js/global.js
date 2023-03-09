@@ -80,7 +80,7 @@ async function resetSurvey() {
 function activeLink(){
     const path = window.location.pathname;
     let current = path.substring(16);
-    console.log(current)
+    console.log(path)
     // linkhome linkvalstat linkqstat linkq linkabout
 
     if(current === "index" || current === ""){
