@@ -130,18 +130,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 question-stat-card p-3" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
-                        <div class="text-center p-2 text-color d-flex">
-                            <!-- <div class="col-lg-1"><input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-2">찬성 :</div>
-                            <div class="col-lg-9"><span>{{agree_desc}}</span></div>
+                        <div class="text-left p-2 text-color row">
+                            <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
+                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">찬성 :</div>
+                            <div class="col-lg-9 col-xxl-9 col-sm-12 col-xs-12"><span>{{agree_desc}}</span></div>
                         </div>
                     </div>
                     <div class="col-lg-6 question-stat-card p-4 disagree-question-card" id='{{disagreediv}}'
                         data-value="disagree" data-qnum='{{qnum}}'>
-                        <div class="p-2 text-color d-flex">
-                            <!-- <div class="col-lg-1 text-center"><input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-3 text-center">내가 반대 :</div>
-                            <div class="col-lg-8 text-left"><span>{{disagree_desc}}</span></div>
+                        <div class="text-left p-2 text-color row">
+                            <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
+                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">반대 :</div>
+                            <div class="col-lg-9 col-xxl-9 col-sm-12 col-sm-12"><span>{{disagree_desc}}</span></div>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,15 @@
     .question-stat-card{
         height: 18vh !important;
     }
-    
+    .qdesc{
+        text-align: justify;
+        justify-content: flex-end;
+    }
+    @media(min-width: 1920px) {
+        .question-stat-card{
+            height: 10vh !important;
+        }
+    }
 </style>
 
 <!-- /Modal -->
@@ -120,23 +128,22 @@
                     </div>
                 </div>
             </div>
-
             <!-- question div -->
             <div class="container">
-                <div class="row gap-3 justify-content-evenly mt-5">
+                <div class="row justify-content-evenly mt-5 gap-2">
                     <div class="col-lg-5 question-stat-card agree-question-component" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
-                        <div class="text-left p-2 text-color d-flex">
+                        <div class="text-left p-2 text-color row">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-4">찬성 :</div>
-                            <div class="col-lg-7"><span>{{agree_desc}}</span></div>
+                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">찬성 :</div>
+                            <div class="col-lg-9 col-xxl-9 col-sm-12 col-xs-12"><span>{{agree_desc}}</span></div>
                         </div>
                     </div>
                     <div class="col-lg-5 question-stat-card agree-question-component" id='{{disagreediv}}'
                         data-value="disagree" data-qnum='{{qnum}}'>
-                        <div class="text-left p-2 text-color d-flex">
+                        <div class="text-left p-2 text-color row">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-4">내가 반대 :</div>
-                            <div class="col-lg-7 h-auto d-inline-block"><span>{{disagree_desc}}</span></div>
+                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">반대 :</div>
+                            <div class="col-lg-9 col-xxl-9 col-sm-12 col-sm-12"><span>{{disagree_desc}}</span></div>
                         </div>
                     </div>
                 </div>

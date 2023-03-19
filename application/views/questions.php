@@ -12,21 +12,32 @@
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- question div -->
             <div class="col-lg-12 d-flex bd-highlight">
-                <div class="col-lg-6 col-sm-12 question-stat-card p-4 " data-value="agree" data-qnum="1">
-                    <div class="text-left text-color">
-                        <picture>
-                            <img class="img-fluid" src='<?php echo base_url();?>{{agree_img}}' alt="agree" id="answer">
-                        </picture>
-                        <p class="m-2 p-2">{{agree_desc}}</p>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 question-stat-card p-4 " data-value="agree" data-qnum="1">
+                        <div class="text-left text-color">
+                            <picture>
+                                <img class="img-fluid" src='<?php echo base_url();?>{{agree_img}}' alt="agree" id="answer">
+                            </picture>
+                            <!-- <p class="m-2 p-2">{{agree_desc}}</p> -->
+                            <div class="text-left p-2 text-color row">
+                                <div class="col-lg-3 col-sm-12">찬성 :</div>
+                                <div class="col-lg-8"><span>{{agree_desc}}</span></div>
+                            </div>
+                        </div>
+                        
                     </div>
-                </div>
-                <div class=" col-lg-6 col-sm-12 question-stat-card p-4" data-value="disagree" data-qnum="1">
-                    <div class="text-left text-color">
-                        <picture>
-                            <img class="img-fluid" src='<?php echo base_url();?>{{disagree_img}}' alt="disagree" id="answer">
-                        </picture>
+                    <div class=" col-lg-6 col-sm-12 question-stat-card p-4" data-value="disagree" data-qnum="1">
+                        <div class="text-left text-color">
+                            <picture>
+                                <img class="img-fluid" src='<?php echo base_url();?>{{disagree_img}}' alt="disagree" id="answer">
+                            </picture>
 
-                        <p class="p-2 m-2">{{disagree_desc}}</p>
+                            <!-- <p class="p-2 m-2">{{disagree_desc}}</p> -->
+                            <div class="text-left p-2 text-color row">
+                                <div class="col-lg-3 col-sm-12">반대 :</div>
+                                <div class="col-lg-8 h-auto d-inline-block qdesc"><span>{{disagree_desc}}</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

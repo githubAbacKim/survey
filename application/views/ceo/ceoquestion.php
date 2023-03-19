@@ -27,7 +27,11 @@
                             <picture>
                                 <img class="img-fluid" src='<?php echo base_url();?>{{agree_img}}' alt="agree" id="answer">
                             </picture>
-                            <p class="m-2 p-2">{{agree_desc}}</p>
+                            <!-- <p class="m-2 p-2">{{agree_desc}}</p> -->
+                            <div class="text-left p-2 text-color row">
+                                <div class="col-lg-12 col-sm-12">찬성 :</div>
+                                <div class="col-lg-12"><span>{{agree_desc}}</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-lg-12 question-stat-card p-4" data-value="disagree" data-qnum="1">
@@ -36,7 +40,11 @@
                                 <img class="img-fluid" src='<?php echo base_url();?>{{disagree_img}}' alt="disagree" id="answer">
                             </picture>
 
-                            <p class="p-2 m-2">{{disagree_desc}}</p>
+                            <!-- <p class="p-2 m-2">{{disagree_desc}}</p> -->
+                            <div class="text-left p-2 text-color row">
+                                <div class="col-lg-12 col-sm-12">반대 :</div>
+                                <div class="col-lg-12 h-auto d-inline-block qdesc"><span>{{disagree_desc}}</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>

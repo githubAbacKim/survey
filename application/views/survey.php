@@ -100,7 +100,7 @@
         <div class="col-lg-2 offset-lg-2 next-page-indicator text-center mt-3">
             <button type="button" id="prevBtn"><img src="<?php echo base_url('resources/images/back.svg');?>"  alt="">&nbsp; 이전</button>
             <button type="button" id="nextBtn">다음 &nbsp;<img src="<?php echo base_url('resources/images/next.svg');?>"  alt=""></button>
-            <button type="button" id="submitBtn">제출하다 &nbsp;<img src="<?php echo base_url('resources/images/next.svg');?>"  alt=""></button>
+            <button type="button" id="submitBtn">제출 &nbsp;<img src="<?php echo base_url('resources/images/next.svg');?>"  alt=""></button>
         </div>
     </div>
     <template id="datatemplate">
