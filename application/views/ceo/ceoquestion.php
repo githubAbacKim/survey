@@ -8,7 +8,7 @@
         overflow: auto;
     }
 </style>
-<div class="container-fluid p-3">
+<div class="container p-3">
     <template id="commentTemp">
         <div class="h-card-2 card p-3 mt-2 rounded-10">
             <div class="h-card-3">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </template>
-    <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
+    <div class="row gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
     <!-- Modal -->

@@ -123,7 +123,7 @@
             </div>
         </div>
     </form>     
-    <div class="row p-2 d-flex justify-content-evenly">
+    <div class="row p-2 d-flex justify-content-evenly valuestatcont">
         <div class="col-lg-4 col-xs-12 rounded-3 align-self-center">
             <div class="p-3">
                 <canvas id="pie-chart" width="1200" height="1200"></canvas>

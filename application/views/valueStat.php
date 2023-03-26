@@ -47,8 +47,8 @@
 
 <div class="container p-3">
     <form id="searchform" method="post">
-        <div class="row">        
-            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
+        <div class="row gap-2 justify-content-center">        
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">성별</label>
                 </div>
@@ -63,7 +63,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">학교급</label>
                 </div>
@@ -81,7 +81,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-6 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
                 </div>
@@ -114,13 +114,13 @@
                 </div>
             </div>
             <!-- Grid column -->
-            <div class="col-lg-3 col-sm-12 text-center bd-highlight">
+            <div class="col-lg-2 col-sm-12 text-center bd-highlight">
                 <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="search" role="button">조회</a>
             </div>
         </div>
-    </form>     
-    <div class="row p-2 d-flex justify-content-evenly">
-        <div class="col-lg-4 col-xs-12 rounded-3 align-self-center">
+    </form>    
+    <div class="row p-2 justify-content-evenly valuestatcont">
+        <div class="col-lg-4 col-xxl-5 col-xs-12 rounded-3 align-self-end">
             <div class="p-3">
                 <canvas id="pie-chart" width="1200" height="1200"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -181,7 +181,7 @@
                 </div>
             </div>
         </template>
-        <div class="col-lg-3 col-xs-12 d-grid gap-3 mt-3" id="scaleCont">            
+        <div class="col-lg-3 col-xxl-4 col col-xs-12 d-grid gap-3 mt-3" id="scaleCont">            
         </div>
     </div>
     <!-- Modal -->

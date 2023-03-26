@@ -34,8 +34,8 @@
 <!-- /Modal -->
 <div class="container p-3">
     <form id="searchform" method="post">
-        <div class="row">        
-            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
+        <div class="row gap-2 justify-content-center">        
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">성별</label>
                 </div>
@@ -50,7 +50,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">학교급</label>
                 </div>
@@ -68,7 +68,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-3 col-sm-12 text-center d-flex flex-row ">
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-6 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
                 </div>
@@ -101,29 +101,29 @@
                 </div>
             </div>
             <!-- Grid column -->
-            <div class="col-lg-3 col-sm-12 text-center bd-highlight">
+            <div class="col-lg-2 col-sm-12 text-center bd-highlight">
                 <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="search" role="button">조회</a>
             </div>
         </div>
     </form>
     <template id="qstat-template">
-        <div class="col-lg-10 col-xs-12 p-5 question-card">
+        <div class="col-lg-10 col-xs-12 p-2 question-card">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- Here get the total agree and disgree in each question -->
             <div class="container">
                 <div class="row">
-                    <div class="col-1 mt-5 text-nowrap text-right">
+                    <div class="col-2 p-0 mt-5 text-nowrap text-center">
                         <span class="bold left-progress">찬성</span>
                     </div>
-                    <div class=" col-10">
+                    <div class="col-8 p-0">
                         <div class="progress mt-5 m-2">
                             <div class="progress-bar bg-success" id="{{agreeprog}}" role="progressbar" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="{{agreePercent}}"></div>
                             <div class="progress-bar bg-orange" id="{{disagreeprog}}" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                                aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="{{agreePercent}}"></div>
                         </div>
                     </div>
-                    <div class="col-1  mt-5">
+                    <div class="col-2 p-0 mt-5 text-nowrap text-center">
                         <span class="bold text-color right-progress">반대</span>
                     </div>
                 </div>
@@ -132,18 +132,18 @@
             <div class="container">
                 <div class="row justify-content-evenly mt-5 gap-2">
                     <div class="col-lg-5 question-stat-card agree-question-component" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
-                        <div class="text-left p-2 text-color row">
+                        <div class="p-3 text-color row statement-desc">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">찬성 :</div>
-                            <div class="col-lg-9 col-xxl-9 col-sm-12 col-xs-12"><span>{{agree_desc}}</span></div>
+                            <div class="col-lg-2 col-xxl-2 col-sm-12 col-xs-12 statement-label pe-0">찬성 :</div>
+                            <div class="col-lg-10 col-xxl-10 col-sm-12 col-xs-12 text-start"><span>{{agree_desc}}</span></div>
                         </div>
                     </div>
                     <div class="col-lg-5 question-stat-card agree-question-component" id='{{disagreediv}}'
                         data-value="disagree" data-qnum='{{qnum}}'>
-                        <div class="text-left p-2 text-color row">
+                        <div class="p-3 text-color row statement-desc">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">반대 :</div>
-                            <div class="col-lg-9 col-xxl-9 col-sm-12 col-sm-12"><span>{{disagree_desc}}</span></div>
+                            <div class="col-lg-2 col-xxl-2 col-sm-12 col-xs-12 statement-label pe-0">반대 :</div>
+                            <div class="col-lg-10 col-xxl-10 col-sm-12 col-sm-12 text-start"><span>{{disagree_desc}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
         </div>
     </template>
 
-    <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
+    <div class="row mt-3 p-2 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
 <!-- Modal -->

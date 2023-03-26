@@ -23,12 +23,12 @@
 </style>
 
 <!-- /Modal -->
-<div class="container-fluid p-3">
+<div class="container p-3">
     <form id="searchform" method="post">
-        <div class="row mt-5">        
-            <div class="col-lg-2 offset-lg-2 col-sm-12 text-center d-flex flex-row ">
+        <div class="row justify-content-center">        
+            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
-                    <label for="form-select" class="p-3 select-label text-label-drop-down">성별</label>
+                    <label for="form-select" class="pt-3 select-label text-label-drop-down">성별</label>
                 </div>
                 <div class="col col-lg-7 col-sm-7">                            
                     <select id="gender" name="gender" class="form-select bg-color border-button">
@@ -45,7 +45,7 @@
             <!-- Grid column -->
             <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
                 <div class="col col-lg-5 col-sm-5">
-                    <label for="form-select" class="p-3 select-label text-label-drop-down">학교급</label>
+                    <label for="form-select" class="pt-3 select-label text-label-drop-down">학교급</label>
                 </div>
                 <div class="col col-lg-7 col-xs-7">
                     <select id="school_level" name="school_level" class="form-select bg-color border-button">
@@ -64,10 +64,10 @@
 
             <!-- Grid column -->
             <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
-                <div class="col col-lg-6 col-sm-5">
-                    <label for="form-select" class="p-3 select-label text-label-drop-down">학년구분</label>
+                <div class="col col-lg-5 col-sm-5">
+                    <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
                 </div>
-                <div class="col col-lg-6 col-sm-7">
+                <div class="col col-lg-7 col-sm-7">
                     <select id="elem" name="elem" class="form-select bg-color border-button gap-3">
                         <option value="">선택</option>
                         <option value="1학년">1학년</option>
@@ -97,7 +97,7 @@
             </div>
             <!-- Grid column -->
             <div class="col-lg-2 col-sm-12 text-center bd-highlight">
-                <a class="btn btn-secondary btn-sm shadow p-2 btn-bg" id="search" role="button">조회</a>
+                <a class="btn btn-secondary btn-sm shadow p-3 btn-bg" id="search" role="button">조회</a>
             </div>
         </div>
     </form>
@@ -109,10 +109,10 @@
             <!-- Here get the total agree and disgree in each question -->
             <div class="container">
                 <div class="row">
-                    <div class="col-1 mt-5 text-nowrap text-right">
+                    <div class="col-2 p-0 mt-5 text-nowrap text-center">
                         <span class="bold left-progress">찬성</span>
                     </div>
-                    <div class=" col-10">
+                    <div class=" col-8 p-0">
                         <div class="progress mt-5 m-2">
                             <div class="progress-bar bg-success" id="{{agreeprog}}" role="progressbar" aria-valuemin="0"
                                 aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="manual" data-bs-placement="top" title="{{agreePercent}}"></div>
@@ -120,7 +120,7 @@
                                 aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="manual" data-bs-placement="top" title="{{disagreePercent}}"></div>
                         </div>
                     </div>
-                    <div class="col-1  mt-5">
+                    <div class="col-2 p-0 mt-5 text-nowrap text-center">
                         <span class="bold text-color right-progress">반대</span>
                     </div>
                 </div>
@@ -129,18 +129,18 @@
             <!-- question div -->
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 question-stat-card p-3" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
+                    <div class="col-lg-6 question-stat-card p-2 bordered" id='{{agreediv}}' data-value="agree" data-qnum='{{qnum}}'>
                         <div class="text-left p-2 text-color row">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">찬성 :</div>
+                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12 statement-label">찬성 :</div>
                             <div class="col-lg-9 col-xxl-9 col-sm-12 col-xs-12"><span>{{agree_desc}}</span></div>
                         </div>
                     </div>
-                    <div class="col-lg-6 question-stat-card p-4 disagree-question-card" id='{{disagreediv}}'
+                    <div class="col-lg-6 question-stat-card p-2 bordered disagree-question-card" id='{{disagreediv}}'
                         data-value="disagree" data-qnum='{{qnum}}'>
                         <div class="text-left p-2 text-color row">
                             <!-- <div class="col-lg-1"><input class="form-check-input checkbox" name="checkbox{{qnum}}" type="checkbox" value="agree" id="confirm_agree"></div>                             -->
-                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12">반대 :</div>
+                            <div class="col-lg-3 col-xxl-3 col-sm-12 col-xs-12 statement-label">반대 :</div>
                             <div class="col-lg-9 col-xxl-9 col-sm-12 col-sm-12"><span>{{disagree_desc}}</span></div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
         </div>
     </template>
 
-    <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
+    <div class="row gap-3 mt-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
 <!-- Modal -->

@@ -492,8 +492,8 @@ class Ceo extends CI_Controller
 	function fetchDefaultData(){
 		$var = array(
 			"tab1"=>"participants_answer pa",
-			"tab2"=>"question q",
-			"id1"=>"q.question_id",
+			"tab2"=>"participants p",
+			"id1"=>"p.participant_id",
 			"id2"=>"pa.participant_id"
 		);
 		$result = $this->survey_model->select_join($var,$like=false,$where=false);
@@ -817,6 +817,6 @@ class Ceo extends CI_Controller
 	}
 
 	public function test2(){
-		echo site_url();
+		echo $this->fetchDefaultData();
 	}
 }

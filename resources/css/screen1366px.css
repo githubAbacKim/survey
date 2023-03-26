@@ -1,0 +1,16 @@
+@media(max-width: 1366px) { 
+    .valuestatcont{
+        margin-top: 2rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+    .startCont{
+      margin-top: 2rem;
+    }
+
+    .footerindex{
+        margin-top: 4rem !important;
+    }
+} 

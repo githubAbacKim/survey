@@ -67,7 +67,7 @@
             <img src="<?php echo base_url("resources/images/dummystart.svg") ?>" class="mt-3" id="dummyBut">
         </div>
         <!-- Footer -->
-        <div class="footer text-center container">
+        <div class="footerindex text-center">
             <!-- Grid container -->
             <div class="container">
                 <div class="row">

@@ -1,11 +1,12 @@
 $(function () {
-
+	if (window.location.href === "http://210.99.223.38:20002/") {
+		window.location.href = "http://210.99.223.38:20002/index.php/page";
+	}
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
 	const public_sec = $("#public");
 
-	
 	function getShowList(school) {
 		if (school === "초등학생") {
 			elemlevel.show();

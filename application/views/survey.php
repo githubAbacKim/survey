@@ -109,36 +109,38 @@
                 <p>{{question}}</p>
             </div>
             <div class="col-lg-12 col-xs-12 p-3 gap-3 justify-content-md-center d-flex flex-row bd-highlight">
-                <div class="scale-div col-lg-3 col-xs-6" data-value="agree" data-qnum='{{qnum}}'>
-                    <label for="ag{{qnum}}">
-                        <picture>
-                            <source srcset='<?php echo base_url()?>{{agree_img}}' type="image/svg+xml">
-                            <img class="img-fluid" src='<?php echo base_url()?>{{agree_img}}' alt="agree" id="answer" />
-                        </picture>
-                        <div class="card-title-t text-center p-2 text-color">
-                            <h5>{{agree_title}}</h5>
-                        </div>
-                        <div class="card-body card-height text-color p-3">
-                            <p class="fs-5">{{agree_desc}}</p>
-                        </div>
-                        <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="radio" >
-                    </label>
-                </div>
-                <div class="scale-div col-lg-3 col-xs-6" data-value="disagree" data-qnum='{{qnum}}'>
-                    <label for="dis{{qnum}}">
-                        <picture>
-                            <source srcset='<?php echo base_url()?>{{disagree_img}}' type="image/svg+xml">
-                            <img class="img-fluid" src='<?php echo base_url()?>{{disagree_img}}' alt="disagree" id="answer" />
-                        </picture>
-                        <div class="card-title-t text-center p-2 text-color">
-                            <h5>{{disagree_title}}</h5>
-                        </div>
-                        <div class="card-body card-height text-color p-3">
-                            <p class="fs-5">{{disagree_desc}}</p>
-                        </div>
-                        <input type="radio" name="rq{{qnum}}" value="disagree" id="dis{{qnum}}" class="radio">
-                    </label>
-                </div>                
+                <div class="row">
+                    <div class="scale-div col-lg-3 col-xs-6" data-value="agree" data-qnum='{{qnum}}'>
+                        <label for="ag{{qnum}}">
+                            <picture>
+                                <source srcset='<?php echo base_url()?>{{agree_img}}' type="image/svg+xml">
+                                <img class="img-fluid" src='<?php echo base_url()?>{{agree_img}}' alt="agree" id="answer" />
+                            </picture>
+                            <div class="card-title-t text-center p-2 text-color">
+                                <h5>{{agree_title}}</h5>
+                            </div>
+                            <div class="card-body card-height text-color p-3">
+                                <span class="fs-6">{{agree_desc}}</span>
+                            </div>
+                            <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="radio" >
+                        </label>
+                    </div>
+                    <div class="scale-div col-lg-3 col-xs-6" data-value="disagree" data-qnum='{{qnum}}'>
+                        <label for="dis{{qnum}}">
+                            <picture>
+                                <source srcset='<?php echo base_url()?>{{disagree_img}}' type="image/svg+xml">
+                                <img class="img-fluid" src='<?php echo base_url()?>{{disagree_img}}' alt="disagree" id="answer" />
+                            </picture>
+                            <div class="card-title-t text-center p-2 text-color">
+                                <h5>{{disagree_title}}</h5>
+                            </div>
+                            <div class="card-body card-height text-color p-3">
+                                <span class="fs-6">{{disagree_desc}}</span>
+                            </div>
+                            <input type="radio" name="rq{{qnum}}" value="disagree" id="dis{{qnum}}" class="radio">
+                        </label>
+                    </div>   
+                </div>             
             </div>
             <div class="col-lg-6 offset-lg-3 col-xs-12 text-color">
                 <input class="form-control" name="comment{{qnum}}" type="text" placeholder="위 문항에 대한 시장님의 의견을 들려주세요!" aria-label="default input example">

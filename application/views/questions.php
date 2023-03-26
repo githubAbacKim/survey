@@ -3,39 +3,42 @@
         background: rgba(255, 255, 255, 0.33);
         border-radius: 18px;
     }
+    /* div{
+        border:solid 1px;
+    } */
 </style>
 
 
 <div class="container p-3">    
     <template id="data-template">
         <div class="col-lg-10 col-sm-12 question-card">
-            <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
+            <h5 class="fw-bold p-3 mt-4 text-color">{{question}}</h5>
             <!-- question div -->
             <div class="col-lg-12 d-flex bd-highlight">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 question-stat-card p-4 " data-value="agree" data-qnum="1">
-                        <div class="text-left text-color">
+                        <div class="text-color">
                             <picture>
                                 <img class="img-fluid" src='<?php echo base_url();?>{{agree_img}}' alt="agree" id="answer">
                             </picture>
                             <!-- <p class="m-2 p-2">{{agree_desc}}</p> -->
-                            <div class="text-left p-2 text-color row">
-                                <div class="col-lg-3 col-sm-12">찬성 :</div>
-                                <div class="col-lg-8"><span>{{agree_desc}}</span></div>
+                            <div class="p-2 text-color row mt-2">
+                                <div class="col-lg-2 col-xxl-2 col-sm-12 statement-label">찬성 :</div>
+                                <div class="col-lg-10 col-xxl-10 text-start"><span>{{agree_desc}}</span></div>
                             </div>
                         </div>
                         
                     </div>
                     <div class=" col-lg-6 col-sm-12 question-stat-card p-4" data-value="disagree" data-qnum="1">
-                        <div class="text-left text-color">
+                        <div class="text-color">
                             <picture>
                                 <img class="img-fluid" src='<?php echo base_url();?>{{disagree_img}}' alt="disagree" id="answer">
                             </picture>
 
                             <!-- <p class="p-2 m-2">{{disagree_desc}}</p> -->
-                            <div class="text-left p-2 text-color row">
-                                <div class="col-lg-3 col-sm-12">반대 :</div>
-                                <div class="col-lg-8 h-auto d-inline-block qdesc"><span>{{disagree_desc}}</span></div>
+                            <div class="p-2 text-color row mt-2">
+                                <div class="col-lg-2 col-xxl-2 col-sm-12 statement-label">반대 :</div>
+                                <div class="col-lg-10 col-xxl-10 text-start"><span>{{disagree_desc}}</span></div>
                             </div>
                         </div>
                     </div>
@@ -43,7 +46,7 @@
             </div>
         </div>
     </template>
-    <div class="row p-5 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
+    <div class="row gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
     <!-- Modal -->

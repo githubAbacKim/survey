@@ -61,15 +61,20 @@ $(function () {
 					let tanswer = data[0] + data[1];
 					let valagree = (data[0]/tanswer)*100;
 					let valdisagree = (data[1]/tanswer)*100;
-					var tagree = valagree.toFixed() + "%";
-					var tdisagree = valdisagree.toFixed() + "%";
-					  console.log('agree - ',tagree);
-					  console.log('disagree - ',tdisagree);
+					var tagree = valagree.toFixed() !== 'NaN' ? valagree.toFixed() + "%" : "0%";
+					var tdisagree = valagree.toFixed() !== 'NaN' ? valdisagree.toFixed() + "%" : "0%";
+						console.log('agree - ',valagree.toFixed());
+						console.log('disagree - ',tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);
 					$("#" + progAgree).attr("title", tagree);
 					$("#" + progDisagree).attr("title", tdisagree);
+
+					$('[data-toggle="tooltip"]').hide();
+					$("#" + progAgree).tooltip();
+					$("#" + progDisagree).tooltip();
+					
 				}
 			});
 			num++;
@@ -129,6 +134,8 @@ $(function () {
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}	
+
+	
 	
 	let displayUrl = '/page/fetchquestion';
 	let resultUrl = '/page/fetchDefaultData';
@@ -182,4 +189,6 @@ $(function () {
 	});
 
 	validatesession() === true && validateanswer() === true ? resetSurvey(): false;
+
+
 });

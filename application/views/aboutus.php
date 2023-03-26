@@ -76,13 +76,13 @@
     </section> -->
     <section class="d-block">
         <div class="row justify-content-center headersect1"> 
-            <div class="col-xxl-4 col-lg-6 col-md-6 col-xs-7 col-sm-7">
-                <img class="img-fluid" src="../../resources/images/aboutus/aboutheader-s1.svg" alt="...">
+            <div class="col-xxl-5 col-lg-6 col-md-6 col-xs-7 col-sm-7">
+                <img class="img-fluid w-100" src="../../resources/images/aboutus/aboutheader-s1.svg" alt="...">
             </div>
-        </div>   
+        </div>
         <div class="row justify-content-center mt-5 mb-5"> 
-            <div class="col-xxl-4 col-lg-6 col-md-6 col-xs-7 col-sm-7">
-                <img class="img-fluid" src="../../resources/images/aboutus/aboutheader-s2.svg" alt="...">
+            <div class="col-xxl-5 col-lg-6 col-md-6 col-xs-7 col-sm-7">
+                <img class="img-fluid w-100" src="../../resources/images/aboutus/aboutheader-s2.svg" alt="...">
             </div>
         </div>  
     </section>
@@ -117,9 +117,12 @@
         </div>
     </section>
     <section class="d-block">        
-        <div class="row mt-5 mb-5 footerdiv">
-                <div class="col-6 text-center text-color bg-light p-3 footertext">egkim618@gmail.com</div>
-                <div class="col-6 text-center text-color bg-light p-3 footertext"><span class="fw-bold">AI도시를 부탁해</span> by 김은경</div>
+        <!-- <div class="row mt-5 mb-5 footerdiv">
+            <div class="col-6 text-center text-color bg-light p-3 footertext">egkim618@gmail.com</div>
+            <div class="col-6 text-center text-color bg-light p-3 footertext"><span class="fw-bold">AI도시를 부탁해</span> by 김은경</div>
+        </div> -->
+        <div class="row mt-5 justify-content-center mb-5 footerdiv">
+            <div class="col-6 text-center text-color bg-light p-3 footertext">egkim618@gmail.com</div>
         </div>
     </section>
     <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-hidden="true">
