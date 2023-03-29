@@ -63,11 +63,12 @@ $(function () {
 					let valdisagree = (data[1]/tanswer)*100;
 					var tagree = valagree.toFixed() !== 'NaN' ? valagree.toFixed() + "%" : "0%";
 					var tdisagree = valagree.toFixed() !== 'NaN' ? valdisagree.toFixed() + "%" : "0%";
-						console.log('agree - ',valagree.toFixed());
+						console.log('agree - ',tagree);
 						console.log('disagree - ',tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);
+
 					$("#" + progAgree).attr("title", tagree);
 					$("#" + progDisagree).attr("title", tdisagree);
 

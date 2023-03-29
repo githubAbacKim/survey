@@ -117,10 +117,8 @@
                     </div>
                     <div class="col-8 p-0">
                         <div class="progress mt-5 m-2">
-                            <div class="progress-bar bg-success" id="{{agreeprog}}" role="progressbar" aria-valuemin="0"
-                                aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="{{agreePercent}}"></div>
-                            <div class="progress-bar bg-orange" id="{{disagreeprog}}" aria-valuemin="0"
-                                aria-valuemax="100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="{{agreePercent}}"></div>
+                            <div class="progress-bar bg-success" id="{{agreeprog}}"></div>
+                            <div class="progress-bar bg-orange" id="{{disagreeprog}}"></div>
                         </div>
                     </div>
                     <div class="col-2 p-0 mt-5 text-nowrap text-center">
