@@ -6,6 +6,7 @@ $(function () {
 	const highschool = $("#highschool");
 	const college = $("#college");
 	const public_sec = $("#public");
+	const awareness = $("#awareness");
 
 	function getShowList(school) {
 		if (school === "초등학생") {
@@ -13,31 +14,43 @@ $(function () {
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			
+			awareness.show();
 		} else if (school === "중학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
+
+			awareness.show();
 		} else if (school === "고등학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
+			
+			awareness.show();
 		} else if (school === "대학") {
 			college.show();
 			elemlevel.hide();
 			highschool.hide();
 			public_sec.hide();
+			
+			awareness.show();
 		} else if (school === "일반인") {
 			public_sec.show();
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
+			
+			awareness.show();
 		} else {
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			
+			awareness.hide();
 		}
 	}
 

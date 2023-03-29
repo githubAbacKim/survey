@@ -143,14 +143,16 @@
                     <!-- Grid column -->
                     <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
                         <div class="col col-lg-5 col-sm-5">
-                            <label for="form-select" class="p-3 select-label text-label-drop-down">지역규모</label>
+                            <label for="form-select" class="p-3 select-label text-label-drop-down">인공지능에 대한 인식</label>
                         </div>
                         <div class="col ol-lg-7 col-sm-7">
-                            <select id="region" name="regional_scale" class="form-select form-select-lg bg-color border-button">
+                            <select id="awareness" name="awareness" class="form-select form-select-lg bg-color border-button">
                                 <option value="">선택</option>
-                                <option value="읍면지역">읍면지역</option>
-                                <option value="중소도시">중소도시</option>
-                                <option value="대도시">대도시</option>
+                                <option value="매우긍정">매우긍정</option>
+                                <option value="긍정">긍정</option>
+                                <option value="보통">보통</option>
+                                <option value="부정">부정 </option>
+                                <option value="매우부정">매우부정 </option>
                             </select>
                         </div>
                     </div>

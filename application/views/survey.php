@@ -42,7 +42,7 @@
     .step {
         height: 15px;
         width: 15px;
-        margin: 0 15px;
+        margin: 0 12px;
         background-color: #bbbbbb;
         border: solid 4px #5C1C2C;
         /* border: none; */
@@ -109,8 +109,8 @@
                 <p>{{question}}</p>
             </div>
             <div class="col-lg-12 col-xs-12 p-3 gap-3 justify-content-md-center d-flex flex-row bd-highlight">
-                <div class="row">
-                    <div class="scale-div col-lg-3 col-xs-6" data-value="agree" data-qnum='{{qnum}}'>
+                <div class="row justify-content-center">
+                    <div class="scale-div col-lg-4 col-xs-6" data-value="agree" data-qnum='{{qnum}}'>
                         <label for="ag{{qnum}}">
                             <picture>
                                 <source srcset='<?php echo base_url()?>{{agree_img}}' type="image/svg+xml">
@@ -125,7 +125,7 @@
                             <input type="radio" name="rq{{qnum}}" value="agree" id="ag{{qnum}}" class="radio" >
                         </label>
                     </div>
-                    <div class="scale-div col-lg-3 col-xs-6" data-value="disagree" data-qnum='{{qnum}}'>
+                    <div class="scale-div col-lg-4 col-xs-6" data-value="disagree" data-qnum='{{qnum}}'>
                         <label for="dis{{qnum}}">
                             <picture>
                                 <source srcset='<?php echo base_url()?>{{disagree_img}}' type="image/svg+xml">

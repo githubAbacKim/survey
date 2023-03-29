@@ -595,7 +595,7 @@ class Page extends CI_Controller
 		if( $this->input->post('school_level') === "일반인"){
 			$this->form_validation->set_rules('public', '일반인', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
-		$this->form_validation->set_rules('regional_scale', '지역규모', 'required',array('required'=>'선택 해주세요 {field}'));
+		$this->form_validation->set_rules('awareness', '인공지능에 대한 인식', 'required',array('required'=>'선택 해주세요 {field}'));
 
 		if ($this->form_validation->run() == FALSE) {
 			//$msg['error'] = validation_errors();
@@ -622,7 +622,7 @@ class Page extends CI_Controller
 				"gender" => set_value('gender'),
 				"school_level" => set_value('school_level'),
 				"classification" => $classification,
-				"regional_scale" => set_value('regional_scale')
+				"awareness" => set_value('awareness')
 			);
 			$return = true;
 			$add = $this->survey_model->insert('participants', $data,$return);
