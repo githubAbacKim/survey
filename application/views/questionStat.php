@@ -68,7 +68,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+            <div class="classification col-lg-2 col-sm-12 text-center d-flex flex-row d-none">
                 <div class="col col-lg-6 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
                 </div>
@@ -107,7 +107,7 @@
         </div>
     </form>
     <template id="qstat-template">
-        <div class="col-lg-10 col-xs-12 p-2 question-card">
+        <div class="col-lg-10 col-xs-12 p-5 question-card shadow">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- Here get the total agree and disgree in each question -->
             <div class="container">
@@ -149,7 +149,7 @@
         </div>
     </template>
 
-    <div class="row mt-3 p-2 gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
+    <div class="row mt-3 p-2 gap-5 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
 <!-- Modal -->

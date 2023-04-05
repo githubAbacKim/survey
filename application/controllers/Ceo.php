@@ -22,7 +22,6 @@ class Ceo extends CI_Controller
 	public function index()
 	{
 		$this->questions();
-
 		// echo $_SERVER['HTTP_HOST'];
 	}
 

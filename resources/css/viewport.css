@@ -1,0 +1,205 @@
+@media(min-width: 3840px) { 
+    html{
+        height: 100vh !important;
+    }
+    .valuestatcont{
+        margin-top: 3rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+
+    /* .statement-desc{
+      height: 31rem;
+    } */
+    .startCont{
+      margin-top: 15rem !important;
+    }
+    
+    .footerindex{
+      margin-top:25rem !important;
+      font-size: 1.2rem;
+    }
+} 
+@media(max-width: 3440px) { 
+    html{
+        height: 100vh !important;
+    }
+    .valuestatcont{
+        margin-top: 3rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+
+    /* .statement-desc{
+      height: 31rem;
+    } */
+    .startCont{
+      margin-top: 15rem !important;
+    }
+    
+    .footerindex{
+      margin-top:25rem !important;
+      font-size: 1.2rem;
+    }
+} 
+@media(max-width: 2560px) { 
+    html{
+        height: 100vh !important;
+    }
+    .valuestatcont{
+        margin-top: 3rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+
+    /* .statement-desc{
+      height: 31rem;
+    } */
+    .surveytitle{
+      font-size: 8rem !important;
+    }
+    .surveydesc{
+      font-size: 2rem !important;
+    }
+    .startCont{
+      margin-top: 15rem !important;
+    }    
+    .footerindex{
+      margin-top:20rem !important;
+      font-size: 1.2rem;
+    }
+} 
+@media(max-width: 1920px) { 
+    html{
+        height: 100vh !important;
+    }
+    .valuestatcont{
+        margin-top: 5rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+
+    /* .statement-desc{
+      height: 31rem;
+    } */
+    .surveytitle{
+      font-size: 5rem !important;
+    }
+    .surveydesc{
+      font-size: 1.5rem !important;
+    }
+    .startCont{
+      margin-top: 5rem !important;
+    }
+    
+    .footerindex{
+      margin-top: 15rem !important;
+    }
+} 
+@media(max-width: 1600px){
+  .valuestatcont{
+    margin-top: 2rem !important;
+  }
+  .footerindex{
+    margin-top: 5rem !important;
+  }
+}
+@media(max-width: 1366px) { 
+    html{
+        height: 100vh !important;
+    }
+    .valuestatcont{
+        margin-top: 2rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+    .surveytitle{
+      font-size: 3rem !important;
+    }
+    .surveydesc{
+      font-size: 1rem !important;
+    }
+    .startCont{
+      margin-top: 2.5rem !important;
+    }
+
+    .footerindex{
+        margin-top: 6rem !important;
+    }
+    
+} 
+@media(max-width: 1280px) { 
+    html{
+        height: 100vh !important;
+    }
+    .startf
+    .valuestatcont{
+        margin-top: 2rem !important;
+    }
+
+    .statement-label{
+      text-align: right;
+    }
+    .startCont{
+      margin-top: 10rem !important;
+    }
+
+    .footerindex{
+        margin-top: 12rem !important;
+    }
+
+    /* value statistic page */
+    .valuestatcont{
+        height: 50vh;
+        margin-top: 5rem !important;
+    }
+    .scale-contval{
+        height: 40vh;
+    }
+} 
+
+@media (max-width: 412px){ 
+html{
+    height: 100vh !important;    
+}
+body{
+  overflow: auto !important;
+  
+}
+    .section2{
+    background-color: white;
+}
+.statement-label{
+    text-align: left !important;
+}
+.surveytitle{
+  font-size: 2.5rem !important;
+}
+.surveydesc{
+  font-size: 1rem !important;
+}
+.startCont{
+  margin-top: 1rem !important;
+}
+.footerindex{
+    font-size: 1rem;
+    margin-top: 2rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.scale-contval{
+  height: 60vh;
+  margin-bottom:2rem;
+}
+
+}

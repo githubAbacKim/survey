@@ -1,56 +1,55 @@
 $(function () {
-	if (window.location.href === "http://210.99.223.38:20002/") {
-		window.location.href = "http://210.99.223.38:20002/index.php/page";
-	}
+	
 	const elemlevel = $("#elem");
 	const highschool = $("#highschool");
 	const college = $("#college");
 	const public_sec = $("#public");
 	const awareness = $("#awareness");
+	const classification = $('.classification');
 
 	function getShowList(school) {
 		if (school === "초등학생") {
 			elemlevel.show();
 			highschool.hide();
 			college.hide();
-			public_sec.hide();
-			
-			awareness.show();
+			public_sec.hide();	
+
+			classification.removeClass('d-none');
 		} else if (school === "중학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
 
-			awareness.show();
+			classification.removeClass('d-none');
 		} else if (school === "고등학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
 			
-			awareness.show();
+			classification.removeClass('d-none');
 		} else if (school === "대학") {
 			college.show();
 			elemlevel.hide();
 			highschool.hide();
 			public_sec.hide();
 			
-			awareness.show();
+			classification.removeClass('d-none');
 		} else if (school === "일반인") {
 			public_sec.show();
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
 			
-			awareness.show();
+			classification.removeClass('d-none');
 		} else {
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			classification.addClass('d-none');
 			
-			awareness.hide();
 		}
 	}
 
@@ -114,10 +113,13 @@ $(function () {
 	//if check box is checked add class to start image to enable start
 	$("#confirm_agree").change(function () {
 		if ($(this).is(":checked")) {
+			
 			$("#dummyBut").fadeOut("fast");
+			$("#submitform").removeClass('d-none')
 			$("#submitform").fadeIn("slow");
 		} else {
 			$("#submitform").fadeOut("fast");
+			$("#submitform").addClass('d-none')
 			$("#dummyBut").fadeIn("slow");
 		}
 	});

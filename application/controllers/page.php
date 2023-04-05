@@ -27,7 +27,7 @@ class Page extends CI_Controller
 		$this->load->view('bodyHeader',$data);
 		$this->load->view('index', $data);
 		$this->load->view('footer', $data);
-
+		
 		// echo $_SERVER['HTTP_HOST'];
 	}
 

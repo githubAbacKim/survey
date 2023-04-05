@@ -17,7 +17,7 @@
         </div>
     </template>    
     <template id="data-template">
-        <div class="col-lg-8 col-sm-12 question-card">
+        <div class="col-lg-8 col-sm-12 question-card shadow">
             <h5 class="fw-bold mt-4 text-color">{{question}}</h5>
             <!-- question div -->
             <div class="row">
@@ -48,12 +48,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-sm-12 gap-3 mt-5 commentCont" id="commentCont{{qnum}}">                
+                <div class="col-lg-8 col-sm-12 gap-3 mt-3 commentCont" id="commentCont{{qnum}}">                
                 </div>
             </div>
         </div>
     </template>
-    <div class="row gap-3 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
+    <div class="row gap-5 justify-content-evenly d-flex flex-row-reverse bd-highlight" id="questCont">
     </div>
 </div>
     <!-- Modal -->

@@ -4,6 +4,12 @@
         width: 100px;
         opacity: 1;
     }
+    .toc{
+      margin-left:-1rem;
+      height: 5rem;
+      width: 5rem;
+      opacity: 0.1;
+    }
 </style>
 
 <!-- Modal -->
@@ -50,11 +56,11 @@
     </div>
 </nav> -->
 <div class="container-fluid content">
-    <h1 class="text-lg-center text-color text-style text-center">AI 도시를 부탁해!</h1>
-    <p class="text-md normal-text-color">당신은 <b>AI 도시의 시장님</b>입니다. <br>AI와 관련된 다양한 상황에서<b> 당신의 입장을 선택</b>해주세요.</p>
+    <h1 class="surveytitle text-lg-center text-color text-style text-center">AI 도시를 부탁해!</h1>
+    <p class="surveydesc text-md normal-text-color">당신은 <b>AI 도시의 시장님</b>입니다. <br>AI와 관련된 다양한 상황에서<b> 당신의 입장을 선택</b>해주세요.</p>
 
     <div class="text-center">
-        <p class="tp" data-toggle="tooltip" data-placement="bottom" title=" 수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.">
+        <p class="tp surveydesc" data-toggle="tooltip" data-placement="bottom" title=" 수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.">
             <span class="bold">동의</span>
             <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
             수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
@@ -62,7 +68,7 @@
     </div>
     <form id="startForm" action="<?php echo site_url('page/register_participants') ?>" method="POST">
         <div class="container-fluid text-center startCont">
-            <img src="<?php echo base_url("resources/images/realstart.svg") ?>" class="startbut mt-3" id="submitform"
+            <img src="<?php echo base_url("resources/images/realstart.svg") ?>" class="startbut mt-3 d-none" id="submitform"
                 alt="sumbit" data-toggle="modal">
             <img src="<?php echo base_url("resources/images/dummystart.svg") ?>" class="mt-3" id="dummyBut">
         </div>
@@ -89,7 +95,7 @@
                     <!-- Grid column -->
                     <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
                         <div class="col col-lg-5 col-sm-5">
-                            <label for="form-select" class="p-3 select-label text-label-drop-down">학교급</label>
+                            <label id="school_label" for="form-select" class="p-3 select-label text-label-drop-down">학교급</label>
                         </div>
                         <div class="col col-lg-7 col-xs-7">
                             <select id="school_level" name="school_level" class="form-select form-select-lg bg-color border-button">
@@ -105,7 +111,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
+                    <div class="classification col-lg-3 col-sm-12 text-center d-flex justify-content-evenly d-none">
                         <div class="col col-lg-5 col-sm-5">
                             <label for="form-select" class="p-3 select-label text-label-drop-down">학년구분</label>
                         </div>
@@ -143,7 +149,7 @@
                     <!-- Grid column -->
                     <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
                         <div class="col col-lg-5 col-sm-5">
-                            <label for="form-select" class="p-3 select-label text-label-drop-down">인공지능에 대한 인식</label>
+                            <label for="form-select" class=" select-label text-label-drop-down">인공지능에 대한 인식</label>
                         </div>
                         <div class="col ol-lg-7 col-sm-7">
                             <select id="awareness" name="awareness" class="form-select form-select-lg bg-color border-button">
@@ -162,6 +168,8 @@
             </div>
         </div>
     </form>
+</div>
+<div class="position-absolute top-0 bg-transparent toc" ondblclick='window.location.href ="/ceo/index"'>    
 </div>
 <!-- Modal -->
 <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-hidden="true">

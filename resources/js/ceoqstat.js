@@ -2,6 +2,11 @@ $(function () {
 		
 	var listContainer = $("#questCont");
 	var paginationcont = $("#qstat-template").html();
+	const elemlevel = $("#elem");
+	const highschool = $("#highschool");
+	const college = $("#college");
+	const public_sec = $("#public");
+	const classification = $('.classification');
 
 	function getData(url) {
 		var tmp = null;
@@ -63,8 +68,6 @@ $(function () {
 					let valdisagree = (data[1]/tanswer)*100;
 					var tagree = valagree.toFixed() !== 'NaN' ? valagree.toFixed() + "%" : "0%";
 					var tdisagree = valagree.toFixed() !== 'NaN' ? valdisagree.toFixed() + "%" : "0%";
-						console.log('agree - ',tagree);
-						console.log('disagree - ',tdisagree);
 
 					$("#" + progAgree).css("width", tagree);
 					$("#" + progDisagree).css("width", tdisagree);
@@ -91,31 +94,37 @@ $(function () {
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "중학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "고등학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "대학") {
 			college.show();
 			elemlevel.hide();
 			highschool.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "일반인") {
 			public_sec.show();
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
+			classification.removeClass('d-none');
 		} else {
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			classification.addClass('d-none');
 		}
 	}
 
@@ -143,8 +152,8 @@ $(function () {
 
 	function activeCeoLink(){
 		const path = window.location.pathname;
-		let current = path.substring(15);
-
+		let current = path.substring(5);
+		console.log(current)
 		if(current === "questionstatistics"){
 			$('#qlink').removeClass('btnWhite');
 			$('#qlink').addClass('btn-bg')
@@ -162,12 +171,6 @@ $(function () {
 
 	let defaultdata = getData(resultUrl).data;
 	searchResult(getData(displayUrl),defaultdata);
-	console.log(defaultdata);
-	const elemlevel = $("#elem");
-	const highschool = $("#highschool");
-	const college = $("#college");
-	const public_sec = $("#public");
-
 
 	var data = document.getElementById("school_level").value;
 	getShowList(data);
@@ -210,5 +213,11 @@ $(function () {
 
 });
 $(document).ready(function() {
-	$('[data-trigger="show"]').tooltip('show');
-  });
+$('[data-trigger="show"]').tooltip('show');
+});
+
+document.addEventListener("keydown", function(event) {
+if (event.keyCode === 8 || event.which === 8) {
+	console.log("Backspace key was pressed.");
+}
+});

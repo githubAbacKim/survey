@@ -81,7 +81,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-2 col-sm-12 text-center d-flex flex-row ">
+            <div class="classification col-lg-2 col-sm-12 text-center d-flex flex-row d-none">
                 <div class="col col-lg-6 col-sm-5">
                     <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
                 </div>
@@ -120,29 +120,28 @@
         </div>
     </form>    
     <div class="row p-2 justify-content-evenly valuestatcont">
-        <div class="col-lg-4 col-xxl-5 col-xs-12 rounded-3 align-self-end">
+        <div class="col-lg-4 col-xxl-5 col-xs-12 rounded-3 align-self-center">
             <div class="p-3">
                 <canvas id="pie-chart" width="1200" height="1200"></canvas>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+                <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             </div>
         </div>
         
         <template id="linktemplate">
-            <a id="{{linkId}}" data-value="{{type}}" role="button">
-                <div class="col-lg-12 col-sm-8 d-flex typelabels mt-2">
-                    <div class="col-3 text-center titleLabels shadow p-1" id="{{id}}">{{type}}</div>
-                    <div class="col-9 text-center labeldesc p-1"><h>{{type_desc}}</span></div>
-                </div>
-            </a>            
+            <div class="col-lg-12 col-sm-8 d-flex typelabels mt-3" id="{{linkId}}" data-value="{{type}}" role="button">
+                <div class="col-3 text-center titleLabels shadow p-1" id="{{id}}">{{type}}</div>
+                <div class="col-9 text-center labeldesc p-1"><h>{{type_desc}}</span></div>
+            </div>     
         </template>
         <div class="col-lg-3 col-sm-6 align-self-center" id="linkCont">        
         </div>
 
         <template id="scaletemplate">
             <div class="col-lg-12 col-sm-12 profile_head text-color">
-                <div class="col-lg-4 col-ms-6 text-center offset-lg-4 shadow p-2 titleBtn">{{type}}</div>
+                <div class="col-lg-4 col-ms-6 text-center offset-lg-4 shadow p-2 titleBtn fw-bold">{{type}}</div>
             </div>
-            <div class="scale-contval">
+            <div class="row justify-content-evenly scale-contval">
                 <div class="scale-div col-12 gx-2 position-relative">
                     <picture class="picture-container d-flex">
                         <source srcset="<?php echo base_url();?>{{scalesh}}" type="image/svg+xml">

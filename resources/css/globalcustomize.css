@@ -1,13 +1,18 @@
-html,
-body {
+body{
+  background: transparent;
+}
+html{
   /* font-family: Verdana, sans-serif; */
   font-size: 15px;
   line-height: 1.5;
+  height: 100vh;
+  height: 100dvh;
   /* background-color: #F6EFE0;   */
   background-image: url('../images/KakaoTalk_bg.svg');
   background-color: #F6EFE0;
   background-position: top;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
   font-family: 'nexon-lv1-gothic-otf', sans-serif;
 }

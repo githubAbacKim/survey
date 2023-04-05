@@ -3,38 +3,45 @@ $(function () {
 	const highschool = $("#highschool");
 	const college = $("#college");
 	const public_sec = $("#public");
+	const classification = $('.classification');
 
-	function getShowList(school){
+	function getShowList(school) {
 		if (school === "초등학생") {
 			elemlevel.show();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "중학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "고등학생") {
 			highschool.show();
 			elemlevel.hide();
 			college.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "대학") {
 			college.show();
 			elemlevel.hide();
 			highschool.hide();
 			public_sec.hide();
+			classification.removeClass('d-none');
 		} else if (school === "일반인") {
 			public_sec.show();
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
+			classification.removeClass('d-none');
 		} else {
 			elemlevel.hide();
 			highschool.hide();
 			college.hide();
 			public_sec.hide();
+			classification.addClass('d-none');
 		}
 	}
 
@@ -75,29 +82,6 @@ $(function () {
 		return tmp;
 	}
 
-	// function displayData(scaledata,rotatedata,labeldata,type)
-	// {	
-	// 	var scaleContainer = $("#scaleCont");
-	// 	var scaletemp = $("#scaletemplate").html();
-		
-	// 	let scaleTempdata = {
-	// 		type: type,
-	// 		scalesh: scaledata[0],
-	// 		rotate1: rotatedata[0],
-	// 		labelsh1: labeldata[0],
-	// 		labelsh2: labeldata[1],
-	// 		scalets: scaledata[1],
-	// 		rotate2: rotatedata[1],
-	// 		labelts1: labeldata[2],
-	// 		labelts2: labeldata[3],
-	// 		scaleth: scaledata[2],
-	// 		rotate3: rotatedata[2],
-	// 		labelth1: labeldata[4],
-	// 		labelth2: labeldata[5]			
-	// 	};
-	// 	scaleContainer.append(Mustache.render(scaletemp, scaleTempdata));		
-	// }
-
 	function displaylink(result)
 	{	// get linklist
 		var linkContainer = $("#linkCont");
@@ -122,33 +106,6 @@ $(function () {
 		});		
 	}
 
-	// function makeAllClickableLink(data)
-	// {
-	// 	$.each(data, function (i,d) {
-	// 		let name = d.name+"link";		
-	// 		//console.log(id);	
-	// 		$('#'+name).click(function () {
-	// 			let value = this.getAttribute('data-value');
-	// 			let scaleContainer = $("#scaleCont");
-				
-	// 			$.ajax({
-	// 				type: "POST",
-	// 				url: "/ceo/getSelectedData", 
-	// 				data: {data: value},
-	// 				dataType: "json",  
-	// 				cache:false,
-	// 				success: function(r){
-	// 					scaleContainer.empty();
-	// 					displayData(r.scale,r.rotate,r.label,value);
-	// 				},
-	// 				error: function () {
-	// 					console.log("error");
-	// 				},
-	// 			});			
-	// 		});
-	// 	});
-	// }
-
 	function modal(title,message,type){
 		$("#alertModal").modal("show");
 		$('#alertModal').find('.modal-title').text(title);
@@ -168,105 +125,52 @@ $(function () {
 		$('#confirmModal').find('.modal-title').text(title);
 		$('.alert-secondary').html(message);
 	}
-	
-	function displayPie(piedata){		
-		var canvas = $('#pie-chart').get(0).getContext('2d');
-
-		Chart.pluginService.register({
-			beforeRender: function(chart) {
-				if (chart.config.options.showAllTooltips) {
-				// create an array of tooltips
-				// we can't use the chart tooltip because there is only one tooltip per chart
-				chart.pluginTooltips = [];
-				chart.config.data.datasets.forEach(function(dataset, i) {
-					chart.getDatasetMeta(i).data.forEach(function(sector, j) {
-					chart.pluginTooltips.push(new Chart.Tooltip({
-						_chart: chart.chart,
-						_chartInstance: chart,
-						_data: chart.data,
-						_options: chart.options.tooltips,
-						_active: [sector]
-					}, chart));
-					});
-				});
-				// turn off normal tooltips
-				chart.options.tooltips.enabled = false;
-				}
+	var ctx = document.getElementById("pie-chart");
+	var myChart = new Chart(ctx, {
+		type: "pie",
+		data: {
+			labels: [
+				"SSH",
+				"SST",
+				"HTH",
+				"HSH",
+				"STT",
+				"HTT",
+				"HST",
+				"STH",
+			],
+			datasets: [
+				{
+					label: "answers",
+					backgroundColor: [
+						"#6370E3",
+						"#BEC5FF",
+						"#42C696",
+						"#9AF5D4",
+						"#BB6BED",
+						"#DDB1FF",
+						"#FF9C27",
+						"#FFD772",
+					],
+					data: [],
+				},
+			],
+		},
+		options: {
+			responsive: true,
+			legend: {
+				position: "bottom",
+				align: "center",
+				color: "rgb(255, 99, 132)",
+				labels: {
+					font: {
+						size: 30,
+					},
+				},
 			},
-			afterDraw: function(chart, easing) {
-				if (chart.config.options.showAllTooltips) {
-				// we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
-				if (!chart.allTooltipsOnce) {
-					if (easing !== 1)
-					return;
-					chart.allTooltipsOnce = true;
-				}
-				// turn on tooltips
-				chart.options.tooltips.enabled = true;
-				Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
-					tooltip.initialize();
-					tooltip.update();
-					// we don't actually need this since we are not animating tooltips
-					tooltip.pivot();
-					tooltip.transition(easing).draw();
-				});
-				chart.options.tooltips.enabled = false;
-				}
-			}
-		});
+		},
 		
-		const config = {
-			type: "pie",
-			data: {
-				labels: [
-					"SSH",
-					"SST",
-					"HTH",
-					"HSH",
-					"STT",
-					"HTT",
-					"HST",
-					"STH",
-				],
-				datasets: [
-					{
-						label: "answers",
-						backgroundColor: [
-							"#6370E3",
-							"#BEC5FF",
-							"#42C696",
-							"#9AF5D4",
-							"#BB6BED",
-							"#DDB1FF",
-							"#FF9C27",
-							"#FFD772",
-						],
-						data: piedata,
-					},
-				],
-			},
-			options: {
-				responsive: true,
-				legend: {
-					position: "bottom",
-					align: "center",
-					color: "rgb(255, 99, 132)",
-					labels: {
-						font: {
-							size: 30,
-						},
-					},
-				},
-				tooltips: {
-					yAlign: 'bottom',
-					xAlign: 'center'
-				},
-				showAllTooltips: true
-			}
-		}
-		new Chart(canvas,config);
-		//new Chart(document.getElementById("pie-chart"),config);
-	}
+	});
 
 	function validatesession() {
 		var tmp = null;
@@ -306,7 +210,8 @@ $(function () {
 			dataType: 'json',
 			success: function(response){
 				if(response.status === true){	
-					displayPie(response.data);
+					myChart.data.datasets[0].data = response.data;
+					myChart.update();
 				}else{
 					//console.log("no data");
 					var title = '죄송합니다!!!';
@@ -326,7 +231,7 @@ $(function () {
 	});
 	function activeCeoLink(){
 		const path = window.location.pathname;
-		let current = path.substring(15);
+		let current = path.substring(5);
 		console.log(current)
 		if(current === "valuestatistic"){
 			$('#qlink').removeClass('btnWhite');
@@ -339,7 +244,9 @@ $(function () {
 	}
 	let url = "/ceo/fetchDefaultResultType";
 	let piedata = getData(url).data;
-	displayPie(piedata);
+	
+	myChart.data.datasets[0].data = piedata;
+	myChart.update();
 
 	let linkdata = getData(url).link;
 	let scaledata = getData(url).scale;
@@ -351,5 +258,9 @@ $(function () {
 	// displayData(scaledata,rotatedata,labeldata,"SSH");
 	// makeAllClickableLink(linkdata);
 
-	
+	document.addEventListener("keydown", function(event) {
+	if (event.keyCode === 8 || event.which === 8) {
+		console.log("Backspace key was pressed.");
+	}
+	});
 });

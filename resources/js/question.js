@@ -24,7 +24,6 @@ $(function(){
     function displayQuestionStat(dataresult)
     {
         $.each(dataresult,function(i,result){
-            console.log(result.question_num)
             var data = {
                 'qnum': result.question_num,
                 'question': result.question,
