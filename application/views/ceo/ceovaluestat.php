@@ -113,7 +113,7 @@
                     </select>
                     <select id="public" name="public" class="form-select bg-color border-button">
                         <option value="전체">전체</option>
-                        <option value="인문사회">일반</option>
+                        <option value="일반">일반</option>
                     </select>
                 </div>
             </div>

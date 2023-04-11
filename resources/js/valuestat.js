@@ -230,8 +230,14 @@ $(function () {
 						},
 					},
 				},
+				tooltip: {
+					callbacks: {
+						label:function(context){
+							return context.label;
+						}
+					}
+				},
 			},
-			
 			// onHover: function(event,activeEls){
 			// 	if(activeEls.length !==0){
 			// 		let value = list[activeEls[0].index];					
@@ -299,6 +305,7 @@ $(function () {
 			async: false,
 			dataType: 'json',
 			success: function(response){
+				console.log(response.data)
 				if(response.status === true){	
 					myChart.data.datasets[0].data = response.data;
 					myChart.update();
@@ -310,10 +317,9 @@ $(function () {
 					modal(title,message,type);
 				}
 			},
-			error: function(response){
-				//console.log("error query");
+			error: function(xhr, status, error){
 				var title = '앗 미안 해요!!!';
-				var message = response.error;
+				var message = error;
 				var type = 'error query';
 				modal(title,message,type);
 			}

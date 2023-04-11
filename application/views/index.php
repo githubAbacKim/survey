@@ -59,13 +59,7 @@
     <h1 class="surveytitle text-lg-center text-color text-style text-center">AI 도시를 부탁해!</h1>
     <p class="surveydesc text-md normal-text-color">당신은 <b>AI 도시의 시장님</b>입니다. <br>AI와 관련된 다양한 상황에서<b> 당신의 입장을 선택</b>해주세요.</p>
 
-    <div class="text-center">
-        <p class="tp surveydesc" data-toggle="tooltip" data-placement="bottom" title=" 수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.">
-            <span class="bold">동의</span>
-            <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
-            수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
-        </p>
-    </div>
+    
     <form id="startForm" action="<?php echo site_url('page/register_participants') ?>" method="POST">
         <div class="container-fluid text-center startCont">
             <img src="<?php echo base_url("resources/images/realstart.svg") ?>" class="startbut mt-3 d-none" id="submitform"
@@ -76,6 +70,13 @@
         <div class="footerindex text-center">
             <!-- Grid container -->
             <div class="container">
+                <div class="row text-center mb-3">
+                    <p class="tp surveydesc" data-toggle="tooltip" data-placement="bottom" title=" 수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.">
+                        <span class="bold">동의</span>
+                        <input class="form-check-input checkbox" type="checkbox" value="agree" id="confirm_agree">
+                        수집된 자료는 인공지능 윤리 교육 연구를 위해 사용될 수 있습니다.
+                    </p>
+                </div>
                 <div class="row">
                     <!-- Grid column -->    
                     <div class="col-lg-3 col-sm-12 text-center d-flex justify-content-evenly">
@@ -140,7 +141,7 @@
                             </select>
                             <select id="public" name="public" class="form-select form-select-lg bg-color border-button">
                                 <option value="">선택</option>
-                                <option value="인문사회">일반</option>
+                                <option value="일반">일반</option>
                             </select>
                         </div>
                     </div>

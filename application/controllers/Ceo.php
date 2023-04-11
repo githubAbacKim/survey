@@ -256,6 +256,10 @@ class Ceo extends CI_Controller
 		if( $this->input->post('school_level') === "대학"){
 			$this->form_validation->set_rules('college', '대학', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
+		if( $this->input->post('school_level') === "일반인"){
+			$this->form_validation->set_rules('public', '일반인', 'required',array('required'=>'선택 해주세요 {field}'));
+		}
+
 		if ($this->form_validation->run() == FALSE) {
 			$msg['error'] = validation_errors();
 			//$msg['error'] = "선택하지 않은 항목이 있습니다. 모든 항목을 선택해주세요.";
@@ -273,6 +277,9 @@ class Ceo extends CI_Controller
 			if(set_value('school_level') === "대학"){
 				$classification = set_value('college');
 			}
+			if(set_value('school_level') === "일반인"){
+				$classification = set_value('public');
+			}
 
 			if(set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체'){
 				$where = array(
@@ -280,7 +287,7 @@ class Ceo extends CI_Controller
 					"classification" => strval($classification)
 				);
 			}
-			elseif (set_value('gender') !== "전체" && set_value('school_level') === "전체") {
+			elseif (set_value('gender') !== "전체" && set_value('school_level')) {
 				$where = array(
 					"gender" => set_value('gender')
 				);
@@ -294,6 +301,12 @@ class Ceo extends CI_Controller
 			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
 				$where = array(
 					"school_level" => set_value('school_level')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체') {
+				$where = array(
+					"school_level" => set_value('school_level'),
+					"classification" => strval($classification)
 				);
 			}
 			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {
@@ -342,6 +355,9 @@ class Ceo extends CI_Controller
 		if( $this->input->post('school_level') === "대학"){
 			$this->form_validation->set_rules('college', '대학', 'required',array('required'=>'선택 해주세요 {field}'));
 		}
+		if( $this->input->post('school_level') === "일반인"){
+			$this->form_validation->set_rules('public', '일반인', 'required',array('required'=>'선택 해주세요 {field}'));
+		}
 
 		if ($this->form_validation->run() == FALSE) {
 			$msg['error'] = validation_errors();
@@ -359,6 +375,9 @@ class Ceo extends CI_Controller
 			}
 			if(set_value('school_level') === "대학"){
 				$classification = set_value('college');
+			}
+			if(set_value('school_level') === "일반인"){
+				$classification = set_value('public');
 			}
 	
 			if(set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체'){
@@ -381,6 +400,12 @@ class Ceo extends CI_Controller
 			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification === '전체') {
 				$where = array(
 					"school_level" => set_value('school_level')
+				);
+			}
+			elseif (set_value('gender') === "전체" && set_value('school_level') !== '전체' && $classification !== '전체') {
+				$where = array(
+					"school_level" => set_value('school_level'),
+					"classification" => strval($classification)
 				);
 			}
 			elseif (set_value('gender') === "전체" && set_value('school_level') === '전체') {

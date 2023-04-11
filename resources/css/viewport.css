@@ -97,19 +97,22 @@
       font-size: 1.5rem !important;
     }
     .startCont{
-      margin-top: 5rem !important;
+      margin-top: 10rem !important;
     }
     
     .footerindex{
-      margin-top: 15rem !important;
+      margin-top: 13rem !important;
     }
 } 
 @media(max-width: 1600px){
   .valuestatcont{
     margin-top: 2rem !important;
   }
-  .footerindex{
+  .startCont{
     margin-top: 5rem !important;
+  }
+  .footerindex{
+    margin-top: 8rem !important;
   }
 }
 @media(max-width: 1366px) { 
@@ -119,7 +122,6 @@
     .valuestatcont{
         margin-top: 2rem !important;
     }
-
     .statement-label{
       text-align: right;
     }
@@ -134,7 +136,7 @@
     }
 
     .footerindex{
-        margin-top: 6rem !important;
+        margin-top: 8rem !important;
     }
     
 } 
@@ -155,7 +157,7 @@
     }
 
     .footerindex{
-        margin-top: 12rem !important;
+        margin-top: 13rem !important;
     }
 
     /* value statistic page */

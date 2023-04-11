@@ -213,17 +213,15 @@ $(function () {
 					myChart.data.datasets[0].data = response.data;
 					myChart.update();
 				}else{
-					//console.log("no data");
 					var title = '죄송합니다!!!';
 					var message = response.error;
 					var type = 'error';
 					modal(title,message,type);
 				}
 			},
-			error: function(response){
-				//console.log("error query");
-				var title = '죄송합니다!!!';
-				var message = response.error;
+			error: function(xhr, status, error){
+				var title = '앗 미안 해요!!!';
+				var message = error;
 				var type = 'error query';
 				modal(title,message,type);
 			}

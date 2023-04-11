@@ -64,12 +64,12 @@
 
             <!-- Grid column -->
             <div class="classification col-lg-2 col-sm-12 text-center d-flex flex-row d-none">
-                <div class="col col-lg-5 col-sm-5">
-                    <label for="form-select" class="pt-3 select-label text-label-drop-down">학년구분</label>
+                <div class="col col-lg-6 col-sm-5">
+                    <label for="form-select" class="p-3 select-label text-label-drop-down">학년구분</label>
                 </div>
-                <div class="col col-lg-7 col-sm-7">
+                <div class="col col-lg-6 col-sm-7">
                     <select id="elem" name="elem" class="form-select bg-color border-button gap-3">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="1학년">1학년</option>
                         <option value="2학년">2학년</option>
                         <option value="3학년">3학년</option>
@@ -78,20 +78,20 @@
                         <option value="6학년">6학년</option>
                     </select>
                     <select id="highschool" name="highschool" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
                     <select id="college" name="college" class="form-select bg-color border-button">
-                        <option value="">선택</option>
+                        <option value="전체">전체</option>
                         <option value="인문사회">인문사회</option>
                         <option value="자연 | 공학">자연 | 공학</option>
                         <option value="예체능">예체능</option>
                     </select>
                     <select id="public" name="public" class="form-select bg-color border-button">
-                        <option value="">선택</option>
-                        <option value="인문사회">일반</option>
+                        <option value="전체">전체</option>
+                        <option value="일반">일반</option>
                     </select>
                 </div>
             </div>

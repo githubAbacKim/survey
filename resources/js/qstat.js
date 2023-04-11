@@ -168,16 +168,15 @@ $(function () {
 				if(response.status === true){	
 					searchResult(getData(displayUrl),response.data)
 				}else{
-					console.log("no data");
 					var title = '앗 미안 해요!!!';
 					var message = response.error;
 					var type = 'error';
 					modal(title,message,type);
 				}
 			},
-			error: function(response){				
+			error: function(xhr, status, error){
 				var title = '앗 미안 해요!!!';
-				var message = response.error;
+				var message = error;
 				var type = 'error query';
 				modal(title,message,type);
 			}
