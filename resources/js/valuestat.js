@@ -226,16 +226,21 @@ $(function () {
 					color: "rgb(255, 99, 132)",
 					labels: {
 						font: {
-							size: 12,
+							size: 15,
 						},
 					},
 				},
 				tooltip: {
+					font:{
+						size: 18
+					},
 					callbacks: {
-						label:function(context){
-							return context.label;
-						}
-					}
+						label: function(context){
+							// console.log(context)
+							return '';
+						},
+						
+					},
 				},
 			},
 			// onHover: function(event,activeEls){
