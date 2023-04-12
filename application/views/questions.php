@@ -42,6 +42,14 @@
                             </div>
                         </div>
                     </div>
+                </div>                
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-2 text-color text-center fw-bold">관련 영상: </div>
+                <div class="col-lg-9">
+                    <div class="col-lg-12"><a class="link-secondary" href="{{link1}}}" target="_blank">{{text1}}</a></div>
+                    <div class="col-lg-12"><a class="link-secondary" href="{{link2}}}" target="_blank">{{text2}}</a></div>
+                    <div class="col-lg-12"><a class="link-secondary" href="{{link3}}}" target="_blank">{{text3}}</a></div>
                 </div>
             </div>
         </div>
